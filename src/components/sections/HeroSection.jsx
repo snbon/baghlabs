@@ -4,7 +4,7 @@ const HeroSection = () => {
   return (
     <div className="w-full h-full flex items-center justify-center hero-bg-morph">
       <div className="container-custom text-center">
-        <h1 className="text-4xl-robotic md:text-5xl-robotic lg:text-6xl-robotic font-light text-gray-900 mb-6 leading-tight">
+        <h1 className="text-xl md:text-2xl lg:text-3xl font-light text-gray-900 mb-6 leading-tight tracking-tight">
           From Concept to Product to Impact
         </h1>
         <p className="text-base-robotic md:text-lg-robotic lg:text-xl-robotic text-gray-700 max-w-3xl mx-auto mb-8 leading-relaxed">

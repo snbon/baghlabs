@@ -1,31 +1,30 @@
 import React from 'react'
-
 import { Link } from 'react-router-dom'
 
-const CTASection = () => {
+const CasesCTA = ({ title, description, buttons }) => {
   return (
     <div className="w-full h-full flex flex-col bg-bagh-800">
       {/* CTA Content */}
       <div className="flex-1 flex items-center justify-center">
         <div className="container-custom text-center">
           <h2 className="text-3xl-robotic md:text-4xl-robotic lg:text-5xl-robotic font-light text-white mb-6 leading-tight">
-            From Concept to Product to Impact
+            {title}
           </h2>
           <p className="text-base-robotic md:text-lg-robotic text-gray-200 max-w-3xl mx-auto mb-8 leading-relaxed">
-            Whether you're here to explore our products or looking for a digital partner to bring your idea to life — you're in the right place.
-          </p>
-          <p className="text-lg-robotic md:text-xl-robotic text-white mb-8 font-medium">
-            We are currently not taking on new projects, but we are still allowed to chat over a coffee.
+            {description}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="border-2 border-white text-white hover:bg-white hover:text-bagh-800 font-medium py-3 px-8 rounded-lg transition-all duration-200 text-sm-robotic">
-              Connect with us
-            </button>
+            <Link to="/" className="btn-secondary bg-white text-bagh-800 hover:bg-bagh-50 px-8 py-3 text-base">
+              {buttons.secondary}
+            </Link>
+            <Link to="/" className="btn-primary bg-bagh-600 hover:bg-bagh-700 px-8 py-3 text-base">
+              {buttons.primary}
+            </Link>
           </div>
         </div>
       </div>
 
-      {/* Footer Content */}
+      {/* Footer Content - Fixed at bottom */}
       <div className="bg-bagh-900 border-t border-bagh-700">
         <div className="container-custom py-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -84,4 +83,4 @@ const CTASection = () => {
   )
 }
 
-export default CTASection
+export default CasesCTA

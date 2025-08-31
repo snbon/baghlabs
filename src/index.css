@@ -18,6 +18,28 @@
     line-height: 1.6;
     overflow-x: hidden;
   }
+  
+  /* Fix for mobile viewport height issues */
+  .h-screen {
+    height: 100vh;
+    height: 100dvh; /* Dynamic viewport height for mobile */
+  }
+  
+  /* Ensure proper mobile viewport handling */
+  @supports (height: 100dvh) {
+    .h-screen {
+      height: 100dvh;
+    }
+  }
+  
+  /* Mobile-specific viewport handling */
+  @media (max-width: 768px) {
+    .mobile-viewport {
+      min-height: 100vh;
+      min-height: 100dvh;
+      height: auto;
+    }
+  }
 
   h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
@@ -149,6 +171,28 @@
     animation: bgMorph 8s ease-in-out infinite;
   }
 
+  /* Fluid glass navigation effects */
+  .fluid-glow {
+    box-shadow: 0 0 20px rgba(71, 85, 105, 0.3), 0 0 40px rgba(71, 85, 105, 0.1);
+  }
+
+  .fluid-glow:hover {
+    box-shadow: 0 0 30px rgba(71, 85, 105, 0.4), 0 0 60px rgba(71, 85, 105, 0.2);
+  }
+
+  /* Fluid glass morphing effect */
+  .fluid-glass {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(71, 85, 105, 0.2);
+  }
+
+  /* Subtle fluid animation */
+  .fluid-animate {
+    animation: fluidMorph 8s ease-in-out infinite;
+  }
+
   /* Smaller font sizes - even smaller than before */
   .text-xs-robotic {
     font-size: 0.75rem;
@@ -242,14 +286,25 @@
     }
   }
 
-  @keyframes bgMorph {
-    0%, 100% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-  }
+            @keyframes bgMorph {
+            0%, 100% {
+              background-position: 0% 50%;
+            }
+            50% {
+              background-position: 100% 50%;
+            }
+          }
+
+          @keyframes fluidMorph {
+            0%, 100% {
+              background-position: 0% 50%;
+              transform: scale(1);
+            }
+            50% {
+              background-position: 100% 50%;
+              transform: scale(1.02);
+            }
+          }
 }
 
 

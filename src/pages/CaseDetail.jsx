@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useSection } from '../contexts/SectionContext'
 
 // Register ScrollTrigger
 gsap.registerPlugin(ScrollTrigger)
@@ -9,6 +10,7 @@ gsap.registerPlugin(ScrollTrigger)
 const CaseDetail = () => {
   const { caseName } = useParams()
   const pageRef = useRef(null)
+  const { updateSection } = useSection()
 
   // Case data - in a real app, this would come from an API
   const caseData = {
@@ -110,6 +112,9 @@ The platform integrates seamlessly with existing calendar systems like Google Ca
 
   useEffect(() => {
     if (!currentCase) return
+    
+    // Update section context for navigation styling
+    updateSection(0, 'bg-bagh-50')
 
     const ctx = gsap.context(() => {
       // Fade in elements on scroll
@@ -149,7 +154,7 @@ The platform integrates seamlessly with existing calendar systems like Google Ca
     }, pageRef)
 
     return () => ctx.revert()
-  }, [currentCase])
+  }, [currentCase, updateSection])
 
   if (!currentCase) {
     return (
@@ -168,18 +173,17 @@ The platform integrates seamlessly with existing calendar systems like Google Ca
   return (
     <div ref={pageRef} className="bg-white">
       {/* Hero Section */}
-      <section className="relative min-h-[50vh] flex items-center bg-bagh-50">
-        <div className="absolute inset-0 bg-gradient-to-r from-bagh-100 to-bagh-50"></div>
-        <div className="container-custom relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-4">
+      <section className="min-h-screen flex items-center justify-center bg-bagh-50">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto text-center space-y-6">
             <div className="animate-on-scroll">
-              <span className="inline-block bg-bagh-200 text-bagh-800 text-xs font-light px-3 py-1 rounded mb-3">
+              <span className="inline-block bg-bagh-200 text-bagh-800 text-xs font-light px-3 py-1 rounded mb-4">
                 {currentCase.category}
               </span>
-              <h1 className="text-3xl md:text-5xl heading-minimal text-bagh-800 mb-3">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl heading-minimal text-bagh-800 mb-4">
                 {currentCase.name}
               </h1>
-              <p className="text-base md:text-lg text-minimal leading-relaxed">
+              <p className="text-xl md:text-2xl text-minimal leading-relaxed">
                 {currentCase.tagline}
               </p>
             </div>
@@ -188,9 +192,9 @@ The platform integrates seamlessly with existing calendar systems like Google Ca
       </section>
 
       {/* Main Content */}
-      <section className="section-padding">
+      <section className="min-h-screen flex items-center justify-center bg-white">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto space-y-12">
+          <div className="max-w-4xl mx-auto space-y-16">
             {/* Overview */}
             <div className="animate-on-scroll">
               <h2 className="text-2xl heading-minimal text-bagh-800 mb-4">Overview</h2>
@@ -307,16 +311,16 @@ The platform integrates seamlessly with existing calendar systems like Google Ca
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-bagh-50">
+      <section className="min-h-screen flex items-center justify-center bg-bagh-50">
         <div className="container-custom text-center">
-          <div className="max-w-2xl mx-auto space-y-4">
-            <h2 className="text-2xl heading-minimal text-bagh-800">
+          <div className="max-w-2xl mx-auto space-y-6">
+            <h2 className="text-3xl md:text-4xl heading-minimal text-bagh-800">
               Ready to Start Your Project?
             </h2>
-            <p className="text-sm text-minimal">
+            <p className="text-lg md:text-xl text-minimal">
               Let's discuss how we can help bring your idea to life.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/cases" className="btn-secondary">
                 View More Cases
               </Link>

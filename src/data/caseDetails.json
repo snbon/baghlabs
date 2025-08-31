@@ -1,0 +1,118 @@
+{
+  "shiftend": {
+    "id": "shiftend",
+    "name": "ShiftEnd",
+    "tagline": "Revolutionary Workforce Management Platform",
+    "description": "A comprehensive workforce management platform that streamlines scheduling, time tracking, and communication for industrial teams.",
+    "longDescription": "ShiftEnd is a comprehensive workforce management platform that streamlines scheduling, time tracking, and communication for industrial teams. Built with modern technologies, it provides real-time insights and predictive analytics to optimize operations and reduce costs.",
+    "image": "/api/placeholder/800/500/7c3aed/ffffff?text=ShiftEnd",
+    "heroImage": "/api/placeholder/1200/600/7c3aed/ffffff?text=ShiftEnd+Hero",
+    "category": "Workforce Management",
+    "industry": "Manufacturing",
+    "client": "Manufacturing Corp",
+    "timeline": "6 months",
+    "teamSize": "8 developers",
+    "technologies": ["React", "Node.js", "PostgreSQL", "Redis", "Docker"],
+    "features": [
+      "AI-powered scheduling optimization",
+      "Real-time team communication",
+      "Advanced analytics dashboard",
+      "Mobile-first responsive design",
+      "Integration with existing HR systems"
+    ],
+    "challenge": "Industrial teams struggled with inefficient scheduling, poor communication, and lack of real-time insights into workforce performance. Manual processes led to scheduling conflicts, communication gaps, and difficulty tracking productivity metrics.",
+    "solution": "We developed a comprehensive platform that automates scheduling, provides real-time communication tools, and delivers actionable insights through advanced analytics. The solution includes intelligent scheduling algorithms, integrated communication channels, and comprehensive reporting dashboards.",
+    "results": [
+      "40% reduction in scheduling conflicts",
+      "25% improvement in team productivity",
+      "Real-time visibility into workforce metrics",
+      "Seamless integration with existing systems",
+      "Improved employee satisfaction scores"
+    ],
+    "process": {
+      "discovery": "We conducted extensive research with manufacturing teams to understand their unique scheduling challenges and communication needs.",
+      "design": "Created intuitive interfaces that work seamlessly on both desktop and mobile devices, with a focus on usability in industrial environments.",
+      "development": "Built a scalable backend architecture using modern technologies, ensuring reliability and performance under heavy industrial workloads.",
+      "testing": "Comprehensive testing with real manufacturing teams to ensure the platform meets their specific requirements and workflows.",
+      "deployment": "Smooth rollout with comprehensive training and support to ensure successful adoption across all team levels."
+    },
+    "technicalDetails": {
+      "frontend": "React-based SPA with responsive design and offline capabilities",
+      "backend": "Node.js API with PostgreSQL database and Redis caching",
+      "infrastructure": "Docker containers deployed on cloud infrastructure",
+      "security": "Enterprise-grade security with role-based access control",
+      "scalability": "Microservices architecture designed for horizontal scaling"
+    },
+    "gallery": [
+      "/api/placeholder/800/500/7c3aed/ffffff?text=Dashboard+View",
+      "/api/placeholder/800/500/7c3aed/ffffff?text=Mobile+App",
+      "/api/placeholder/800/500/7c3aed/ffffff?text=Analytics+Screen"
+    ],
+    "testimonials": [
+      {
+        "quote": "ShiftEnd has transformed how we manage our workforce. The scheduling is now automated and accurate, and our teams can communicate seamlessly.",
+        "author": "Sarah Johnson",
+        "role": "Operations Manager",
+        "company": "Manufacturing Corp"
+      }
+    ]
+  },
+  "availly": {
+    "id": "availly",
+    "name": "Availly",
+    "tagline": "Next-Generation SaaS Platform for Modern Businesses",
+    "description": "A cutting-edge SaaS platform that helps businesses streamline their operations through intelligent automation, data analytics, and seamless integrations.",
+    "longDescription": "Availly is a cutting-edge SaaS platform that helps businesses streamline their operations through intelligent automation, data analytics, and seamless integrations. The platform provides a unified dashboard for managing multiple business processes efficiently.",
+    "image": "/api/placeholder/800/500/3b82f6/ffffff?text=Availly",
+    "heroImage": "/api/placeholder/1200/600/3b82f6/ffffff?text=Availly+Hero",
+    "category": "Business Operations",
+    "industry": "Technology",
+    "client": "TechStart Inc",
+    "timeline": "8 months",
+    "teamSize": "12 developers",
+    "technologies": ["Next.js", "TypeScript", "Python", "MongoDB", "AWS"],
+    "features": [
+      "Intelligent workflow automation",
+      "Real-time data analytics",
+      "Multi-platform integrations",
+      "Custom dashboard builder",
+      "Advanced reporting system"
+    ],
+    "challenge": "Businesses needed a unified platform to manage multiple operations, automate workflows, and gain insights from their data without complex integrations. Existing solutions were either too basic or required extensive customization.",
+    "solution": "We built a comprehensive SaaS platform with intelligent automation, real-time analytics, and seamless integrations that provides a single source of truth for business operations. The platform adapts to different business models and scales with growth.",
+    "results": [
+      "60% reduction in manual processes",
+      "35% improvement in operational efficiency",
+      "Unified view of all business operations",
+      "Scalable architecture for growth",
+      "Reduced integration costs by 40%"
+    ],
+    "process": {
+      "discovery": "Analyzed business operations across multiple industries to identify common pain points and automation opportunities.",
+      "design": "Created a flexible, modular design system that can adapt to different business models and user preferences.",
+      "development": "Built a robust backend using Python and MongoDB, with a modern Next.js frontend for optimal performance.",
+      "testing": "Comprehensive testing across different business scenarios and user workflows to ensure reliability.",
+      "deployment": "Phased rollout with continuous monitoring and optimization based on user feedback and performance metrics."
+    },
+    "technicalDetails": {
+      "frontend": "Next.js with TypeScript for type safety and optimal performance",
+      "backend": "Python-based API with MongoDB for flexible data modeling",
+      "infrastructure": "AWS cloud infrastructure with auto-scaling capabilities",
+      "security": "Enterprise security standards with data encryption and compliance features",
+      "scalability": "Microservices architecture with event-driven design patterns"
+    },
+    "gallery": [
+      "/api/placeholder/800/500/3b82f6/ffffff?text=Dashboard+Overview",
+      "/api/placeholder/800/500/3b82f6/ffffff?text=Workflow+Builder",
+      "/api/placeholder/800/500/3b82f6/ffffff?text=Analytics+View"
+    ],
+    "testimonials": [
+      {
+        "quote": "Availly has streamlined our entire business operation. The automation features alone have saved us countless hours every week.",
+        "author": "Michael Chen",
+        "role": "CTO",
+        "company": "TechStart Inc"
+      }
+    ]
+  }
+}

@@ -50,7 +50,7 @@ const Footer = () => {
         <div className="border-t border-bagh-200 mt-8 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
             <p className="text-xs text-bagh-400">
-              © 2024 BaghLabs. All rights reserved.
+              © 2025 BaghLabs. All rights reserved.
             </p>
             <p className="text-xs text-bagh-400">
               From Concept to Product to Impact
