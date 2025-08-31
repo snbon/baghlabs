@@ -1,0 +1,255 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .btn-primary {
+    @apply bg-bagh-800 text-white px-4 py-2 rounded-md font-light text-sm hover:bg-bagh-700 transition-colors duration-200;
+  }
+  
+  .btn-secondary {
+    @apply border border-bagh-800 text-bagh-800 px-4 py-2 rounded-md font-light text-sm hover:bg-bagh-800 hover:text-white transition-colors duration-200;
+  }
+  
+  .section-padding {
+    @apply py-12 md:py-16;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-bagh-800 to-bagh-600 bg-clip-text text-transparent;
+  }
+
+  .text-minimal {
+    @apply text-bagh-700 font-light;
+  }
+
+  .heading-minimal {
+    @apply text-bagh-800 font-light tracking-tight;
+  }
+
+  /* Full viewport sections */
+  .full-viewport {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    will-change: opacity, transform;
+  }
+
+  /* Scroll indicator */
+  .scroll-indicator {
+    position: fixed;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 50;
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .scroll-indicator {
+      display: block;
+    }
+  }
+
+  .scroll-dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: #cbd5e1;
+    opacity: 0.3;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin: 0.25rem 0;
+  }
+
+  .scroll-dot.active {
+    opacity: 1;
+    background-color: #475569;
+    transform: scale(1.2);
+  }
+
+  .scroll-dot:hover {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+
+  /* Hide scrollbars */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Minimal, controlled animations */
+  .floating-dot {
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .floating-dot:nth-child(2) {
+    animation-delay: -2s;
+  }
+
+  .floating-dot:nth-child(3) {
+    animation-delay: -4s;
+  }
+
+  .floating-dot:nth-child(4) {
+    animation-delay: -6s;
+  }
+
+  .floating-circle {
+    animation: floatCircle 12s ease-in-out infinite;
+  }
+
+  .floating-circle:nth-child(2) {
+    animation-delay: -4s;
+  }
+
+  .floating-circle:nth-child(3) {
+    animation-delay: -8s;
+  }
+
+  /* Hero background morphing animation */
+  .hero-bg-morph {
+    background: linear-gradient(45deg, #f8fafc, #e2e8f0, #f1f5f9);
+    background-size: 400% 400%;
+    animation: bgMorph 8s ease-in-out infinite;
+  }
+
+  /* Smaller font sizes - even smaller than before */
+  .text-xs-robotic {
+    font-size: 0.75rem;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+  }
+
+  .text-sm-robotic {
+    font-size: 0.75rem;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+  }
+
+  .text-base-robotic {
+    font-size: 0.75rem;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+  }
+
+  .text-lg-robotic {
+    font-size: 0.75rem;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+  }
+
+  .text-xl-robotic {
+    font-size: 0.75rem;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+  }
+
+  .text-2xl-robotic {
+    font-size: 0.75rem;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+  }
+
+  .text-3xl-robotic {
+    font-size: 0.75rem;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+  }
+
+  .text-4xl-robotic {
+    font-size: 0.875rem;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+  }
+
+  .text-5xl-robotic {
+    font-size: 0.875rem;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+  }
+
+  .text-6xl-robotic {
+    font-size: 1rem;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+  }
+}
+
+@layer utilities {
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+
+  @keyframes floatCircle {
+    0%, 100% {
+      transform: translateY(0px);
+      opacity: 0.15;
+    }
+    50% {
+      transform: translateY(-20px);
+      opacity: 0.25;
+    }
+  }
+
+  @keyframes bgMorph {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+}
+
+
