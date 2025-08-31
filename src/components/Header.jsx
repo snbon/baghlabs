@@ -52,12 +52,13 @@ const Header = () => {
   }, [lastScrollY])
 
   return (
-    <header 
-      ref={headerRef}
-      className={`sticky top-0 z-[9999] transition-all duration-300 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'
-      }`}
-    >
+    <>
+      <header 
+        ref={headerRef}
+        className={`sticky top-0 z-[9999] transition-all duration-300 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'
+        }`}
+      >
       {/* Fluid glass navigation bar */}
       <div className="container-custom py-4">
         <div className="relative">
@@ -122,36 +123,63 @@ const Header = () => {
             </button>
           </div>
         </div>
-        {/* Mobile Navigation with fluid glass design */}
-        {isMenuOpen && (
-          <div className="md:hidden mt-4">
-            <div className="relative">
-                                    {/* Fluid glass background for mobile menu */}
-                      <div className="absolute inset-0 bg-white/20 backdrop-blur-xl rounded-2xl border border-white/30 shadow-2xl shadow-bagh-600/20"></div>
-                              <div className="absolute inset-0 bg-gradient-to-r from-bagh-600/10 via-bagh-500/5 to-bagh-600/10 rounded-2xl"></div>
-              
-              <div className="relative px-6 pt-4 pb-6 space-y-3">
-                {navigation.map((item) => (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    className={`block px-4 py-3 rounded-xl text-sm font-light transition-all duration-300 ${
-                      location.pathname === item.href
-                        ? `${activeColor} bg-bagh-600/20 border border-bagh-400/30`
-                        : `${textColor} ${hoverColor} hover:bg-white/20`
-                    }`}
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
       </div>
     </header>
-  )
-}
+    
+         {/* Mobile Navigation Modal with fluid glass design */}
+     <div className={`md:hidden fixed inset-0 z-[9998] transition-opacity duration-300 ease-in-out ${
+       isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+     }`}>
+       {/* Backdrop */}
+       <div 
+         className={`absolute inset-0 bg-black/20 backdrop-blur-sm transition-opacity duration-300 ease-in-out ${
+           isMenuOpen ? 'opacity-100' : 'opacity-0'
+         }`}
+         onClick={() => setIsMenuOpen(false)}
+       ></div>
+       
+       {/* Modal Content */}
+       <div className="relative h-full flex items-center justify-center p-4">
+         <div className={`relative w-full max-w-sm transition-all duration-300 ease-out will-change-transform ${
+           isMenuOpen ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-98 translate-y-2'
+         }`} style={{ transform: 'translate3d(0, 0, 0)' }}>
+           {/* Fluid glass background for mobile menu */}
+           <div className="absolute inset-0 bg-white/20 backdrop-blur-xl rounded-2xl border border-white/30 shadow-2xl shadow-bagh-600/20"></div>
+           <div className="absolute inset-0 bg-gradient-to-r from-bagh-600/10 via-bagh-500/5 to-bagh-600/10 rounded-2xl"></div>
+           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(71,85,105,0.1),transparent_70%)] rounded-2xl"></div>
+           
+           {/* Close button */}
+           <button
+             onClick={() => setIsMenuOpen(false)}
+             className="absolute -top-3 -right-3 w-8 h-8 bg-white/20 backdrop-blur-xl rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 z-10"
+           >
+             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+             </svg>
+           </button>
+           
+           {/* Navigation Items - Centered */}
+           <div className="relative px-8 py-12 space-y-4 flex flex-col items-center">
+             {navigation.map((item) => (
+               <Link
+                 key={item.name}
+                 to={item.href}
+                 className={`block w-full text-center px-6 py-4 rounded-xl text-base font-light transition-all duration-300 ${
+                   location.pathname === item.href
+                     ? `${activeColor} border-b-2 border-current`
+                     : `${textColor} ${hoverColor} hover:bg-white/20`
+                 }`}
+                 onClick={() => setIsMenuOpen(false)}
+               >
+                 {item.name}
+               </Link>
+             ))}
+           </div>
+         </div>
+       </div>
+     </div>
+      </>
+    )
+  }
 
 export default Header
