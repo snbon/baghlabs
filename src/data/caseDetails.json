@@ -5,8 +5,8 @@
     "tagline": "From paper chaos to a streamlined digital workflow.",
     "description": "ShiftEnd is a SaaS tool that simplifies compliance for Belgian restaurants by replacing the traditional dagontvangstenboek with a sleek, affordable, and legally compliant platform.",
     "longDescription": "Small restaurants in Belgium without GKS (cash register systems) are required by law to maintain a daily sales log, often done on paper. This process is tedious, error prone, and outdated. ShiftEnd was built to digitize this workflow while keeping compliance at its core. Designed for non technical users, ShiftEnd emphasizes simplicity, affordability, and legal assurance.",
-    "image": "/src/assets/shiftend/shiftend-report.png",
-    "heroImage": "/src/assets/shiftend/shiftend-report.png",
+    "image": "/assets/shiftend/shiftend-report.png",
+    "heroImage": "/assets/shiftend/shiftend-report.png",
     "websiteUrl": "https://shiftend.be",
     "category": "Operations",
     "industry": "Hospitality & Food Service",
@@ -59,9 +59,9 @@
       "scalability": "Multi tenant architecture designed for horizontal scaling across multiple restaurant locations"
     },
     "gallery": [
-      "/src/assets/shiftend/shiftend-landingpage.png",
-      "/src/assets/shiftend/shiftend-report.png",
-      "/src/assets/shiftend/shiftend-permissions.png"
+              "/assets/shiftend/shiftend-landingpage.png",
+        "/assets/shiftend/shiftend-report.png",
+        "/assets/shiftend/shiftend-permissions.png"
     ],
     "testimonials": [
       {
@@ -78,8 +78,8 @@
     "tagline": "Availability you share, privacy you keep.",
     "description": "Availly is a lightweight tool for managing personal and business availability, offering a sleek calendar UI and powerful sharing features.",
     "longDescription": "Managing time across clients, projects, or personal commitments is often chaotic. Existing solutions are either bloated or lack customization for small teams and freelancers. Availly was designed as a lean scheduling platform: lightweight, beautiful, and shareable. With a focus on simplicity and performance, it removes friction from booking and availability management.",
-    "image": "/src/assets/availly/availly-landing-page.png",
-    "heroImage": "/src/assets/availly/availly-dashboard.png",
+    "image": "/assets/availly/availly-landing-page.png",
+    "heroImage": "/assets/availly/availly-dashboard.png",
     "websiteUrl": "https://availly.me",
     "category": "Productivity",
     "industry": "Technology & Professional Services",
@@ -135,9 +135,9 @@
       "scalability": "Microservices architecture with event driven design patterns and horizontal scaling capabilities"
     },
     "gallery": [
-      "/src/assets/availly/availly-dashboard.png",
-      "/src/assets/availly/availly-settings.png",
-      "/src/assets/availly/availly-loginpage.png"
+              "/assets/availly/availly-dashboard.png",
+        "/assets/availly/availly-settings.png",
+        "/assets/availly/availly-loginpage.png"
     ],
     "testimonials": [
       {

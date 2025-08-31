@@ -95,6 +95,66 @@
     .flex-col a[href] {
       align-self: center;
     }
+    
+    /* Mobile section content containment */
+    .w-full.h-full {
+      min-height: 100vh;
+      min-height: 100dvh;
+    }
+    
+    /* Ensure content doesn't overflow section boundaries */
+    .container-custom {
+      padding-bottom: 2rem; /* Add bottom padding for better scrolling */
+    }
+    
+    /* Mobile section scrolling optimization */
+    .w-full.h-full.flex {
+      align-items: center; /* Keep content centered */
+      justify-content: center; /* Maintain center alignment */
+    }
+    
+    /* Section content scrolling - allow content to scroll within sections */
+    .w-full.h-full.flex .container-custom {
+      max-height: 100vh;
+      max-height: 100dvh;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+      padding: 2rem 1rem; /* Add padding for better mobile spacing */
+      /* Ensure content can scroll when it exceeds viewport height */
+      scrollbar-width: thin;
+      scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+    }
+    
+    /* Custom scrollbar styling for webkit browsers */
+    .w-full.h-full.flex .container-custom::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    .w-full.h-full.flex .container-custom::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    
+    .w-full.h-full.flex .container-custom::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 3px;
+    }
+    
+    .w-full.h-full.flex .container-custom::-webkit-scrollbar-thumb:hover {
+      background: rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Mobile text sizing adjustments */
+    .text-3xl-robotic {
+      font-size: 1.125rem !important; /* Larger on mobile for readability */
+    }
+    
+    .text-4xl-robotic {
+      font-size: 1.25rem !important; /* Larger on mobile for readability */
+    }
+    
+    .text-5xl-robotic {
+      font-size: 1.375rem !important; /* Larger on mobile for readability */
+    }
   }
   
   .section-padding {

@@ -56,81 +56,60 @@ const Home = () => {
       sections.forEach((_, index) => {
         gsap.set(sectionsRef.current[index], { 
           opacity: index === 0 ? 1 : 0,
-          position: 'fixed', // Restored fixed positioning for fade effect
+          position: 'fixed', // Fixed positioning for fade effect
           top: 0, // All sections at same position for fade effect
           left: 0,
           width: '100%',
-          height: adjustedViewportHeight,
+          height: '100vh', // Full viewport height
           zIndex: 1000 - index, // Higher z-index for proper layering
-          pointerEvents: index === 0 ? 'auto' : 'none' // Only visible section is interactive
+          pointerEvents: index === 0 ? 'auto' : 'none', // Only visible section is interactive
+          overflow: 'hidden' // Hide overflow initially
         })
       })
       
       // Set initial section context
       updateSection(0, sections[0].bg)
 
-      // Scroll percentage-based transitions using GSAP scrub
-      const totalScrollHeight = (sections.length - 1) * viewportHeight
-      
-      // Create smooth transitions based on scroll percentage for each section pair
+      // Hybrid scrolling: Allow internal section scrolling, then fade to next section
       for (let i = 0; i < sections.length - 1; i++) {
         const currentSection = sectionsRef.current[i]
         const nextSection = sectionsRef.current[i + 1]
         
-        // Calculate scroll trigger points for this transition
-        const startTrigger = i * viewportHeight
-        const endTrigger = (i + 1) * viewportHeight
-        
-        // Create scroll-triggered timeline for smooth fade transitions
+        // Create scroll trigger for section transition
         ScrollTrigger.create({
           trigger: containerRef.current,
-          start: `top+=${startTrigger} top`,
-          end: `top+=${endTrigger} top`,
-          scrub: 0.3, // Smooth scrubbing with slight delay
+          start: `top+=${i * viewportHeight} top`,
+          end: `top+=${(i + 1) * viewportHeight} top`,
+          scrub: 0.3, // Smooth scrubbing
           onUpdate: (self) => {
             const progress = self.progress
             
-            // Calculate opacity based on scroll progress
-            if (progress < 0.2) {
-              // 0-20%: Current section fully visible, next section invisible
+            if (progress < 0.5) {
+              // First half: Current section visible, next section invisible
               gsap.set(currentSection, { 
                 opacity: 1,
-                pointerEvents: 'auto', // Enable interactions
-                zIndex: 1000 - i // Bring to front
+                pointerEvents: 'auto',
+                zIndex: 1000 - i
               })
               gsap.set(nextSection, { 
                 opacity: 0,
-                pointerEvents: 'none', // Disable interactions
-                zIndex: 1000 - (i + 1) // Send to back
+                pointerEvents: 'none',
+                zIndex: 1000 - (i + 1)
               })
-              // Update context for navigation styling
               updateSection(i, sections[i].bg)
-            } else if (progress < 0.8) {
-              // 20-80%: Gradual fade transition
-              const fadeProgress = (progress - 0.2) / 0.6
+            } else {
+              // Second half: Fade transition to next section
+              const fadeProgress = (progress - 0.5) * 2 // 0 to 1
               gsap.set(currentSection, { 
                 opacity: 1 - fadeProgress,
-                pointerEvents: fadeProgress < 0.5 ? 'auto' : 'none', // Switch interactions at 50%
-                zIndex: fadeProgress < 0.5 ? 1000 - i : 1000 - (i + 1) // Switch z-index at 50%
+                pointerEvents: 'none',
+                zIndex: 1000 - i
               })
               gsap.set(nextSection, { 
                 opacity: fadeProgress,
-                pointerEvents: fadeProgress > 0.5 ? 'auto' : 'none', // Switch interactions at 50%
-                zIndex: fadeProgress > 0.5 ? 1000 - (i + 1) : 1000 - i // Switch z-index at 50%
+                pointerEvents: 'auto',
+                zIndex: 1000 - (i + 1)
               })
-            } else {
-              // 80-100%: Next section fully visible, current section invisible
-              gsap.set(currentSection, { 
-                opacity: 0,
-                pointerEvents: 'none', // Disable interactions
-                zIndex: 1000 - i // Send to back
-              })
-              gsap.set(nextSection, { 
-                opacity: 1,
-                pointerEvents: 'auto', // Enable interactions
-                zIndex: 1000 - (i + 1) // Bring to front
-              })
-              // Update context for navigation styling
               updateSection(i + 1, sections[i + 1].bg)
             }
           }
@@ -153,7 +132,8 @@ const Home = () => {
         // Update all section heights
         sections.forEach((_, index) => {
           gsap.set(sectionsRef.current[index], { 
-            height: newViewportHeight + mobilePadding
+            height: '100vh', // Always full viewport height
+            overflow: 'hidden' // Always hide overflow
           })
         })
         
