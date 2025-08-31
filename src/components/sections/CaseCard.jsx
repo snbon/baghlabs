@@ -71,9 +71,9 @@ const CaseCard = ({ caseItem, index }) => {
             {caseItem.id !== 'coming-soon-1' && caseItem.id !== 'coming-soon-2' ? (
               <Link
                 to={`/cases/${caseItem.id}`}
-                className="inline-flex items-center btn-primary text-base px-6 py-3"
+                className="inline-flex items-center btn-secondary text-base px-4 py-1.5"
               >
-                View Full Case Study
+                Learn more 
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>

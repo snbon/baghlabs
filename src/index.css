@@ -97,6 +97,103 @@
     display: none;
   }
 
+  /* Hide scrollbar utility */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+  }
+
+  /* Entrance Animations - Initial State */
+  .animate-fade-in-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .animate-slide-in-down {
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .animate-slide-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .animate-slide-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .animate-scale-in {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .animate-fade-in-scale {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .animate-text-reveal {
+    opacity: 0;
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .animate-line-expand {
+    width: 0;
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  /* Animation Active States */
+  .animate-fade-in-up.animate-active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .animate-slide-in-down.animate-active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .animate-slide-in-left.animate-active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .animate-slide-in-right.animate-active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .animate-scale-in.animate-active {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .animate-fade-in-scale.animate-active {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .animate-text-reveal.animate-active {
+    opacity: 1;
+  }
+
+  .animate-line-expand.animate-active {
+    width: 4rem;
+  }
+
+
+
   @media (min-width: 768px) {
     .scroll-indicator {
       display: block;
