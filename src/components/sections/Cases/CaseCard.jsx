@@ -9,15 +9,11 @@ const CaseCard = ({ caseItem, index }) => {
           {/* Image */}
           <div className="w-full lg:w-1/2">
             <div className="relative rounded-xl overflow-hidden">
-              <Link to={`/cases/${caseItem.id}`} className="block cursor-pointer group">
-                <img
-                  src={caseItem.image}
-                  alt={caseItem.name}
-                  className="w-full h-64 lg:h-80 object-contain transition-transform duration-300 group-hover:scale-105"
-                />
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 rounded-xl"></div>
-              </Link>
+              <img
+                src={caseItem.image}
+                alt={caseItem.name}
+                className="w-full h-64 lg:h-80 object-contain"
+              />
             </div>
           </div>
 

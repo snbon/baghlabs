@@ -155,6 +155,27 @@
     .text-5xl-robotic {
       font-size: 1.375rem !important; /* Larger on mobile for readability */
     }
+    
+    /* Mobile case card scrolling optimization */
+    .case-item {
+      user-select: none; /* Prevent text selection during scroll */
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+    }
+    
+    /* Ensure case cards don't interfere with horizontal scrolling */
+    .case-item img {
+      pointer-events: none; /* Disable pointer events on images */
+      -webkit-user-drag: none; /* Prevent image dragging on mobile */
+      user-drag: none;
+    }
+    
+    /* Only buttons should be interactive */
+    .case-item .btn-primary,
+    .case-item .btn-secondary {
+      pointer-events: auto; /* Re-enable pointer events for buttons */
+    }
   }
   
   .section-padding {
