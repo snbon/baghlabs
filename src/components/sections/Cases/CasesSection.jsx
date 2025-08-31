@@ -4,7 +4,7 @@ const CasesSection = () => {
   const cases = [
     {
       name: 'ShiftEnd',
-      description: 'A digital tool helping Belgian restaurants replace outdated paper-based workflows with a simple, affordable SaaS solution.',
+      description: 'A digital tool helping Belgian restaurants replace outdated paper based workflows with a simple, affordable SaaS solution.',
       category: 'SaaS Platform'
     },
     {
@@ -28,7 +28,7 @@ const CasesSection = () => {
 
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {cases.map((caseItem, index) => (
-            <div key={index} className="bg-gray-50 p-8 rounded-lg border border-gray-200 hover:border-gray-300 transition-all duration-300">
+            <div key={index} className="bg-gray-50 p-8 rounded-lg transition-all duration-300">
               <div className="text-left">
                 <span className="text-xs-robotic text-gray-500 uppercase tracking-wider mb-2 block">
                   {caseItem.category}

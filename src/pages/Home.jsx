@@ -2,11 +2,7 @@ import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useSection } from '../contexts/SectionContext'
-import HeroSection from '../components/sections/HeroSection'
-import AboutSection from '../components/sections/AboutSection'
-import CasesSection from '../components/sections/CasesSection'
-import WhySection from '../components/sections/WhySection'
-import CTASection from '../components/sections/CTASection'
+import { HeroSection, AboutSection, WhySection, CTASection, HomeCasesSection } from '../components/sections/Home'
 
 const Home = () => {
   const containerRef = useRef(null)
@@ -16,7 +12,7 @@ const Home = () => {
   const sections = [
     { component: HeroSection, bg: 'bg-white' },
     { component: AboutSection, bg: 'bg-bagh-50' },
-    { component: CasesSection, bg: 'bg-white' },
+    { component: HomeCasesSection, bg: 'bg-white' },
     { component: WhySection, bg: 'bg-white' },
     { component: CTASection, bg: 'bg-bagh-800' }
   ]
@@ -60,12 +56,13 @@ const Home = () => {
       sections.forEach((_, index) => {
         gsap.set(sectionsRef.current[index], { 
           opacity: index === 0 ? 1 : 0,
-          position: 'fixed',
-          top: 0,
+          position: 'fixed', // Restored fixed positioning for fade effect
+          top: 0, // All sections at same position for fade effect
           left: 0,
           width: '100%',
           height: adjustedViewportHeight,
-          zIndex: sections.length - index
+          zIndex: 1000 - index, // Higher z-index for proper layering
+          pointerEvents: index === 0 ? 'auto' : 'none' // Only visible section is interactive
         })
       })
       
@@ -96,19 +93,43 @@ const Home = () => {
             // Calculate opacity based on scroll progress
             if (progress < 0.2) {
               // 0-20%: Current section fully visible, next section invisible
-              gsap.set(currentSection, { opacity: 1 })
-              gsap.set(nextSection, { opacity: 0 })
+              gsap.set(currentSection, { 
+                opacity: 1,
+                pointerEvents: 'auto', // Enable interactions
+                zIndex: 1000 - i // Bring to front
+              })
+              gsap.set(nextSection, { 
+                opacity: 0,
+                pointerEvents: 'none', // Disable interactions
+                zIndex: 1000 - (i + 1) // Send to back
+              })
               // Update context for navigation styling
               updateSection(i, sections[i].bg)
             } else if (progress < 0.8) {
               // 20-80%: Gradual fade transition
               const fadeProgress = (progress - 0.2) / 0.6
-              gsap.set(currentSection, { opacity: 1 - fadeProgress })
-              gsap.set(nextSection, { opacity: fadeProgress })
+              gsap.set(currentSection, { 
+                opacity: 1 - fadeProgress,
+                pointerEvents: fadeProgress < 0.5 ? 'auto' : 'none', // Switch interactions at 50%
+                zIndex: fadeProgress < 0.5 ? 1000 - i : 1000 - (i + 1) // Switch z-index at 50%
+              })
+              gsap.set(nextSection, { 
+                opacity: fadeProgress,
+                pointerEvents: fadeProgress > 0.5 ? 'auto' : 'none', // Switch interactions at 50%
+                zIndex: fadeProgress > 0.5 ? 1000 - (i + 1) : 1000 - i // Switch z-index at 50%
+              })
             } else {
               // 80-100%: Next section fully visible, current section invisible
-              gsap.set(currentSection, { opacity: 0 })
-              gsap.set(nextSection, { opacity: 1 })
+              gsap.set(currentSection, { 
+                opacity: 0,
+                pointerEvents: 'none', // Disable interactions
+                zIndex: 1000 - i // Send to back
+              })
+              gsap.set(nextSection, { 
+                opacity: 1,
+                pointerEvents: 'auto', // Enable interactions
+                zIndex: 1000 - (i + 1) // Bring to front
+              })
               // Update context for navigation styling
               updateSection(i + 1, sections[i + 1].bg)
             }
@@ -191,17 +212,18 @@ const Home = () => {
 
   return (
     <div ref={containerRef} className="relative">
-      {/* Sections positioned fixed for stationary background with robust transitions */}
+      {/* Sections positioned fixed for fade effect with proper interaction management */}
       {sections.map((section, index) => {
         const SectionComponent = section.component
         return (
           <div
             key={index}
             ref={(el) => (sectionsRef.current[index] = el)}
-            className="fixed top-0 left-0 w-full z-10"
+            className="fixed top-0 left-0 w-full"
             style={{ 
               opacity: index === 0 ? 1 : 0,
-              zIndex: sections.length - index
+              zIndex: 1000 - index, // Higher z-index for proper layering
+              pointerEvents: index === 0 ? 'auto' : 'none' // Only visible section is interactive
             }}
           >
             <SectionComponent />

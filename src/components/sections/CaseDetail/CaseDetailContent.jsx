@@ -1,6 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const CaseDetailContent = ({ caseData }) => {
+  const [selectedImage, setSelectedImage] = useState(null)
+
+  const openImageModal = (image) => {
+    setSelectedImage(image)
+  }
+
+  const closeImageModal = () => {
+    setSelectedImage(null)
+  }
+
   return (
     <div className="w-full py-24">
       <div className="container-custom">
@@ -12,7 +22,7 @@ const CaseDetailContent = ({ caseData }) => {
               <img
                 src={caseData.heroImage}
                 alt={caseData.name}
-                className="w-full h-auto rounded-3xl shadow-2xl animate-fade-in-scale"
+                className="w-full h-auto rounded-3xl animate-fade-in-scale"
                 data-animation-delay="0.5"
               />
             </div>
@@ -92,7 +102,7 @@ const CaseDetailContent = ({ caseData }) => {
               <div className="flex space-x-4 pb-4 pl-4 pr-8" style={{ width: 'max-content' }}>
                 {caseData.features.map((feature, index) => (
                   <div key={index} className="group flex-shrink-0">
-                    <div className="relative bg-white rounded-xl p-6 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden w-72 h-32">
+                    <div className="relative bg-white rounded-xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden w-72 h-32">
                       {/* Subtle background animation */}
                       <div className="absolute inset-0 bg-gradient-to-br from-transparent via-bagh-50/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform -translate-x-full group-hover:translate-x-full"></div>
                       
@@ -229,13 +239,22 @@ const CaseDetailContent = ({ caseData }) => {
             <div className="hidden md:grid md:grid-cols-3 gap-8">
               {caseData.gallery.map((image, index) => (
                 <div key={index} className="group animate-fade-in-up" data-animation-delay={1.3 + (index * 0.15)}>
-                  <div className="relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                  <div 
+                    className="relative overflow-hidden rounded-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+                    onClick={() => openImageModal(image)}
+                  >
                     <img
                       src={image}
                       alt={`${caseData.name} screenshot ${index + 1}`}
-                      className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700"
+                      className="w-full h-64 object-contain group-hover:scale-110 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-500"></div>
+                    {/* Click indicator */}
+                    <div className="absolute top-4 right-4 bg-white/90 text-gray-700 p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                      </svg>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -246,13 +265,22 @@ const CaseDetailContent = ({ caseData }) => {
               <div className="flex space-x-4 pb-4 pl-4 pr-8" style={{ width: 'max-content' }}>
                 {caseData.gallery.map((image, index) => (
                   <div key={index} className="group flex-shrink-0">
-                    <div className="relative overflow-hidden rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 w-80 h-48">
+                    <div 
+                      className="relative overflow-hidden rounded-2xl transition-all duration-500 hover:-translate-y-2 w-80 h-48 cursor-pointer"
+                      onClick={() => openImageModal(image)}
+                    >
                       <img
                         src={image}
                         alt={`${caseData.name} screenshot ${index + 1}`}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700"
                       />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-500"></div>
+                      {/* Click indicator */}
+                      <div className="absolute top-4 right-4 bg-white/90 text-gray-700 p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -261,6 +289,31 @@ const CaseDetailContent = ({ caseData }) => {
           </div>
         </div>
       </div>
+
+      {/* Image Modal */}
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          onClick={closeImageModal}
+        >
+          <div className="relative max-w-7xl max-h-full">
+            <img
+              src={selectedImage}
+              alt="Full size view"
+              className="max-w-full max-h-full object-contain rounded-lg"
+            />
+            {/* Close button */}
+            <button
+              onClick={closeImageModal}
+              className="absolute top-4 right-4 bg-white/90 text-gray-700 p-3 rounded-full hover:bg-white transition-colors duration-200"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

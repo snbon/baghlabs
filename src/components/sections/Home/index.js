@@ -1,0 +1,5 @@
+export { default as HeroSection } from './HeroSection'
+export { default as AboutSection } from './AboutSection'
+export { default as WhySection } from './WhySection'
+export { default as CTASection } from './CTASection'
+export { default as HomeCasesSection } from './HomeCasesSection'

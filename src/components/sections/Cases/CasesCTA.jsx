@@ -14,9 +14,14 @@ const CasesCTA = ({ title, description, buttons }) => {
             {description}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/" className="btn-secondary bg-white text-bagh-800 hover:bg-bagh-50 px-8 py-3 text-base">
-              {buttons.secondary}
-            </Link>
+            <a 
+              href="https://www.linkedin.com/company/baghlabs/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="btn-secondary bg-white text-bagh-800 hover:bg-bagh-50 px-8 py-3 text-base"
+            >
+              Connect with us
+            </a>
             <Link to="/" className="btn-primary bg-bagh-600 hover:bg-bagh-700 px-8 py-3 text-base">
               {buttons.primary}
             </Link>

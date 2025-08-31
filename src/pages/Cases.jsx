@@ -2,9 +2,7 @@ import { useEffect, useRef, useCallback } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useSection } from '../contexts/SectionContext'
-import CasesHero from '../components/sections/CasesHero'
-import CaseCard from '../components/sections/CaseCard'
-import CasesCTA from '../components/sections/CasesCTA'
+import { CasesHero, CaseCard, CasesCTA } from '../components/sections/Cases'
 import casesData from '../data/cases.json'
 
 // Register ScrollTrigger

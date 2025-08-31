@@ -5,8 +5,9 @@
       "name": "Availly",
       "description": "Availability you share, privacy you keep.",
       "longDescription": "A lightweight calendar and availability management tool built to make scheduling seamless and intuitive.",
-      "image": "/api/placeholder/800/500/3b82f6/ffffff?text=Availly",
-      "category": "Business Operations",
+      "image": "/src/assets/availly/availly-landing-page.png",
+      "websiteUrl": "https://availly.me",
+      "category": "Productivity",
       "technologies": ["PHP - Laravel", "React", "Javascript", "PostgreSQL", "Supabase", "Railway"],
       "features": [
         "Calendar view for scheduling at a glance",
@@ -19,10 +20,11 @@
     {
       "id": "shiftend",
       "name": "ShiftEnd",
-      "description": "Revolutionary platform designed to transform industry workflows.",
+      "description": "From paper chaos to a streamlined digital workflow.",
       "longDescription": "A SaaS tool designed for Belgian restaurants to digitally and legally replace the outdated dagontvangstenboek (daily sales log). Simple, affordable, and compliant.",
-      "image": "/api/placeholder/800/500/7c3aed/ffffff?text=ShiftEnd",
-      "category": "Workforce Management",
+      "image": "/src/assets/shiftend/shiftend-landingpage.png",
+      "websiteUrl": "https://shiftend.be",
+      "category": "Operations",
       "technologies": ["PHP - Laravel", "Vue.js", "PostgreSQL", "Docker", "Railway"],
       "features": [
         "Multi location support",
@@ -37,13 +39,13 @@
       "name": "Project Alpha",
       "description": "Mobile application for finance management for Belgian banks",
       "longDescription": " This innovative platform combines cutting edge technology such as AI and machine learning to provide accurate insights and recommendations for Belgian users.",
-      "image": "/api/placeholder/800/500/10b981/ffffff?text=Coming+Soon",
-      "category": "Emerging Markets",
+      "image": "/src/assets/coming-soon-iphone-landscape.png",
+      "category": "Finance",
       "technologies": ["Kotlin", "Spring Boot", "Machine Learning", "Cloud Functions"],
       "features": [
         "AI powered insights and recommendations",
         "Real time transactions and notifications",
-        "Cross-platform compatibility",
+        "Cross platform compatibility",
         "Advanced security protocols",
         "Scalable cloud infrastructure"
       ]
@@ -51,8 +53,8 @@
   ],
   "pageContent": {
     "hero": {
-      "title": "Our Cases",
-      "description": "Explore our portfolio of successful projects and see how we've helped businesses transform their digital presence."
+      "title": "Our Work",
+      "description": "Explore the products we've built, the challenges they solve, and the impact they deliver."
     },
     "cta": {
       "title": "Ready to Start Your Project?",

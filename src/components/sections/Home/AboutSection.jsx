@@ -33,7 +33,7 @@ const AboutSection = () => {
             
             <div className="space-y-3">
               <h3 className="text-lg-robotic md:text-xl-robotic font-medium text-gray-900">
-                Future-Focused Innovation
+                Future Focused Innovation
               </h3>
               <p className="text-sm-robotic md:text-base-robotic text-gray-600 leading-relaxed">
                 We stay ahead of technology trends to deliver cutting-edge solutions that future-proof your business.

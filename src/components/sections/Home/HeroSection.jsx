@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const HeroSection = () => {
   return (
@@ -11,9 +12,9 @@ const HeroSection = () => {
           A software studio dedicated to turning bold ideas into impactful digital products. We design and build SaaS solutions that simplify, scale, and solve real business challenges.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="btn-secondary text-sm-robotic">
+          <Link to="/cases" className="btn-secondary text-sm-robotic">
             Explore
-          </button>
+          </Link>
         </div>
       </div>
     </div>

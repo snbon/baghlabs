@@ -1,8 +1,7 @@
 import React from 'react'
-
 import { Link } from 'react-router-dom'
 
-const CTASection = () => {
+const CaseDetailCTA = () => {
   return (
     <div className="w-full h-full flex flex-col bg-bagh-800">
       {/* CTA Content */}
@@ -18,9 +17,14 @@ const CTASection = () => {
             We are currently not taking on new projects, but we are still allowed to chat over a coffee.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="border-2 border-white text-white hover:bg-white hover:text-bagh-800 font-medium py-3 px-8 rounded-lg transition-all duration-200 text-sm-robotic">
+            <a 
+              href="https://www.linkedin.com/company/baghlabs/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="border-2 border-white text-white hover:bg-white hover:text-bagh-800 font-medium py-3 px-8 rounded-lg transition-all duration-200 text-sm-robotic inline-block text-center"
+            >
               Connect with us
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -84,4 +88,4 @@ const CTASection = () => {
   )
 }
 
-export default CTASection
+export default CaseDetailCTA
