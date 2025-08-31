@@ -2,116 +2,150 @@
   "shiftend": {
     "id": "shiftend",
     "name": "ShiftEnd",
-    "tagline": "Revolutionary Workforce Management Platform",
-    "description": "A comprehensive workforce management platform that streamlines scheduling, time tracking, and communication for industrial teams.",
-    "longDescription": "ShiftEnd is a comprehensive workforce management platform that streamlines scheduling, time tracking, and communication for industrial teams. Built with modern technologies, it provides real-time insights and predictive analytics to optimize operations and reduce costs.",
+    "tagline": "From paper chaos to a streamlined digital workflow.",
+    "description": "ShiftEnd is a SaaS tool that simplifies compliance for Belgian restaurants by replacing the traditional dagontvangstenboek with a sleek, affordable, and legally compliant platform.",
+    "longDescription": "Small restaurants in Belgium without GKS (cash register systems) are required by law to maintain a daily sales log, often done on paper. This process is tedious, error-prone, and outdated. ShiftEnd was built to digitize this workflow while keeping compliance at its core. Designed for non-technical users, ShiftEnd emphasizes simplicity, affordability, and legal assurance.",
     "image": "/api/placeholder/800/500/7c3aed/ffffff?text=ShiftEnd",
     "heroImage": "/api/placeholder/1200/600/7c3aed/ffffff?text=ShiftEnd+Hero",
-    "category": "Workforce Management",
-    "industry": "Manufacturing",
-    "client": "Manufacturing Corp",
+    "category": "Operations",
+    "industry": "Hospitality & Food Service",
+    "client": "Belgian Restaurant Industry",
     "timeline": "6 months",
     "teamSize": "8 developers",
-    "technologies": ["React", "Node.js", "PostgreSQL", "Redis", "Docker"],
-    "features": [
-      "AI-powered scheduling optimization",
-      "Real-time team communication",
-      "Advanced analytics dashboard",
-      "Mobile-first responsive design",
-      "Integration with existing HR systems"
+    "technologies": [
+      "PHP - Laravel",
+      "JavaScript - Vue.js",
+      "PostgreSQL",
+      "Railway",
+      "Supabase",
+      "Mailtrap (email notifications)"
     ],
-    "challenge": "Industrial teams struggled with inefficient scheduling, poor communication, and lack of real-time insights into workforce performance. Manual processes led to scheduling conflicts, communication gaps, and difficulty tracking productivity metrics.",
-    "solution": "We developed a comprehensive platform that automates scheduling, provides real-time communication tools, and delivers actionable insights through advanced analytics. The solution includes intelligent scheduling algorithms, integrated communication channels, and comprehensive reporting dashboards.",
+    "features": [
+      "Legally compliant with FOD",
+      "Multilingual UI for Dutch, French, and English users",
+      "Automated daily reporting and confirmation emails",
+      "Affordable SaaS pricing tailored for small horeca",
+      "Multi-location support",
+      "Advanced team management",
+      "Digital daily sales logbook (legally compliant)",
+      "Role-based access control",
+      "Activity logging and audit trail",
+      "VAT handling and tax compliance"
+    ],
+    "challenge": "Ensuring full compliance with Belgian regulations while designing a minimal UI for non-technical users. Building trust for a legally sensitive workflow and scaling the system for multi-restaurant support. The traditional paper-based dagontvangstenboek system was error-prone, time-consuming, and difficult to audit.",
+    "solution": "We created a clean, guided interface that simplifies data entry while embedding compliance logic. Multilingual support and an onboarding flow ensure accessibility for a wide user base. The system includes automated compliance checks, digital signatures for daily closures, and comprehensive audit trails that meet FOD requirements.",
     "results": [
-      "40% reduction in scheduling conflicts",
-      "25% improvement in team productivity",
-      "Real-time visibility into workforce metrics",
-      "Seamless integration with existing systems",
-      "Improved employee satisfaction scores"
+      "Time savings: Replaced hours of paperwork with a few clicks",
+      "Confidence: Full legal compliance without added complexity",
+      "Accessibility: Affordable pricing makes it a no-brainer for small horeca businesses",
+      "Multi-location support for restaurant chains",
+      "Automated VAT calculations and reporting",
+      "7-year data retention for tax compliance",
+      "Real-time access for tax inspectors (FOD)"
     ],
     "process": {
-      "discovery": "We conducted extensive research with manufacturing teams to understand their unique scheduling challenges and communication needs.",
-      "design": "Created intuitive interfaces that work seamlessly on both desktop and mobile devices, with a focus on usability in industrial environments.",
-      "development": "Built a scalable backend architecture using modern technologies, ensuring reliability and performance under heavy industrial workloads.",
-      "testing": "Comprehensive testing with real manufacturing teams to ensure the platform meets their specific requirements and workflows.",
-      "deployment": "Smooth rollout with comprehensive training and support to ensure successful adoption across all team levels."
+      "discovery": "We conducted extensive research with Belgian restaurant owners to understand their compliance challenges, existing workflows, and pain points with the traditional dagontvangstenboek system.",
+      "design": "Created intuitive interfaces that work seamlessly on both desktop and mobile devices, with a focus on usability for non-technical restaurant staff in busy environments.",
+      "development": "Built a scalable backend architecture using Laravel and PostgreSQL, ensuring reliability and performance while maintaining full FOD compliance requirements.",
+      "testing": "Comprehensive testing with real restaurant teams and compliance verification to ensure the platform meets Belgian legal requirements and user workflows.",
+      "deployment": "Smooth rollout with comprehensive training and support, ensuring successful adoption across all restaurant staff levels and compliance verification."
     },
     "technicalDetails": {
-      "frontend": "React-based SPA with responsive design and offline capabilities",
-      "backend": "Node.js API with PostgreSQL database and Redis caching",
-      "infrastructure": "Docker containers deployed on cloud infrastructure",
-      "security": "Enterprise-grade security with role-based access control",
-      "scalability": "Microservices architecture designed for horizontal scaling"
+      "frontend": "Vue.js 3 SPA with Vuetify components and responsive design",
+      "backend": "Laravel 12 API with PostgreSQL database and Laravel Sanctum authentication",
+      "infrastructure": "Railway deployment with Docker containers and automated CI/CD",
+      "security": "Enterprise-grade security with role-based access control, audit logging, and data encryption",
+      "scalability": "Multi-tenant architecture designed for horizontal scaling across multiple restaurant locations"
     },
     "gallery": [
       "/api/placeholder/800/500/7c3aed/ffffff?text=Dashboard+View",
-      "/api/placeholder/800/500/7c3aed/ffffff?text=Mobile+App",
-      "/api/placeholder/800/500/7c3aed/ffffff?text=Analytics+Screen"
+      "/api/placeholder/800/500/7c3aed/ffffff?text=Daily+Sales+Log",
+      "/api/placeholder/800/500/7c3aed/ffffff?text=Team+Management",
+      "/api/placeholder/800/500/7c3aed/ffffff?text=Compliance+Reports"
     ],
     "testimonials": [
       {
-        "quote": "ShiftEnd has transformed how we manage our workforce. The scheduling is now automated and accurate, and our teams can communicate seamlessly.",
-        "author": "Sarah Johnson",
-        "role": "Operations Manager",
-        "company": "Manufacturing Corp"
+        "quote": "ShiftEnd has transformed how we handle our daily sales logging. What used to take hours of paperwork is now just a few clicks, and we're fully compliant with Belgian regulations.",
+        "author": "Marie Dubois",
+        "role": "Restaurant Owner",
+        "company": "Le Petit Bistro, Brussels"
       }
     ]
   },
   "availly": {
     "id": "availly",
     "name": "Availly",
-    "tagline": "Next-Generation SaaS Platform for Modern Businesses",
-    "description": "A cutting-edge SaaS platform that helps businesses streamline their operations through intelligent automation, data analytics, and seamless integrations.",
-    "longDescription": "Availly is a cutting-edge SaaS platform that helps businesses streamline their operations through intelligent automation, data analytics, and seamless integrations. The platform provides a unified dashboard for managing multiple business processes efficiently.",
+    "tagline": "Availability you share, privacy you keep.",
+    "description": "Availly is a lightweight tool for managing personal and business availability, offering a sleek calendar UI and powerful sharing features.",
+    "longDescription": "Managing time across clients, projects, or personal commitments is often chaotic. Existing solutions are either bloated or lack customization for small teams and freelancers. Availly was designed as a lean scheduling platform: lightweight, beautiful, and shareable. With a focus on simplicity and performance, it removes friction from booking and availability management.",
     "image": "/api/placeholder/800/500/3b82f6/ffffff?text=Availly",
     "heroImage": "/api/placeholder/1200/600/3b82f6/ffffff?text=Availly+Hero",
-    "category": "Business Operations",
-    "industry": "Technology",
-    "client": "TechStart Inc",
+    "category": "Productivity",
+    "industry": "Technology & Professional Services",
+    "client": "Freelancers, Individuals & Small Teams",
     "timeline": "8 months",
     "teamSize": "12 developers",
-    "technologies": ["Next.js", "TypeScript", "Python", "MongoDB", "AWS"],
-    "features": [
-      "Intelligent workflow automation",
-      "Real-time data analytics",
-      "Multi-platform integrations",
-      "Custom dashboard builder",
-      "Advanced reporting system"
+    "technologies": [
+      "PHP - Laravel",
+      "JavaScript - React",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "Railway",
+      "Supabase",
+      "Resend",
+      "OpenRouter API",
+      "Google API",
+      "CalDAV API"
     ],
-    "challenge": "Businesses needed a unified platform to manage multiple operations, automate workflows, and gain insights from their data without complex integrations. Existing solutions were either too basic or required extensive customization.",
-    "solution": "We built a comprehensive SaaS platform with intelligent automation, real-time analytics, and seamless integrations that provides a single source of truth for business operations. The platform adapts to different business models and scales with growth.",
+    "features": [
+      "Calendar-based availability management",
+      "Shareable booking links for clients or colleagues",
+      "Responsive, mobile-friendly interface",
+      "Fast performance and minimal design",
+      "Multiple calendar integrations (Google, Microsoft, Apple)",
+      "Privacy-first approach with read-only calendar scopes",
+      "One-time link generation for specific time ranges",
+      "Real-time calendar synchronization",
+      "Timezone-aware scheduling",
+      "Basic analytics and link tracking"
+    ],
+    "challenge": "Designing a tool that's powerful yet lightweight, balancing simplicity with flexible sharing features. Building a responsive, mobile-first UI that works seamlessly across different calendar providers while maintaining privacy and performance standards.",
+    "solution": "We built a modern, fast single-page app with a focus on usability and design minimalism. Availly emphasizes clarity, with clean UI components and smooth calendar interactions. The platform uses a privacy-first approach, encrypting tokens at rest and caching only time ranges without storing event details.",
     "results": [
-      "60% reduction in manual processes",
-      "35% improvement in operational efficiency",
-      "Unified view of all business operations",
-      "Scalable architecture for growth",
-      "Reduced integration costs by 40%"
+      "Efficiency: Reduced scheduling back-and-forth",
+      "Accessibility: Simple interface for all user types",
+      "Professionalism: Shareable links and branding options",
+      "Privacy: Read-only calendar access with encrypted tokens",
+      "Performance: Fast, responsive interface with real-time sync",
+      "Integration: Seamless connection with major calendar providers",
+      "Scalability: Built for growth with microservices architecture"
     ],
     "process": {
-      "discovery": "Analyzed business operations across multiple industries to identify common pain points and automation opportunities.",
-      "design": "Created a flexible, modular design system that can adapt to different business models and user preferences.",
-      "development": "Built a robust backend using Python and MongoDB, with a modern Next.js frontend for optimal performance.",
-      "testing": "Comprehensive testing across different business scenarios and user workflows to ensure reliability.",
-      "deployment": "Phased rollout with continuous monitoring and optimization based on user feedback and performance metrics."
+      "discovery": "Analyzed scheduling workflows across different professional contexts to identify common pain points and opportunities for simplification.",
+      "design": "Created a clean, minimalist design system focused on calendar clarity and ease of use, with mobile-first responsive design principles.",
+      "development": "Built a robust Laravel backend with React frontend, integrating multiple calendar APIs while maintaining privacy and performance standards.",
+      "testing": "Comprehensive testing across different calendar providers, timezone scenarios, and user workflows to ensure reliability and accuracy.",
+      "deployment": "Phased rollout with continuous monitoring and optimization based on user feedback and performance metrics, deployed on Railway with Supabase."
     },
     "technicalDetails": {
-      "frontend": "Next.js with TypeScript for type safety and optimal performance",
-      "backend": "Python-based API with MongoDB for flexible data modeling",
-      "infrastructure": "AWS cloud infrastructure with auto-scaling capabilities",
-      "security": "Enterprise security standards with data encryption and compliance features",
-      "scalability": "Microservices architecture with event-driven design patterns"
+      "frontend": "React 19 SPA with Tailwind CSS for styling and responsive design",
+      "backend": "Laravel 12 API with PostgreSQL database and Redis caching",
+      "infrastructure": "Railway deployment with Supabase for database and real-time features",
+      "security": "Privacy-first approach with encrypted tokens, read-only calendar scopes, and rate-limited public endpoints",
+      "scalability": "Microservices architecture with event-driven design patterns and horizontal scaling capabilities"
     },
     "gallery": [
-      "/api/placeholder/800/500/3b82f6/ffffff?text=Dashboard+Overview",
-      "/api/placeholder/800/500/3b82f6/ffffff?text=Workflow+Builder",
-      "/api/placeholder/800/500/3b82f6/ffffff?text=Analytics+View"
+      "/api/placeholder/800/500/3b82f6/ffffff?text=Calendar+Dashboard",
+      "/api/placeholder/800/500/3b82f6/ffffff?text=Availability+Settings",
+      "/api/placeholder/800/500/3b82f6/ffffff?text=Shareable+Links",
+      "/api/placeholder/800/500/3b82f6/ffffff?text=Mobile+Interface"
     ],
     "testimonials": [
       {
-        "quote": "Availly has streamlined our entire business operation. The automation features alone have saved us countless hours every week.",
-        "author": "Michael Chen",
-        "role": "CTO",
-        "company": "TechStart Inc"
+        "quote": "Availly has streamlined our entire scheduling process. The calendar integrations work seamlessly, and our clients love the simple booking experience.",
+        "author": "Sarah Chen",
+        "role": "Freelance Consultant",
+        "company": "Digital Strategy Solutions"
       }
     ]
   }

@@ -155,18 +155,24 @@ const CaseDetailContent = ({ caseData }) => {
             <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-4">
               {caseData.results.map((result, index) => (
                 <div key={index} className="group animate-fade-in-up" data-animation-delay={1.2 + (index * 0.1)}>
-                  <div className="relative bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden h-32">
+                  <div className="relative bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden h-40">
                     {/* Subtle shimmer effect */}
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"></div>
                     
-                    {/* Compact icon with micro-animation */}
-                    <div className="relative flex flex-col items-center justify-center text-center h-full space-y-3">
-                      <div className="w-10 h-10 bg-gradient-to-br from-green-50 to-green-100 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform duration-300 ease-out">
-                        <svg className="w-5 h-5 text-green-500 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                        </svg>
+                    {/* Compact icon with micro-animation - Fixed sizing */}
+                    <div className="relative flex flex-col h-full">
+                      {/* Icon section - Fixed height and size */}
+                      <div className="flex-shrink-0 h-12 flex items-center justify-center mb-3">
+                        <div className="w-10 h-10 min-w-[40px] min-h-[40px] bg-gradient-to-br from-green-50 to-green-100 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform duration-300 ease-out">
+                          <svg className="w-5 h-5 text-green-500 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                          </svg>
+                        </div>
                       </div>
-                      <p className="text-xs-robotic text-gray-600 leading-relaxed font-light px-2">{result}</p>
+                      {/* Text section - Flexible height with proper spacing */}
+                      <div className="flex-1 flex items-start justify-center px-3">
+                        <p className="text-xs-robotic text-gray-600 leading-relaxed font-light text-center break-words hyphens-auto">{result}</p>
+                      </div>
                     </div>
                     
                     {/* Subtle corner accent */}
@@ -181,18 +187,24 @@ const CaseDetailContent = ({ caseData }) => {
               <div className="flex space-x-4 pb-4" style={{ width: 'max-content' }}>
                 {caseData.results.map((result, index) => (
                   <div key={index} className="group flex-shrink-0">
-                    <div className="relative bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden w-64 h-32">
+                    <div className="relative bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden w-64 h-40">
                       {/* Subtle shimmer effect */}
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"></div>
                       
-                      {/* Compact icon with micro-animation */}
-                      <div className="relative flex flex-col items-center justify-center text-center h-full space-y-3">
-                        <div className="w-10 h-10 bg-gradient-to-br from-green-50 to-green-100 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform duration-300 ease-out">
-                          <svg className="w-5 h-5 text-green-500 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                          </svg>
+                      {/* Compact icon with micro-animation - Fixed sizing */}
+                      <div className="relative flex flex-col h-full">
+                        {/* Icon section - Fixed height and size */}
+                        <div className="flex-shrink-0 h-12 flex items-center justify-center mb-3">
+                          <div className="w-10 h-10 min-w-[40px] min-h-[40px] bg-gradient-to-br from-green-50 to-green-100 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform duration-300 ease-out">
+                            <svg className="w-5 h-5 text-green-500 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                            </svg>
+                          </div>
                         </div>
-                        <p className="text-xs-robotic text-gray-600 leading-relaxed font-light px-2">{result}</p>
+                        {/* Text section - Flexible height with proper spacing */}
+                        <div className="flex-1 flex items-start justify-center px-3">
+                          <p className="text-xs-robotic text-gray-600 leading-relaxed font-light text-center break-words hyphens-auto">{result}</p>
+                        </div>
                       </div>
                       
                       {/* Subtle corner accent */}
