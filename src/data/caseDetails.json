@@ -13,12 +13,14 @@
     "timeline": "6 months",
     "teamSize": "8 developers",
     "technologies": [
-      "PHP - Laravel",
-      "JavaScript - Vue.js",
+      "PHP",
+      "Laravel",
+      "JavaScript",
+      "Vue.js",
       "PostgreSQL",
       "Railway",
       "Supabase",
-      "Mailtrap (email notifications)"
+      "Mailtrap"
     ],
     "features": [
       "Legally compliant with FOD",
@@ -60,8 +62,7 @@
     "gallery": [
       "/api/placeholder/800/500/7c3aed/ffffff?text=Dashboard+View",
       "/api/placeholder/800/500/7c3aed/ffffff?text=Daily+Sales+Log",
-      "/api/placeholder/800/500/7c3aed/ffffff?text=Team+Management",
-      "/api/placeholder/800/500/7c3aed/ffffff?text=Compliance+Reports"
+      "/api/placeholder/800/500/7c3aed/ffffff?text=Team+Management"
     ],
     "testimonials": [
       {
@@ -87,7 +88,8 @@
     "teamSize": "12 developers",
     "technologies": [
       "PHP - Laravel",
-      "JavaScript - React",
+      "JavaScript",
+      "React",
       "PostgreSQL",
       "Tailwind CSS",
       "Railway",
@@ -137,8 +139,7 @@
     "gallery": [
       "/api/placeholder/800/500/3b82f6/ffffff?text=Calendar+Dashboard",
       "/api/placeholder/800/500/3b82f6/ffffff?text=Availability+Settings",
-      "/api/placeholder/800/500/3b82f6/ffffff?text=Shareable+Links",
-      "/api/placeholder/800/500/3b82f6/ffffff?text=Mobile+Interface"
+      "/api/placeholder/800/500/3b82f6/ffffff?text=Shareable+Links"
     ],
     "testimonials": [
       {
