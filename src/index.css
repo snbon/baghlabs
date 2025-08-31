@@ -53,11 +53,48 @@
   }
   
   .btn-primary {
-    @apply bg-bagh-800 text-white px-4 py-2 rounded-md font-light text-sm hover:bg-bagh-700 transition-colors duration-200;
+    @apply bg-bagh-800 text-white px-4 py-2 rounded-md font-light text-sm hover:bg-bagh-700 transition-colors duration-200 w-fit max-w-none;
   }
   
   .btn-secondary {
-    @apply border border-bagh-800 text-bagh-800 px-4 py-2 rounded-md font-light text-sm hover:bg-bagh-800 hover:text-white transition-colors duration-200;
+    @apply border border-bagh-800 text-bagh-800 px-4 py-2 rounded-md font-light text-sm hover:bg-bagh-800 hover:text-white transition-colors duration-200 w-fit max-w-none;
+  }
+
+  /* Mobile button width constraints */
+  @media (max-width: 768px) {
+    .btn-primary,
+    .btn-secondary {
+      width: fit-content !important;
+      max-width: none !important;
+      flex-shrink: 0;
+    }
+    
+    /* Ensure buttons in flex containers don't expand */
+    .flex .btn-primary,
+    .flex .btn-secondary,
+    .flex-col .btn-primary,
+    .flex-col .btn-secondary {
+      align-self: center;
+      width: fit-content !important;
+    }
+    
+    /* Additional mobile button constraints for any button-like elements */
+    button[type="button"],
+    button[type="submit"],
+    .inline-flex.items-center,
+    a[href] {
+      width: fit-content !important;
+      max-width: none !important;
+      flex-shrink: 0;
+    }
+    
+    /* Center buttons in flex containers on mobile */
+    .flex button,
+    .flex-col button,
+    .flex a[href],
+    .flex-col a[href] {
+      align-self: center;
+    }
   }
   
   .section-padding {

@@ -109,7 +109,7 @@ const CaseDetail = () => {
         <div className="text-center">
           <h1 className="text-xl heading-minimal text-bagh-800 mb-3">Case Not Found</h1>
           <p className="text-sm text-minimal mb-4">The case study you're looking for doesn't exist.</p>
-          <Link to="/cases" className="btn-primary">
+          <Link to="/cases" className="btn-primary w-fit">
             Back to Cases
           </Link>
         </div>

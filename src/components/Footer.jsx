@@ -41,7 +41,7 @@ const Footer = () => {
             <p className="text-xs text-minimal">
               Ready to bring your idea to life?
             </p>
-            <Link to="/cases" className="btn-primary inline-block">
+            <Link to="/cases" className="btn-primary inline-block w-fit">
               Work With Us
             </Link>
           </div>

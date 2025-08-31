@@ -19,14 +19,14 @@ const CaseDetailHero = ({ caseData }) => {
               {caseData.description}
             </p>
             
-            {/* Visit Website Button */}
+            {/* Visit Website Link */}
             {caseData.websiteUrl && (
               <div className="mt-8">
                 <a
                   href={caseData.websiteUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center bg-bagh-600 hover:bg-bagh-700 text-white font-medium py-3 px-6 rounded-lg transition-all duration-200 text-sm-robotic"
+                  className="inline-flex items-center text-bagh-600 hover:text-bagh-800 font-light transition-colors duration-200 text-sm-robotic underline underline-offset-4 hover:no-underline"
                 >
                   Visit Website
                   <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

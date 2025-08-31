@@ -70,6 +70,14 @@ const CTASection = () => {
               <p className="text-xs text-gray-300">
                 Ready to bring your idea to life?
               </p>
+              <a 
+                href="https://www.linkedin.com/company/baghlabs/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block text-xs text-bagh-300 hover:text-white transition-colors duration-200 underline underline-offset-2"
+              >
+                Connect with us
+              </a>
             </div>
           </div>
 

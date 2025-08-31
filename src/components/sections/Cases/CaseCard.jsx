@@ -9,11 +9,15 @@ const CaseCard = ({ caseItem, index }) => {
           {/* Image */}
           <div className="w-full lg:w-1/2">
             <div className="relative rounded-xl overflow-hidden">
-              <img
-                src={caseItem.image}
-                alt={caseItem.name}
-                className="w-full h-64 lg:h-80 object-contain"
-              />
+              <Link to={`/cases/${caseItem.id}`} className="block cursor-pointer group">
+                <img
+                  src={caseItem.image}
+                  alt={caseItem.name}
+                  className="w-full h-64 lg:h-80 object-contain transition-transform duration-300 group-hover:scale-105"
+                />
+                {/* Hover overlay */}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 rounded-xl"></div>
+              </Link>
             </div>
           </div>
 
@@ -68,7 +72,7 @@ const CaseCard = ({ caseItem, index }) => {
                 <>
                   <Link
                     to={`/cases/${caseItem.id}`}
-                    className="inline-flex items-center btn-secondary text-sm px-3 py-2"
+                    className="inline-flex items-center btn-secondary text-sm px-3 py-2 w-fit"
                   >
                     Case Detail
                     <svg className="w-3 h-3 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -79,7 +83,7 @@ const CaseCard = ({ caseItem, index }) => {
                     href="https://availly.me"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center btn-primary text-sm px-3 py-2"
+                    className="inline-flex items-center btn-primary text-sm px-3 py-2 w-fit"
                   >
                     Visit Website
                     <svg className="w-3 h-3 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -91,7 +95,7 @@ const CaseCard = ({ caseItem, index }) => {
                 <>
                   <Link
                     to={`/cases/${caseItem.id}`}
-                    className="inline-flex items-center btn-secondary text-sm px-3 py-2"
+                    className="inline-flex items-center btn-secondary text-sm px-3 py-2 w-fit"
                   >
                     Case Detail
                     <svg className="w-3 h-3 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -102,7 +106,7 @@ const CaseCard = ({ caseItem, index }) => {
                     href="https://shiftend.be"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center btn-primary text-sm px-3 py-2"
+                    className="inline-flex items-center btn-primary text-sm px-3 py-2 w-fit"
                   >
                     Visit Website
                     <svg className="w-3 h-3 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

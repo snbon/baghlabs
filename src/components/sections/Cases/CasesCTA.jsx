@@ -18,11 +18,11 @@ const CasesCTA = ({ title, description, buttons }) => {
               href="https://www.linkedin.com/company/baghlabs/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="btn-secondary bg-white text-bagh-800 hover:bg-bagh-50 px-8 py-3 text-base"
+              className="border-2 border-white text-white hover:bg-white hover:text-bagh-800 font-medium py-3 px-8 rounded-lg transition-all duration-200 text-sm-robotic inline-block text-center w-fit mx-auto sm:mx-0"
             >
               Connect with us
             </a>
-            <Link to="/" className="btn-primary bg-bagh-600 hover:bg-bagh-700 px-8 py-3 text-base">
+            <Link to="/" className="bg-bagh-200 text-bagh-800 hover:bg-bagh-800 hover:border-2 hover:text-bagh-200 font-medium py-3 px-8 rounded-lg transition-all duration-200 text-sm-robotic inline-block text-center w-fit mx-auto sm:mx-0">
               {buttons.primary}
             </Link>
           </div>

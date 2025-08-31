@@ -12,7 +12,7 @@ const HeroSection = () => {
           A Software studio dedicated to transforming bold ideas into impactful digital products. <br/> We focus on simplicity, speed, and solving real business challenges.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link to="/cases" className="btn-secondary text-sm-robotic">
+          <Link to="/cases" className="btn-secondary text-sm-robotic w-fit mx-auto sm:mx-0">
             Explore
           </Link>
         </div>
