@@ -1,64 +1,59 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import casesData from '../../../data/cases.json'
+import { useTranslation } from 'react-i18next'
+import { motion } from 'framer-motion'
+import { Link, useLocation } from 'react-router-dom'
+import { CaseGallery } from '@/components/ui/case-gallery'
+import { getFeaturedCases } from '@/data/cases'
 
 const HomeCasesSection = () => {
-  const { cases } = casesData
+  const { t } = useTranslation('home')
+  const location = useLocation()
+  const basePath = location.pathname.startsWith('/en') ? '/en' : ''
+  const featuredCases = getFeaturedCases(6)
 
-  const handleCaseClick = (caseId) => {
-    console.log('Case clicked:', caseId)
-    console.log('Link should navigate to:', `/cases/${caseId}`)
-  }
+  // Augment with i18n text
+  const { t: tCases } = useTranslation('cases')
+  const casesWithText = featuredCases.map(c => ({
+    ...c,
+    name: tCases(`${c.id}.name`, { defaultValue: c.id }),
+    tagline: tCases(`${c.id}.tagline`, { defaultValue: '' }),
+  }))
 
   return (
-    <div className="w-full h-full flex items-center justify-center bg-white overflow-hidden">
-      <div className="container-custom">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl-robotic md:text-4xl-robotic lg:text-5xl-robotic font-light text-gray-900 mb-6 leading-tight">
-            Our Cases
-          </h2>
-          <p className="text-base-robotic md:text-lg-robotic text-gray-700 max-w-2xl mx-auto leading-relaxed">
-            We don't just build ideas — we launch them.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {cases.map((caseItem, index) => (
-            <div 
-              key={caseItem.id} 
-              className="case-item bg-gray-50 p-8 rounded-lg transition-all duration-300 group"
-            >
-              <div className="text-left">
-                <span className="text-xs-robotic text-gray-500 uppercase tracking-wider mb-2 block">
-                  {caseItem.category}
-                </span>
-                <h3 className="text-xl-robotic md:text-2xl-robotic font-medium text-gray-900 mb-3 group-hover:text-bagh-600 transition-colors duration-300">
-                  {caseItem.name}
-                </h3>
-                <p className="text-sm-robotic md:text-base-robotic text-gray-600 leading-relaxed mb-4">
-                  {caseItem.description}
-                </p>
-                
-                {/* Visit Case Study Link */}
-                <Link 
-                  to={`/cases/${caseItem.id}`}
-                  onClick={() => handleCaseClick(caseItem.id)}
-                  className="inline-flex items-center text-bagh-600 hover:text-bagh-700 font-light text-sm transition-colors duration-200"
-                >
-                  Visit Case Study
-                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
-              </div>
+    <div className="w-full min-h-screen flex items-center justify-center">
+      <div className="w-full py-20">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.6 }}
+          className="container-custom mb-8 md:mb-14"
+        >
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-3">
+                {t('cases.heading')}
+              </h2>
+              <Link
+                to={`${basePath}/cases`}
+                className="group flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {t('cases.subtext')}
+                <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7v10" />
+                </svg>
+              </Link>
             </div>
-          ))}
-          
-          <div className="md:col-span-2 text-center mt-8">
-            <p className="text-sm-robotic text-gray-500 italic">
-              More products coming soon...
-            </p>
           </div>
+        </motion.div>
+
+        <CaseGallery
+          cases={casesWithText}
+          readMoreLabel={t('cases.subtext')}
+          basePath={basePath}
+        />
+
+        <div className="container-custom mt-8">
+          <p className="text-sm text-muted-foreground">{t('cases.comingSoon')}</p>
         </div>
       </div>
     </div>

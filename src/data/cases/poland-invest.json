@@ -1,0 +1,18 @@
+{
+  "id": "poland-invest",
+  "template": "creative",
+  "image": "/assets/poland-invest/zen-poland-invest-by-persona-gent.jpg",
+  "heroImage": "/assets/poland-invest/zen-poland-invest-by-persona-gent.jpg",
+  "year": "2021",
+  "services": ["Photography", "Video Production", "Online Advertising", "Commercial Production"],
+  "gallery": [
+    "/assets/poland-invest/zen-poland-invest-by-persona-gent.jpg"
+  ],
+  "videos": [
+    "https://www.youtube.com/embed/XPnJXpRs3Sk",
+    "https://www.youtube.com/embed/RwE2tWKa7SM"
+  ],
+  "category": "visual-online-impact",
+  "relatedService": "performance-marketing",
+  "comingSoon": false
+}

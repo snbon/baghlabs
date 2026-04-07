@@ -1,0 +1,120 @@
+{
+  "page": {
+    "heroTitle": "Our Work",
+    "heroDescription": "Explore the products we've built, the challenges they solve, and the impact they deliver.",
+    "tabAll": "All",
+    "tabSoftware": "Software Products",
+    "tabCreative": "Creative Work",
+    "tabDevelopment": "Development",
+    "tabBrandingContent": "Branding & Content",
+    "tabPerformanceMarketing": "Performance Marketing",
+    "ctaTitle": "Impressed?",
+    "ctaDescription": "Let's discuss how we can help bring your idea to life with our expertise in SaaS and mobile development. We are currently not taking on new projects, but that doesn't hold us to chat over a coffee.",
+    "ctaLearnMore": "Learn More",
+    "ctaGetInTouch": "Get in Touch"
+  },
+  "availly": {
+    "name": "Availly",
+    "tagline": "Availability you share, privacy you keep.",
+    "description": "Availly is a lightweight tool for managing personal and business availability, offering a sleek calendar UI and powerful sharing features.",
+    "longDescription": "Managing time across clients, projects, or personal commitments is often chaotic. Existing solutions are either bloated or lack customization for small teams and freelancers. Availly was designed as a lean scheduling platform: lightweight, beautiful, and shareable.",
+    "challenge": "Powerful yet lightweight balance, responsive mobile-first UI across calendar providers while maintaining privacy and performance.",
+    "solution": "Modern fast SPA, minimalist design, privacy-first approach with encrypted tokens and read-only calendar scopes.",
+    "category": "Productivity",
+    "industry": "Technology & Professional Services",
+    "client": "Freelancers, Individuals & Small Teams"
+  },
+  "shiftend": {
+    "name": "ShiftEnd",
+    "tagline": "From paper chaos to a streamlined digital workflow.",
+    "description": "ShiftEnd is a SaaS tool that simplifies compliance for Belgian restaurants by replacing the traditional dagontvangstenboek with a sleek, affordable, and legally compliant platform.",
+    "longDescription": "Small restaurants in Belgium without GKS cash register systems are required by law to maintain a daily sales log, often done on paper. This process is tedious, error prone, and outdated. ShiftEnd was built to digitize this workflow while keeping compliance at its core.",
+    "challenge": "Full compliance with Belgian regulations while designing minimal UI for non-technical users.",
+    "solution": "Clean guided interface with compliance logic, multilingual support, automated compliance checks, digital signatures, and audit trails.",
+    "category": "Operations",
+    "industry": "Hospitality & Food Service",
+    "client": "Belgian Restaurant Industry"
+  },
+  "delicebrugge": {
+    "name": "Délice Brugge",
+    "tagline": "From zero to a complete digital experience for a Bruges restaurant.",
+    "description": "For Délice Brugge we built the entire website from the ground up — from color palette and web design to a custom multilingual website with an integrated group booking system and pre-ordering menu.",
+    "longDescription": "Délice Brugge needed a full digital presence: a website that reflects the atmosphere of the restaurant and guides visitors smoothly through the booking process. We took this on from A to Z: color palette, web design, development and the build of a custom group booking flow where guests can compose their menu in advance — in 4 languages.",
+    "challenge": "Building a complete website that is both visually compelling and functional for group bookings of 6+ guests, with per-person pre-ordering in NL, EN, FR and DE.",
+    "solution": "Fully custom Next.js website — from color palette and web design to development. Includes an integrated group booking system, per-guest pre-ordering menu flow and full multilingual support across 4 languages.",
+    "category": "Hospitality",
+    "industry": "Restaurant & Foodservice",
+    "client": "Délice Brugge"
+  },
+  "calvarychurch": {
+    "name": "De Pelgrim — Calvary Chapel",
+    "tagline": "Complete website build with bilingual CMS for independent management.",
+    "description": "For De Pelgrim Calvary Chapel we built the entire website from the ground up — from color palette and web design to a Next.js website with Sanity CMS, fully bilingual (NL/EN) so the team can manage everything independently.",
+    "longDescription": "De Pelgrim needed a fresh, modern website that reflects the community and is easy to manage by a non-technical team. We took on the full journey: the design of the color palette and visual identity of the website, the UI/UX, and the complete technical build on Next.js with Sanity CMS as the content layer — bilingual, structured and intuitive.",
+    "challenge": "Building a complete website for a church community, with a custom visual identity, and a bilingual CMS that can be managed independently by a non-technical team — including events, Bible verses and ministry pages.",
+    "solution": "Fully custom Next.js website — from color palette and web design to CMS architecture. Sanity CMS with structured bilingual content types (NL/EN), live preview and a simple editing interface for the church team.",
+    "category": "Non-profit",
+    "industry": "Religion & Community",
+    "client": "De Pelgrim Calvary Chapel Oostende"
+  },
+  "project-alpha": {
+    "name": "Project Alpha",
+    "tagline": "Mobile application for finance management for Belgian banks.",
+    "description": "An AI/ML powered finance app for Belgians.",
+    "category": "FinTech"
+  },
+  "blurry-vintage": {
+    "name": "Blurry Vintage",
+    "tagline": "Luxury thrift fashion with a personal story.",
+    "description": "Apart from the fact that Blurry is known for selling Luxury thrift clothes, it also stands for a store with personal story behind. Life can get blurry, in so many ways but we say: don't worry. We got you, your dreams & your style.",
+    "challenge": "Translating the essence of Blurry Vintage into visuals was a challenge we embraced with excitement. Balancing the luxury of thrift fashion while embodying the personal narrative required a delicate touch.",
+    "solution": "Our research into Blurry Vintage commenced by delving deep into the world of luxury thrift fashion, uncovering the delicate equilibrium between opulence and approachability.",
+    "year": "2023",
+    "category": "Branding & Visual Storytelling"
+  },
+  "claymates": {
+    "name": "ClayMates Ceramic Atelier",
+    "tagline": "Connecting through the craft of ceramics.",
+    "description": "ClayMates is more than a ceramics studio, it is a community, a place to relax, disconnect from the stressful outside world and reconnect with yourself and the clay. Whether you are a beginner or advanced, ClayMates is open to everyone.",
+    "challenge": "Capturing the tactile beauty and serene ambiance of their studio within a two-dimensional medium required an approach that balanced authenticity with visual allure.",
+    "solution": "Through meticulous product photography, we captured the intricate details and textures of their ceramics, allowing potential clients to appreciate the craftsmanship from afar.",
+    "year": "2023",
+    "category": "Visual Storytelling"
+  },
+  "ic": {
+    "name": "IC GlowUp Skyhome",
+    "tagline": "From vision to brand identity.",
+    "description": "Innovative Commerce — Product design, brand identity",
+    "challenge": "The challenge lay in giving life to ideas, creating distinct identities for both the main brand and its sub-brands without the physical presence of products.",
+    "solution": "Our approach combined in-depth research, immersive brainstorming, and meticulous design execution to birth brands that stand as pillars of Innovative Commerce's mission.",
+    "year": "2023",
+    "category": "Brand Envisioning"
+  },
+  "rebelieve": {
+    "name": "Rebelieve by Nathan Nuyts",
+    "tagline": "Empowering movement through imagery.",
+    "description": "Rebelieve isn't just a clothing brand — it's a rallying cry for self-belief and empowerment.",
+    "challenge": "The challenge lay in translating Nathan's personal journey and ethos into compelling visuals, fusing authenticity and aspiration seamlessly.",
+    "solution": "We crafted a digital space that welcomed individuals on their unique journeys through immersive online ads and striking visuals.",
+    "year": "2023",
+    "category": "Digital Experience"
+  },
+  "yokoso": {
+    "name": "Yokoso",
+    "tagline": "Sushi crafted to your taste.",
+    "description": "With a commitment to customization and choice, Yokoso Sushi elevates your dining experience, allowing you to craft sushi masterpieces that reflect your taste.",
+    "challenge": "The challenge lay in visually conveying the sheer variety and customization they offer, bridging the gap between taste and imagery.",
+    "solution": "Through carefully crafted online advertising, we served up delectable visuals that invited customers to explore the world of personalized sushi.",
+    "year": "2022",
+    "category": "Visual & Online Impact"
+  },
+  "poland-invest": {
+    "name": "Poland Invest ZEN",
+    "tagline": "Investing in a visionary future.",
+    "description": "With a focus on promising locations and high potential returns, Poland Invest brings a fresh perspective to real estate investment.",
+    "challenge": "The challenge lay in encapsulating the blend of ambition and calculated risk-taking that defines their investors.",
+    "solution": "Our online approach aimed to mirror the confidence and foresight that define their investment strategies through precision-targeted online ads.",
+    "year": "2021",
+    "category": "Visual & Online Impact"
+  }
+}

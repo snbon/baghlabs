@@ -1,0 +1,38 @@
+{
+  "id": "availly",
+  "template": "web",
+  "image": "/assets/availly/availly-dashboard.png",
+  "heroImage": "/assets/availly/availly-landing-page.png",
+  "websiteUrl": "https://availly.me",
+  "technologies": ["PHP Laravel", "React", "PostgreSQL", "Tailwind CSS", "Railway", "Supabase", "Resend", "OpenRouter API", "Google API", "CalDAV API"],
+  "features": ["Calendar view", "Availability management", "Shareable booking links", "Responsive interface", "Calendar integrations", "Privacy-first", "AI scheduling", "Multi-timezone support"],
+  "gallery": [
+    "/assets/availly/availly-dashboard.png",
+    "/assets/availly/availly-settings.png",
+    "/assets/availly/availly-loginpage.png"
+  ],
+  "category": "productivity",
+  "relatedService": "development",
+  "comingSoon": false,
+  "process": {
+    "discovery": "Understanding user scheduling pain points across different calendar platforms",
+    "design": "Minimalist UI with privacy-first approach and intuitive availability blocks",
+    "development": "React 19 SPA with Laravel 12 API, Redis caching, privacy-first architecture",
+    "testing": "Cross-platform calendar sync testing, privacy compliance verification",
+    "deployment": "Railway with Supabase, automated CI/CD pipeline"
+  },
+  "results": [
+    "50% reduction in scheduling back-and-forth",
+    "Privacy-compliant calendar sharing",
+    "Sub-100ms availability checks",
+    "Seamless Google/CalDAV integration",
+    "Zero personal data exposure",
+    "Mobile-first responsive design",
+    "AI-powered smart scheduling"
+  ],
+  "testimonial": {
+    "quote": "Availly transformed how I manage client bookings. It's exactly what I needed — powerful but simple.",
+    "author": "Sarah Chen",
+    "role": "Freelance Consultant, Digital Strategy Solutions"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "calvarychurch",
+  "template": "web",
+  "image": "/assets/calvarychurch/calvary-sanity.png",
+  "heroImage": "/assets/calvarychurch/calvary-homepage.png",
+  "websiteUrl": "https://www.depelgrim.be",
+  "technologies": ["Next.js", "Sanity CMS", "Tailwind CSS", "Dual Language (NL/EN)"],
+  "features": ["Sanity CMS", "Dual language content management", "Event management", "Bible verse widget", "Recurring events", "Contact & ministries pages"],
+  "gallery": [
+    "/assets/calvarychurch/calvary-homepage.png",
+    "/assets/calvarychurch/calvary-sanity.png"
+  ],
+  "category": "Non-profit",
+  "relatedService": "development",
+  "comingSoon": false,
+  "results": [
+    "Volledig tweetalig CMS met Sanity",
+    "Inhoud beheerbaar zonder technische kennis",
+    "Events & bijbelteksten real-time aanpasbaar",
+    "Snelle lancering dankzij gestructureerde CMS-architectuur"
+  ]
+}

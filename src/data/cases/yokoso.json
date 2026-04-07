@@ -1,0 +1,21 @@
+{
+  "id": "yokoso",
+  "template": "creative",
+  "image": "/assets/yokoso/yokoso-campagin-photography-by-persona-gent.jpg",
+  "heroImage": "/assets/yokoso/yokoso-campagin-photography-by-persona-gent.jpg",
+  "year": "2022",
+  "services": ["Campaign Photography", "Video Production", "Online Advertising"],
+  "gallery": [
+    "/assets/yokoso/yokoso-campagin-photography-by-persona-gent.jpg",
+    "/assets/yokoso/yokoso-packaging-photography-by-persona-gent.jpg",
+    "/assets/yokoso/yokoso-sushi-shot-by-persona-gent.jpg",
+    "/assets/yokoso/yokoso-interior-shot-by-persona-gent.jpg"
+  ],
+  "videos": [
+    "https://www.youtube.com/embed/ISBYiGWuyWw",
+    "https://www.youtube.com/embed/7FoDhjG29kY"
+  ],
+  "category": "visual-online-impact",
+  "relatedService": "performance-marketing",
+  "comingSoon": false
+}

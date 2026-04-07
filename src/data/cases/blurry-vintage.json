@@ -1,0 +1,19 @@
+{
+  "id": "blurry-vintage",
+  "template": "creative",
+  "image": "/assets/blurry-vintage/blurry-by-persona-gent.jpg",
+  "heroImage": "/assets/blurry-vintage/blurry-by-persona-gent.jpg",
+  "year": "2023",
+  "services": ["Branding", "Photography", "Packaging Design", "Visual Storytelling"],
+  "gallery": [
+    "/assets/blurry-vintage/blurry-by-persona-gent.jpg",
+    "/assets/blurry-vintage/blurry-model-by-persona-gent.jpg",
+    "/assets/blurry-vintage/blurry-model2-by-persona-gent.jpg",
+    "/assets/blurry-vintage/blurry-model3-by-persona-gent.jpg",
+    "/assets/blurry-vintage/blurry-packaging-design-by-persona-gent.png"
+  ],
+  "videos": [],
+  "category": "branding",
+  "relatedService": "branding-content",
+  "comingSoon": false
+}

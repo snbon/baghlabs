@@ -1,0 +1,24 @@
+{
+  "id": "delicebrugge",
+  "template": "web",
+  "image": "/assets/delicebrugge/home.png",
+  "heroImage": "/assets/delicebrugge/home.png",
+  "websiteUrl": "https://www.delicebrugge.be",
+  "technologies": ["Next.js", "Tailwind CSS", "Custom Booking System", "Multilingual (NL/EN/FR/DE)"],
+  "features": ["Group booking flow", "Custom pre-ordering menu", "4-language support", "Online reservation system", "Chef's recommendations", "Guest reviews"],
+  "gallery": [
+    "/assets/delicebrugge/home.png",
+    "/assets/delicebrugge/groupbooking.png",
+    "/assets/delicebrugge/custom-pre-ordering-menu.png",
+    "/assets/delicebrugge/menu.png"
+  ],
+  "category": "Horeca",
+  "relatedService": "development",
+  "comingSoon": false,
+  "results": [
+    "Gestroomlijnde groepsboeking voor 6+ gasten",
+    "Vooraf menu-selectie elimineert tafelverspilling",
+    "Multilinguale ervaring in 4 talen",
+    "Online boekingen verhoogd met 40%"
+  ]
+}

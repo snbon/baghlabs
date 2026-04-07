@@ -1,44 +1,37 @@
-import React from 'react'
+import { useTranslation } from 'react-i18next'
+import { motion } from 'framer-motion'
 
 const WhySection = () => {
-  const reasons = [
-    {
-      title: 'We Solve Real Problems',
-      description: 'Not imagined ones. We start with the actual challenges your business faces every day and build solutions that address them directly. No feature bloat, no unnecessary complexity just what works.'
-    },
-    {
-      title: 'Simplicity is Our Superpower',
-      description: 'The best solutions are invisible. We take complex business processes and make them feel effortless. If your team can use it without training, we\'ve done our job right.'
-    },
-    {
-      title: 'Your Success Defines Ours',
-      description: 'We measure our success by your results. When your business runs smoother, when your team is more productive, when your customers are happier that\'s what drives us forward.'
-    }
-  ]
+  const { t } = useTranslation('home')
+  const reasons = t('why.reasons', { returnObjects: true })
 
   return (
-    <div className="w-full h-full flex items-center justify-center bg-white">
-      <div className="container-custom">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl-robotic md:text-4xl-robotic lg:text-5xl-robotic font-light text-gray-900 mb-6 leading-tight">
-            Why BaghLabs?
-          </h2>
-          <p className="text-base-robotic md:text-lg-robotic text-gray-700 max-w-4xl mx-auto mb-8 leading-relaxed">
-            Because building software isn't about technology. It's about understanding people, 
-            their challenges, and creating solutions that make their lives better. That's our philosophy.
-          </p>
-        </div>
+    <div className="w-full min-h-screen flex items-center justify-center">
+      <div className="container-custom py-20">
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.6 }}
+          className="text-3xl md:text-4xl font-semibold text-foreground mb-16 tracking-tight"
+        >
+          {t('why.heading')}
+        </motion.h2>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-12">
           {reasons.map((reason, index) => (
-            <div key={index} className="text-center p-8 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 hover:from-gray-100 hover:to-gray-200 transition-all duration-300 hover:shadow-lg">
-              <h3 className="text-xl-robotic md:text-2xl-robotic font-medium text-gray-900 mb-4">
-                {reason.title}
-              </h3>
-              <p className="text-sm-robotic md:text-base-robotic text-gray-600 leading-relaxed">
-                {reason.description}
-              </p>
-            </div>
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
+              className="space-y-4"
+            >
+              <div className="w-8 h-0.5 bg-foreground" />
+              <h3 className="text-xl font-semibold text-foreground">{reason.title}</h3>
+              <p className="text-muted-foreground leading-relaxed">{reason.description}</p>
+            </motion.div>
           ))}
         </div>
       </div>

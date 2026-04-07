@@ -1,0 +1,19 @@
+{
+  "id": "ic",
+  "template": "creative",
+  "image": "/assets/ic/glowup-serum-product-design-by-persona-gent.jpg",
+  "heroImage": "/assets/ic/glowup-serum-product-design-by-persona-gent.jpg",
+  "year": "2023",
+  "services": ["Brand Identity", "Product Design", "Packaging Design", "Brand Strategy"],
+  "gallery": [
+    "/assets/ic/glowup-serum-product-design-by-persona-gent.jpg",
+    "/assets/ic/refumed-products-by-persona-gent.jpg",
+    "/assets/ic/ic-product2-by-persona-gent.jpg",
+    "/assets/ic/ic-packaging-design-by-persona-gent.jpg",
+    "/assets/ic/ic-product-by-persona-gent.jpg"
+  ],
+  "videos": [],
+  "category": "brand-envisioning",
+  "relatedService": "branding-content",
+  "comingSoon": false
+}

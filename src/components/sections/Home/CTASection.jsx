@@ -1,98 +1,132 @@
-import React from 'react'
-
-import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import { motion } from 'framer-motion'
+import { useLocation, useNavigate, Link } from 'react-router-dom'
 
 const CTASection = () => {
+  const { t } = useTranslation('home')
+  const { t: tCommon, i18n } = useTranslation('common')
+  const location = useLocation()
+  const navigate = useNavigate()
+
+  const isEnglish = location.pathname.startsWith('/en')
+  const basePath = isEnglish ? '/en' : ''
+
+const toggleLanguage = () => {
+    if (isEnglish) {
+      const newPath = location.pathname.replace(/^\/en/, '') || '/'
+      i18n.changeLanguage('nl')
+      navigate(newPath)
+    } else {
+      const newPath = `/en${location.pathname === '/' ? '' : location.pathname}`
+      i18n.changeLanguage('en')
+      navigate(newPath)
+    }
+  }
+
   return (
-    <div className="w-full h-full flex flex-col bg-bagh-800">
-      {/* CTA Content */}
-      <div className="flex-1 flex items-center justify-center">
+    <div className="relative w-full flex flex-col bg-white overflow-hidden">
+      {/* Noise dots only — fade in very gradually from top, no colour cast */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage:
+            'radial-gradient(circle at 1px 1px, rgba(0,0,0,0.07) 1px, transparent 0)',
+          backgroundSize: '20px 20px',
+          WebkitMaskImage:
+            'linear-gradient(to bottom, transparent 0%, black 35%, black 100%)',
+          maskImage:
+            'linear-gradient(to bottom, transparent 0%, black 35%, black 100%)',
+        }}
+      />
+
+      {/* CTA */}
+      <div className="relative flex-1 flex items-center justify-center py-28">
         <div className="container-custom text-center">
-          <h2 className="text-3xl-robotic md:text-4xl-robotic lg:text-5xl-robotic font-light text-white mb-6 leading-tight">
-            From Concept to Product to Impact
-          </h2>
-          <p className="text-base-robotic md:text-lg-robotic text-gray-200 max-w-3xl mx-auto mb-8 leading-relaxed">
-            Whether you're here to explore our products or looking for a digital partner to bring your idea to life — you're in the right place.
-          </p>
-          <p className="text-lg-robotic md:text-xl-robotic text-white mb-8 font-medium">
-            We are currently not taking on new projects, but we are still allowed to chat over a coffee.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="https://www.linkedin.com/company/baghlabs/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="border-2 border-white text-white hover:bg-white hover:text-bagh-800 font-medium py-3 px-8 rounded-lg transition-all duration-200 text-sm-robotic inline-block text-center"
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-6 tracking-tight">
+              {t('ctaSection.heading')}
+            </h2>
+            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-4 leading-relaxed">
+              {t('ctaSection.description')}
+            </p>
+            <p className="text-sm text-muted-foreground/60 mb-10">
+              {t('ctaSection.note')}
+            </p>
+            <Link
+              to={`${basePath}/contact`}
+              className="btn-secondary inline-flex items-center gap-2"
             >
-              Connect with us
-            </a>
-          </div>
+              {t('ctaSection.cta')}
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </motion.div>
         </div>
       </div>
 
-      {/* Footer Content */}
-      <div className="bg-bagh-900 border-t border-bagh-700">
-        <div className="container-custom py-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Company Info */}
-            <div className="space-y-3">
-              <div className="flex items-center space-x-2">
-                <div className="w-6 h-6 bg-bagh-800 rounded-md flex items-center justify-center">
-                  <span className="text-white font-light text-sm">B</span>
+      {/* Footer */}
+      <footer className="relative border-t border-bagh-100 py-12">
+        <div className="container-custom">
+          <div className="grid md:grid-cols-3 gap-8">
+            <div>
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="w-7 h-7 bg-bagh-800 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-medium text-xs">B</span>
                 </div>
-                <span className="text-lg font-light text-white">BaghLabs</span>
+                <span className="text-bagh-800 font-semibold">BaghLabs</span>
               </div>
-              <p className="text-xs text-gray-300 leading-relaxed">
-                From Concept to Product to Impact. A software studio dedicated to turning bold ideas into impactful digital products.
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                {tCommon('footer.description')}
               </p>
             </div>
-
-            {/* Quick Links */}
-            <div className="space-y-3">
-              <h3 className="text-sm font-light text-white">Quick Links</h3>
-              <ul className="space-y-1">
-                <li>
-                  <Link to="/" className="text-xs text-gray-300 hover:text-white transition-colors duration-200">
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/cases" className="text-xs text-gray-300 hover:text-white transition-colors duration-200">
-                    Our Cases
-                  </Link>
-                </li>
+            <div>
+              <h4 className="text-foreground font-medium text-sm mb-4 uppercase tracking-wide">
+                {tCommon('footer.quickLinks')}
+              </h4>
+              <ul className="space-y-2">
+                {Object.entries(tCommon('footer.links', { returnObjects: true })).map(([key, label]) => (
+                  <li key={key}>
+                    <Link
+                      to={key === 'contact' ? `${basePath}/contact` : key === 'cases' ? `${basePath}/cases` : key === 'services' ? `${basePath}/services/development` : `${basePath}/`}
+                      className="text-muted-foreground text-sm hover:text-foreground transition-colors"
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
-
-            {/* Contact */}
-            <div className="space-y-3">
-              <h3 className="text-sm font-light text-white">Get in Touch</h3>
-              <p className="text-xs text-gray-300">
-                Ready to bring your idea to life?
-              </p>
-              <a 
-                href="https://www.linkedin.com/company/baghlabs/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-block text-xs text-bagh-300 hover:text-white transition-colors duration-200 underline underline-offset-2"
+            <div>
+              <h4 className="text-foreground font-medium text-sm mb-4 uppercase tracking-wide">
+                {tCommon('footer.getInTouch')}
+              </h4>
+              <p className="text-muted-foreground text-sm mb-4">{tCommon('footer.readyText')}</p>
+              <Link
+                to={`${basePath}/contact`}
+                className="btn-secondary text-sm"
               >
-                Connect with us
-              </a>
+                {tCommon('footer.workWithUs')}
+              </Link>
             </div>
           </div>
-
-          <div className="border-t border-bagh-700 mt-8 pt-6">
-            <div className="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
-              <p className="text-xs text-gray-400">
-                © 2025 BaghLabs. All rights reserved.
-              </p>
-              <p className="text-xs text-gray-400">
-                From Concept to Product to Impact
-              </p>
-            </div>
+          <div className="border-t border-bagh-100 mt-12 pt-6 flex flex-col items-center gap-2 text-center">
+            <p className="text-muted-foreground text-xs">{tCommon('footer.copyright')}</p>
+            <p className="text-muted-foreground/50 text-xs">{tCommon('footer.tagline')}</p>
+            <button
+              onClick={toggleLanguage}
+              className="mt-1 text-xs font-semibold uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors"
+            >
+              {isEnglish ? 'NL' : 'EN'}
+            </button>
           </div>
         </div>
-      </div>
+      </footer>
     </div>
   )
 }

@@ -1,0 +1,19 @@
+{
+  "id": "claymates",
+  "template": "creative",
+  "image": "/assets/claymates/claymates-cup2.jpg",
+  "heroImage": "/assets/claymates/claymates-cup2.jpg",
+  "year": "2023",
+  "services": ["Photography", "Video Production", "Visual Storytelling"],
+  "gallery": [
+    "/assets/claymates/claymates-cup2.jpg",
+    "/assets/claymates/claymates-cup.jpg",
+    "/assets/claymates/claymates-cup-3.jpg",
+    "/assets/claymates/claymating.jpg",
+    "/assets/claymates/claymates-interior.jpg"
+  ],
+  "videos": ["https://www.youtube.com/embed/-g_MVsqWXsM"],
+  "category": "visual-storytelling",
+  "relatedService": "branding-content",
+  "comingSoon": false
+}

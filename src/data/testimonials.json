@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "Sarah Chen",
+    "role": "Freelance Consultant",
+    "company": "Digital Strategy Solutions",
+    "content": "Availly transformed how I manage client bookings. Exactly what I needed — powerful but simple. BaghLabs delivered beyond expectations.",
+    "rating": 5,
+    "avatar": ""
+  },
+  {
+    "id": 2,
+    "name": "Thomas Verhaeghe",
+    "role": "Operations Manager",
+    "company": "ShiftEnd",
+    "content": "BaghLabs understood our problem from day one. The ShiftEnd platform has saved our team hours every week. Clean, fast and reliable.",
+    "rating": 5,
+    "avatar": ""
+  },
+  {
+    "id": 3,
+    "name": "Lena Devos",
+    "role": "Creative Director",
+    "company": "Blurry Vintage",
+    "content": "The visual storytelling BaghLabs delivered for Blurry Vintage was exactly on point. They captured our brand effortlessly.",
+    "rating": 5,
+    "avatar": ""
+  }
+]

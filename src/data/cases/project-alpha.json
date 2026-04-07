@@ -1,0 +1,13 @@
+{
+  "id": "project-alpha",
+  "template": "web",
+  "image": "/assets/coming-soon-pc-landscape.png",
+  "heroImage": "/assets/coming-soon-iphone-landscape.png",
+  "websiteUrl": null,
+  "technologies": ["Kotlin", "Spring Boot", "ML", "Cloud Functions"],
+  "features": ["AI insights", "Real-time transactions", "Cross-platform", "Security", "Scalability"],
+  "gallery": [],
+  "category": "fintech",
+  "relatedService": "development",
+  "comingSoon": true
+}

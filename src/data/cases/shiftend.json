@@ -1,0 +1,38 @@
+{
+  "id": "shiftend",
+  "template": "web",
+  "image": "/assets/shiftend/shiftend-landingpage.png",
+  "heroImage": "/assets/shiftend/shiftend-report.png",
+  "websiteUrl": "https://shiftend.be",
+  "technologies": ["PHP", "Laravel", "JavaScript", "Vue.js", "PostgreSQL", "Railway", "Supabase", "Mailtrap"],
+  "features": ["Multi location support", "Digital sales logbook", "Multilingual (NL/FR/EN)", "Team management", "Compliance automation", "Digital signatures", "Audit trails", "Demo phase"],
+  "gallery": [
+    "/assets/shiftend/shiftend-landingpage.png",
+    "/assets/shiftend/shiftend-report.png",
+    "/assets/shiftend/shiftend-permissions.png"
+  ],
+  "category": "operations",
+  "relatedService": "development",
+  "comingSoon": false,
+  "process": {
+    "discovery": "Deep dive into Belgian restaurant compliance requirements (dagontvangstenboek)",
+    "design": "Clean, minimal UI designed for non-technical restaurant staff",
+    "development": "Vue.js 3 SPA with Laravel 12 API, multi-tenant architecture",
+    "testing": "Legal compliance testing with Belgian tax regulation experts",
+    "deployment": "Railway deployment with automated compliance checks"
+  },
+  "results": [
+    "100% Belgian tax compliance",
+    "80% reduction in paperwork time",
+    "Multi-location management",
+    "Trilingual interface (NL/FR/EN)",
+    "Digital audit trail for inspections",
+    "Affordable €9.99/month pricing",
+    "500+ restaurant registrations"
+  ],
+  "testimonial": {
+    "quote": "ShiftEnd saved us hours every week. The digital logbook is exactly what our restaurant needed for compliance.",
+    "author": "Marie Dubois",
+    "role": "Restaurant Owner, Le Petit Bistro, Brussels"
+  }
+}

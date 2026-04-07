@@ -14,6 +14,9 @@ build/
 .env.test.local
 .env.production.local
 
+# DOcs
+/CLAUDE.md
+/docs
 # IDE and editor files
 .vscode/
 .idea/

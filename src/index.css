@@ -1,49 +1,54 @@
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+/* Import Geist font */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --radius: 0.5rem;
+  }
+
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
-    font-family: 'Inter', system-ui, sans-serif;
-    font-weight: 300;
+    font-family: 'Geist', system-ui, sans-serif;
+    font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.6;
     overflow-x: hidden;
-  }
-  
-  /* Fix for mobile viewport height issues */
-  .h-screen {
-    height: 100vh;
-    height: 100dvh; /* Dynamic viewport height for mobile */
-  }
-  
-  /* Ensure proper mobile viewport handling */
-  @supports (height: 100dvh) {
-    .h-screen {
-      height: 100dvh;
-    }
-  }
-  
-  /* Mobile-specific viewport handling */
-  @media (max-width: 768px) {
-    .mobile-viewport {
-      min-height: 100vh;
-      min-height: 100dvh;
-      height: auto;
-    }
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-weight: 400;
+    font-family: 'Geist', system-ui, sans-serif;
+    font-weight: 600;
     letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  * {
+    border-color: hsl(var(--border));
   }
 }
 
@@ -51,475 +56,49 @@
   .container-custom {
     @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
   }
-  
+
   .btn-primary {
-    @apply bg-bagh-800 text-white px-4 py-2 rounded-md font-light text-sm hover:bg-bagh-700 transition-colors duration-200 w-fit max-w-none;
-  }
-  
-  .btn-secondary {
-    @apply border border-bagh-800 text-bagh-800 px-4 py-2 rounded-md font-light text-sm hover:bg-bagh-800 hover:text-white transition-colors duration-200 w-fit max-w-none;
+    @apply bg-bagh-800 text-white px-4 py-2 rounded-md font-normal text-sm hover:bg-bagh-700 transition-colors duration-200 w-fit;
   }
 
-  /* Mobile button width constraints */
-  @media (max-width: 768px) {
-    .btn-primary,
-    .btn-secondary {
-      width: fit-content !important;
-      max-width: none !important;
-      flex-shrink: 0;
-    }
-    
-    /* Ensure buttons in flex containers don't expand */
-    .flex .btn-primary,
-    .flex .btn-secondary,
-    .flex-col .btn-primary,
-    .flex-col .btn-secondary {
-      align-self: center;
-      width: fit-content !important;
-    }
-    
-    /* Additional mobile button constraints for any button-like elements */
-    button[type="button"],
-    button[type="submit"],
-    .inline-flex.items-center,
-    a[href] {
-      width: fit-content !important;
-      max-width: none !important;
-      flex-shrink: 0;
-    }
-    
-    /* Center buttons in flex containers on mobile */
-    .flex button,
-    .flex-col button,
-    .flex a[href],
-    .flex-col a[href] {
-      align-self: center;
-    }
-    
-    /* Mobile section content containment */
-    .w-full.h-full {
-      min-height: 100vh;
-      min-height: 100dvh;
-    }
-    
-    /* Ensure content doesn't overflow section boundaries */
-    .container-custom {
-      padding-bottom: 2rem; /* Add bottom padding for better scrolling */
-    }
-    
-    /* Mobile section scrolling optimization */
-    .w-full.h-full.flex {
-      align-items: center; /* Keep content centered */
-      justify-content: center; /* Maintain center alignment */
-    }
-    
-    /* Section content scrolling - allow content to scroll within sections */
-    .w-full.h-full.flex .container-custom {
-      max-height: 100vh;
-      max-height: 100dvh;
-      overflow-y: auto;
-      -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-      padding: 2rem 1rem; /* Add padding for better mobile spacing */
-      /* Ensure content can scroll when it exceeds viewport height */
-      scrollbar-width: thin;
-      scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
-    }
-    
-    /* Custom scrollbar styling for webkit browsers */
-    .w-full.h-full.flex .container-custom::-webkit-scrollbar {
-      width: 6px;
-    }
-    
-    .w-full.h-full.flex .container-custom::-webkit-scrollbar-track {
-      background: transparent;
-    }
-    
-    .w-full.h-full.flex .container-custom::-webkit-scrollbar-thumb {
-      background: rgba(0, 0, 0, 0.2);
-      border-radius: 3px;
-    }
-    
-    .w-full.h-full.flex .container-custom::-webkit-scrollbar-thumb:hover {
-      background: rgba(0, 0, 0, 0.3);
-    }
-    
-    /* Mobile text sizing adjustments */
-    .text-3xl-robotic {
-      font-size: 1.125rem !important; /* Larger on mobile for readability */
-    }
-    
-    .text-4xl-robotic {
-      font-size: 1.25rem !important; /* Larger on mobile for readability */
-    }
-    
-    .text-5xl-robotic {
-      font-size: 1.375rem !important; /* Larger on mobile for readability */
-    }
-    
-    /* Mobile case card scrolling optimization */
-    .case-item {
-      user-select: none; /* Prevent text selection during scroll */
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-    }
-    
-    /* Ensure case cards don't interfere with horizontal scrolling */
-    .case-item img {
-      pointer-events: none; /* Disable pointer events on images */
-      -webkit-user-drag: none; /* Prevent image dragging on mobile */
-      user-drag: none;
-    }
-    
-    /* Only buttons should be interactive */
-    .case-item .btn-primary,
-    .case-item .btn-secondary {
-      pointer-events: auto; /* Re-enable pointer events for buttons */
-    }
+  .btn-secondary {
+    @apply border border-bagh-800 text-bagh-800 px-4 py-2 rounded-md font-normal text-sm hover:bg-bagh-800 hover:text-white transition-colors duration-200 w-fit;
   }
-  
+
   .section-padding {
-    @apply py-12 md:py-16;
+    @apply py-20 md:py-32;
   }
-  
+
   .text-gradient {
     @apply bg-gradient-to-r from-bagh-800 to-bagh-600 bg-clip-text text-transparent;
   }
 
   .text-minimal {
-    @apply text-bagh-700 font-light;
+    @apply text-bagh-700;
   }
 
   .heading-minimal {
-    @apply text-bagh-800 font-light tracking-tight;
+    @apply text-bagh-800 font-semibold tracking-tight;
   }
 
-  /* Full viewport sections */
-  .full-viewport {
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    will-change: opacity, transform;
-  }
-
-  /* Scroll indicator */
-  .scroll-indicator {
-    position: fixed;
-    right: 1.5rem;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 50;
-    display: none;
-  }
-
-  /* Hide scrollbar utility */
-  .scrollbar-hide {
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    scrollbar-width: none;  /* Firefox */
-  }
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;  /* Safari and Chrome */
-  }
-
-  /* Entrance Animations - Initial State */
-  .animate-fade-in-up {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-
-  .animate-slide-in-down {
-    opacity: 0;
-    transform: translateY(-30px);
-    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-
-  .animate-slide-in-left {
-    opacity: 0;
-    transform: translateX(-50px);
-    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-
-  .animate-slide-in-right {
-    opacity: 0;
-    transform: translateX(50px);
-    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-
-  .animate-scale-in {
-    opacity: 0;
-    transform: scale(0.9);
-    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-
-  .animate-fade-in-scale {
-    opacity: 0;
-    transform: scale(0.95);
-    transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-
-  .animate-text-reveal {
-    opacity: 0;
-    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-
-  .animate-line-expand {
-    width: 0;
-    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-
-  /* Animation Active States */
-  .animate-fade-in-up.animate-active {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .animate-slide-in-down.animate-active {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .animate-slide-in-left.animate-active {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  .animate-slide-in-right.animate-active {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  .animate-scale-in.animate-active {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-  .animate-fade-in-scale.animate-active {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-  .animate-text-reveal.animate-active {
-    opacity: 1;
-  }
-
-  .animate-line-expand.animate-active {
-    width: 4rem;
-  }
-
-
-
-  @media (min-width: 768px) {
-    .scroll-indicator {
-      display: block;
-    }
-  }
-
-  .scroll-dot {
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 50%;
-    background-color: #cbd5e1;
-    opacity: 0.3;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    margin: 0.25rem 0;
-  }
-
-  .scroll-dot.active {
-    opacity: 1;
-    background-color: #475569;
-    transform: scale(1.2);
-  }
-
-  .scroll-dot:hover {
-    opacity: 0.7;
-    transform: scale(1.1);
-  }
-
-  /* Hide scrollbars */
+  /* Scrollbar hide utility */
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
 
-  /* Minimal, controlled animations */
-  .floating-dot {
-    animation: float 8s ease-in-out infinite;
+  /* Scroll reveal animation states */
+  .animate-fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
-  .floating-dot:nth-child(2) {
-    animation-delay: -2s;
-  }
-
-  .floating-dot:nth-child(3) {
-    animation-delay: -4s;
-  }
-
-  .floating-dot:nth-child(4) {
-    animation-delay: -6s;
-  }
-
-  .floating-circle {
-    animation: floatCircle 12s ease-in-out infinite;
-  }
-
-  .floating-circle:nth-child(2) {
-    animation-delay: -4s;
-  }
-
-  .floating-circle:nth-child(3) {
-    animation-delay: -8s;
-  }
-
-  /* Hero background morphing animation */
-  .hero-bg-morph {
-    background: linear-gradient(45deg, #f8fafc, #e2e8f0, #f1f5f9);
-    background-size: 400% 400%;
-    animation: bgMorph 8s ease-in-out infinite;
-  }
-
-  /* Fluid glass navigation effects */
-  .fluid-glow {
-    box-shadow: 0 0 20px rgba(71, 85, 105, 0.3), 0 0 40px rgba(71, 85, 105, 0.1);
-  }
-
-  .fluid-glow:hover {
-    box-shadow: 0 0 30px rgba(71, 85, 105, 0.4), 0 0 60px rgba(71, 85, 105, 0.2);
-  }
-
-  /* Fluid glass morphing effect */
-  .fluid-glass {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 8px 32px rgba(71, 85, 105, 0.2);
-  }
-
-  /* Subtle fluid animation */
-  .fluid-animate {
-    animation: fluidMorph 8s ease-in-out infinite;
-  }
-
-  /* Smaller font sizes - even smaller than before */
-  .text-xs-robotic {
-    font-size: 0.75rem;
-    font-family: 'JetBrains Mono', 'Courier New', monospace;
-    font-weight: 300;
-    letter-spacing: 0.05em;
-  }
-
-  .text-sm-robotic {
-    font-size: 0.75rem;
-    font-family: 'JetBrains Mono', 'Courier New', monospace;
-    font-weight: 300;
-    letter-spacing: 0.05em;
-  }
-
-  .text-base-robotic {
-    font-size: 0.75rem;
-    font-family: 'JetBrains Mono', 'Courier New', monospace;
-    font-weight: 300;
-    letter-spacing: 0.05em;
-  }
-
-  .text-lg-robotic {
-    font-size: 0.75rem;
-    font-family: 'JetBrains Mono', 'Courier New', monospace;
-    font-weight: 300;
-    letter-spacing: 0.05em;
-  }
-
-  .text-xl-robotic {
-    font-size: 0.75rem;
-    font-family: 'JetBrains Mono', 'Courier New', monospace;
-    font-weight: 300;
-    letter-spacing: 0.05em;
-  }
-
-  .text-2xl-robotic {
-    font-size: 0.75rem;
-    font-family: 'JetBrains Mono', 'Courier New', monospace;
-    font-weight: 300;
-    letter-spacing: 0.05em;
-  }
-
-  .text-3xl-robotic {
-    font-size: 0.75rem;
-    font-family: 'JetBrains Mono', 'Courier New', monospace;
-    font-weight: 300;
-    letter-spacing: 0.05em;
-  }
-
-  .text-4xl-robotic {
-    font-size: 0.875rem;
-    font-family: 'JetBrains Mono', 'Courier New', monospace;
-    font-weight: 300;
-    letter-spacing: 0.05em;
-  }
-
-  .text-5xl-robotic {
-    font-size: 0.875rem;
-    font-family: 'JetBrains Mono', 'Courier New', monospace;
-    font-weight: 300;
-    letter-spacing: 0.05em;
-  }
-
-  .text-6xl-robotic {
-    font-size: 1rem;
-    font-family: 'JetBrains Mono', 'Courier New', monospace;
-    font-weight: 300;
-    letter-spacing: 0.05em;
+  .animate-fade-in-up.animate-active {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
-
-@layer utilities {
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-15px);
-    }
-  }
-
-  @keyframes floatCircle {
-    0%, 100% {
-      transform: translateY(0px);
-      opacity: 0.15;
-    }
-    50% {
-      transform: translateY(-20px);
-      opacity: 0.25;
-    }
-  }
-
-            @keyframes bgMorph {
-            0%, 100% {
-              background-position: 0% 50%;
-            }
-            50% {
-              background-position: 100% 50%;
-            }
-          }
-
-          @keyframes fluidMorph {
-            0%, 100% {
-              background-position: 0% 50%;
-              transform: scale(1);
-            }
-            50% {
-              background-position: 100% 50%;
-              transform: scale(1.02);
-            }
-          }
-}
-
-

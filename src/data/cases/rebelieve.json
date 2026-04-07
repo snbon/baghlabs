@@ -1,0 +1,18 @@
+{
+  "id": "rebelieve",
+  "template": "creative",
+  "image": "/assets/rebelieve/rebelieve-by-persona-gent.jpg",
+  "heroImage": "/assets/rebelieve/rebelieve-by-persona-gent.jpg",
+  "year": "2023",
+  "services": ["Photography", "Video Production", "Online Advertising", "Digital Marketing"],
+  "gallery": [
+    "/assets/rebelieve/rebelieve-by-persona-gent.jpg",
+    "/assets/rebelieve/rebelieve-by-persona-gent1.jpg",
+    "/assets/rebelieve/rebelieve-by-persona-gent2.jpg",
+    "/assets/rebelieve/rebelieve-by-persona-gent13.jpg"
+  ],
+  "videos": ["https://www.youtube.com/embed/X4K-8bcEVI8"],
+  "category": "digital-experience",
+  "relatedService": "performance-marketing",
+  "comingSoon": false
+}

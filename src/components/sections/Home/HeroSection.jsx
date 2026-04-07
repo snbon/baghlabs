@@ -1,25 +1,46 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import { motion } from 'framer-motion'
+import { GooeyText } from '@/components/ui/gooey-text'
+import BackgroundHero from '@/components/ui/background-hero'
 
 const HeroSection = () => {
+  const { t } = useTranslation('home')
+  const location = useLocation()
+  const basePath = location.pathname.startsWith('/en') ? '/en' : ''
+  const phrases = t('hero.morphingPhrases', { returnObjects: true })
+
   return (
-    <div className="w-full h-full flex items-center justify-center hero-bg-morph">
-      <div className="container-custom text-center">
-        <h1 className="text-xl md:text-2xl lg:text-3xl font-light text-gray-900 mb-6 leading-tight tracking-tight">
-          From Concept to Product to Impact
-        </h1>
-        <p className="text-base-robotic md:text-lg-robotic lg:text-xl-robotic text-gray-700 max-w-3xl mx-auto mb-8 leading-relaxed">
-          A Software studio dedicated to transforming bold ideas into impactful digital products. <br/> We focus on simplicity, speed, and solving real business challenges.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link to="/cases" className="btn-secondary text-sm-robotic w-fit mx-auto sm:mx-0">
-            Explore
+    <div className="relative w-full min-h-screen flex items-center justify-center">
+      <BackgroundHero />
+      <div className="container-custom text-center pt-20">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+        >
+          {/* GooeyText morphing hero */}
+          <div className="mb-8">
+            <GooeyText
+              texts={phrases}
+              morphTime={1.2}
+              cooldownTime={0.5}
+              className="h-24 md:h-32"
+              textClassName="text-5xl md:text-7xl lg:text-8xl font-bold text-foreground"
+            />
+          </div>
+
+          <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto mb-10 leading-relaxed">
+            {t('hero.subtitle')}
+          </p>
+
+          <Link to={`${basePath}/cases`} className="btn-secondary text-sm">
+            {t('hero.cta')}
           </Link>
-        </div>
+        </motion.div>
       </div>
     </div>
   )
 }
 
 export default HeroSection
-

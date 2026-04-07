@@ -1,0 +1,211 @@
+{
+  "development": {
+    "id": "development",
+    "title": "Development",
+    "subtitle": "Web & Product Development",
+    "heroDescription": "Van idee tot gelanceerd product. BaghLabs bouwt schaalbare web applicaties, SaaS producten en MVP's voor startups en KMO's.",
+    "whatWeOffer": {
+      "heading": "Wat we bouwen",
+      "items": [
+        {
+          "title": "Maatwerk Websites",
+          "description": "Professionele websites op maat — van een impactvolle homepage tot complexe multipage-structuren met CMS en backend integratie."
+        },
+        {
+          "title": "SaaS Product Development",
+          "description": "We bouwen schaalbare SaaS-applicaties van de grond af. Van architectuurontwerp en MVP tot volledige lancering met gebruikersbeheer en analytics."
+        },
+        {
+          "title": "MVP Development",
+          "description": "Valideer uw idee snel en kostenefficiënt. We helpen u de juiste functies te prioriteren en lanceren in weken, niet maanden."
+        },
+        {
+          "title": "API & Backend Integraties",
+          "description": "Verbind uw systemen naadloos. We bouwen robuuste API's en integreren bestaande diensten in uw digitale infrastructuur."
+        }
+      ]
+    },
+    "pricing": {
+      "heading": "Transparante prijzen",
+      "plans": [
+        {
+          "title": "Basic",
+          "popular": false,
+          "description": "Voor starters die een professionele online aanwezigheid nodig hebben.",
+          "price": "Vanaf €850",
+          "features": [
+            "Custom homepage op maat",
+            "Responsief & mobiel-vriendelijk",
+            "Basis SEO-optimalisatie",
+            "Contactformulier",
+            "E-mail ondersteuning",
+            "Levering binnen 2 weken"
+          ]
+        },
+        {
+          "title": "Pro",
+          "popular": true,
+          "description": "Voor KMO's met complexere digitale noden.",
+          "price": "Vanaf €1.590",
+          "features": [
+            "Multipage website op maat",
+            "Complexe sitestructuren",
+            "Backend & CMS integratie",
+            "Gebruikersbeheer & rollen",
+            "Ondersteuning via ticketplatform",
+            "3 maanden nazorg"
+          ]
+        },
+        {
+          "title": "Enterprise",
+          "popular": false,
+          "description": "Voor complexe architecturen en langetermijntrajecten.",
+          "price": "Op aanvraag",
+          "features": [
+            "Van conceptie tot lancering",
+            "Complexe architectuur & integraties",
+            "Dedicated developer",
+            "Uitgebreide testing & QA",
+            "Post-launch ondersteuning",
+            "Ondersteuning via ticketplatform"
+          ]
+        }
+      ]
+    }
+  },
+  "branding-content": {
+    "id": "branding-content",
+    "title": "Branding & Content",
+    "subtitle": "Merkidentiteit & Visuele Content",
+    "heroDescription": "Uw merk is meer dan een logo. BaghLabs creëert complete merkidentiteiten, fotosessies en videoproducties voor bedrijven die willen opvallen.",
+    "whatWeOffer": {
+      "heading": "Wat we creëren",
+      "items": [
+        {
+          "title": "Merkidentiteit & Branding",
+          "description": "Logo's, kleurpaletten, typografie en brandbooks die uw merk onderscheiden en herkenbaar maken bij uw doelgroep."
+        },
+        {
+          "title": "Foto & Videoproductie",
+          "description": "Professionele foto- en videosessies die de essentie van uw merk vastleggen. Van producten tot campagnebeelden."
+        },
+        {
+          "title": "Advertentiecampagnes",
+          "description": "Volledige campagne-aanpak: strategie, videoadvertenties en foto's — klaar om in te zetten op sociale media en andere kanalen."
+        },
+        {
+          "title": "Verpakkingsontwerp",
+          "description": "Van digitale presentatie tot fysieke verpakking — consistente merkbeleving op elk touchpoint."
+        }
+      ]
+    },
+    "pricing": {
+      "heading": "Transparante prijzen",
+      "plans": [
+        {
+          "title": "Content",
+          "popular": false,
+          "description": "Voor starters die professionele visuele content nodig hebben.",
+          "price": "Vanaf €500",
+          "features": [
+            "Foto- en/of videosessie",
+            "Bewerkt eindmateriaal",
+            "Geschikt voor sociale media",
+            "Snelle levering",
+            "E-mail ondersteuning"
+          ]
+        },
+        {
+          "title": "Advertenties",
+          "popular": true,
+          "description": "Complete campagne-aanpak voor KMO's die willen groeien.",
+          "price": "Vanaf €1.500",
+          "features": [
+            "Campagnestrategie op maat",
+            "Videoadvertentie productie",
+            "Professionele fotosessie inbegrepen",
+            "Bewerkt campagnemateriaal",
+            "Klaar voor Meta & Google Ads",
+            "2 revisierondes"
+          ]
+        },
+        {
+          "title": "Branding",
+          "popular": false,
+          "description": "Van merkidentiteit tot complete visuele strategie met weboplossingen.",
+          "price": "Op aanvraag",
+          "features": [
+            "Volledige merkidentiteit",
+            "Logo, kleuren & typografie",
+            "Brandbook & stijlgids",
+            "Content tot lancering",
+            "Integratie met weboplossingen",
+            "Ondersteuning via ticketplatform"
+          ]
+        }
+      ]
+    }
+  },
+  "performance-marketing": {
+    "id": "performance-marketing",
+    "title": "Performance Marketing",
+    "subtitle": "Datagedreven Marketing & Groei",
+    "heroDescription": "Marketing die meetbare resultaten levert. BaghLabs combineert creativiteit met data om Meta Ads en Google Ads campagnes te bouwen die écht converteren.",
+    "whatWeOffer": {
+      "heading": "Wat we doen",
+      "items": [
+        {
+          "title": "Meta Ads (Facebook & Instagram)",
+          "description": "Gerichte advertentiecampagnes op Meta die uw doelgroep bereiken en conversies genereren."
+        },
+        {
+          "title": "Google Ads & SEA",
+          "description": "Zoekadvertenties, display en shopping campagnes die uw zichtbaarheid verhogen en kwalitatieve leads aantrekken."
+        },
+        {
+          "title": "Campagnestrategie & Creatie",
+          "description": "Van doelgroepanalyse tot advertentiecreatie — we bouwen campagnes die consistent presteren en optimaliseren op basis van data."
+        },
+        {
+          "title": "Rapportage & Analyse",
+          "description": "Transparante maand- en weekrapporten met betekenisvolle KPI's. U weet altijd wat uw budget oplevert."
+        }
+      ]
+    },
+    "pricing": {
+      "heading": "Transparante prijzen",
+      "plans": [
+        {
+          "title": "Starter",
+          "popular": false,
+          "description": "Ideaal voor bedrijven die starten met betaalde advertenties.",
+          "price": "€500/mo",
+          "features": [
+            "Setup Meta Ads account",
+            "1 advertentiecampagne",
+            "Doelgroepinstelling & targeting",
+            "Maandelijkse rapportage",
+            "Optimalisatie & bijsturing",
+            "E-mail ondersteuning"
+          ]
+        },
+        {
+          "title": "Groei",
+          "popular": true,
+          "description": "Voor KMO's die serieus willen schalen via betaalde kanalen.",
+          "price": "Op aanvraag",
+          "features": [
+            "Multi-platform aanpak (Meta + Google)",
+            "Volledige campagnestrategie",
+            "Advertentiecreatie & copywriting",
+            "A/B testen & optimalisatie",
+            "Wekelijkse rapportage",
+            "Maandelijkse strategiegesprekken",
+            "Conversie-tracking & pixel setup",
+            "Retargeting campagnes"
+          ]
+        }
+      ]
+    }
+  }
+}

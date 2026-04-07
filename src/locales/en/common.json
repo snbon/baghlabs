@@ -1,0 +1,35 @@
+{
+  "nav": {
+    "home": "Home",
+    "cases": "Cases",
+    "services": "Services",
+    "contact": "Contact",
+    "lang": "NL"
+  },
+  "footer": {
+    "tagline": "From Concept to Product to Impact",
+    "description": "A software studio specialising in software development, branding and performance marketing for ambitious businesses.",
+    "quickLinks": "Quick Links",
+    "getInTouch": "Get in Touch",
+    "readyText": "Ready to bring your idea to life?",
+    "workWithUs": "Get in touch",
+    "copyright": "© 2025 BaghLabs. All rights reserved.",
+    "links": {
+      "home": "Home",
+      "cases": "Our Cases",
+      "services": "Services",
+      "contact": "Contact"
+    }
+  },
+  "cta": {
+    "connectWithUs": "Get in touch",
+    "learnMore": "Learn More",
+    "getInTouch": "Get in touch",
+    "visitWebsite": "Visit Website",
+    "caseDetail": "Case Detail",
+    "comingSoon": "Coming Soon",
+    "readMore": "Read more",
+    "bookCall": "Book a call",
+    "viewCase": "View Case"
+  }
+}
