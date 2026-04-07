@@ -32,6 +32,11 @@ const Footer = () => {
                   Our Cases
                 </Link>
               </li>
+              <li>
+                <a href="https://support.baghlabs.com" target="_blank" rel="noopener noreferrer" className="text-xs text-minimal hover:text-bagh-800 transition-colors duration-200">
+                  Support Portal
+                </a>
+              </li>
             </ul>
           </div>
 

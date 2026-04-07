@@ -21,6 +21,7 @@ const Header = () => {
     { name: t('nav.home'), href: `${basePath}/` },
     { name: t('nav.cases'), href: `${basePath}/cases` },
     { name: t('nav.contact'), href: `${basePath}/contact` },
+    { name: 'Support', href: 'https://support.baghlabs.com', external: true },
   ]
 
   const serviceLinks = [
@@ -101,22 +102,35 @@ const Header = () => {
 
               {/* Desktop nav */}
               <nav className="hidden md:flex items-center space-x-8">
-                {navLinks.map((item) => (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    className={`relative text-sm font-light transition-all duration-300 group ${
-                      isActive(item.href) ? 'text-bagh-600' : 'text-bagh-800 hover:text-bagh-600'
-                    }`}
-                  >
-                    {item.name}
-                    <div className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-bagh-600 to-bagh-500 rounded-full transition-all duration-300 ${
-                      isActive(item.href)
-                        ? 'w-full opacity-100'
-                        : 'w-0 opacity-0 group-hover:w-full group-hover:opacity-100'
-                    }`} />
-                  </Link>
-                ))}
+                {navLinks.map((item) =>
+                  item.external ? (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="relative text-sm font-light transition-all duration-300 group text-bagh-800 hover:text-bagh-600"
+                    >
+                      {item.name}
+                      <div className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-bagh-600 to-bagh-500 rounded-full transition-all duration-300 w-0 opacity-0 group-hover:w-full group-hover:opacity-100" />
+                    </a>
+                  ) : (
+                    <Link
+                      key={item.name}
+                      to={item.href}
+                      className={`relative text-sm font-light transition-all duration-300 group ${
+                        isActive(item.href) ? 'text-bagh-600' : 'text-bagh-800 hover:text-bagh-600'
+                      }`}
+                    >
+                      {item.name}
+                      <div className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-bagh-600 to-bagh-500 rounded-full transition-all duration-300 ${
+                        isActive(item.href)
+                          ? 'w-full opacity-100'
+                          : 'w-0 opacity-0 group-hover:w-full group-hover:opacity-100'
+                      }`} />
+                    </Link>
+                  )
+                )}
 
                 {/* Services dropdown */}
                 <div className="relative" ref={dropdownRef}>
@@ -181,20 +195,33 @@ const Header = () => {
           <div className="relative rounded-2xl overflow-hidden">
             <div className="absolute inset-0 bg-white/80 backdrop-blur-xl border border-white/40 shadow-xl shadow-bagh-900/10" />
             <nav className="relative px-2 py-3 space-y-0.5">
-              {navLinks.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className={`block px-4 py-3 rounded-xl text-sm font-light transition-colors duration-200 ${
-                    isActive(item.href)
-                      ? 'text-bagh-600 bg-bagh-50/60'
-                      : 'text-bagh-800 hover:text-bagh-600 hover:bg-bagh-50/40'
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
+              {navLinks.map((item) =>
+                item.external ? (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-4 py-3 rounded-xl text-sm font-light transition-colors duration-200 text-bagh-800 hover:text-bagh-600 hover:bg-bagh-50/40"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className={`block px-4 py-3 rounded-xl text-sm font-light transition-colors duration-200 ${
+                      isActive(item.href)
+                        ? 'text-bagh-600 bg-bagh-50/60'
+                        : 'text-bagh-800 hover:text-bagh-600 hover:bg-bagh-50/40'
+                    }`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                )
+              )}
 
               <button
                 className="w-full text-left px-4 py-3 rounded-xl text-sm font-light text-bagh-800 hover:text-bagh-600 hover:bg-bagh-50/40 transition-colors duration-200 flex items-center gap-1.5"
