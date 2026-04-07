@@ -3,7 +3,6 @@
   "template": "web",
   "image": "/assets/availly/availly-dashboard.png",
   "heroImage": "/assets/availly/availly-landing-page.png",
-  "websiteUrl": "https://availly.me",
   "technologies": ["PHP Laravel", "React", "PostgreSQL", "Tailwind CSS", "Railway", "Supabase", "Resend", "OpenRouter API", "Google API", "CalDAV API"],
   "features": ["Calendar view", "Availability management", "Shareable booking links", "Responsive interface", "Calendar integrations", "Privacy-first", "AI scheduling", "Multi-timezone support"],
   "gallery": [

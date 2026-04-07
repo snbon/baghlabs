@@ -1,28 +1,28 @@
 [
   {
     "id": 1,
-    "name": "Sarah Chen",
-    "role": "Freelance Consultant",
-    "company": "Digital Strategy Solutions",
-    "content": "Availly transformed how I manage client bookings. Exactly what I needed , powerful but simple. BaghLabs delivered beyond expectations.",
+    "name": "Suraj",
+    "role": "Zaakvoerder",
+    "company": "Delice Brugge",
+    "content": "Baghlabs bouwde een hele systeem van 0 voor ons - niet alleen hebben we een mooie web aanwezigheid maar ook automatisch systeem voor grote groep boekingen en dat vooral bespaart ons enorm veel tijd.",
     "rating": 5,
     "avatar": ""
   },
   {
     "id": 2,
-    "name": "Thomas Verhaeghe",
+    "name": "S.N",
     "role": "Operations Manager",
-    "company": "ShiftEnd",
-    "content": "BaghLabs understood our problem from day one. The ShiftEnd platform has saved our team hours every week. Clean, fast and reliable.",
+    "company": "Availly",
+    "content": "Availly transformed how I manage client bookings. Exactly what I needed , simple yet powerful. It certainly has made my current flow lighter",
     "rating": 5,
     "avatar": ""
   },
   {
     "id": 3,
-    "name": "Lena Devos",
+    "name": "O.M",
     "role": "Creative Director",
     "company": "Blurry Vintage",
-    "content": "The visual storytelling BaghLabs delivered for Blurry Vintage was exactly on point. They captured our brand effortlessly.",
+    "content": "The visual storytelling that was delivered for Blurry Vintage was exactly on point. It captured our brand effortlessly.",
     "rating": 5,
     "avatar": ""
   }

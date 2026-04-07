@@ -3,7 +3,7 @@
   "template": "web",
   "image": "/assets/shiftend/shiftend-landingpage.png",
   "heroImage": "/assets/shiftend/shiftend-report.png",
-  "websiteUrl": "https://shiftend.be",
+  "websiteUrl": null,
   "technologies": ["PHP", "Laravel", "JavaScript", "Vue.js", "PostgreSQL", "Railway", "Supabase", "Mailtrap"],
   "features": ["Multi location support", "Digital sales logbook", "Multilingual (NL/FR/EN)", "Team management", "Compliance automation", "Digital signatures", "Audit trails", "Demo phase"],
   "gallery": [
