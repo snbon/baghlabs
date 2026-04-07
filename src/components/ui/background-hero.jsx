@@ -10,16 +10,16 @@ const BackgroundHero = () => {
 
   // Entire background fades out
   const opacity = useTransform(scrollY, [0, 600], [1, 0])
-  // Dots drift upward at 10% scroll speed , subtle parallax depth
+  // Dots drift upward at 10% scroll speed, subtle parallax depth
   const dotsY = useTransform(scrollY, [0, 1000], [0, -80])
-  // Glow drifts upward faster , stronger parallax depth
+  // Glow drifts upward faster, stronger parallax depth
   const glowY = useTransform(scrollY, [0, 1000], [0, -200])
 
   return (
     <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
       <div className="absolute inset-0 bg-white" />
 
-      {/* Noise dots , parallax layer 1 */}
+      {/* Noise dots, parallax layer 1 */}
       <motion.div
         style={{ opacity, y: dotsY }}
         className="absolute inset-0"
@@ -34,7 +34,7 @@ const BackgroundHero = () => {
         />
       </motion.div>
 
-      {/* Yellow glow , parallax layer 2 (drifts faster for depth) */}
+      {/* Yellow glow, parallax layer 2 (drifts faster for depth) */}
       <motion.div
         style={{ opacity, y: glowY }}
         className="absolute inset-0"

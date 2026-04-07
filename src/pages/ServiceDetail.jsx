@@ -14,7 +14,7 @@ const ServiceDetail = () => {
   const { t: tCommon } = useTranslation('common')
   const { t: tCases } = useTranslation('cases')
 
-  // Parallax , dots drift upward subtly as user scrolls
+  // Parallax, dots drift upward subtly as user scrolls
   const { scrollY } = useScroll()
   const dotsY = useTransform(scrollY, [0, 2000], [0, -80])
 

@@ -104,7 +104,7 @@ const Contact = () => {
 
   return (
     <div>
-      {/* Hero , noise dots only, no yellow glow */}
+      {/* Hero, noise dots only, no yellow glow */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 -z-10 pointer-events-none">
           <div className="absolute inset-0 bg-white" />

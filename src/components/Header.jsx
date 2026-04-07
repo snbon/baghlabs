@@ -173,7 +173,7 @@ const Header = () => {
         </div>
       </header>
 
-      {/* Mobile menu , slide down from navbar */}
+      {/* Mobile menu, slide down from navbar */}
       <div className={`md:hidden fixed top-0 inset-x-0 z-[9997] transition-all duration-300 ease-in-out ${
         isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'
       }`}>

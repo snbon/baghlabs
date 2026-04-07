@@ -15,7 +15,7 @@ const BackgroundPage = () => {
       {/* White base */}
       <div className="absolute inset-0 bg-white" />
 
-      {/* Grid , static, masked to fade-in at top, fade-out at bottom */}
+      {/* Grid, static, masked to fade-in at top, fade-out at bottom */}
       <div
         className="absolute inset-0"
         style={{
@@ -29,7 +29,7 @@ const BackgroundPage = () => {
         }}
       />
 
-      {/* Floating accent , parallax, gives depth without being distracting */}
+      {/* Floating accent, parallax, gives depth without being distracting */}
       <motion.div
         style={{ y: accentY }}
         className="absolute inset-0 pointer-events-none"

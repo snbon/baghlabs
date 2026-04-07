@@ -38,21 +38,21 @@
   "delicebrugge": {
     "name": "Délice Brugge",
     "tagline": "From zero to a complete digital experience for a Bruges restaurant.",
-    "description": "For Délice Brugge we built the entire website from the ground up , from color palette and web design to a custom multilingual website with an integrated group booking system and pre-ordering menu.",
-    "longDescription": "Délice Brugge needed a full digital presence: a website that reflects the atmosphere of the restaurant and guides visitors smoothly through the booking process. We took this on from A to Z: color palette, web design, development and the build of a custom group booking flow where guests can compose their menu in advance , in 4 languages.",
+    "description": "For Délice Brugge we built the entire website from the ground up, from color palette and web design to a custom multilingual website with an integrated group booking system and pre-ordering menu.",
+    "longDescription": "Délice Brugge needed a full digital presence: a website that reflects the atmosphere of the restaurant and guides visitors smoothly through the booking process. We took this on from A to Z: color palette, web design, development and the build of a custom group booking flow where guests can compose their menu in advance, in 4 languages.",
     "challenge": "Building a complete website that is both visually compelling and functional for group bookings of 6+ guests, with per-person pre-ordering in NL, EN, FR and DE.",
-    "solution": "Fully custom Next.js website , from color palette and web design to development. Includes an integrated group booking system, per-guest pre-ordering menu flow and full multilingual support across 4 languages.",
+    "solution": "Fully custom Next.js website, from color palette and web design to development. Includes an integrated group booking system, per-guest pre-ordering menu flow and full multilingual support across 4 languages.",
     "category": "Hospitality",
     "industry": "Restaurant & Foodservice",
     "client": "Délice Brugge"
   },
   "calvarychurch": {
-    "name": "De Pelgrim , Calvary Chapel",
+    "name": "De Pelgrim, Calvary Chapel",
     "tagline": "Complete website build with bilingual CMS for independent management.",
-    "description": "For De Pelgrim Calvary Chapel we built the entire website from the ground up , from color palette and web design to a Next.js website with Sanity CMS, fully bilingual (NL/EN) so the team can manage everything independently.",
-    "longDescription": "De Pelgrim needed a fresh, modern website that reflects the community and is easy to manage by a non-technical team. We took on the full journey: the design of the color palette and visual identity of the website, the UI/UX, and the complete technical build on Next.js with Sanity CMS as the content layer , bilingual, structured and intuitive.",
-    "challenge": "Building a complete website for a church community, with a custom visual identity, and a bilingual CMS that can be managed independently by a non-technical team , including events, Bible verses and ministry pages.",
-    "solution": "Fully custom Next.js website , from color palette and web design to CMS architecture. Sanity CMS with structured bilingual content types (NL/EN), live preview and a simple editing interface for the church team.",
+    "description": "For De Pelgrim Calvary Chapel we built the entire website from the ground up, from color palette and web design to a Next.js website with Sanity CMS, fully bilingual (NL/EN) so the team can manage everything independently.",
+    "longDescription": "De Pelgrim needed a fresh, modern website that reflects the community and is easy to manage by a non-technical team. We took on the full journey: the design of the color palette and visual identity of the website, the UI/UX, and the complete technical build on Next.js with Sanity CMS as the content layer, bilingual, structured and intuitive.",
+    "challenge": "Building a complete website for a church community, with a custom visual identity, and a bilingual CMS that can be managed independently by a non-technical team, including events, Bible verses and ministry pages.",
+    "solution": "Fully custom Next.js website, from color palette and web design to CMS architecture. Sanity CMS with structured bilingual content types (NL/EN), live preview and a simple editing interface for the church team.",
     "category": "Non-profit",
     "industry": "Religion & Community",
     "client": "De Pelgrim Calvary Chapel Oostende"
@@ -84,7 +84,7 @@
   "ic": {
     "name": "IC GlowUp Skyhome",
     "tagline": "From vision to brand identity.",
-    "description": "Innovative Commerce , Product design, brand identity",
+    "description": "Innovative Commerce, Product design, brand identity",
     "challenge": "The challenge lay in giving life to ideas, creating distinct identities for both the main brand and its sub-brands without the physical presence of products.",
     "solution": "Our approach combined in-depth research, immersive brainstorming, and meticulous design execution to birth brands that stand as pillars of Innovative Commerce's mission.",
     "year": "2023",
@@ -93,7 +93,7 @@
   "rebelieve": {
     "name": "Rebelieve by Nathan Nuyts",
     "tagline": "Empowering movement through imagery.",
-    "description": "Rebelieve isn't just a clothing brand , it's a rallying cry for self-belief and empowerment.",
+    "description": "Rebelieve isn't just a clothing brand, it's a rallying cry for self-belief and empowerment.",
     "challenge": "The challenge lay in translating Nathan's personal journey and ethos into compelling visuals, fusing authenticity and aspiration seamlessly.",
     "solution": "We crafted a digital space that welcomed individuals on their unique journeys through immersive online ads and striking visuals.",
     "year": "2023",

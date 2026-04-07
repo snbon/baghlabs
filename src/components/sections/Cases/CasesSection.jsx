@@ -22,7 +22,7 @@ const CasesSection = () => {
             Our Cases
           </h2>
           <p className="text-base-robotic md:text-lg-robotic text-gray-700 max-w-2xl mx-auto leading-relaxed">
-            We don't just build ideas , we launch them.
+            We don't just build ideas, we launch them.
           </p>
         </div>
 
