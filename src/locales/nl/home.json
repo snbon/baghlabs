@@ -1,12 +1,12 @@
 {
   "hero": {
     "morphingPhrases": ["Van Concept", "tot Product", "tot Impact"],
-    "subtitle": "Een software studio toegewijd aan het omzetten van gedurfde ideeën in impactvolle digitale producten. We bouwen software, merken en campagnes voor ambitieuze bedrijven.",
+    "subtitle": "Wij vertalen jouw visie naar digitale producten met impact. Wij creëren software, merken en campagnes voor ondernemingen met ambitie.",
     "cta": "Let's go!"
   },
   "about": {
     "heading": "Uw digitale partner",
-    "intro": "BaghLabs is een software studio actief in Vlaanderen. We werken met KMO's, startups en scale-ups die hun digitale aanwezigheid willen versterken , van maatwerk software tot merkidentiteit en performante marketingcampagnes.",
+    "intro": "BaghLabs is een software studio actief in Vlaanderen. We werken met KMO's, startups en scale-ups die hun digitale aanwezigheid willen versterken , van custom software tot merkidentiteit en performante marketingcampagnes.",
     "servicesLabel": "Onze Diensten",
     "services": {
       "development": {
