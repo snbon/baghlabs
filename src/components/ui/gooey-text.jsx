@@ -1,7 +1,17 @@
 import * as React from 'react'
 import { cn } from '@/lib/utils'
 
+// iOS/iPadOS Safari doesn't render SVG feColorMatrix filters correctly
+function checkNeedsFallback() {
+  if (typeof navigator === 'undefined') return false
+  return (
+    /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+  )
+}
+
 export function GooeyText({ texts, morphTime = 1, cooldownTime = 0.25, className, textClassName }) {
+  const [needsFallback] = React.useState(checkNeedsFallback)
   const text1Ref = React.useRef(null)
   const text2Ref = React.useRef(null)
 
@@ -12,23 +22,36 @@ export function GooeyText({ texts, morphTime = 1, cooldownTime = 0.25, className
     let cooldown = cooldownTime
     let animFrameId
 
-    const setMorph = (fraction) => {
-      if (text1Ref.current && text2Ref.current) {
-        text2Ref.current.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`
-        text2Ref.current.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`
-        fraction = 1 - fraction
-        text1Ref.current.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`
-        text1Ref.current.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`
-      }
-    }
+    const setMorph = needsFallback
+      ? (fraction) => {
+          if (!text1Ref.current || !text2Ref.current) return
+          // Premium CSS fallback: blur + opacity + vertical float
+          text2Ref.current.style.filter = `blur(${(1 - fraction) * 6}px)`
+          text2Ref.current.style.opacity = Math.pow(fraction, 0.4)
+          text2Ref.current.style.transform = `translateY(${(1 - fraction) * 10}px)`
+
+          text1Ref.current.style.filter = `blur(${fraction * 6}px)`
+          text1Ref.current.style.opacity = Math.pow(1 - fraction, 0.4)
+          text1Ref.current.style.transform = `translateY(${-fraction * 10}px)`
+        }
+      : (fraction) => {
+          if (!text1Ref.current || !text2Ref.current) return
+          text2Ref.current.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`
+          text2Ref.current.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`
+          fraction = 1 - fraction
+          text1Ref.current.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`
+          text1Ref.current.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`
+        }
 
     const doCooldown = () => {
       morph = 0
       if (text1Ref.current && text2Ref.current) {
         text2Ref.current.style.filter = ''
         text2Ref.current.style.opacity = '100%'
+        text2Ref.current.style.transform = ''
         text1Ref.current.style.filter = ''
         text1Ref.current.style.opacity = '0%'
+        text1Ref.current.style.transform = ''
       }
     }
 
@@ -66,19 +89,24 @@ export function GooeyText({ texts, morphTime = 1, cooldownTime = 0.25, className
     animate()
 
     return () => cancelAnimationFrame(animFrameId)
-  }, [texts, morphTime, cooldownTime])
+  }, [texts, morphTime, cooldownTime, needsFallback])
 
   return (
     <div className={cn('relative', className)}>
-      <svg className="absolute h-0 w-0" aria-hidden="true" focusable="false">
-        <defs>
-          <filter id="threshold">
-            <feColorMatrix in="SourceGraphic" type="matrix"
-              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 255 -140" />
-          </filter>
-        </defs>
-      </svg>
-      <div className="flex items-center justify-center" style={{ filter: 'url(#threshold)' }}>
+      {!needsFallback && (
+        <svg className="absolute h-0 w-0" aria-hidden="true" focusable="false">
+          <defs>
+            <filter id="threshold">
+              <feColorMatrix in="SourceGraphic" type="matrix"
+                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 255 -140" />
+            </filter>
+          </defs>
+        </svg>
+      )}
+      <div
+        className="flex items-center justify-center"
+        style={needsFallback ? undefined : { filter: 'url(#threshold)' }}
+      >
         <span ref={text1Ref} className={cn('absolute inline-block select-none text-center', textClassName)} />
         <span ref={text2Ref} className={cn('absolute inline-block select-none text-center', textClassName)} />
       </div>

@@ -1,6 +1,8 @@
 import { CheckIcon } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 const Pricing = ({ plans, heading }) => {
+  const { t } = useTranslation('common')
   return (
     <section className="flex flex-col items-center justify-center gap-20 w-[95%] mx-auto py-20 bg-background text-foreground">
       <div className="flex flex-col items-center gap-7 w-full">
@@ -57,7 +59,7 @@ const Pricing = ({ plans, heading }) => {
                       : 'bg-secondary text-secondary-foreground border border-[#0000001a] hover:bg-bagh-50'
                   }`}
                 >
-                  Book a call
+                  {t('cta.bookCall')}
                 </a>
               </div>
             </div>

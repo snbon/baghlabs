@@ -11,15 +11,20 @@
     "description": "A software studio specialising in software development, branding and performance marketing for ambitious businesses.",
     "quickLinks": "Quick Links",
     "getInTouch": "Get in Touch",
-    "readyText": "Ready to bring your idea to life?",
-    "workWithUs": "Get in touch",
-    "copyright": "© 2025 BaghLabs. All rights reserved.",
+    "readyText": "Ready to bring your concept to life.",
+    "workWithUs": "Talk over a coffee?",
+    "copyright": "© 2026 BaghLabs. All rights reserved.",
     "links": {
       "home": "Home",
       "cases": "Our Cases",
       "services": "Services",
       "contact": "Contact"
     }
+  },
+  "sections": {
+    "relatedWork": "Related Work",
+    "gallery": "Gallery",
+    "moreWork": "More Work"
   },
   "cta": {
     "connectWithUs": "Get in touch",

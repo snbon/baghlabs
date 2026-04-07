@@ -4,7 +4,7 @@
     "heroDescription": "Heeft u een project in gedachten? Een idee dat u wilt uitwerken? Of gewoon een vraag? Vul het formulier in en we nemen zo snel mogelijk contact met u op.",
     "heroNote": "Actief in Brussel, Gent en de rest van Vlaanderen",
     "formTitle": "Stuur ons een bericht",
-    "formDescription": "Vertel ons over uw project of vraag. We reageren binnen 1-2 werkdagen."
+    "formDescription": "Vertel ons over jouw project of vraag. We reageren binnen 1-2 werkdagen."
   },
   "form": {
     "name": "Volledige naam",
@@ -17,11 +17,11 @@
     "phonePlaceholder": "+32 4XX XX XX XX",
     "services": "Geïnteresseerd in",
     "inquiry": "Uw bericht",
-    "inquiryPlaceholder": "Vertel ons over uw project, doelstellingen en vragen...",
+    "inquiryPlaceholder": "Vertel ons over jouw project, doelstellingen en vragen...",
     "submit": "Verstuur bericht",
     "submitting": "Verzenden...",
     "success": "Bericht verzonden!",
-    "successMessage": "Bedankt voor uw bericht. We nemen binnen 1-2 werkdagen contact met u op.",
+    "successMessage": "Bedankt voor jouw bericht. We nemen binnen 1-2 werkdagen contact met u op.",
     "error": "Er is iets misgegaan. Probeer het opnieuw of email ons op baghstudios@gmail.com.",
     "recaptchaError": "Bevestig dat u geen robot bent.",
     "back": "Terug",
@@ -33,13 +33,13 @@
     "budget": "Budget",
     "message": "Bericht",
     "contactTitle": "Over u",
-    "contactDesc": "Laten we beginnen met uw contactgegevens.",
+    "contactDesc": "Laten we beginnen met jouw contactgegevens.",
     "servicesTitle": "Geïnteresseerd in",
     "servicesDesc": "Selecteer de diensten die u interesseren. U kunt meerdere opties kiezen.",
     "budgetTitle": "Budget & timing",
-    "budgetDesc": "Geef ons een idee van uw budget en wanneer u wilt starten.",
+    "budgetDesc": "Geef ons een idee van jouw budget en wanneer u wilt starten.",
     "messageTitle": "Uw bericht",
-    "messageDesc": "Vertel ons over uw project of vraag. We reageren binnen 1-2 werkdagen."
+    "messageDesc": "Vertel ons over jouw project of vraag. We reageren binnen 1-2 werkdagen."
   },
   "budget": {
     "budgetLabel": "Geschat budget",

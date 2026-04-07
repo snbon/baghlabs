@@ -247,7 +247,7 @@ const CaseDetail = () => {
         {/* Gallery */}
         {caseData.gallery?.length > 0 && (
           <div className="container-custom max-w-6xl mb-16">
-            <h2 className="text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-8">Gallery</h2>
+            <h2 className="text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-8">{tCommon('sections.gallery')}</h2>
             <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
               {caseData.gallery.map((img, i) => (
                 <motion.button
@@ -355,7 +355,7 @@ const CaseDetail = () => {
       {otherCases.length > 0 && (
         <section className="py-20">
           <div className="container-custom mb-8">
-            <h2 className="text-3xl md:text-4xl font-semibold text-foreground">More Work</h2>
+            <h2 className="text-3xl md:text-4xl font-semibold text-foreground">{tCommon('sections.moreWork')}</h2>
           </div>
           <CaseGallery cases={otherCases} readMoreLabel={tCommon('cta.readMore')} basePath={basePath} />
         </section>

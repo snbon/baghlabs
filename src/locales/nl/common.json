@@ -11,9 +11,9 @@
     "description": "Een software studio gespecialiseerd in software development, branding en performance marketing voor ambitieuze bedrijven.",
     "quickLinks": "Snelle Links",
     "getInTouch": "Contact",
-    "readyText": "Klaar om uw idee tot leven te brengen?",
-    "workWithUs": "Neem contact op",
-    "copyright": "© 2025 BaghLabs. Alle rechten voorbehouden.",
+    "readyText": "Klaar om jouw concept tot leven te brengen.",
+    "workWithUs": "Koffietje?",
+    "copyright": "© 2026 BaghLabs. Alle rechten voorbehouden.",
     "links": {
       "home": "Home",
       "cases": "Onze Cases",
@@ -21,10 +21,15 @@
       "contact": "Contact"
     }
   },
+  "sections": {
+    "relatedWork": "Gerelateerd werk",
+    "gallery": "Galerij",
+    "moreWork": "Meer werk"
+  },
   "cta": {
-    "connectWithUs": "Neem contact op",
+    "connectWithUs": "Let's connect!",
     "learnMore": "Meer weten",
-    "getInTouch": "Neem contact op",
+    "getInTouch": "Contact",
     "visitWebsite": "Bezoek website",
     "caseDetail": "Case detail",
     "comingSoon": "Binnenkort",

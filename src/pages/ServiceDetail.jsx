@@ -114,7 +114,7 @@ const ServiceDetail = () => {
       {relatedCases.length > 0 && (
         <section className="py-20">
           <div className="container-custom mb-8">
-            <h2 className="text-3xl md:text-4xl font-semibold text-foreground">Related Work</h2>
+            <h2 className="text-3xl md:text-4xl font-semibold text-foreground">{tCommon('sections.relatedWork')}</h2>
           </div>
           <CaseGallery
             cases={relatedCases}
