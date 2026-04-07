@@ -77,7 +77,7 @@ const Cases = () => {
         </section>
       </div>
 
-      {/* Footer outside the grid wrapper — grid fades out, dots fade in */}
+      {/* Footer outside the grid wrapper , grid fades out, dots fade in */}
       <CTASection />
     </div>
   )

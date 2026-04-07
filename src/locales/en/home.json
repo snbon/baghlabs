@@ -6,7 +6,7 @@
   },
   "about": {
     "heading": "Your digital partner",
-    "intro": "BaghLabs is a software studio active in Flanders. We work with SMEs, startups and scale-ups looking to strengthen their digital presence — from custom software to brand identity and performance marketing campaigns.",
+    "intro": "BaghLabs is a software studio active in Flanders. We work with SMEs, startups and scale-ups looking to strengthen their digital presence , from custom software to brand identity and performance marketing campaigns.",
     "servicesLabel": "Our Services",
     "services": {
       "development": {
@@ -36,21 +36,21 @@
     "reasons": [
       {
         "title": "We solve real problems",
-        "description": "Not imagined ones. We start with the actual pain points of your business and build solutions that address them directly — no feature bloat, no unnecessary complexity."
+        "description": "Not imagined ones. We start with the actual pain points of your business and build solutions that address them directly , no feature bloat, no unnecessary complexity."
       },
       {
         "title": "Simplicity is our superpower",
-        "description": "The best solutions are invisible. We translate complex business processes into intuitive products your team can use without training — and your customers won't forget."
+        "description": "The best solutions are invisible. We translate complex business processes into intuitive products your team can use without training , and your customers won't forget."
       },
       {
         "title": "Results, not excuses",
-        "description": "We measure our success by your results. More leads, better conversions, a stronger brand — that's what drives us. No cookie-cutter templates, no half measures."
+        "description": "We measure our success by your results. More leads, better conversions, a stronger brand , that's what drives us. No cookie-cutter templates, no half measures."
       }
     ]
   },
   "ctaSection": {
     "heading": "Ready to build something together?",
-    "description": "From custom software to a complete brand identity — BaghLabs is your digital partner. Let's get acquainted.",
+    "description": "From custom software to a complete brand identity , BaghLabs is your digital partner. Let's get acquainted.",
     "note": "Active in Brussels, Ghent and across Flanders.",
     "cta": "Get in touch"
   }

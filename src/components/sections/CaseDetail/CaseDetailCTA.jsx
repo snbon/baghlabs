@@ -11,7 +11,7 @@ const CaseDetailCTA = () => {
             From Concept to Product to Impact
           </h2>
           <p className="text-base-robotic md:text-lg-robotic text-gray-200 max-w-3xl mx-auto mb-8 leading-relaxed">
-            Whether you're here to explore our products or looking for a digital partner to bring your idea to life — you're in the right place.
+            Whether you're here to explore our products or looking for a digital partner to bring your idea to life , you're in the right place.
           </p>
           <p className="text-lg-robotic md:text-xl-robotic text-white mb-8 font-medium">
             We are currently not taking on new projects, but we are still allowed to chat over a coffee.

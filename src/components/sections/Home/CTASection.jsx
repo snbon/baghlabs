@@ -25,7 +25,7 @@ const toggleLanguage = () => {
 
   return (
     <div className="relative w-full flex flex-col bg-white overflow-hidden">
-      {/* Noise dots only — fade in very gradually from top, no colour cast */}
+      {/* Noise dots only , fade in very gradually from top, no colour cast */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{

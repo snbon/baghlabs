@@ -38,21 +38,21 @@
   "delicebrugge": {
     "name": "Délice Brugge",
     "tagline": "Van nul naar een complete digitale ervaring voor een Brugs restaurant.",
-    "description": "Voor Délice Brugge bouwden we de volledige website van de grond af — van kleurpalet en webdesign tot een custom multilinguale website met geïntegreerd groepsboekingssysteem en pre-ordering menu.",
-    "longDescription": "Délice Brugge had nood aan een volledige digitale aanwezigheid: een website die de sfeer van het restaurant weerspiegelt én bezoekers vlot door het boekingsproces leidt. We namen dit van A tot Z op: merkkleurenpalettering, webdesign, development én de bouw van een op maat gemaakte groepsboekingsflow waarbij gasten hun menu op voorhand kunnen samenstellen — in 4 talen.",
+    "description": "Voor Délice Brugge bouwden we de volledige website van de grond af , van kleurpalet en webdesign tot een custom multilinguale website met geïntegreerd groepsboekingssysteem en pre-ordering menu.",
+    "longDescription": "Délice Brugge had nood aan een volledige digitale aanwezigheid: een website die de sfeer van het restaurant weerspiegelt én bezoekers vlot door het boekingsproces leidt. We namen dit van A tot Z op: merkkleurenpalettering, webdesign, development én de bouw van een op maat gemaakte groepsboekingsflow waarbij gasten hun menu op voorhand kunnen samenstellen , in 4 talen.",
     "challenge": "Een complete website bouwen die zowel visueel aantrekkelijk is als functioneel voor groepsboekingen van 6+ gasten, met pre-ordering per persoon in NL, EN, FR en DE.",
-    "solution": "Volledig custom Next.js website — van kleurpalet en webdesign tot development. Inclusief geïntegreerd groepsboekingssysteem, pre-ordering menu flow per gast en volledige meertaligheid in 4 talen.",
+    "solution": "Volledig custom Next.js website , van kleurpalet en webdesign tot development. Inclusief geïntegreerd groepsboekingssysteem, pre-ordering menu flow per gast en volledige meertaligheid in 4 talen.",
     "category": "Horeca",
     "industry": "Restaurant & Foodservice",
     "client": "Délice Brugge"
   },
   "calvarychurch": {
-    "name": "De Pelgrim — Calvary Chapel",
+    "name": "De Pelgrim , Calvary Chapel",
     "tagline": "Complete websitebouw met tweetalig CMS voor onafhankelijk beheer.",
-    "description": "Voor De Pelgrim Calvary Chapel bouwden we de volledige website van de grond af — van kleurpalet en webdesign tot een Next.js website met Sanity CMS, volledig tweetalig (NL/EN) zodat het team zelfstandig alles kan beheren.",
-    "longDescription": "De Pelgrim had nood aan een frisse, moderne website die de gemeenschap weerspiegelt én eenvoudig te beheren is door een non-technisch team. We namen het volledige traject op: het ontwerp van het kleurpalet en de visuele identiteit van de website, de UI/UX, en de volledige technische bouw op Next.js met Sanity CMS als contentlaag — tweetalig, gestructureerd en intuïtief.",
-    "challenge": "Een complete website bouwen voor een kerkgemeenschap, met een visuele identiteit op maat, én een tweetalig CMS dat door een non-technisch team zelfstandig beheerd kan worden — inclusief events, bijbelteksten en ministerie-pagina's.",
-    "solution": "Volledig custom Next.js website — van kleurpalet en webdesign tot CMS-architectuur. Sanity CMS met gestructureerde tweetalige inhoudstypes (NL/EN), live preview en eenvoudige bewerkingsinterface voor het kerkteam.",
+    "description": "Voor De Pelgrim Calvary Chapel bouwden we de volledige website van de grond af , van kleurpalet en webdesign tot een Next.js website met Sanity CMS, volledig tweetalig (NL/EN) zodat het team zelfstandig alles kan beheren.",
+    "longDescription": "De Pelgrim had nood aan een frisse, moderne website die de gemeenschap weerspiegelt én eenvoudig te beheren is door een non-technisch team. We namen het volledige traject op: het ontwerp van het kleurpalet en de visuele identiteit van de website, de UI/UX, en de volledige technische bouw op Next.js met Sanity CMS als contentlaag , tweetalig, gestructureerd en intuïtief.",
+    "challenge": "Een complete website bouwen voor een kerkgemeenschap, met een visuele identiteit op maat, én een tweetalig CMS dat door een non-technisch team zelfstandig beheerd kan worden , inclusief events, bijbelteksten en ministerie-pagina's.",
+    "solution": "Volledig custom Next.js website , van kleurpalet en webdesign tot CMS-architectuur. Sanity CMS met gestructureerde tweetalige inhoudstypes (NL/EN), live preview en eenvoudige bewerkingsinterface voor het kerkteam.",
     "category": "Non-profit",
     "industry": "Religie & Gemeenschap",
     "client": "De Pelgrim Calvary Chapel Oostende"
@@ -66,7 +66,7 @@
   "blurry-vintage": {
     "name": "Blurry Vintage",
     "tagline": "Luxe tweedehands mode met een persoonlijk verhaal.",
-    "description": "Blurry staat bekend om het verkopen van luxe vintage kleding, maar ook voor een winkel met een persoonlijk verhaal. Het leven kan wazig worden, op zo veel manieren — maar we zeggen: maak je geen zorgen. Wij zorgen voor jou, je dromen & je stijl.",
+    "description": "Blurry staat bekend om het verkopen van luxe vintage kleding, maar ook voor een winkel met een persoonlijk verhaal. Het leven kan wazig worden, op zo veel manieren , maar we zeggen: maak je geen zorgen. Wij zorgen voor jou, je dromen & je stijl.",
     "challenge": "Het vertalen van de essentie van Blurry Vintage naar visuals vereiste een delicate balans tussen de luxe van vintage mode en de persoonlijke merkboodschap.",
     "solution": "Ons onderzoek naar Blurry Vintage begon met een diepe duik in de wereld van luxe vintage mode, waarbij we de delicate balans tussen weelde en toegankelijkheid ontdekten.",
     "year": "2023",
@@ -75,7 +75,7 @@
   "claymates": {
     "name": "ClayMates Ceramic Atelier",
     "tagline": "Verbinden via het ambacht van keramiek.",
-    "description": "ClayMates is meer dan een keramiekstudio — het is een gemeenschap, een plek om te ontspannen, los te komen van de stressvolle buitenwereld en opnieuw contact te maken met jezelf en de klei.",
+    "description": "ClayMates is meer dan een keramiekstudio , het is een gemeenschap, een plek om te ontspannen, los te komen van de stressvolle buitenwereld en opnieuw contact te maken met jezelf en de klei.",
     "challenge": "Het vastleggen van de tactiele schoonheid en serene sfeer van hun studio binnen een tweedimensionaal medium.",
     "solution": "Door middel van nauwgezette productfotografie legden we de ingewikkelde details en texturen van hun keramiek vast.",
     "year": "2023",
@@ -84,7 +84,7 @@
   "ic": {
     "name": "IC GlowUp Skyhome",
     "tagline": "Van visie naar merkidentiteit.",
-    "description": "Innovative Commerce — Productontwerp, merkidentiteit",
+    "description": "Innovative Commerce , Productontwerp, merkidentiteit",
     "challenge": "De uitdaging lag in het tot leven brengen van ideeën, het creëren van duidelijke identiteiten voor zowel het hoofdmerk als zijn sub-merken zonder de fysieke aanwezigheid van producten.",
     "solution": "We combineerden diepgaand onderzoek, intensief brainstormen en nauwgezette uitvoering om merken te creëren die als pijlers van de missie van Innovative Commerce staan.",
     "year": "2023",
@@ -93,7 +93,7 @@
   "rebelieve": {
     "name": "Rebelieve by Nathan Nuyts",
     "tagline": "Beweging empoweren door beeldtaal.",
-    "description": "Rebelieve is niet alleen een kledingmerk — het is een strijdkreet voor zelfvertrouwen en empowerment.",
+    "description": "Rebelieve is niet alleen een kledingmerk , het is een strijdkreet voor zelfvertrouwen en empowerment.",
     "challenge": "De uitdaging was het vertalen van Nathan's persoonlijke reis en ethos naar overtuigende visuals.",
     "solution": "We creëerden een digitale ruimte die mensen verwelkomt op hun unieke reizen met meeslepende online advertenties.",
     "year": "2023",
