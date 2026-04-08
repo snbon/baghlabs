@@ -108,6 +108,17 @@
     "year": "2022",
     "category": "Visual & Online Impact"
   },
+  "supportportal": {
+    "name": "Support Portal",
+    "tagline": "Streamlined client support, powered by transparency.",
+    "description": "A dedicated support portal for BaghLabs clients to submit tickets, track progress, and stay in the loop — all in one place.",
+    "longDescription": "Managing client requests across email threads and chat messages leads to lost context and delayed responses. We built the BaghLabs Support Portal to centralize communication: clients log in, create support tickets, and follow real-time progress — while our team syncs everything directly with GitHub Issues behind the scenes.",
+    "challenge": "Building a frictionless support experience that bridges the gap between client-facing simplicity and developer-facing workflow, without duplicating effort across platforms.",
+    "solution": "A clean Next.js portal with Supabase authentication and database, integrated with the GitHub API so every client ticket automatically becomes a trackable issue in our development workflow.",
+    "category": "Client Services",
+    "industry": "Software & Technology",
+    "client": "BaghLabs Clients"
+  },
   "poland-invest": {
     "name": "Poland Invest ZEN",
     "tagline": "Investing in a visionary future.",

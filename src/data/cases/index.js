@@ -9,8 +9,10 @@ import ic from './ic.json'
 import rebelieve from './rebelieve.json'
 import yokoso from './yokoso.json'
 import polandInvest from './poland-invest.json'
+import supportportal from './supportportal.json'
 
 export const cases = [
+  supportportal,
   availly,
   shiftend,
   delicebrugge,

@@ -1,0 +1,37 @@
+{
+  "id": "supportportal",
+  "template": "web",
+  "image": "/assets/supportportal/login.png",
+  "heroImage": "/assets/supportportal/login.png",
+  "websiteUrl": "https://support.baghlabs.com",
+  "technologies": ["Next.js", "GitHub API", "Supabase", "Tailwind CSS"],
+  "features": ["Ticket management", "Client invitations", "Secure authentication", "Real-time status updates", "GitHub integration", "Role-based access"],
+  "gallery": [
+    "/assets/supportportal/login.png",
+    "/assets/supportportal/ticket.png",
+    "/assets/supportportal/invite.png"
+  ],
+  "category": "client-services",
+  "relatedService": "development",
+  "comingSoon": false,
+  "process": {
+    "discovery": "Identifying pain points in client-agency communication and support workflows",
+    "design": "Clean, intuitive interface focused on fast ticket creation and transparent status tracking",
+    "development": "Next.js app with Supabase auth and database, GitHub API for issue syncing",
+    "testing": "End-to-end testing of ticket lifecycle from creation to resolution",
+    "deployment": "Deployed on Vercel with Supabase backend"
+  },
+  "results": [
+    "Centralized client communication",
+    "Seamless GitHub issue integration",
+    "Secure role-based client access",
+    "Real-time ticket status tracking",
+    "Reduced email back-and-forth",
+    "Self-service client onboarding via invites"
+  ],
+  "testimonial": {
+    "quote": "The support portal made it so much easier to track our requests and stay in the loop on progress. No more lost emails.",
+    "author": "Client Feedback",
+    "role": "BaghLabs Client"
+  }
+}

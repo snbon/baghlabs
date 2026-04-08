@@ -108,6 +108,17 @@
     "year": "2022",
     "category": "Visual & Online Impact"
   },
+  "supportportal": {
+    "name": "Support Portal",
+    "tagline": "Gestroomlijnde klantenondersteuning, gedreven door transparantie.",
+    "description": "Een speciaal supportportaal voor BaghLabs-klanten om tickets in te dienen, voortgang te volgen en op de hoogte te blijven — alles op één plek.",
+    "longDescription": "Het beheren van klantverzoeken via e-mailthreads en chatberichten leidt tot verloren context en vertraagde reacties. We bouwden het BaghLabs Support Portal om communicatie te centraliseren: klanten loggen in, maken supporttickets aan en volgen de voortgang in realtime — terwijl ons team alles achter de schermen synchroniseert met GitHub Issues.",
+    "challenge": "Een wrijvingsloze supportervaring bouwen die de kloof overbrugt tussen klantgerichte eenvoud en ontwikkelaarsgerichte workflow, zonder dubbel werk op meerdere platformen.",
+    "solution": "Een strak Next.js-portaal met Supabase-authenticatie en database, geïntegreerd met de GitHub API zodat elk klantticket automatisch een traceerbaar issue wordt in onze ontwikkelingsworkflow.",
+    "category": "Klantdiensten",
+    "industry": "Software & Technologie",
+    "client": "BaghLabs Klanten"
+  },
   "poland-invest": {
     "name": "Poland Invest ZEN",
     "tagline": "Investeren in een visionaire toekomst.",
