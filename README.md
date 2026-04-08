@@ -1,4 +1,4 @@
-# BaghLabs
+# Baghlabs
 
 **From Concept to Product to Impact**
 

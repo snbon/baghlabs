@@ -26,7 +26,7 @@ export default async (req, context) => {
       : 'Not specified'
 
     await resend.emails.send({
-      from: 'BaghLabs Contact <onboarding@resend.dev>',
+      from: 'Baghlabs Contact <onboarding@resend.dev>',
       to: 'sweaniz@icloud.com',
       replyTo: email,
       subject: `New contact from ${name}${company ? ` (${company})` : ''}`,

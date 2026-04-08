@@ -31,6 +31,7 @@ const CaseDetail = () => {
     category: t(`${caseData.id}.category`, { defaultValue: '' }),
     industry: t(`${caseData.id}.industry`, { defaultValue: '' }),
     client: t(`${caseData.id}.client`, { defaultValue: '' }),
+    results: t(`${caseData.id}.results`, { returnObjects: true, defaultValue: caseData.results || [] }),
   } : null
 
   const otherCases = caseData
@@ -118,19 +119,19 @@ const CaseDetail = () => {
           >
             {caseText.industry && (
               <div>
-                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">Industry</p>
+                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">{tCommon('sections.industry')}</p>
                 <p className="font-medium text-foreground">{caseText.industry}</p>
               </div>
             )}
             {caseText.client && (
               <div>
-                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">Client</p>
+                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">{tCommon('sections.client')}</p>
                 <p className="font-medium text-foreground">{caseText.client}</p>
               </div>
             )}
             {caseData.year && (
               <div>
-                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">Year</p>
+                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">{tCommon('sections.year')}</p>
                 <p className="font-medium text-foreground">{caseData.year}</p>
               </div>
             )}
@@ -145,7 +146,7 @@ const CaseDetail = () => {
               transition={{ duration: 0.6 }}
               className="mb-16"
             >
-              <h2 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wide">Technologies</h2>
+              <h2 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wide">{tCommon('sections.technologies')}</h2>
               <div className="flex flex-wrap gap-2">
                 {caseData.technologies.map((tech, i) => (
                   <Badge key={i} variant="secondary">{tech}</Badge>
@@ -162,7 +163,7 @@ const CaseDetail = () => {
               transition={{ duration: 0.6 }}
               className="mb-16"
             >
-              <h2 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wide">Services</h2>
+              <h2 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wide">{tCommon('sections.services')}</h2>
               <div className="flex flex-wrap gap-2">
                 {caseData.services.map((service, i) => (
                   <Badge key={i} variant="secondary">{service}</Badge>
@@ -181,7 +182,7 @@ const CaseDetail = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
                 >
-                  <h2 className="text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-4">Challenge</h2>
+                  <h2 className="text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-4">{tCommon('sections.challenge')}</h2>
                   <p className="text-foreground leading-relaxed">{caseText.challenge}</p>
                 </motion.div>
               )}
@@ -192,7 +193,7 @@ const CaseDetail = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.1 }}
                 >
-                  <h2 className="text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-4">Solution</h2>
+                  <h2 className="text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-4">{tCommon('sections.solution')}</h2>
                   <p className="text-foreground leading-relaxed">{caseText.solution}</p>
                 </motion.div>
               )}
@@ -200,7 +201,7 @@ const CaseDetail = () => {
           )}
 
           {/* Results for web cases */}
-          {caseData.template === 'web' && caseData.results?.length > 0 && (
+          {caseData.template === 'web' && (Array.isArray(caseText.results) ? caseText.results : caseData.results)?.length > 0 && (
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -208,9 +209,9 @@ const CaseDetail = () => {
               transition={{ duration: 0.6 }}
               className="mb-16"
             >
-              <h2 className="text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-6">Results</h2>
+              <h2 className="text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-6">{tCommon('sections.results')}</h2>
               <div className="grid md:grid-cols-2 gap-4">
-                {caseData.results.map((result, i) => (
+                {(Array.isArray(caseText.results) ? caseText.results : caseData.results).map((result, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-foreground mt-2 flex-shrink-0" />
                     <p className="text-foreground">{result}</p>
@@ -333,7 +334,7 @@ const CaseDetail = () => {
         {/* Videos for creative cases */}
         {caseData.template === 'creative' && caseData.videos?.length > 0 && (
           <div className="container-custom max-w-4xl mb-16">
-            <h2 className="text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-8">Video</h2>
+            <h2 className="text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-8">{tCommon('sections.video')}</h2>
             <div className="space-y-8">
               {caseData.videos.map((video, i) => (
                 <div key={i} className="aspect-video rounded-xl overflow-hidden">

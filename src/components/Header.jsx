@@ -96,7 +96,7 @@ const Header = () => {
                   <span className="text-white font-light text-sm">B</span>
                 </div>
                 <span className="text-lg font-light text-bagh-800 transition-colors duration-300">
-                  BaghLabs
+                  Baghlabs
                 </span>
               </Link>
 

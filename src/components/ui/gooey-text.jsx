@@ -76,7 +76,7 @@ export function GooeyText({ texts, morphTime = 1, cooldownTime = 0.25, className
     <div className={cn('relative', className)}>
       {/*
         Text lives inside the SVG so the feColorMatrix threshold filter applies
-        to native SVG elements — this works on iOS Safari, unlike CSS filter: url(#id)
+        to native SVG elements , this works on iOS Safari, unlike CSS filter: url(#id)
         on HTML elements which Safari has never supported reliably.
       */}
       <svg className="w-full h-full" style={{ overflow: 'visible' }} aria-hidden="true">

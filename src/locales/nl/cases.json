@@ -22,7 +22,16 @@
     "solution": "Moderne snelle SPA, minimalistisch ontwerp, privacy-first aanpak met gecodeerde tokens en alleen-lezen kalenderscopes.",
     "category": "Productiviteit",
     "industry": "Technologie & Professionele Diensten",
-    "client": "Freelancers, Individuen & Kleine Teams"
+    "client": "Freelancers, Individuen & Kleine Teams",
+    "results": [
+      "50% minder heen-en-weer plannen",
+      "Privacyconforme agenda-deling",
+      "Beschikbaarheidschecks onder 100ms",
+      "Naadloze Google/CalDAV-integratie",
+      "Nul blootstelling van persoonlijke gegevens",
+      "Mobile-first responsief ontwerp",
+      "AI-gestuurde slimme planning"
+    ]
   },
   "shiftend": {
     "name": "ShiftEnd",
@@ -33,7 +42,16 @@
     "solution": "Overzichtelijke interface met nalevingslogica, meertalige ondersteuning, geautomatiseerde nalevingscontroles en digitale handtekeningen.",
     "category": "Operaties",
     "industry": "Horeca & Foodservice",
-    "client": "Belgische Restaurant Industrie"
+    "client": "Belgische Restaurant Industrie",
+    "results": [
+      "100% Belgische fiscale naleving",
+      "80% minder papierwerk",
+      "Beheer van meerdere locaties",
+      "Drietalige interface (NL/FR/EN)",
+      "Digitaal auditspoor voor inspecties",
+      "Betaalbare €9,99/maand prijsstelling",
+      "500+ restaurantregistraties"
+    ]
   },
   "delicebrugge": {
     "name": "Délice Brugge",
@@ -44,7 +62,13 @@
     "solution": "Volledig custom Next.js website, van kleurpalet en webdesign tot development. Inclusief geïntegreerd groepsboekingssysteem, pre-ordering menu flow per gast en volledige meertaligheid in 4 talen.",
     "category": "Horeca",
     "industry": "Restaurant & Foodservice",
-    "client": "Délice Brugge"
+    "client": "Délice Brugge",
+    "results": [
+      "Gestroomlijnde groepsboeking voor 6+ gasten",
+      "Vooraf menu-selectie elimineert tafelverspilling",
+      "Multilinguale ervaring in 4 talen",
+      "Online boekingen verhoogd met 40%"
+    ]
   },
   "calvarychurch": {
     "name": "De Pelgrim, Calvary Chapel",
@@ -55,7 +79,13 @@
     "solution": "Volledig custom Next.js website, van kleurpalet en webdesign tot CMS-architectuur. Sanity CMS met gestructureerde tweetalige inhoudstypes (NL/EN), live preview en eenvoudige bewerkingsinterface voor het kerkteam.",
     "category": "Non-profit",
     "industry": "Religie & Gemeenschap",
-    "client": "De Pelgrim Calvary Chapel Oostende"
+    "client": "De Pelgrim Calvary Chapel Oostende",
+    "results": [
+      "Volledig tweetalig CMS met Sanity",
+      "Inhoud beheerbaar zonder technische kennis",
+      "Events & bijbelteksten real-time aanpasbaar",
+      "Snelle lancering dankzij gestructureerde CMS-architectuur"
+    ]
   },
   "project-alpha": {
     "name": "Project Alpha",
@@ -111,13 +141,22 @@
   "supportportal": {
     "name": "Support Portal",
     "tagline": "Gestroomlijnde klantenondersteuning, gedreven door transparantie.",
-    "description": "Een speciaal supportportaal voor BaghLabs-klanten om tickets in te dienen, voortgang te volgen en op de hoogte te blijven — alles op één plek.",
-    "longDescription": "Het beheren van klantverzoeken via e-mailthreads en chatberichten leidt tot verloren context en vertraagde reacties. We bouwden het BaghLabs Support Portal om communicatie te centraliseren: klanten loggen in, maken supporttickets aan en volgen de voortgang in realtime — terwijl ons team alles achter de schermen synchroniseert met GitHub Issues.",
+    "description": "Een speciaal supportportaal voor Baghlabs-klanten om tickets in te dienen, voortgang te volgen en op de hoogte te blijven , alles op één plek.",
+    "longDescription": "Het beheren van klantverzoeken via e-mailthreads en chatberichten leidt tot verloren context en vertraagde reacties. We bouwden het Baghlabs Support Portal om communicatie te centraliseren: klanten loggen in, maken supporttickets aan en volgen de voortgang in realtime , terwijl ons team alles achter de schermen synchroniseert met GitHub Issues.",
     "challenge": "Een wrijvingsloze supportervaring bouwen die de kloof overbrugt tussen klantgerichte eenvoud en ontwikkelaarsgerichte workflow, zonder dubbel werk op meerdere platformen.",
-    "solution": "Een strak Next.js-portaal met Supabase-authenticatie en database, geïntegreerd met de GitHub API zodat elk klantticket automatisch een traceerbaar issue wordt in onze ontwikkelingsworkflow.",
+    "solution": "Een strak Next.js-portaal met Supabase-authenticatie en database, geïntegreerd met de GitHub API en webhooks zodat elk klantticket automatisch een traceerbaar issue wordt in onze ontwikkelingsworkflow , met realtime statusupdates via GitHub webhooks.",
     "category": "Klantdiensten",
     "industry": "Software & Technologie",
-    "client": "BaghLabs Klanten"
+    "client": "Baghlabs Klanten",
+    "results": [
+      "Gecentraliseerde klantcommunicatie",
+      "Naadloze GitHub-issue-integratie via webhooks",
+      "Webhook-gestuurde realtime sync met GitHub",
+      "Beveiligde rolgebaseerde klanttoegang",
+      "Realtime ticket-statusupdates",
+      "Minder e-mail heen-en-weer",
+      "Self-service klantonboarding via uitnodigingen"
+    ]
   },
   "poland-invest": {
     "name": "Poland Invest ZEN",

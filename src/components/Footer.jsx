@@ -11,7 +11,7 @@ const Footer = () => {
               <div className="w-6 h-6 bg-bagh-800 rounded-md flex items-center justify-center">
                 <span className="text-white font-light text-sm">B</span>
               </div>
-              <span className="text-lg font-light text-bagh-800">BaghLabs</span>
+              <span className="text-lg font-light text-bagh-800">Baghlabs</span>
             </div>
             <p className="text-xs text-minimal leading-relaxed">
               From Concept to Product to Impact. A software studio dedicated to turning bold ideas into impactful digital products.
@@ -55,7 +55,7 @@ const Footer = () => {
         <div className="border-t border-bagh-200 mt-8 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
             <p className="text-xs text-bagh-400">
-              © 2026 BaghLabs. All rights reserved.
+              © 2026 Baghlabs. All rights reserved.
             </p>
             <p className="text-xs text-bagh-400">
               From Concept to Product to Impact

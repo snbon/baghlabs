@@ -22,7 +22,16 @@
     "solution": "Modern fast SPA, minimalist design, privacy-first approach with encrypted tokens and read-only calendar scopes.",
     "category": "Productivity",
     "industry": "Technology & Professional Services",
-    "client": "Freelancers, Individuals & Small Teams"
+    "client": "Freelancers, Individuals & Small Teams",
+    "results": [
+      "50% reduction in scheduling back-and-forth",
+      "Privacy-compliant calendar sharing",
+      "Sub-100ms availability checks",
+      "Seamless Google/CalDAV integration",
+      "Zero personal data exposure",
+      "Mobile-first responsive design",
+      "AI-powered smart scheduling"
+    ]
   },
   "shiftend": {
     "name": "ShiftEnd",
@@ -33,7 +42,16 @@
     "solution": "Clean guided interface with compliance logic, multilingual support, automated compliance checks, digital signatures, and audit trails.",
     "category": "Operations",
     "industry": "Hospitality & Food Service",
-    "client": "Belgian Restaurant Industry"
+    "client": "Belgian Restaurant Industry",
+    "results": [
+      "100% Belgian tax compliance",
+      "80% reduction in paperwork time",
+      "Multi-location management",
+      "Trilingual interface (NL/FR/EN)",
+      "Digital audit trail for inspections",
+      "Affordable €9.99/month pricing",
+      "500+ restaurant registrations"
+    ]
   },
   "delicebrugge": {
     "name": "Délice Brugge",
@@ -44,7 +62,13 @@
     "solution": "Fully custom Next.js website, from color palette and web design to development. Includes an integrated group booking system, per-guest pre-ordering menu flow and full multilingual support across 4 languages.",
     "category": "Hospitality",
     "industry": "Restaurant & Foodservice",
-    "client": "Délice Brugge"
+    "client": "Délice Brugge",
+    "results": [
+      "Streamlined group booking for 6+ guests",
+      "Pre-order menu selection eliminates table waste",
+      "Multilingual experience in 4 languages",
+      "Online bookings increased by 40%"
+    ]
   },
   "calvarychurch": {
     "name": "De Pelgrim, Calvary Chapel",
@@ -55,7 +79,13 @@
     "solution": "Fully custom Next.js website, from color palette and web design to CMS architecture. Sanity CMS with structured bilingual content types (NL/EN), live preview and a simple editing interface for the church team.",
     "category": "Non-profit",
     "industry": "Religion & Community",
-    "client": "De Pelgrim Calvary Chapel Oostende"
+    "client": "De Pelgrim Calvary Chapel Oostende",
+    "results": [
+      "Fully bilingual CMS with Sanity",
+      "Content manageable without technical knowledge",
+      "Events & Bible verses editable in real-time",
+      "Fast launch thanks to structured CMS architecture"
+    ]
   },
   "project-alpha": {
     "name": "Project Alpha",
@@ -111,13 +141,22 @@
   "supportportal": {
     "name": "Support Portal",
     "tagline": "Streamlined client support, powered by transparency.",
-    "description": "A dedicated support portal for BaghLabs clients to submit tickets, track progress, and stay in the loop — all in one place.",
-    "longDescription": "Managing client requests across email threads and chat messages leads to lost context and delayed responses. We built the BaghLabs Support Portal to centralize communication: clients log in, create support tickets, and follow real-time progress — while our team syncs everything directly with GitHub Issues behind the scenes.",
+    "description": "A dedicated support portal for Baghlabs clients to submit tickets, track progress, and stay in the loop , all in one place.",
+    "longDescription": "Managing client requests across email threads and chat messages leads to lost context and delayed responses. We built the Baghlabs Support Portal to centralize communication: clients log in, create support tickets, and follow real-time progress , while our team syncs everything directly with GitHub Issues behind the scenes.",
     "challenge": "Building a frictionless support experience that bridges the gap between client-facing simplicity and developer-facing workflow, without duplicating effort across platforms.",
-    "solution": "A clean Next.js portal with Supabase authentication and database, integrated with the GitHub API so every client ticket automatically becomes a trackable issue in our development workflow.",
+    "solution": "A clean Next.js portal with Supabase authentication and database, integrated with the GitHub API and webhooks so every client ticket automatically becomes a trackable issue in our development workflow , with real-time status updates pushed back via GitHub webhooks.",
     "category": "Client Services",
     "industry": "Software & Technology",
-    "client": "BaghLabs Clients"
+    "client": "Baghlabs Clients",
+    "results": [
+      "Centralized client communication",
+      "Seamless GitHub issue integration",
+      "Webhook-driven real-time sync with GitHub",
+      "Secure role-based client access",
+      "Real-time ticket status tracking",
+      "Reduced email back-and-forth",
+      "Self-service client onboarding via invites"
+    ]
   },
   "poland-invest": {
     "name": "Poland Invest ZEN",

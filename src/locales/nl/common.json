@@ -13,7 +13,7 @@
     "getInTouch": "Contact",
     "readyText": "Klaar om jouw concept tot leven te brengen.",
     "workWithUs": "Koffietje?",
-    "copyright": "© 2026 BaghLabs. Alle rechten voorbehouden.",
+    "copyright": "© 2026 Baghlabs. Alle rechten voorbehouden.",
     "links": {
       "home": "Home",
       "cases": "Onze Cases",
@@ -24,7 +24,16 @@
   "sections": {
     "relatedWork": "Gerelateerd werk",
     "gallery": "Galerij",
-    "moreWork": "Meer werk"
+    "moreWork": "Meer werk",
+    "industry": "Sector",
+    "client": "Klant",
+    "year": "Jaar",
+    "technologies": "Technologieën",
+    "services": "Diensten",
+    "challenge": "Uitdaging",
+    "solution": "Oplossing",
+    "results": "Resultaten",
+    "video": "Video"
   },
   "cta": {
     "connectWithUs": "Let's connect!",

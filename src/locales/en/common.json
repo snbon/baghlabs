@@ -13,7 +13,7 @@
     "getInTouch": "Get in Touch",
     "readyText": "Ready to bring your concept to life.",
     "workWithUs": "Talk over a coffee?",
-    "copyright": "© 2026 BaghLabs. All rights reserved.",
+    "copyright": "© 2026 Baghlabs. All rights reserved.",
     "links": {
       "home": "Home",
       "cases": "Our Cases",
@@ -24,7 +24,16 @@
   "sections": {
     "relatedWork": "Related Work",
     "gallery": "Gallery",
-    "moreWork": "More Work"
+    "moreWork": "More Work",
+    "industry": "Industry",
+    "client": "Client",
+    "year": "Year",
+    "technologies": "Technologies",
+    "services": "Services",
+    "challenge": "Challenge",
+    "solution": "Solution",
+    "results": "Results",
+    "video": "Video"
   },
   "cta": {
     "connectWithUs": "Get in touch",

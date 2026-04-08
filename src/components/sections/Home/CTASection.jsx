@@ -79,7 +79,7 @@ const toggleLanguage = () => {
                 <div className="w-7 h-7 bg-bagh-800 rounded-lg flex items-center justify-center">
                   <span className="text-white font-medium text-xs">B</span>
                 </div>
-                <span className="text-bagh-800 font-semibold">BaghLabs</span>
+                <span className="text-bagh-800 font-semibold">Baghlabs</span>
               </div>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 {tCommon('footer.description')}

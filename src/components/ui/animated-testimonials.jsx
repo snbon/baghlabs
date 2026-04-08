@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react"
 
 export function AnimatedTestimonials({
   title = "Wat klanten zeggen",
-  subtitle = "Bekijk wat onze klanten zeggen over samenwerken met BaghLabs.",
+  subtitle = "Bekijk wat onze klanten zeggen over samenwerken met Baghlabs.",
   badgeText = "Klantbeoordelingen",
   testimonials = [],
   autoRotateInterval = 6000,
