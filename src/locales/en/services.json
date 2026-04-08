@@ -32,7 +32,7 @@
           "title": "Basic",
           "popular": false,
           "description": "For starters who need a professional online presence.",
-          "price": "From €850",
+          "price": "From €850 ex.",
           "features": [
             "Custom homepage",
             "Responsive & mobile-friendly",
@@ -46,7 +46,7 @@
           "title": "Pro",
           "popular": true,
           "description": "For SMEs with more complex digital needs.",
-          "price": "From €1,590",
+          "price": "From €1,590 ex.",
           "features": [
             "Custom multi-page website",
             "Complex site structures",
@@ -106,7 +106,7 @@
           "title": "Content",
           "popular": false,
           "description": "For starters who need professional visual content.",
-          "price": "From €500",
+          "price": "From €500 ex.",
           "features": [
             "Photo and/or video session",
             "Edited final material",
@@ -119,7 +119,7 @@
           "title": "Advertising",
           "popular": true,
           "description": "Complete campaign approach for SMEs looking to grow.",
-          "price": "From €1,500",
+          "price": "From €1,500 ex.",
           "features": [
             "Custom campaign strategy",
             "Video advertisement production",

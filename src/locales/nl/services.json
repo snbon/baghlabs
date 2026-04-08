@@ -32,7 +32,7 @@
           "title": "Basic",
           "popular": false,
           "description": "Voor starters die een professionele online aanwezigheid nodig hebben.",
-          "price": "Vanaf €850",
+          "price": "Vanaf €850 excl.",
           "features": [
             "Custom homepage op maat",
             "Responsief & mobiel-vriendelijk",
@@ -46,7 +46,7 @@
           "title": "Pro",
           "popular": true,
           "description": "Voor KMO's met complexere digitale noden.",
-          "price": "Vanaf €1.590",
+          "price": "Vanaf €1.590 excl.",
           "features": [
             "Multipage website op maat",
             "Complexe sitestructuren",
@@ -106,7 +106,7 @@
           "title": "Content",
           "popular": false,
           "description": "Voor starters die professionele visuele content nodig hebben.",
-          "price": "Vanaf €500",
+          "price": "Vanaf €500 excl.",
           "features": [
             "Foto- en/of videosessie",
             "Bewerkt eindmateriaal",
@@ -119,7 +119,7 @@
           "title": "Advertenties",
           "popular": true,
           "description": "Complete campagne-aanpak voor KMO's die willen groeien.",
-          "price": "Vanaf €1.500",
+          "price": "Vanaf €1.500 excl.",
           "features": [
             "Campagnestrategie op maat",
             "Videoadvertentie productie",
