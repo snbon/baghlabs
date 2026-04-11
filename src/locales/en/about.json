@@ -1,0 +1,39 @@
+{
+  "hero": {
+    "label": "About",
+    "heading": "Behind Baghlabs",
+    "subtitle": "A small studio with a background across marketing, project management and software. Three disciplines that do not usually travel together."
+  },
+  "story": {
+    "heading": "The background",
+    "intro": "Most studios pick a lane. Baghlabs works across a few, because the problems clients bring rarely fit just one.",
+    "pillars": [
+      {
+        "label": "Marketing",
+        "title": "Where the work started",
+        "description": "Campaigns, positioning, ad strategy across different sectors. The lesson that kept coming up: most marketing problems are not marketing problems. Brief, audience, timing - those are where things actually break. That is the level the work happens at."
+      },
+      {
+        "label": "Management",
+        "title": "Keeping things on track",
+        "description": "Projects go sideways for familiar reasons. Scope that grows without a conversation, decisions that do not get made, things that should have been said earlier. Spotting those patterns and doing something about them is part of the job here."
+      },
+      {
+        "label": "Software",
+        "title": "Built in-house",
+        "description": "The code is written here, not handed off. That means estimates are based on what the work actually takes, and the back-and-forth stays short."
+      }
+    ]
+  },
+  "network": {
+    "label": "How it works",
+    "heading": "When more people are needed",
+    "description": "Some projects call for more than one discipline. There is a small trusted circle of professionals that I as Baghlabs work with regularly. When they are needed, they join the project. You will know who is involved and what they are doing.",
+    "note": "People with a shared track record, not sourced from a platform."
+  },
+  "testimonials": {
+    "badge": "Client Reviews",
+    "title": "What clients say",
+    "subtitle": "A few words from people we have worked with."
+  }
+}

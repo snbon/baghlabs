@@ -1,0 +1,39 @@
+{
+  "hero": {
+    "label": "Over ons",
+    "heading": "Achter Baghlabs",
+    "subtitle": "Een kleine studio met een achtergrond in marketing, projectbeheer en software. Drie disciplines die zelden samen voorkomen."
+  },
+  "story": {
+    "heading": "De achtergrond",
+    "intro": "De meeste studio's kiezen één richting. Baghlabs werkt er over meerdere, omdat de problemen die klanten meebrengen zelden in één vakje passen.",
+    "pillars": [
+      {
+        "label": "Marketing",
+        "title": "Waar het begon",
+        "description": "Campagnes, positionering, advertentiestrategie in verschillende sectoren. De les die telkens terugkwam: de meeste marketingproblemen zijn geen marketingproblemen. Brief, doelgroep, timing, dat is waar het echt fout loopt. Dat is het niveau waarop er gewerkt wordt."
+      },
+      {
+        "label": "Management",
+        "title": "Projecten op de rails houden",
+        "description": "Projecten lopen mis om vertrouwde redenen. Scope die groeit zonder gesprek, beslissingen die uitblijven, dingen die eerder gezegd hadden moeten worden. Die patronen vroeg herkennen en er iets aan doen is hier deel van het werk."
+      },
+      {
+        "label": "Software",
+        "title": "Gebouwd in eigen huis",
+        "description": "De code wordt hier geschreven, niet doorgegeven. Dat betekent dat offertes gebaseerd zijn op wat het werk echt vraagt, en dat de communicatie kort blijft."
+      }
+    ]
+  },
+  "network": {
+    "label": "Hoe het werkt",
+    "heading": "Wanneer meer mensen nodig zijn",
+    "description": "Sommige projecten vragen meer dan één discipline. Er is een kleine vertrouwde kring waar ik als Baghlabs mee samenwerk. Wanneer ze nodig zijn, sluiten ze aan. Je weet wie er betrokken is en wat ze doen.",
+    "note": "Mensen met een gedeelde werkhistorie, niet gevonden via een platform"
+  },
+  "testimonials": {
+    "badge": "Klantbeoordelingen",
+    "title": "Wat klanten zeggen",
+    "subtitle": "Een paar woorden van mensen waarmee er is samengewerkt."
+  }
+}

@@ -5,6 +5,7 @@ import Cases from './pages/Cases'
 import CaseDetail from './pages/CaseDetail'
 import ServiceDetail from './pages/ServiceDetail'
 import Contact from './pages/Contact'
+import About from './pages/About'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="cases/:caseName" element={<CaseDetail />} />
         <Route path="services/:serviceId" element={<ServiceDetail />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="about" element={<About />} />
       </Route>
       {/* English */}
       <Route path="/en" element={<Layout lang="en" />}>
@@ -24,6 +26,7 @@ function App() {
         <Route path="cases/:caseName" element={<CaseDetail />} />
         <Route path="services/:serviceId" element={<ServiceDetail />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="about" element={<About />} />
       </Route>
     </Routes>
   )

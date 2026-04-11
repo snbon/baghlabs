@@ -20,6 +20,7 @@ const Header = () => {
   const navLinks = [
     { name: t('nav.home'), href: `${basePath}/` },
     { name: t('nav.cases'), href: `${basePath}/cases` },
+    { name: t('nav.about'), href: `${basePath}/about` },
     { name: t('nav.contact'), href: `${basePath}/contact` },
     { name: 'Support', href: 'https://support.baghlabs.com', external: true },
   ]
