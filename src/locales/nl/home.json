@@ -1,7 +1,7 @@
 {
   "hero": {
     "morphingPhrases": ["Van Concept", "tot Product", "tot Impact"],
-    "subtitle": "Wij vertalen jouw visie naar digitale producten met impact. Wij creëren software, merken en campagnes voor ondernemingen met ambitie.",
+    "subtitle": "Wij vertalen uw visie naar digitale producten met impact. Wij creëren software, merken en campagnes voor ondernemingen met ambitie.",
     "cta": "Let's go!"
   },
   "about": {
@@ -16,7 +16,7 @@
       },
       "branding": {
         "title": "Branding & Content",
-        "description": "Merkidentiteiten, fotografie en videoproducties die jouw verhaal vertellen en jouw doelgroep aanspreken.",
+        "description": "Merkidentiteiten, fotografie en videoproducties die uw verhaal vertellen en uw doelgroep aanspreken.",
         "link": "/services/branding-content"
       },
       "marketing": {
@@ -36,21 +36,21 @@
     "reasons": [
       {
         "title": "We lossen echte problemen op",
-        "description": "Geen verzonnen uitdagingen. We beginnen bij de werkelijke knelpunten van jouw bedrijf en bouwen oplossingen die deze direct aanpakken, zonder functiebloat, zonder onnodige complexiteit."
+        "description": "Geen verzonnen uitdagingen. We beginnen bij de werkelijke knelpunten van uw bedrijf en bouwen oplossingen die deze direct aanpakken, zonder functiebloat, zonder onnodige complexiteit."
       },
       {
         "title": "Eenvoud is onze superkracht",
-        "description": "De beste oplossingen zijn onzichtbaar. We vertalen complexe bedrijfsprocessen naar intuïtieve producten die jouw team zonder training kan gebruiken, en jouw klanten niet zullen vergeten."
+        "description": "De beste oplossingen zijn onzichtbaar. We vertalen complexe bedrijfsprocessen naar intuïtieve producten die uw team zonder training kan gebruiken, en uw klanten niet zullen vergeten."
       },
       {
         "title": "Resultaat, geen excuses",
-        "description": "We meten ons succes aan jouw resultaten. Meer leads, betere conversies, een sterker merk, dat is wat ons drijft. Geen standaard templates, geen half werk."
+        "description": "We meten ons succes aan uw resultaten. Meer leads, betere conversies, een sterker merk, dat is wat ons drijft. Geen standaard templates, geen half werk."
       }
     ]
   },
   "ctaSection": {
     "heading": "Klaar om samen iets te bouwen?",
-    "description": "Van maatwerk software tot een complete merkidentiteit, Baghlabs is jouw digitale partner. Laten we kennismaken.",
+    "description": "Van maatwerk software tot een complete merkidentiteit, Baghlabs is uw digitale partner. Laten we kennismaken.",
     "note": "Actief in Brussel, Gent en de rest van Vlaanderen.",
     "cta": "Contact"
   }
