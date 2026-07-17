@@ -1,51 +1,52 @@
 {
   "nav": {
     "home": "Home",
-    "cases": "Cases",
-    "about": "Over ons",
+    "cases": "Projecten",
+    "about": "Over",
     "services": "Diensten",
     "contact": "Contact",
     "lang": "EN"
   },
   "footer": {
-    "tagline": "From Concept to Product to Impact",
-    "description": "Een software studio gespecialiseerd in software development, branding en performance marketing voor ambitieuze bedrijven.",
-    "quickLinks": "Snelle Links",
+    "tagline": "Bespoke AI-systemen voor operationeel werk.",
+    "description": "Baghlabs bouwt besloten AI-software voor bedrijven met complexe workflows. Documenten, data en bestaande tools in één systeem, met menselijke controle waar het telt.",
+    "quickLinks": "Navigatie",
     "getInTouch": "Contact",
-    "readyText": "Klaar om uw concept tot leven te brengen?",
-    "workWithUs": "Koffietje?",
+    "readyText": "Vind de workflow die je het meeste tijd kost.",
+    "workWithUs": "Bespreek je workflow",
     "copyright": "© 2026 Baghlabs. Alle rechten voorbehouden.",
     "links": {
       "home": "Home",
-      "cases": "Onze Cases",
+      "cases": "Projecten",
       "services": "Diensten",
+      "about": "Over",
       "contact": "Contact"
     }
   },
   "sections": {
-    "relatedWork": "Gerelateerd werk",
-    "gallery": "Galerij",
+    "relatedWork": "Ander werk",
+    "gallery": "Beelden",
     "moreWork": "Meer werk",
     "industry": "Sector",
     "client": "Klant",
     "year": "Jaar",
-    "technologies": "Technologieën",
-    "services": "Diensten",
-    "challenge": "Uitdaging",
-    "solution": "Oplossing",
+    "technologies": "Technologie",
+    "services": "Onderdelen",
+    "challenge": "Probleem",
+    "solution": "Aanpak",
     "results": "Resultaat",
     "video": "Video"
   },
   "cta": {
-    "connectWithUs": "Let's connect!",
+    "connectWithUs": "Bespreek je workflow",
     "learnMore": "Meer weten",
     "getInTouch": "Contact",
-    "visitWebsite": "Bezoek website",
-    "caseDetail": "Case detail",
+    "visitWebsite": "Bezoek site",
+    "caseDetail": "Bekijk project",
     "comingSoon": "Binnenkort",
     "readMore": "Lees meer",
-    "bookCall": "Boek een gesprek",
+    "bookCall": "Plan een gesprek",
     "mostPopular": "// meest gekozen",
-    "viewCase": "Bekijk case"
+    "viewCase": "Bekijk project"
   }
 }

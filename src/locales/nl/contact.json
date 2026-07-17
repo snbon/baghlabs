@@ -1,10 +1,11 @@
 {
   "page": {
-    "heroTitle": "Laten we kennismaken",
-    "heroDescription": "Heeft u een project in gedachten? Een idee dat u wilt uitwerken? Of gewoon een vraag? Vul het formulier in en we nemen zo snel mogelijk contact met u op.",
-    "heroNote": "Actief in Brussel, Gent en de rest van Vlaanderen",
-    "formTitle": "Stuur ons een bericht",
-    "formDescription": "Vertel ons over uw project of vraag. We reageren binnen 1-2 werkdagen."
+    "eyebrow": "// Contact",
+    "heroTitle": "Bespreek je workflow.",
+    "heroDescription": "Een operationeel knelpunt, een AI-systeem in gedachten, of gewoon willen aftoetsen of dit past. Vul het formulier in — je hoort binnen één werkdag terug.",
+    "heroNote": "Actief in Brussel, Gent en de rest van Vlaanderen.",
+    "formTitle": "Bericht",
+    "formDescription": "Vertel ons over het proces of het probleem. We reageren binnen 1 werkdag."
   },
   "form": {
     "name": "Volledige naam",
@@ -55,10 +56,13 @@
     "flexible": "Flexibel"
   },
   "services": {
-    "development": "Development",
-    "branding": "Branding & Content",
-    "marketing": "Performance Marketing",
-    "other": "Anders / Niet zeker"
+    "ai-workflows": "AI Workflow Systemen",
+    "kennissystemen": "Besloten Kennissystemen",
+    "documentverwerking": "Document- & Dataverwerking",
+    "integraties": "Systeem Integraties",
+    "softwareontwikkeling": "Softwareontwikkeling",
+    "blueprint": "AI Opportunity Blueprint",
+    "other": "Iets anders / niet zeker"
   },
   "testimonials": {
     "badge": "Klantbeoordelingen",

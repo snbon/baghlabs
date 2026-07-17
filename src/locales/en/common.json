@@ -1,51 +1,52 @@
 {
   "nav": {
     "home": "Home",
-    "cases": "Cases",
+    "cases": "Work",
     "about": "About",
     "services": "Services",
     "contact": "Contact",
     "lang": "NL"
   },
   "footer": {
-    "tagline": "From Concept to Product to Impact",
-    "description": "A software studio specialising in software development, branding and performance marketing for ambitious businesses.",
-    "quickLinks": "Quick Links",
-    "getInTouch": "Get in Touch",
-    "readyText": "Ready to bring your concept to life?",
-    "workWithUs": "Talk over a coffee?",
+    "tagline": "Bespoke AI systems for operational work.",
+    "description": "Baghlabs builds private AI software for businesses with complex workflows. Documents, data and existing tools in one system, with human control where it matters.",
+    "quickLinks": "Navigation",
+    "getInTouch": "Get in touch",
+    "readyText": "Find the workflow costing you the most time.",
+    "workWithUs": "Discuss your workflow",
     "copyright": "© 2026 Baghlabs. All rights reserved.",
     "links": {
       "home": "Home",
-      "cases": "Our Cases",
+      "cases": "Work",
       "services": "Services",
+      "about": "About",
       "contact": "Contact"
     }
   },
   "sections": {
-    "relatedWork": "Related Work",
-    "gallery": "Gallery",
-    "moreWork": "More Work",
+    "relatedWork": "Other work",
+    "gallery": "Visuals",
+    "moreWork": "More work",
     "industry": "Industry",
     "client": "Client",
     "year": "Year",
-    "technologies": "Technologies",
-    "services": "Services",
-    "challenge": "Challenge",
-    "solution": "Solution",
-    "results": "Results",
+    "technologies": "Technology",
+    "services": "Scope",
+    "challenge": "Problem",
+    "solution": "Approach",
+    "results": "Outcome",
     "video": "Video"
   },
   "cta": {
-    "connectWithUs": "Get in touch",
-    "learnMore": "Learn More",
+    "connectWithUs": "Discuss your workflow",
+    "learnMore": "Learn more",
     "getInTouch": "Get in touch",
-    "visitWebsite": "Visit Website",
-    "caseDetail": "Case Detail",
-    "comingSoon": "Coming Soon",
+    "visitWebsite": "Visit site",
+    "caseDetail": "View project",
+    "comingSoon": "Coming soon",
     "readMore": "Read more",
     "bookCall": "Book a call",
-    "mostPopular": "// most popular",
-    "viewCase": "View Case"
+    "mostPopular": "// most picked",
+    "viewCase": "View project"
   }
 }

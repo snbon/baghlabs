@@ -1,0 +1,62 @@
+{
+  "id": "documentverwerking",
+  "slug": "documentverwerking",
+  "accent": "magenta",
+  "order": 3,
+  "label": {
+    "nl": "AI Document- & Dataverwerking",
+    "en": "AI Document & Data Processing"
+  },
+  "tagline": {
+    "nl": "Stop met overtypen uit PDF's.",
+    "en": "Stop retyping data from PDF's."
+  },
+  "positioning": {
+    "nl": "PDF's, e-mailbijlagen, scans, formulieren, spreadsheets — je huidige workflow is een mens die kopieert. We bouwen pipelines die uitlezen, valideren tegen jouw regels, twijfelgevallen naar een mens sturen en schone data doorzetten naar het volgende systeem.",
+    "en": "PDFs, email attachments, scans, forms, spreadsheets — right now a person is retyping them. We build pipelines that extract, validate against your rules, route uncertain records to a human, and push clean data to the next system."
+  },
+  "scope": {
+    "nl": [
+      "Facturen, bestelbonnen, contracten, formulieren",
+      "E-mailbijlagen naar gestructureerde records",
+      "Classificatie en betrouwbaarheidsscores",
+      "Duplicaat- en anomaliedetectie",
+      "Validatieregels op maat van jouw proces",
+      "Export of API-sync naar ERP, CRM, boekhouding"
+    ],
+    "en": [
+      "Invoices, purchase orders, contracts, forms",
+      "Email attachments to structured records",
+      "Classification and confidence scoring",
+      "Duplicate and anomaly detection",
+      "Custom validation rules per your process",
+      "Export or API sync to ERP, CRM, accounting"
+    ]
+  },
+  "deliverables": {
+    "nl": [
+      "Pipeline die je zelf kan monitoren",
+      "Review-queue voor uitzonderingen",
+      "Rapport over doorloopvolume, kwaliteit en tijdswinst",
+      "Aansluiting op het bestaande systeem, niet ernaast"
+    ],
+    "en": [
+      "Pipeline you can monitor yourself",
+      "Review queue for exceptions",
+      "Reporting on volume, quality and time saved",
+      "Wired into your existing system, not next to it"
+    ]
+  },
+  "notForYouIf": {
+    "nl": [
+      "Volume is te laag om automatisering te verantwoorden",
+      "De brondocumenten zijn niet consistent verzameld",
+      "Er is geen tolerantie voor human-in-the-loop review"
+    ],
+    "en": [
+      "Volume is too low to justify automation",
+      "Source documents aren't consistently collected",
+      "There's no tolerance for human-in-the-loop review"
+    ]
+  }
+}

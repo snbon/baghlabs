@@ -1,17 +1,13 @@
 import { HeroSection, StorySection, NetworkSection, TestimonialsSection } from '../components/sections/About'
 import { CTASection } from '../components/sections/Home'
-import BackgroundPage from '@/components/ui/background-page'
 
 const About = () => {
   return (
-    <div>
+    <div className="bg-noir text-paper">
       <HeroSection />
-      <div className="relative overflow-hidden">
-        <BackgroundPage />
-        <StorySection />
-        <NetworkSection />
-        <TestimonialsSection />
-      </div>
+      <StorySection />
+      <NetworkSection />
+      <TestimonialsSection />
       <CTASection />
     </div>
   )

@@ -1,0 +1,64 @@
+{
+  "id": "integraties",
+  "slug": "integraties",
+  "accent": "lime",
+  "order": 4,
+  "label": {
+    "nl": "Business Systems Integratie",
+    "en": "Business Systems Integration"
+  },
+  "tagline": {
+    "nl": "Eén systeem, geen zeven losse tools.",
+    "en": "One system, not seven disconnected tools."
+  },
+  "positioning": {
+    "nl": "ERP, CRM, boekhouding, planning, webshop, servicedesk, interne databases — meestal werken ze wel apart, maar niet samen. We bouwen de integratielaag waarop je data betrouwbaar heen en weer beweegt, met retries, logs en foutafhandeling die je snapt.",
+    "en": "ERP, CRM, accounting, planning, webshop, service desk, internal databases — mostly they work alone, not together. We build the integration layer that moves data reliably between them, with retries, logs and error handling you can read."
+  },
+  "scope": {
+    "nl": [
+      "Custom API- en webhook-integraties",
+      "Datasynchronisatie en veldmapping",
+      "Integratiedashboards en foutmelding",
+      "Event logs en auditsporen",
+      "Rolgebaseerde portalen voor personeel en klanten",
+      "Adapters voor legacy systemen",
+      "Rate-limits, retries, reconciliatie"
+    ],
+    "en": [
+      "Custom API and webhook integrations",
+      "Data sync and field mapping",
+      "Integration dashboards and error surfacing",
+      "Event logs and audit trails",
+      "Role-based portals for staff and clients",
+      "Legacy system adapters",
+      "Rate limits, retries, reconciliation"
+    ]
+  },
+  "deliverables": {
+    "nl": [
+      "Werkende, gedocumenteerde koppeling",
+      "Monitoring die iemand oppikt wanneer iets misgaat",
+      "Reconciliatie-rapport voor de boekhouding of ops",
+      "Overdraagbaar aan een volgend team"
+    ],
+    "en": [
+      "Working, documented integration",
+      "Monitoring someone actually picks up when it fails",
+      "Reconciliation report for finance or ops",
+      "Handed over cleanly to a next team"
+    ]
+  },
+  "notForYouIf": {
+    "nl": [
+      "Een kant-en-klare Zapier-flow doet exact wat je nodig hebt",
+      "De bronsystemen hebben geen API of exportmogelijkheid",
+      "Er is geen bereidheid om edge cases te bespreken"
+    ],
+    "en": [
+      "An off-the-shelf Zapier flow does exactly what you need",
+      "The source systems have no API or export capability",
+      "There's no willingness to discuss edge cases"
+    ]
+  }
+}

@@ -1,17 +1,18 @@
 {
   "page": {
-    "heroTitle": "Ons Werk",
-    "heroDescription": "Ontdek de producten die we hebben gebouwd, de uitdagingen die ze oplossen en de impact die ze leveren.",
+    "eyebrow": "// Projecten",
+    "heroTitle": "Werk uit de studio.",
+    "heroDescription": "Een selectie van gebouwde producten en meegewerkte projecten. AI-systemen komen binnenkort in beeld — vandaag zie je vooral het softwarewerk waar dit huis op gebouwd is.",
     "tabAll": "Alles",
-    "tabSoftware": "Software Producten",
-    "tabCreative": "Creatief Werk",
-    "tabDevelopment": "Development",
-    "tabBrandingContent": "Branding & Content",
-    "tabPerformanceMarketing": "Performance Marketing",
-    "ctaTitle": "Onder de indruk?",
-    "ctaDescription": "Laten we bespreken hoe we uw idee tot leven kunnen brengen met onze expertise in SaaS en mobiele ontwikkeling. We nemen momenteel geen nieuwe projecten aan, maar dat houdt ons niet tegen om bij een koffie te praten.",
+    "tabDevelopment": "Softwareontwikkeling",
+    "tabAi": "AI-systemen",
+    "tabOthers": "Overig",
+    "aiEmptyTitle": "AI-cases binnenkort",
+    "aiEmptyBody": "De AI-systemen die momenteel gebouwd worden staan onder NDA. Zodra publicatie mogelijk is, komen ze hier.",
+    "ctaTitle": "Zin om iets vergelijkbaars te bouwen?",
+    "ctaDescription": "Start met een AI Opportunity Blueprint. Twee weken, vaste prijs, concreet bouwvoorstel.",
     "ctaLearnMore": "Meer weten",
-    "ctaGetInTouch": "Neem contact op"
+    "ctaGetInTouch": "Contact"
   },
   "availly": {
     "name": "Availly",

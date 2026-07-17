@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { ChevronDown } from 'lucide-react'
+import { pillars } from '@/data/services'
+import { useCurrentLang, useLangPath } from '@/lib/usePathAlternate'
 
 const Header = () => {
   const [isVisible, setIsVisible] = useState(true)
@@ -12,53 +14,44 @@ const Header = () => {
   const prevScrollY = useRef(0)
   const location = useLocation()
   const { t } = useTranslation('common')
-  const { t: tServices } = useTranslation('services')
-
-  const isEnglish = location.pathname.startsWith('/en')
-  const basePath = isEnglish ? '/en' : ''
+  const lang = useCurrentLang()
+  const langPath = useLangPath()
 
   const navLinks = [
-    { name: t('nav.home'), href: `${basePath}/` },
-    { name: t('nav.cases'), href: `${basePath}/cases` },
-    { name: t('nav.about'), href: `${basePath}/about` },
-    { name: t('nav.contact'), href: `${basePath}/contact` },
-    { name: 'Support', href: 'https://support.baghlabs.com', external: true },
+    { name: t('nav.home'), href: langPath('home'), key: 'home' },
+    { name: t('nav.cases'), href: langPath('projects'), key: 'projects' },
+    { name: t('nav.about'), href: langPath('about'), key: 'about' },
+    { name: t('nav.contact'), href: langPath('contact'), key: 'contact' },
   ]
 
-  const serviceLinks = [
-    { id: 'development', label: tServices('development.title', { defaultValue: 'Development' }) },
-    { id: 'branding-content', label: tServices('branding-content.title', { defaultValue: 'Branding & Content' }) },
-    { id: 'performance-marketing', label: tServices('performance-marketing.title', { defaultValue: 'Performance Marketing' }) },
-  ]
+  const serviceLinks = pillars.map((p) => ({
+    id: p.id,
+    label: p.label[lang] || p.label.nl,
+  }))
 
-  const isActive = (href) => {
-    if (href === `${basePath}/` || href === basePath) {
-      return location.pathname === `${basePath}/` || location.pathname === basePath
-    }
-    return location.pathname.startsWith(href)
+  const isActive = (key) => {
+    const p = location.pathname
+    if (key === 'home') return p === '/' || p === '/en'
+    if (key === 'projects') return p.startsWith('/projecten') || p.startsWith('/en/cases')
+    if (key === 'about') return p.startsWith('/over-ons') || p.startsWith('/en/about')
+    if (key === 'contact') return p.startsWith('/contact') || p.startsWith('/en/contact')
+    if (key === 'services') return p.startsWith('/diensten') || p.startsWith('/en/services')
+    return false
   }
 
-  // Hide after 15% scroll down, reveal on scroll up
   useEffect(() => {
     const handleScroll = () => {
       const currentY = window.scrollY
       const threshold = window.innerHeight * 0.15
-
-      if (currentY <= threshold) {
-        setIsVisible(true)
-      } else if (currentY > prevScrollY.current) {
-        setIsVisible(false)
-      } else {
-        setIsVisible(true)
-      }
+      if (currentY <= threshold) setIsVisible(true)
+      else if (currentY > prevScrollY.current) setIsVisible(false)
+      else setIsVisible(true)
       prevScrollY.current = currentY
     }
-
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Close dropdown on outside click
   useEffect(() => {
     const onOutside = (e) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
@@ -69,10 +62,10 @@ const Header = () => {
     return () => document.removeEventListener('mousedown', onOutside)
   }, [])
 
-  // Close everything on route change
   useEffect(() => {
     setServicesOpen(false)
     setIsMenuOpen(false)
+    setMobileServicesOpen(false)
   }, [location.pathname])
 
   return (
@@ -82,166 +75,143 @@ const Header = () => {
           isVisible ? 'translate-y-0' : '-translate-y-full'
         }`}
       >
-        <div className="container-custom py-3">
-          <div className="relative">
-            {/* Floating glass card layers */}
-            <div className="absolute inset-0 bg-white/20 backdrop-blur-xl rounded-2xl border border-white/30 shadow-2xl shadow-bagh-600/20" />
-            <div className="absolute inset-0 bg-gradient-to-r from-bagh-600/10 via-bagh-500/5 to-bagh-600/10 rounded-2xl" />
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(71,85,105,0.08),transparent_70%)] rounded-2xl" />
+        <div className="container-wide py-4">
+          <div className="flex items-center justify-between rounded-md border border-paper/10 bg-noir/85 backdrop-blur-xl px-4 md:px-6 py-3 shadow-inner-hairline">
+            {/* Logo */}
+            <Link to={langPath('home')} className="flex items-center gap-3 group">
+              <div className="w-8 h-8 rounded-sm bg-neon flex items-center justify-center shadow-glow-sm group-hover:shadow-glow transition-shadow">
+                <span className="text-noir font-display font-bold text-sm">B</span>
+              </div>
+              <span className="font-display font-bold text-lg tracking-brut text-paper">
+                baghlabs
+              </span>
+              <span className="hidden md:inline font-mono text-[10px] uppercase tracking-widest text-paper/40">
+                // v2
+              </span>
+            </Link>
 
-            {/* Content */}
-            <div className="relative flex items-center justify-between px-5 py-3 md:px-8 md:py-4">
-              {/* Logo */}
-              <Link to={`${basePath}/`} className="flex items-center space-x-3 group">
-                <div className="w-8 h-8 bg-gradient-to-br from-bagh-700 to-bagh-600 rounded-xl flex items-center justify-center shadow-lg shadow-bagh-600/30 transition-all duration-300 group-hover:scale-110">
-                  <span className="text-white font-light text-sm">B</span>
-                </div>
-                <span className="text-lg font-light text-bagh-800 transition-colors duration-300">
-                  Baghlabs
-                </span>
-              </Link>
-
-              {/* Desktop nav */}
-              <nav className="hidden md:flex items-center space-x-8">
-                {navLinks.map((item) =>
-                  item.external ? (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="relative text-sm font-light transition-all duration-300 group text-bagh-800 hover:text-bagh-600"
-                    >
-                      {item.name}
-                      <div className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-bagh-600 to-bagh-500 rounded-full transition-all duration-300 w-0 opacity-0 group-hover:w-full group-hover:opacity-100" />
-                    </a>
-                  ) : (
-                    <Link
-                      key={item.name}
-                      to={item.href}
-                      className={`relative text-sm font-light transition-all duration-300 group ${
-                        isActive(item.href) ? 'text-bagh-600' : 'text-bagh-800 hover:text-bagh-600'
-                      }`}
-                    >
-                      {item.name}
-                      <div className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-bagh-600 to-bagh-500 rounded-full transition-all duration-300 ${
-                        isActive(item.href)
-                          ? 'w-full opacity-100'
-                          : 'w-0 opacity-0 group-hover:w-full group-hover:opacity-100'
-                      }`} />
-                    </Link>
-                  )
-                )}
-
-                {/* Services dropdown */}
-                <div className="relative" ref={dropdownRef}>
-                  <button
-                    onClick={() => setServicesOpen((v) => !v)}
-                    className={`flex items-center gap-1 text-sm font-light transition-all duration-300 group relative ${
-                      isActive(`${basePath}/services`) ? 'text-bagh-600' : 'text-bagh-800 hover:text-bagh-600'
-                    }`}
-                  >
-                    {t('nav.services')}
-                    <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${servicesOpen ? 'rotate-180' : ''}`} />
-                    <div className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-bagh-600 to-bagh-500 rounded-full transition-all duration-300 ${
-                      isActive(`${basePath}/services`)
-                        ? 'w-full opacity-100'
-                        : 'w-0 opacity-0 group-hover:w-full group-hover:opacity-100'
-                    }`} />
-                  </button>
-
-                  {servicesOpen && (
-                    <div className="absolute top-full right-0 mt-3 w-56 bg-white/90 backdrop-blur-xl rounded-xl border border-white/40 shadow-xl shadow-bagh-900/10 overflow-hidden">
-                      {serviceLinks.map((s) => (
-                        <Link
-                          key={s.id}
-                          to={`${basePath}/services/${s.id}`}
-                          className="block px-4 py-3 text-sm font-light text-bagh-700 hover:text-bagh-900 hover:bg-bagh-50/80 transition-colors duration-150 border-b border-bagh-100/50 last:border-0"
-                        >
-                          {s.label}
-                        </Link>
-                      ))}
-                    </div>
+            {/* Desktop nav */}
+            <nav className="hidden md:flex items-center gap-1">
+              {navLinks.map((item) => (
+                <Link
+                  key={item.key}
+                  to={item.href}
+                  className={`relative font-mono text-[11px] uppercase tracking-widest px-3 py-2 transition-colors duration-150 ${
+                    isActive(item.key) ? 'text-neon' : 'text-paper/70 hover:text-paper'
+                  }`}
+                >
+                  {item.name}
+                  {isActive(item.key) && (
+                    <span className="absolute inset-x-3 -bottom-0.5 h-px bg-neon shadow-glow-sm" />
                   )}
-                </div>
-              </nav>
+                </Link>
+              ))}
 
-              {/* Mobile hamburger */}
-              <button
-                type="button"
-                className="md:hidden p-2.5 rounded-xl text-bagh-800 hover:text-bagh-600 hover:bg-white/20 transition-all duration-300"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-              >
-                <span className="sr-only">Open menu</span>
-                {isMenuOpen ? (
-                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                ) : (
-                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                  </svg>
+              {/* Services dropdown */}
+              <div className="relative ml-1" ref={dropdownRef}>
+                <button
+                  onClick={() => setServicesOpen((v) => !v)}
+                  className={`relative flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-widest px-3 py-2 transition-colors duration-150 ${
+                    isActive('services') || servicesOpen ? 'text-neon' : 'text-paper/70 hover:text-paper'
+                  }`}
+                >
+                  {t('nav.services')}
+                  <ChevronDown
+                    className={`w-3 h-3 transition-transform duration-200 ${servicesOpen ? 'rotate-180' : ''}`}
+                  />
+                  {isActive('services') && (
+                    <span className="absolute inset-x-3 -bottom-0.5 h-px bg-neon shadow-glow-sm" />
+                  )}
+                </button>
+
+                {servicesOpen && (
+                  <div className="absolute top-full right-0 mt-3 w-72 rounded-md border border-paper/10 bg-noir-2/95 backdrop-blur-xl shadow-glow-sm overflow-hidden z-50">
+                    {serviceLinks.map((s, i) => (
+                      <Link
+                        key={s.id}
+                        to={langPath('services', s.id)}
+                        className="flex items-center justify-between gap-3 px-4 py-3 text-sm text-paper/80 hover:text-neon hover:bg-noir-3 transition-colors border-b border-paper/5 last:border-0"
+                      >
+                        <span className="flex items-center gap-3">
+                          <span className="font-mono text-[10px] text-paper/40">
+                            {String(i + 1).padStart(2, '0')}
+                          </span>
+                          <span className="font-display font-medium tracking-brut">{s.label}</span>
+                        </span>
+                        <span className="font-mono text-xs text-paper/30">→</span>
+                      </Link>
+                    ))}
+                  </div>
                 )}
-              </button>
-            </div>
+              </div>
+            </nav>
+
+            {/* Mobile hamburger */}
+            <button
+              type="button"
+              className="md:hidden p-2 rounded-md border border-paper/10 hover:border-neon/50 transition-colors"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? (
+                <svg className="h-4 w-4 text-paper" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg className="h-4 w-4 text-paper" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
+            </button>
           </div>
         </div>
       </header>
 
-      {/* Mobile menu, slide down from navbar */}
-      <div className={`md:hidden fixed top-0 inset-x-0 z-[9997] transition-all duration-300 ease-in-out ${
-        isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'
-      }`}>
-        <div className="container-custom pt-20 pb-3">
-          <div className="relative rounded-2xl overflow-hidden">
-            <div className="absolute inset-0 bg-white/80 backdrop-blur-xl border border-white/40 shadow-xl shadow-bagh-900/10" />
-            <nav className="relative px-2 py-3 space-y-0.5">
-              {navLinks.map((item) =>
-                item.external ? (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block px-4 py-3 rounded-xl text-sm font-light transition-colors duration-200 text-bagh-800 hover:text-bagh-600 hover:bg-bagh-50/40"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.name}
-                  </a>
-                ) : (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    className={`block px-4 py-3 rounded-xl text-sm font-light transition-colors duration-200 ${
-                      isActive(item.href)
-                        ? 'text-bagh-600 bg-bagh-50/60'
-                        : 'text-bagh-800 hover:text-bagh-600 hover:bg-bagh-50/40'
-                    }`}
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                )
-              )}
+      {/* Mobile menu */}
+      <div
+        className={`md:hidden fixed top-0 inset-x-0 z-[9997] transition-all duration-200 ${
+          isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'
+        }`}
+      >
+        <div className="container-wide pt-24 pb-4">
+          <div className="rounded-md border border-paper/10 bg-noir-2/95 backdrop-blur-xl shadow-glow-sm overflow-hidden">
+            <nav>
+              {navLinks.map((item) => (
+                <Link
+                  key={item.key}
+                  to={item.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`block px-6 py-4 font-display font-medium text-lg tracking-brut border-b border-paper/5 ${
+                    isActive(item.key)
+                      ? 'text-neon'
+                      : 'text-paper hover:text-neon hover:bg-noir-3'
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              ))}
 
               <button
-                className="w-full text-left px-4 py-3 rounded-xl text-sm font-light text-bagh-800 hover:text-bagh-600 hover:bg-bagh-50/40 transition-colors duration-200 flex items-center gap-1.5"
+                className="w-full text-left px-6 py-4 font-display font-medium text-lg tracking-brut text-paper hover:text-neon hover:bg-noir-3 flex items-center justify-between border-b border-paper/5"
                 onClick={() => setMobileServicesOpen((v) => !v)}
               >
-                {t('nav.services')}
-                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${mobileServicesOpen ? 'rotate-180' : ''}`} />
+                <span>{t('nav.services')}</span>
+                <ChevronDown className={`w-4 h-4 transition-transform ${mobileServicesOpen ? 'rotate-180' : ''}`} />
               </button>
 
               {mobileServicesOpen && (
-                <div className="pl-4 space-y-0.5">
-                  {serviceLinks.map((s) => (
+                <div className="bg-noir-3/60">
+                  {serviceLinks.map((s, i) => (
                     <Link
                       key={s.id}
-                      to={`${basePath}/services/${s.id}`}
-                      className="block px-4 py-2.5 rounded-xl text-sm font-light text-bagh-600 hover:bg-bagh-50/40 transition-colors duration-200"
+                      to={langPath('services', s.id)}
                       onClick={() => setIsMenuOpen(false)}
+                      className="flex items-center gap-3 px-8 py-3 text-sm text-paper/80 hover:text-neon border-b border-paper/5 last:border-0"
                     >
-                      {s.label}
+                      <span className="font-mono text-[10px] text-paper/40">
+                        {String(i + 1).padStart(2, '0')}
+                      </span>
+                      <span>{s.label}</span>
                     </Link>
                   ))}
                 </div>
@@ -249,7 +219,6 @@ const Header = () => {
             </nav>
           </div>
         </div>
-        {/* Tap outside to close */}
         <div className="fixed inset-0 -z-10" onClick={() => setIsMenuOpen(false)} />
       </div>
     </>

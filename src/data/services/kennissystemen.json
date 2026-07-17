@@ -1,0 +1,62 @@
+{
+  "id": "kennissystemen",
+  "slug": "kennissystemen",
+  "accent": "cyan",
+  "order": 2,
+  "label": {
+    "nl": "Besloten Kennissystemen",
+    "en": "Private Knowledge Systems"
+  },
+  "tagline": {
+    "nl": "Interne kennis die je team ook kan gebruiken.",
+    "en": "Company knowledge your team can actually use."
+  },
+  "positioning": {
+    "nl": "Beleid, procedures, contracten, dossiers, producthandleidingen — meestal verspreid over mappen, mailboxen en de hoofden van drie collega's. We bouwen een besloten, rechten-bewust systeem dat exacte antwoorden geeft met de bron erbij.",
+    "en": "Policies, procedures, contracts, cases, product manuals — usually scattered across folders, inboxes and three colleagues' heads. We build a private, permission-aware system that gives precise answers with the source attached."
+  },
+  "scope": {
+    "nl": [
+      "Besloten retrieval-systemen op eigen documenten",
+      "OCR, extractie en classificatie bij intake",
+      "Rolgebaseerd zoeken en toegangsregels",
+      "Antwoorden met citaten naar de bronpagina",
+      "Onboarding- en SOP-assistenten",
+      "Dashboards voor kennisgaten en veelgebruikte vragen"
+    ],
+    "en": [
+      "Private retrieval systems over your own documents",
+      "OCR, extraction and classification at intake",
+      "Role-based search and access rules",
+      "Answers with citations back to the source page",
+      "Onboarding and SOP assistants",
+      "Dashboards for knowledge gaps and frequent queries"
+    ]
+  },
+  "deliverables": {
+    "nl": [
+      "Werkend systeem op je eigen data, niet op een publieke API zonder controle",
+      "Ingestie-pipeline voor nieuwe documenten",
+      "Feedbackloop voor foute of onvolledige antwoorden",
+      "Adminpaneel voor rechten en bronnen"
+    ],
+    "en": [
+      "Working system on your own data, not a public API with no control",
+      "Ingestion pipeline for new documents",
+      "Feedback loop for wrong or incomplete answers",
+      "Admin panel for permissions and sources"
+    ]
+  },
+  "notForYouIf": {
+    "nl": [
+      "Je zoekt een marketing-chatvenster op je site",
+      "Er is geen interne eigenaar voor de documentatie",
+      "Alle kennis staat al netjes in één actueel systeem"
+    ],
+    "en": [
+      "You want a marketing chat widget on your site",
+      "There is no internal owner for the documentation",
+      "All knowledge already sits in one up-to-date system"
+    ]
+  }
+}

@@ -52,20 +52,20 @@ export function AnimatedTestimonials({
           <motion.div variants={itemVariants} className="flex flex-col justify-center">
             <div className="space-y-5">
               {badgeText && (
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-bagh-50 text-bagh-700 border border-bagh-100">
-                  <Star className="h-3 w-3 fill-bagh-500 text-bagh-500" />
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm text-[10px] font-mono uppercase tracking-widest bg-noir-2 text-neon border border-neon/40">
+                  <Star className="h-3 w-3 fill-neon text-neon" />
                   {badgeText}
                 </div>
               )}
-              <h2 className="text-3xl md:text-4xl font-semibold text-foreground tracking-tight">{title}</h2>
-              <p className="text-base text-muted-foreground leading-relaxed max-w-sm">{subtitle}</p>
+              <h2 className="display-3 text-paper">{title}</h2>
+              <p className="text-base text-paper/60 leading-relaxed max-w-sm">{subtitle}</p>
               <div className="flex items-center gap-2 pt-2">
                 {testimonials.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setActiveIndex(index)}
-                    className={`h-2 rounded-full transition-all duration-300 ${
-                      activeIndex === index ? "w-8 bg-foreground" : "w-2 bg-muted-foreground/30"
+                    className={`h-1 rounded-full transition-all duration-300 ${
+                      activeIndex === index ? "w-10 bg-neon shadow-glow-sm" : "w-2 bg-paper/25"
                     }`}
                     aria-label={`Testimonial ${index + 1}`}
                   />
@@ -89,25 +89,25 @@ export function AnimatedTestimonials({
                 transition={{ duration: 0.4, ease: "easeInOut" }}
                 style={{ zIndex: activeIndex === index ? 10 : 0 }}
               >
-                <div className="bg-white/60 backdrop-blur-sm border border-bagh-100/60 rounded-2xl p-7 h-full flex flex-col">
+                <div className="bg-noir-2 border border-paper/10 rounded-md p-7 h-full flex flex-col">
                   <div className="flex gap-1 mb-4">
                     {Array(testimonial.rating).fill(0).map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                      <Star key={i} className="h-4 w-4 fill-neon text-neon" />
                     ))}
                   </div>
                   <div className="relative mb-5 flex-1">
-                    <Quote className="absolute -top-1 -left-1 h-6 w-6 text-bagh-200 rotate-180" />
-                    <p className="relative z-10 text-base leading-relaxed text-foreground pl-3">"{testimonial.content}"</p>
+                    <Quote className="absolute -top-1 -left-1 h-6 w-6 text-paper/15 rotate-180" />
+                    <p className="relative z-10 text-base leading-relaxed text-paper/85 pl-3">"{testimonial.content}"</p>
                   </div>
-                  <Separator className="my-4" />
+                  <Separator className="my-4 bg-paper/10" />
                   <div className="flex items-center gap-3">
-                    <Avatar className="h-10 w-10 border border-bagh-100">
+                    <Avatar className="h-10 w-10 border border-paper/15">
                       <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
-                      <AvatarFallback className="bg-bagh-50 text-bagh-700 text-sm">{testimonial.name.charAt(0)}</AvatarFallback>
+                      <AvatarFallback className="bg-noir-3 text-paper text-sm">{testimonial.name.charAt(0)}</AvatarFallback>
                     </Avatar>
                     <div>
-                      <p className="text-sm font-semibold text-foreground">{testimonial.name}</p>
-                      <p className="text-xs text-muted-foreground">{testimonial.role}, {testimonial.company}</p>
+                      <p className="text-sm font-semibold text-paper">{testimonial.name}</p>
+                      <p className="text-xs text-paper/50">{testimonial.role}, {testimonial.company}</p>
                     </div>
                   </div>
                 </div>

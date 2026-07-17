@@ -1,211 +1,65 @@
 {
-  "development": {
-    "id": "development",
-    "title": "Development",
-    "subtitle": "Web & Product Development",
-    "heroDescription": "Van idee tot gelanceerd product. Baghlabs bouwt schaalbare web applicaties, SaaS producten en MVP's voor startups en KMO's.",
-    "whatWeOffer": {
-      "heading": "Wat we bouwen",
-      "items": [
-        {
-          "title": "Maatwerk Websites",
-          "description": "Professionele websites op maat, van een impactvolle homepage tot complexe multipage-structuren met CMS en backend integratie."
-        },
-        {
-          "title": "SaaS Product Development",
-          "description": "We bouwen schaalbare SaaS-applicaties van de grond af. Van architectuurontwerp en MVP tot volledige lancering met gebruikersbeheer en analytics."
-        },
-        {
-          "title": "MVP Development",
-          "description": "Valideer uw idee snel en kostenefficiënt. We helpen u de juiste functies te prioriteren en lanceren in weken, niet maanden."
-        },
-        {
-          "title": "API & Backend Integraties",
-          "description": "Verbind uw systemen naadloos. We bouwen robuuste API's en integreren bestaande diensten in uw digitale infrastructuur."
-        }
-      ]
-    },
-    "pricing": {
-      "heading": "Onze prijzen",
-      "plans": [
-        {
-          "title": "Basic",
-          "popular": false,
-          "description": "Voor starters die een professionele online aanwezigheid nodig hebben.",
-          "price": "Vanaf €850 excl.",
-          "features": [
-            "Custom homepage op maat",
-            "Responsief & mobiel-vriendelijk",
-            "Basis SEO-optimalisatie",
-            "Contactformulier",
-            "E-mail ondersteuning",
-            "Levering binnen 2 weken"
-          ]
-        },
-        {
-          "title": "Pro",
-          "popular": true,
-          "description": "Voor KMO's met complexere digitale noden.",
-          "price": "Vanaf €1.590 excl.",
-          "features": [
-            "Multipage website op maat",
-            "Complexe sitestructuren",
-            "Backend & CMS integratie",
-            "Gebruikersbeheer & rollen",
-            "Ondersteuning via ticketplatform",
-            "3 maanden nazorg"
-          ]
-        },
-        {
-          "title": "Enterprise",
-          "popular": false,
-          "description": "Voor complexe architecturen en langetermijntrajecten.",
-          "price": "Op aanvraag",
-          "features": [
-            "Van conceptie tot lancering",
-            "Complexe architectuur & integraties",
-            "Dedicated developer",
-            "Uitgebreide testing & QA",
-            "Post-launch ondersteuning",
-            "Ondersteuning via ticketplatform"
-          ]
-        }
-      ]
+  "page": {
+    "sectionsScope": "Wat we bouwen",
+    "sectionsDeliverables": "Wat je krijgt",
+    "sectionsNotForYou": "Wanneer dit niet past",
+    "backToHome": "Terug naar home",
+    "primaryCta": "Bespreek deze workflow",
+    "secondaryCta": "Bekijk het volledige aanbod"
+  },
+  "ai-workflows": {
+    "id": "ai-workflows",
+    "eyebrow": "// Pijler 01",
+    "title": "AI Workflow Systemen",
+    "subtitle": "Zet handmatige admin om in intelligente workflows.",
+    "heroDescription": "Van binnenkomend verzoek tot afgehandelde taak: extractie, controle, goedkeuring, actie in het volgende systeem, met een volledig spoor terug. Geen losse automatisering die stuk gaat bij de eerste uitzondering.",
+    "example": {
+      "title": "Voorbeeld in de praktijk",
+      "body": "Een gedeelde inbox met leveranciers-e-mails wordt automatisch uitgelezen, gekoppeld aan de juiste bestelling, en enkel bij twijfel doorgezet naar de operations-verantwoordelijke. De rest gaat rechtstreeks naar het ERP."
     }
   },
-  "branding-content": {
-    "id": "branding-content",
-    "title": "Branding & Content",
-    "subtitle": "Merkidentiteit & Visuele Content",
-    "heroDescription": "Uw merk is meer dan een logo. Baghlabs creëert complete merkidentiteiten, fotosessies en videoproducties voor bedrijven die willen opvallen.",
-    "whatWeOffer": {
-      "heading": "Wat we creëren",
-      "items": [
-        {
-          "title": "Merkidentiteit & Branding",
-          "description": "Logo's, kleurpaletten, typografie en brandbooks die uw merk onderscheiden en herkenbaar maken bij uw doelgroep."
-        },
-        {
-          "title": "Foto & Videoproductie",
-          "description": "Professionele foto- en videosessies die de essentie van uw merk vastleggen. Van producten tot campagnebeelden."
-        },
-        {
-          "title": "Advertentiecampagnes",
-          "description": "Volledige campagne-aanpak: strategie, videoadvertenties en foto's, klaar om in te zetten op sociale media en andere kanalen."
-        },
-        {
-          "title": "Verpakkingsontwerp",
-          "description": "Van digitale presentatie tot fysieke verpakking, consistente merkbeleving op elk touchpoint."
-        }
-      ]
-    },
-    "pricing": {
-      "heading": "Onze prijzen",
-      "plans": [
-        {
-          "title": "Content",
-          "popular": false,
-          "description": "Voor starters die professionele visuele content nodig hebben.",
-          "price": "Vanaf €500 excl.",
-          "features": [
-            "Foto- en/of videosessie",
-            "Bewerkt eindmateriaal",
-            "Geschikt voor sociale media",
-            "Snelle levering",
-            "E-mail ondersteuning"
-          ]
-        },
-        {
-          "title": "Advertenties",
-          "popular": true,
-          "description": "Complete campagne-aanpak voor KMO's die willen groeien.",
-          "price": "Vanaf €1.500 excl.",
-          "features": [
-            "Campagnestrategie op maat",
-            "Videoadvertentie productie",
-            "Professionele fotosessie inbegrepen",
-            "Bewerkt campagnemateriaal",
-            "Klaar voor Meta & Google Ads",
-            "2 revisierondes"
-          ]
-        },
-        {
-          "title": "Branding",
-          "popular": false,
-          "description": "Van merkidentiteit tot complete visuele strategie met weboplossingen.",
-          "price": "Op aanvraag",
-          "features": [
-            "Volledige merkidentiteit",
-            "Logo, kleuren & typografie",
-            "Brandbook & stijlgids",
-            "Content tot lancering",
-            "Integratie met weboplossingen",
-            "Ondersteuning via ticketplatform"
-          ]
-        }
-      ]
+  "kennissystemen": {
+    "id": "kennissystemen",
+    "eyebrow": "// Pijler 02",
+    "title": "Besloten Kennissystemen",
+    "subtitle": "Maak interne kennis daadwerkelijk bruikbaar.",
+    "heroDescription": "Je waardevolste kennis mag niet vastzitten in mappen, inboxen en de hoofden van senior collega's. We bouwen besloten AI-kennissystemen die medewerkers exacte antwoorden geven, met bron erbij en respect voor rechten.",
+    "example": {
+      "title": "Voorbeeld in de praktijk",
+      "body": "Een medewerker vraagt naar de geldende procedure voor een uitzondering. Het systeem toont het juiste artikel uit het beleid, verwijst naar de paginabron, en verbergt secties waar deze rol geen toegang tot heeft."
     }
   },
-  "performance-marketing": {
-    "id": "performance-marketing",
-    "title": "Performance Marketing",
-    "subtitle": "Datagedreven Marketing & Groei",
-    "heroDescription": "Marketing die meetbare resultaten levert. Baghlabs combineert creativiteit met data om Meta Ads en Google Ads campagnes te bouwen die écht converteren.",
-    "whatWeOffer": {
-      "heading": "Wat we doen",
-      "items": [
-        {
-          "title": "Meta Ads (Facebook & Instagram)",
-          "description": "Gerichte advertentiecampagnes op Meta die uw doelgroep bereiken en conversies genereren."
-        },
-        {
-          "title": "Google Ads & SEA",
-          "description": "Zoekadvertenties, display en shopping campagnes die uw zichtbaarheid verhogen en kwalitatieve leads aantrekken."
-        },
-        {
-          "title": "Campagnestrategie & Creatie",
-          "description": "Van doelgroepanalyse tot advertentiecreatie, we bouwen campagnes die consistent presteren en optimaliseren op basis van data."
-        },
-        {
-          "title": "Rapportage & Analyse",
-          "description": "Overzichtelijke maand- en weekrapporten met betekenisvolle KPI's. U weet altijd wat uw budget oplevert."
-        }
-      ]
-    },
-    "pricing": {
-      "heading": "Onze prijzen",
-      "plans": [
-        {
-          "title": "Starter",
-          "popular": false,
-          "description": "Ideaal voor bedrijven die starten met betaalde advertenties.",
-          "price": "€500/mo",
-          "features": [
-            "Setup Meta Ads account",
-            "1 advertentiecampagne",
-            "Doelgroepinstelling & targeting",
-            "Maandelijkse rapportage",
-            "Optimalisatie & bijsturing",
-            "E-mail ondersteuning"
-          ]
-        },
-        {
-          "title": "Groei",
-          "popular": true,
-          "description": "Voor KMO's die serieus willen schalen via betaalde kanalen.",
-          "price": "Op aanvraag",
-          "features": [
-            "Multi-platform aanpak (Meta + Google)",
-            "Volledige campagnestrategie",
-            "Advertentiecreatie & copywriting",
-            "A/B testen & optimalisatie",
-            "Wekelijkse rapportage",
-            "Maandelijkse strategiegesprekken",
-            "Conversie-tracking & pixel setup",
-            "Retargeting campagnes"
-          ]
-        }
-      ]
+  "documentverwerking": {
+    "id": "documentverwerking",
+    "eyebrow": "// Pijler 03",
+    "title": "AI Document- & Dataverwerking",
+    "subtitle": "Van ongestructureerde documenten naar betrouwbare data.",
+    "heroDescription": "Stop met data overtypen uit PDF's en incomplete documenten najagen. We bouwen extractie-pipelines die ongestructureerde bestanden omzetten in gevalideerde bruikbare data — met twijfelgevallen naar de juiste persoon.",
+    "example": {
+      "title": "Voorbeeld in de praktijk",
+      "body": "Inkomende facturen worden uitgelezen, gecontroleerd tegen bestelbonnen, gemarkeerd bij afwijking, en klaargezet ter goedkeuring in het bestaande boekhoudpakket."
+    }
+  },
+  "integraties": {
+    "id": "integraties",
+    "eyebrow": "// Pijler 04",
+    "title": "Business Systems Integratie",
+    "subtitle": "Verbind de systemen waarop je bedrijf al draait.",
+    "heroDescription": "Je software moet werken als één systeem, niet als een verzameling losse tools. We bouwen de beveiligde integratielaag die data betrouwbaar laat bewegen door je bedrijf — met logs, retries en foutafhandeling die je kan lezen.",
+    "example": {
+      "title": "Voorbeeld in de praktijk",
+      "body": "Een order in de webshop maakt automatisch een factuur in het boekhoudpakket, boekt voorraad af in het ERP, en opent een ticket in de servicedesk — met reconciliatie-rapport per week."
+    }
+  },
+  "softwareontwikkeling": {
+    "id": "softwareontwikkeling",
+    "eyebrow": "// De basis",
+    "title": "Custom Softwareontwikkeling",
+    "subtitle": "De fundering waarop de AI-systemen draaien.",
+    "heroDescription": "Voordat AI een probleem oplost, moet er iemand zijn die de applicatie kan bouwen die het draait. Dat is de kernvaardigheid van Baghlabs. Web-apps, interne tools en portalen — geschreven, uitgerold en onderhouden door dezelfde persoon die je aan de lijn hebt.",
+    "example": {
+      "title": "Voorbeeld in de praktijk",
+      "body": "Een klantportaal waar bedrijven inloggen, hun status in real-time volgen en tickets openen, gekoppeld aan de interne workflow-tools van het team."
     }
   }
 }

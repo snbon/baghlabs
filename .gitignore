@@ -18,6 +18,7 @@ build/
 
 # DOcs
 /CLAUDE.md
+/PIVOT.md
 /docs
 # IDE and editor files
 .vscode/

@@ -1,39 +1,39 @@
 {
   "hero": {
-    "label": "Over ons",
-    "heading": "Achter Baghlabs",
-    "subtitle": "Een kleine studio met een achtergrond in marketing, projectbeheer en software. Drie disciplines die zelden samen voorkomen."
+    "eyebrow": "// Over",
+    "heading": "Baghlabs bouwt AI-systemen die je bedrijf ook echt kan draaien.",
+    "subtitle": "Solo studio met een decennium ervaring in productontwikkeling, projectbeheer en marketing. Vandaag alles in dienst van één specialisme: interne AI-software voor bedrijven met complexe workflows."
   },
   "story": {
-    "heading": "De achtergrond",
-    "intro": "De meeste studio's kiezen één richting. Baghlabs werkt er over meerdere, omdat de problemen die klanten meebrengen zelden in één vakje passen.",
+    "heading": "Waarom deze pivot",
+    "intro": "Vijf jaar Baghlabs, en de vraag verschoof. Klanten kwamen niet meer met 'we hebben een website nodig', maar met 'ons operationeel werk is uit de hand gelopen'. E-mails, PDF's, spreadsheets, systemen die niet praten. Precies waar AI vandaag wél iets kan, mits het ordentelijk gebouwd wordt.",
     "pillars": [
       {
-        "label": "Marketing",
-        "title": "Waar het begon",
-        "description": "Campagnes, positionering, advertentiestrategie in verschillende sectoren. De les die telkens terugkwam: de meeste marketingproblemen zijn geen marketingproblemen. Brief, doelgroep, timing, dat is waar het echt fout loopt. Dat is het niveau waarop er gewerkt wordt."
+        "label": "Systeem-denken",
+        "title": "Bouwt aan het proces, niet aan de tool",
+        "description": "Automatisering die alleen het gelukkige pad afdekt lost geen probleem op. Het interessante werk zit in de uitzondering: rechten, incomplete data, goedkeuring, legacy. Daar begint een systeem, niet bij een demo."
       },
       {
-        "label": "Management",
-        "title": "Projecten op de rails houden",
-        "description": "Projecten lopen mis om vertrouwde redenen. Scope die groeit zonder gesprek, beslissingen die uitblijven, dingen die eerder gezegd hadden moeten worden. Die patronen vroeg herkennen en er iets aan doen is hier deel van het werk."
+        "label": "Ontwikkeling",
+        "title": "Code wordt hier geschreven",
+        "description": "Geen doorverwezen werk. De persoon die je aan de lijn hebt is ook de persoon die het bouwt en uitrolt. Dat houdt scope, timing en communicatie kort."
       },
       {
-        "label": "Software",
-        "title": "Gebouwd in eigen huis",
-        "description": "De code wordt hier geschreven, niet doorgegeven. Dat betekent dat offertes gebaseerd zijn op wat het werk echt vraagt, en dat de communicatie kort blijft."
+        "label": "Verantwoording",
+        "title": "Ontworpen voor de operatie",
+        "description": "Rolgebaseerde toegang, auditlog, human-in-the-loop, monitoring. Geen zwarte doos. Iemand kan altijd terugzien wat het systeem heeft gedaan en waarom."
       }
     ]
   },
   "network": {
     "label": "Hoe het werkt",
     "heading": "Wanneer meer mensen nodig zijn",
-    "description": "Sommige projecten vragen meer dan één discipline. Er is een kleine vertrouwde kring waar ik als Baghlabs mee samenwerk. Wanneer ze nodig zijn, sluiten ze aan. Je weet wie er betrokken is en wat ze doen.",
-    "note": "Mensen met een gedeelde werkhistorie, niet gevonden via een platform"
+    "description": "Grotere trajecten vragen meer dan één discipline. Er is een kleine vertrouwde kring waarmee Baghlabs samenwerkt. Wanneer ze nodig zijn, sluiten ze aan. Je weet wie er betrokken is en waar ze verantwoordelijk voor zijn.",
+    "note": "Mensen met een gedeelde werkgeschiedenis, geen platform-freelancers."
   },
   "testimonials": {
-    "badge": "Klantbeoordelingen",
-    "title": "Wat klanten zeggen",
+    "badge": "Wat klanten zeggen",
+    "title": "Referenties",
     "subtitle": "Een paar woorden van mensen waarmee er is samengewerkt."
   }
 }
