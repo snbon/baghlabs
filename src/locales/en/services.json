@@ -3,63 +3,63 @@
     "sectionsScope": "What we build",
     "sectionsDeliverables": "What you get",
     "sectionsNotForYou": "When this isn't for you",
-    "backToHome": "Back to home",
+    "backToHome": "Back",
     "primaryCta": "Discuss this workflow",
     "secondaryCta": "See the full offer"
   },
   "ai-workflows": {
     "id": "ai-workflows",
     "eyebrow": "// Pillar 01",
-    "title": "AI Workflow Systems",
-    "subtitle": "Turn manual admin into intelligent workflows.",
-    "heroDescription": "From incoming request to closed task: extraction, checks, approval, action in the next system, with a full trace back. No brittle automation that breaks on the first exception.",
+    "title": "AI Workflows",
+    "subtitle": "Manual admin becomes a working system.",
+    "heroDescription": "From incoming request to closed task. Extraction, checks, approval, action. Full trace back.",
     "example": {
       "title": "In practice",
-      "body": "A shared supplier inbox is parsed automatically, matched to the right purchase order, and only sent to the operations lead when there's doubt. The rest goes straight to the ERP."
+      "body": "Supplier inboxes get parsed, matched to purchase orders, and only routed to a human on doubt."
     }
   },
   "kennissystemen": {
     "id": "kennissystemen",
     "eyebrow": "// Pillar 02",
     "title": "Private Knowledge Systems",
-    "subtitle": "Make company knowledge actually usable.",
-    "heroDescription": "Your most valuable knowledge shouldn't be trapped in folders, inboxes and senior employees' heads. We build private AI knowledge systems that give staff accurate answers, grounded in your own documents and respecting access rules.",
+    "subtitle": "Internal knowledge becomes usable.",
+    "heroDescription": "Answers to internal questions, grounded in your own documents. With sources. With permissions. No public API.",
     "example": {
       "title": "In practice",
-      "body": "A staff member asks about the correct procedure for an exception. The system shows the right policy article, cites the source page, and hides sections this role has no access to."
+      "body": "A staff member asks about a procedure. The system shows the right policy article, with the source page."
     }
   },
   "documentverwerking": {
     "id": "documentverwerking",
     "eyebrow": "// Pillar 03",
-    "title": "AI Document & Data Processing",
-    "subtitle": "Turn unstructured documents into reliable data.",
-    "heroDescription": "Stop retyping data from PDFs and chasing incomplete documents. We build extraction pipelines that transform unstructured files into validated, usable data — while routing uncertainty to the right person.",
+    "title": "Document & Data Processing",
+    "subtitle": "PDFs become data.",
+    "heroDescription": "Extraction pipelines that turn unstructured files into validated data. Doubt routes to a human.",
     "example": {
       "title": "In practice",
-      "body": "Incoming invoices are extracted, checked against purchase orders, flagged on mismatch, and queued for approval in the existing accounting tool."
+      "body": "Invoices get extracted, checked against purchase orders, queued for approval in the accounting tool."
     }
   },
   "integraties": {
     "id": "integraties",
     "eyebrow": "// Pillar 04",
-    "title": "Business Systems Integration",
-    "subtitle": "Connect the systems your business already runs on.",
-    "heroDescription": "Your software should work as one system, not a collection of disconnected tools. We build the secure integration layer that moves data reliably across your business — with logs, retries and error handling you can read.",
+    "title": "Systems Integration",
+    "subtitle": "One system, not seven tools.",
+    "heroDescription": "The connective layer between your existing systems. With logs, retries and error handling you can read.",
     "example": {
       "title": "In practice",
-      "body": "A webshop order creates an invoice in accounting, reduces stock in the ERP and opens a ticket in the service desk — with a weekly reconciliation report."
+      "body": "A webshop order creates an invoice, reduces stock and opens a service-desk ticket automatically."
     }
   },
   "softwareontwikkeling": {
     "id": "softwareontwikkeling",
     "eyebrow": "// The foundation",
     "title": "Custom Software Development",
-    "subtitle": "The foundation the AI systems run on.",
-    "heroDescription": "Before AI solves a problem, someone has to build the application that runs it. That's the core skill here. Web apps, internal tools and portals — written, deployed and maintained by the person you actually talk to.",
+    "subtitle": "The foundation AI runs on.",
+    "heroDescription": "Before AI solves anything, someone has to build the application that runs it. That's the core skill here.",
     "example": {
       "title": "In practice",
-      "body": "A client portal where businesses log in, follow their status in real time and open tickets, wired into the team's internal workflow tools."
+      "body": "A client portal where businesses log in, follow status and open tickets. Wired into the internal tools."
     }
   }
 }

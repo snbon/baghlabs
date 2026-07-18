@@ -2,8 +2,8 @@
   "page": {
     "eyebrow": "// Contact",
     "heroTitle": "Discuss your workflow.",
-    "heroDescription": "An operational bottleneck, an AI system in mind, or just wanting to see if this fits. Fill in the form — you'll hear back within one business day.",
-    "heroNote": "Active in Brussels, Ghent and across Flanders.",
+    "heroDescription": "Reply within one business day.",
+    "heroNote": "Brussels · Ghent · Flanders",
     "formTitle": "Message",
     "formDescription": "Tell us about the process or the problem. We respond within 1 business day."
   },
@@ -56,7 +56,7 @@
     "flexible": "Flexible"
   },
   "services": {
-    "ai-workflows": "AI Workflow Systems",
+    "ai-workflows": "AI Workflows",
     "kennissystemen": "Private Knowledge Systems",
     "documentverwerking": "Document & Data Processing",
     "integraties": "Systems Integration",

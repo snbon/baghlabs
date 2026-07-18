@@ -1,35 +1,35 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { CaseTabs } from '@/components/ui/case-tabs'
 import { CaseGallery } from '@/components/ui/case-gallery'
 import { cases } from '@/data/cases'
 import BackgroundPage from '@/components/ui/background-page'
 import { CTASection } from '@/components/sections/Home'
+import { useCurrentLang } from '@/lib/usePathAlternate'
 
 const Cases = () => {
   const [activeTab, setActiveTab] = useState('all')
   const { t } = useTranslation('cases')
   const { t: tCommon } = useTranslation('common')
-  const location = useLocation()
-  const basePath = location.pathname.startsWith('/en') ? '/en' : ''
+  const lang = useCurrentLang()
+  const basePath = lang === 'en' ? '/en' : ''
 
-  // Augment cases with i18n
   const augmentCases = (caseList) =>
-    caseList.map(c => ({
+    caseList.map((c) => ({
       ...c,
       name: t(`${c.id}.name`, { defaultValue: c.id }),
       tagline: t(`${c.id}.tagline`, { defaultValue: '' }),
     }))
 
-  const filteredCases = activeTab === 'all'
-    ? augmentCases(cases)
-    : augmentCases(cases.filter(c => c.relatedService === activeTab))
+  const filteredCases = (() => {
+    if (activeTab === 'all') return augmentCases(cases)
+    if (activeTab === 'ai') return []
+    return augmentCases(cases.filter((c) => c.relatedService === activeTab))
+  })()
 
   return (
     <div>
-      {/* Grid background wraps only the page content, not the footer */}
       <div className="relative overflow-hidden min-h-screen">
         <BackgroundPage />
 
@@ -60,24 +60,41 @@ const Cases = () => {
               labels={{
                 all: t('page.tabAll'),
                 development: t('page.tabDevelopment'),
-                brandingContent: t('page.tabBrandingContent'),
-                performanceMarketing: t('page.tabPerformanceMarketing'),
+                ai: t('page.tabAi'),
+                others: t('page.tabOthers'),
               }}
             />
           </div>
         </section>
 
-        {/* Gallery */}
-        <section className="pb-20">
-          <CaseGallery
-            cases={filteredCases}
-            readMoreLabel={tCommon('cta.readMore')}
-            basePath={basePath}
-          />
-        </section>
+        {/* Gallery or AI empty state */}
+        {activeTab === 'ai' ? (
+          <section className="pb-20">
+            <div className="container-custom max-w-2xl">
+              <div className="rounded-2xl border border-bagh-100/60 bg-white/40 backdrop-blur-sm p-8 md:p-10">
+                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
+                  {tCommon('cta.comingSoon')}
+                </p>
+                <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
+                  {t('page.aiEmptyTitle')}
+                </h2>
+                <p className="text-muted-foreground leading-relaxed">
+                  {t('page.aiEmptyBody')}
+                </p>
+              </div>
+            </div>
+          </section>
+        ) : (
+          <section className="pb-20">
+            <CaseGallery
+              cases={filteredCases}
+              readMoreLabel={tCommon('cta.readMore')}
+              basePath={basePath}
+            />
+          </section>
+        )}
       </div>
 
-      {/* Footer outside the grid wrapper, grid fades out, dots fade in */}
       <CTASection />
     </div>
   )

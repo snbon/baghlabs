@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
 export function CaseGallery({ cases, readMoreLabel = 'Read more', basePath = '' }) {
+  const projectsSegment = basePath === '/en' ? 'cases' : 'projecten'
   const [emblaRef, emblaApi] = useEmblaCarousel({
     breakpoints: { '(max-width: 768px)': { dragFree: true } },
   })
@@ -59,7 +60,7 @@ export function CaseGallery({ cases, readMoreLabel = 'Read more', basePath = '' 
           {cases.map((item) => (
             <div key={item.id} className="pl-4 min-w-0 shrink-0 basis-[85vw] md:basis-[452px]">
               <Link
-                to={item.comingSoon ? '#' : `${basePath}/cases/${item.id}`}
+                to={item.comingSoon ? '#' : `${basePath}/${projectsSegment}/${item.id}`}
                 className={cn('group flex flex-col justify-between', item.comingSoon && 'pointer-events-none')}
               >
                 <div>

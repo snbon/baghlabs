@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { ChevronDown } from 'lucide-react'
+import { pillars } from '@/data/services'
+import { useCurrentLang, useLangPath } from '@/lib/usePathAlternate'
 
 const Header = () => {
   const [isVisible, setIsVisible] = useState(true)
@@ -12,31 +14,34 @@ const Header = () => {
   const prevScrollY = useRef(0)
   const location = useLocation()
   const { t } = useTranslation('common')
-  const { t: tServices } = useTranslation('services')
-
-  const isEnglish = location.pathname.startsWith('/en')
-  const basePath = isEnglish ? '/en' : ''
+  const lang = useCurrentLang()
+  const langPath = useLangPath()
 
   const navLinks = [
-    { name: t('nav.home'), href: `${basePath}/` },
-    { name: t('nav.cases'), href: `${basePath}/cases` },
-    { name: t('nav.about'), href: `${basePath}/about` },
-    { name: t('nav.contact'), href: `${basePath}/contact` },
-    { name: 'Support', href: 'https://support.baghlabs.com', external: true },
+    { name: t('nav.home'), href: langPath('home'), key: 'home' },
+    { name: t('nav.cases'), href: langPath('projects'), key: 'projects' },
+    { name: t('nav.about'), href: langPath('about'), key: 'about' },
+    { name: t('nav.contact'), href: langPath('contact'), key: 'contact' },
+    { name: 'Support', href: 'https://support.baghlabs.com', external: true, key: 'support' },
   ]
 
-  const serviceLinks = [
-    { id: 'development', label: tServices('development.title', { defaultValue: 'Development' }) },
-    { id: 'branding-content', label: tServices('branding-content.title', { defaultValue: 'Branding & Content' }) },
-    { id: 'performance-marketing', label: tServices('performance-marketing.title', { defaultValue: 'Performance Marketing' }) },
-  ]
+  const serviceLinks = pillars.map((p) => ({
+    id: p.id,
+    label: p.label[lang] || p.label.nl,
+  }))
 
-  const isActive = (href) => {
-    if (href === `${basePath}/` || href === basePath) {
-      return location.pathname === `${basePath}/` || location.pathname === basePath
-    }
-    return location.pathname.startsWith(href)
+  const isActive = (item) => {
+    const p = location.pathname
+    if (item.external) return false
+    if (item.key === 'home') return p === '/' || p === '/en'
+    if (item.key === 'projects') return p.startsWith('/projecten') || p.startsWith('/en/cases')
+    if (item.key === 'about') return p.startsWith('/over-ons') || p.startsWith('/en/about')
+    if (item.key === 'contact') return p.startsWith('/contact') || p.startsWith('/en/contact')
+    return false
   }
+
+  const isServicesActive = () =>
+    location.pathname.startsWith('/diensten') || location.pathname.startsWith('/en/services')
 
   // Hide after 15% scroll down, reveal on scroll up
   useEffect(() => {
@@ -92,7 +97,7 @@ const Header = () => {
             {/* Content */}
             <div className="relative flex items-center justify-between px-5 py-3 md:px-8 md:py-4">
               {/* Logo */}
-              <Link to={`${basePath}/`} className="flex items-center space-x-3 group">
+              <Link to={langPath('home')} className="flex items-center space-x-3 group">
                 <div className="w-8 h-8 bg-gradient-to-br from-bagh-700 to-bagh-600 rounded-xl flex items-center justify-center shadow-lg shadow-bagh-600/30 transition-all duration-300 group-hover:scale-110">
                   <span className="text-white font-light text-sm">B</span>
                 </div>
@@ -120,12 +125,12 @@ const Header = () => {
                       key={item.name}
                       to={item.href}
                       className={`relative text-sm font-light transition-all duration-300 group ${
-                        isActive(item.href) ? 'text-bagh-600' : 'text-bagh-800 hover:text-bagh-600'
+                        isActive(item) ? 'text-bagh-600' : 'text-bagh-800 hover:text-bagh-600'
                       }`}
                     >
                       {item.name}
                       <div className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-bagh-600 to-bagh-500 rounded-full transition-all duration-300 ${
-                        isActive(item.href)
+                        isActive(item)
                           ? 'w-full opacity-100'
                           : 'w-0 opacity-0 group-hover:w-full group-hover:opacity-100'
                       }`} />
@@ -138,13 +143,13 @@ const Header = () => {
                   <button
                     onClick={() => setServicesOpen((v) => !v)}
                     className={`flex items-center gap-1 text-sm font-light transition-all duration-300 group relative ${
-                      isActive(`${basePath}/services`) ? 'text-bagh-600' : 'text-bagh-800 hover:text-bagh-600'
+                      isServicesActive() ? 'text-bagh-600' : 'text-bagh-800 hover:text-bagh-600'
                     }`}
                   >
                     {t('nav.services')}
                     <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${servicesOpen ? 'rotate-180' : ''}`} />
                     <div className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-bagh-600 to-bagh-500 rounded-full transition-all duration-300 ${
-                      isActive(`${basePath}/services`)
+                      isServicesActive()
                         ? 'w-full opacity-100'
                         : 'w-0 opacity-0 group-hover:w-full group-hover:opacity-100'
                     }`} />
@@ -155,7 +160,7 @@ const Header = () => {
                       {serviceLinks.map((s) => (
                         <Link
                           key={s.id}
-                          to={`${basePath}/services/${s.id}`}
+                          to={langPath('services', s.id)}
                           className="block px-4 py-3 text-sm font-light text-bagh-700 hover:text-bagh-900 hover:bg-bagh-50/80 transition-colors duration-150 border-b border-bagh-100/50 last:border-0"
                         >
                           {s.label}
@@ -213,7 +218,7 @@ const Header = () => {
                     key={item.name}
                     to={item.href}
                     className={`block px-4 py-3 rounded-xl text-sm font-light transition-colors duration-200 ${
-                      isActive(item.href)
+                      isActive(item)
                         ? 'text-bagh-600 bg-bagh-50/60'
                         : 'text-bagh-800 hover:text-bagh-600 hover:bg-bagh-50/40'
                     }`}
@@ -237,7 +242,7 @@ const Header = () => {
                   {serviceLinks.map((s) => (
                     <Link
                       key={s.id}
-                      to={`${basePath}/services/${s.id}`}
+                      to={langPath('services', s.id)}
                       className="block px-4 py-2.5 rounded-xl text-sm font-light text-bagh-600 hover:bg-bagh-50/40 transition-colors duration-200"
                       onClick={() => setIsMenuOpen(false)}
                     >

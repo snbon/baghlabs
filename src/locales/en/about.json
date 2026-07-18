@@ -1,39 +1,38 @@
 {
   "hero": {
     "eyebrow": "// About",
-    "heading": "Baghlabs builds AI systems your business can actually run.",
-    "subtitle": "Solo studio with a decade of experience across product development, project management and marketing. Today all of it is aimed at one specialism: internal AI software for businesses with complex workflows."
+    "heading": "One studio, one contact.",
+    "subtitle": "AI systems for businesses with real work in the process."
   },
   "story": {
-    "heading": "Why this pivot",
-    "intro": "Five years of Baghlabs, and the question shifted. Clients no longer arrived with 'we need a website' but with 'our operational work has gotten out of hand'. Emails, PDFs, spreadsheets, systems that don't talk. Exactly where AI can help today — if it's built properly.",
+    "heading": "Background",
+    "intro": "Five years of Baghlabs. The question shifted from 'we need a website' to 'our operational work has stalled'. That's where this work starts.",
     "pillars": [
       {
-        "label": "Systems thinking",
-        "title": "Builds around the process, not the tool",
-        "description": "Automation that only covers the happy path doesn't solve a problem. The interesting work is in the exception: permissions, incomplete data, approval, legacy. That's where a system begins, not with a demo."
+        "label": "Systems",
+        "title": "Around the process, not the tool",
+        "description": "Exceptions are the work. Permissions, incomplete data, approvals, legacy. That's where a system begins."
       },
       {
-        "label": "Engineering",
-        "title": "Code is written here",
-        "description": "Nothing gets subcontracted. The person you talk to is the same person who builds and ships it. Keeps scope, timing and communication short."
+        "label": "Code",
+        "title": "Nothing subcontracted",
+        "description": "The person you talk to builds and ships it. Scope and timing stay short."
       },
       {
         "label": "Accountability",
-        "title": "Designed for the operation",
-        "description": "Role-based access, audit log, human-in-the-loop, monitoring. Not a black box. Someone can always see what the system did and why."
+        "title": "Not a black box",
+        "description": "Permissions, audit log, human-in-the-loop, monitoring. Someone can always see what the system did."
       }
     ]
   },
   "network": {
-    "label": "How it works",
+    "label": "Extension",
     "heading": "When more people are needed",
-    "description": "Larger engagements need more than one discipline. There's a small trusted circle Baghlabs works with. When they're needed, they join. You know who's involved and what they're responsible for.",
-    "note": "People with a shared work history, not platform freelancers."
+    "description": "Larger engagements need more than one discipline. A small trusted circle joins when needed. You always know who's involved and what for."
   },
   "testimonials": {
-    "badge": "What clients say",
-    "title": "References",
+    "badge": "References",
+    "title": "What clients say",
     "subtitle": "A few words from people we've worked with."
   }
 }

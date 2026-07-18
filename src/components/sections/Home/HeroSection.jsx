@@ -1,13 +1,13 @@
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import { GooeyText } from '@/components/ui/gooey-text'
 import BackgroundHero from '@/components/ui/background-hero'
+import { useLangPath } from '@/lib/usePathAlternate'
 
 const HeroSection = () => {
   const { t } = useTranslation('home')
-  const location = useLocation()
-  const basePath = location.pathname.startsWith('/en') ? '/en' : ''
+  const langPath = useLangPath()
   const phrases = t('hero.morphingPhrases', { returnObjects: true })
 
   return (
@@ -34,7 +34,7 @@ const HeroSection = () => {
             {t('hero.subtitle')}
           </p>
 
-          <Link to={`${basePath}/cases`} className="btn-secondary text-sm">
+          <Link to={langPath('contact')} className="btn-secondary text-sm">
             {t('hero.cta')}
           </Link>
         </motion.div>

@@ -1,171 +1,58 @@
 {
   "hero": {
-    "eyebrow": "// AI systems engineering for SMEs",
-    "headline": "Bespoke AI systems for the work that still lives in inboxes, PDFs and people's heads.",
-    "subline": "We build private internal software for businesses with complex workflows. Documents, data and existing tools connected into one system — with human control where it counts.",
-    "primaryCta": "Discuss your workflow",
-    "secondaryCta": "See what we build"
+    "morphingPhrases": ["AI Workflows", "Knowledge Systems", "Document Processing", "Integrations"],
+    "subtitle": "Bespoke AI systems for businesses with a lot of operational work. For the work stuck in email, PDFs and spreadsheets.",
+    "cta": "Discuss your workflow"
   },
-  "problem": {
-    "eyebrow": "// The problem",
-    "headline": "Most AI demos don't survive their first week in production.",
-    "body": "Real work is full of exceptions. Permissions that don't line up, documents that arrive half-complete, approvals someone has to give, legacy systems that don't play along. That's where general-purpose tools break. That's where this work starts."
-  },
-  "pillars": {
-    "eyebrow": "// What we build",
-    "headline": "Four places where AI actually changes the operation.",
-    "items": [
-      {
-        "id": "ai-workflows",
-        "number": "01",
-        "title": "AI Workflow Systems",
-        "description": "From incoming message to closed task. Extraction, checks, approval, action. Everything traceable."
+  "about": {
+    "heading": "What we build",
+    "intro": "Four places where AI actually helps the operation. Internal software your team uses — with sources, with permissions, with an audit trail.",
+    "servicesLabel": "Our pillars",
+    "services": {
+      "ai-workflows": {
+        "title": "AI Workflows",
+        "description": "Requests come in, get processed, routed and logged. No manual middle."
       },
-      {
-        "id": "kennissystemen",
-        "number": "02",
+      "kennissystemen": {
         "title": "Private Knowledge Systems",
-        "description": "Internal search and answers over your own documents. Permission-aware, with the source attached, not a public API."
+        "description": "Answers from your own documents. With sources. With permissions. Not a public model."
       },
-      {
-        "id": "documentverwerking",
-        "number": "03",
+      "documentverwerking": {
         "title": "Document & Data Processing",
-        "description": "PDFs, emails and forms into clean data. Uncertain records go to a human, the rest flow straight through."
+        "description": "PDFs and scans become data. Uncertain records go to a person."
       },
-      {
-        "id": "integraties",
-        "number": "04",
+      "integraties": {
         "title": "Systems Integration",
-        "description": "The connective layer between ERP, CRM, accounting and the tools people actually use. With logs and retries."
+        "description": "ERP, CRM, accounting — one system. Logs you can actually read."
       }
-    ],
-    "foundation": {
-      "eyebrow": "// The foundation",
-      "title": "Custom Software Development",
-      "description": "The core skill of this studio for five years. AI is a layer on top, not a replacement."
     }
   },
-  "comparison": {
-    "eyebrow": "// More than automation",
-    "headline": "Why this isn't an AI automation agency.",
-    "leadIn": "Automation usually stops at the happy path. Operational work doesn't.",
-    "columnA": "Generic agency",
-    "columnB": "Baghlabs",
-    "rows": [
-      { "a": "Wires off-the-shelf tools together", "b": "System built around the real process" },
-      { "a": "Public AI prompt or wrapper", "b": "Private data architecture, permission-aware" },
-      { "a": "If-this-then-that rules", "b": "Stateful workflows with validation and recovery" },
-      { "a": "Ships a demo", "b": "Ships production software your team can run" },
-      { "a": "Breaks on the edge case", "b": "Review queue, audit log, fallback, monitoring" },
-      { "a": "Pushes data through random SaaS", "b": "Designed around controlled access and EU privacy" }
-    ]
+  "cases": {
+    "heading": "Recent work",
+    "subtext": "View project",
+    "comingSoon": "More work coming soon."
   },
-  "process": {
-    "eyebrow": "// How we work",
-    "headline": "Three stages, each with a clear boundary.",
-    "stages": [
+  "why": {
+    "heading": "Why Baghlabs",
+    "reasons": [
       {
-        "number": "01",
-        "title": "AI Opportunity Blueprint",
-        "duration": "2 weeks",
-        "priceLabel": "Paid diagnostic",
-        "description": "We pick one workflow together, map the technical reality, and deliver a concrete build proposal. No vague sessions, no free consulting.",
-        "outputs": [
-          "Process map and bottleneck analysis",
-          "Data and integration inventory",
-          "Security and privacy architecture",
-          "Fixed-scope proposal with ROI hypothesis"
-        ]
+        "title": "One point of contact",
+        "description": "The person you talk to writes the code. Scope, timing and communication stay short. Nothing subcontracted."
       },
       {
-        "number": "02",
-        "title": "Build & Launch",
-        "duration": "Scoped per project",
-        "priceLabel": "Fixed scope",
-        "description": "We design, build and deploy the system. After that your team runs it, with documentation and a handover.",
-        "outputs": [
-          "Production web app or internal system",
-          "AI workflow and data model",
-          "Integrations and role-based access",
-          "Audit log and operations dashboard"
-        ]
+        "title": "Around the process, not the tool",
+        "description": "Exceptions are the work. Permissions, incomplete data, approvals, legacy. That's where a system begins."
       },
       {
-        "number": "03",
-        "title": "Continuous Improvement",
-        "duration": "Monthly",
-        "priceLabel": "Ongoing engagement",
-        "description": "AI systems improve after launch. Monitoring, tuning, small extensions — based on real usage, not guesses.",
-        "outputs": [
-          "Monitoring and error resolution",
-          "Monthly usage review",
-          "Prompt and model tuning",
-          "Prioritised backlog of improvements"
-        ]
+        "title": "Not a black box",
+        "description": "Role-based access, audit log, human-in-the-loop, monitoring. Someone can always see what the system did."
       }
     ]
   },
-  "security": {
-    "eyebrow": "// Secure by design",
-    "headline": "Permissions, provenance and accountability aren't add-ons.",
-    "body": "These systems often touch personal, financial or contractual information. That calls for design, not promises. Access is limited to who needs it. AI answers point back to the source. Impactful actions get a human approval. Every move is auditable.",
-    "points": [
-      { "title": "Controlled data access", "description": "Data stays inside your environment. Model choice and hosting match the sensitivity of the content." },
-      { "title": "Role-based permissions", "description": "Who can see and do what is explicit, not implicit. No shared admin accounts." },
-      { "title": "Answers with sources", "description": "AI output is tied to the source document, with page or reference." },
-      { "title": "Human approval", "description": "Actions with impact are never silently automated. Someone sees them, someone approves them." },
-      { "title": "Audit log", "description": "Every step, every change, every approval is traceable. Not a black box." }
-    ]
-  },
-  "scenarios": {
-    "eyebrow": "// Examples",
-    "headline": "Three shapes of system we keep building.",
-    "leadIn": "Anonymised. They're cross-industry — the pattern matters, not the vertical.",
-    "items": [
-      {
-        "tag": "Document → validated record",
-        "title": "PDF-to-accounting pipeline",
-        "description": "Incoming invoices and attachments are extracted, checked against purchase orders, and queued for approval. Uncertainty goes to the right person, the rest goes to the accounting tool."
-      },
-      {
-        "tag": "Knowledge → answer",
-        "title": "Internal SOP assistant",
-        "description": "Staff ask questions about procedures, contracts and products. Answers come from your own documents, with the source cited and access rules respected."
-      },
-      {
-        "tag": "Systems → one view",
-        "title": "Multi-system operations dashboard",
-        "description": "ERP, CRM, ticketing and internal tools brought into one working screen. Status updates flow automatically, escalations reach the right person."
-      }
-    ]
-  },
-  "fit": {
-    "eyebrow": "// Fit",
-    "headline": "When this works, and when it doesn't.",
-    "yesTitle": "Baghlabs fits when",
-    "yes": [
-      "Your team processes many emails, PDFs, forms or spreadsheets",
-      "Important knowledge is scattered across documents and colleagues",
-      "Staff duplicate data across multiple systems",
-      "You want AI to support staff, not replace them",
-      "Standard software gets close but doesn't fit the real process",
-      "Security, permissions and traceability are non-negotiable"
-    ],
-    "noTitle": "Baghlabs doesn't fit when",
-    "no": [
-      "You want a marketing chat widget",
-      "A standard SaaS tool already covers the problem",
-      "You want a one-hour Zapier setup",
-      "There's no internal process owner",
-      "You're looking for a speculative 'AI idea' without a real bottleneck"
-    ]
-  },
-  "cta": {
-    "eyebrow": "// Next step",
-    "headline": "Find the workflow costing you the most time.",
-    "body": "Two weeks, a fixed price, a concrete build proposal. No commitment to build.",
-    "primary": "Start with a Blueprint",
-    "secondary": "Get in touch first"
+  "ctaSection": {
+    "heading": "Find the workflow costing you the most time.",
+    "description": "Two weeks, fixed price, concrete proposal. No commitment to build.",
+    "note": "Active in Brussels, Ghent and across Flanders.",
+    "cta": "Discuss your workflow"
   }
 }

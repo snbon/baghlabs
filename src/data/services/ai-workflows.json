@@ -12,7 +12,7 @@
     "en": "From manual admin to one reliable working system."
   },
   "positioning": {
-    "nl": "We bouwen software rond je echte proces: binnenkomend bericht, uitgelezen data, controle, goedkeuring, actie in het volgende systeem, spoor terug. Geen losse automatiseringen die stuk gaan bij de eerste uitzondering.",
+    "nl": "We bouwen software rond je echte proces: binnenkomend bericht, data eruit, controle, goedkeuring, actie in het volgende systeem — met een audit trail. Geen losse automations die stuk gaan bij de eerste uitzondering.",
     "en": "We build software around your actual process: incoming request, extracted data, checks, approvals, action in the next system, full trace back. No brittle automations that break on the first exception."
   },
   "scope": {

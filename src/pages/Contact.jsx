@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useLocation, useNavigate, Link as RouterLink } from 'react-router-dom'
+import { useNavigate, Link as RouterLink } from 'react-router-dom'
+import { useCurrentLang, useLangPath, usePathAlternate } from '@/lib/usePathAlternate'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronLeft, ChevronRight, Check, Loader2 } from 'lucide-react'
 import ReCAPTCHA from 'react-google-recaptcha'
@@ -39,9 +40,12 @@ const Contact = () => {
   })
 
   const serviceOptions = [
-    { id: 'development', label: t('services.development') },
-    { id: 'branding', label: t('services.branding') },
-    { id: 'marketing', label: t('services.marketing') },
+    { id: 'ai-workflows', label: t('services.ai-workflows') },
+    { id: 'kennissystemen', label: t('services.kennissystemen') },
+    { id: 'documentverwerking', label: t('services.documentverwerking') },
+    { id: 'integraties', label: t('services.integraties') },
+    { id: 'softwareontwikkeling', label: t('services.softwareontwikkeling') },
+    { id: 'blueprint', label: t('services.blueprint') },
     { id: 'other', label: t('services.other') },
   ]
 
@@ -398,26 +402,24 @@ const Contact = () => {
 
 const FooterOnly = () => {
   const { t: tCommon, i18n } = useTranslation('common')
-  const location = useLocation()
   const navigate = useNavigate()
-  const basePath = location.pathname.startsWith('/en') ? '/en' : ''
-  const isEnglish = location.pathname.startsWith('/en')
+  const lang = useCurrentLang()
+  const alternatePath = usePathAlternate(lang === 'en' ? 'nl' : 'en')
+  const langPath = useLangPath()
+  const isEnglish = lang === 'en'
 
   const toggleLanguage = () => {
-    if (isEnglish) {
-      i18n.changeLanguage('nl')
-      navigate(location.pathname.replace(/^\/en/, '') || '/')
-    } else {
-      i18n.changeLanguage('en')
-      navigate(`/en${location.pathname === '/' ? '' : location.pathname}`)
-    }
+    const next = isEnglish ? 'nl' : 'en'
+    i18n.changeLanguage(next)
+    navigate(alternatePath)
   }
 
   const linkHref = (key) => {
-    if (key === 'contact') return `${basePath}/contact`
-    if (key === 'cases') return `${basePath}/cases`
-    if (key === 'services') return `${basePath}/services/development`
-    return `${basePath}/`
+    if (key === 'contact') return langPath('contact')
+    if (key === 'cases') return langPath('projects')
+    if (key === 'services') return langPath('services', 'ai-workflows')
+    if (key === 'about') return langPath('about')
+    return langPath('home')
   }
 
   return (
@@ -458,7 +460,7 @@ const FooterOnly = () => {
             <div>
               <h4 className="text-foreground font-medium text-sm mb-4 uppercase tracking-wide">{tCommon('footer.getInTouch')}</h4>
               <p className="text-muted-foreground text-sm mb-4">{tCommon('footer.readyText')}</p>
-              <RouterLink to={`${basePath}/contact`} className="btn-secondary text-sm inline-block">
+              <RouterLink to={langPath('contact')} className="btn-secondary text-sm inline-block">
                 {tCommon('footer.workWithUs')}
               </RouterLink>
             </div>

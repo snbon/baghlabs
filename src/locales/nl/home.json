@@ -1,204 +1,58 @@
 {
   "hero": {
-    "eyebrow": "// AI-systeemontwikkeling voor KMO",
-    "headline": "Bespoke AI-systemen voor het werk dat nog in inboxen, PDF's en de hoofden van mensen zit.",
-    "subline": "We bouwen besloten interne software voor bedrijven met complexe workflows. Documenten, data en bestaande tools verbonden tot één systeem — met menselijke controle waar het telt.",
-    "primaryCta": "Bespreek je workflow",
-    "secondaryCta": "Zie wat we bouwen"
+    "morphingPhrases": ["AI Workflows", "Kennissystemen", "Documentverwerking", "Systeemintegraties"],
+    "subtitle": "Bespoke AI-systemen voor bedrijven met veel operationeel werk. Voor het werk dat vastloopt in mails, PDF's en Excel.",
+    "cta": "Bespreek je workflow"
   },
-  "problem": {
-    "eyebrow": "// Het probleem",
-    "headline": "De meeste AI-demo's overleven de eerste week productie niet.",
-    "body": "Echt werk zit vol uitzonderingen. Rechten die niet kloppen, documenten die half aankomen, goedkeuringen die iemand moet geven, legacy-systemen die niet meebewegen. Daar lopen algemene tools stuk. Daar begint dit werk."
-  },
-  "pillars": {
-    "eyebrow": "// Wat we bouwen",
-    "headline": "Vier plekken waar AI verschil maakt in de operatie.",
-    "items": [
-      {
-        "id": "ai-workflows",
-        "number": "01",
-        "title": "AI Workflow Systemen",
-        "description": "Van binnenkomend bericht tot afgehandelde taak. Extractie, controle, goedkeuring, actie. Alles traceerbaar."
+  "about": {
+    "heading": "Wat we bouwen",
+    "intro": "Vier plekken waar AI verschil maakt in de operatie. Interne software die je team ook echt gebruikt — met bron, met rechten, met een audit trail.",
+    "servicesLabel": "Onze pijlers",
+    "services": {
+      "ai-workflows": {
+        "title": "AI Workflows",
+        "description": "Aanvragen komen binnen, worden verwerkt, doorgezet en gelogd. Zonder handwerk in het midden."
       },
-      {
-        "id": "kennissystemen",
-        "number": "02",
-        "title": "Besloten Kennissystemen",
-        "description": "Interne zoek- en antwoordfunctie op eigen documenten. Rechten-bewust, met bron erbij, geen publieke API."
+      "kennissystemen": {
+        "title": "AI-kennissystemen",
+        "description": "Antwoorden uit je eigen documenten. Met bron. Met rechten. Geen publiek model."
       },
-      {
-        "id": "documentverwerking",
-        "number": "03",
-        "title": "Document & Data Verwerking",
-        "description": "PDF's, e-mails en formulieren naar schone data. Twijfelgevallen naar een mens, de rest automatisch door."
+      "documentverwerking": {
+        "title": "Document- & Dataverwerking",
+        "description": "PDF's en scans worden data. Twijfelgevallen komen bij een mens."
       },
-      {
-        "id": "integraties",
-        "number": "04",
-        "title": "Systeem Integraties",
-        "description": "De koppellaag tussen ERP, CRM, boekhouding en de tools die er echt worden gebruikt. Met logs en retries."
+      "integraties": {
+        "title": "Systeemintegraties",
+        "description": "ERP, CRM, boekhouding — één systeem. Logs die je kan lezen."
       }
-    ],
-    "foundation": {
-      "eyebrow": "// De basis onder alles",
-      "title": "Custom Softwareontwikkeling",
-      "description": "Al vijf jaar de kernvaardigheid van dit huis. AI is een laag daarbovenop, niet een vervanging."
     }
   },
-  "comparison": {
-    "eyebrow": "// Meer dan automatisering",
-    "headline": "Waarom het verschilt van een AI-automatiseringsbureau.",
-    "leadIn": "Automatisering stopt meestal bij het gelukkige pad. Operationeel werk niet.",
-    "columnA": "Generiek bureau",
-    "columnB": "Baghlabs",
-    "rows": [
+  "cases": {
+    "heading": "Recent gebouwd",
+    "subtext": "Bekijk project",
+    "comingSoon": "Meer werk binnenkort."
+  },
+  "why": {
+    "heading": "Waarom Baghlabs",
+    "reasons": [
       {
-        "a": "Kant-en-klare tools aan elkaar knopen",
-        "b": "Systeem gebouwd rond het echte proces"
+        "title": "Eén contact",
+        "description": "De persoon aan de lijn schrijft ook de code. Scope, timing en communicatie blijven kort. Geen doorverwezen werk."
       },
       {
-        "a": "Publieke AI-prompt of wrapper",
-        "b": "Besloten data-architectuur, rechten-bewust"
+        "title": "Rond het proces, niet de tool",
+        "description": "Uitzonderingen zijn het werk. Rechten, incomplete data, goedkeuring, legacy. Daar begint een systeem."
       },
       {
-        "a": "Als-dit-dan-dat regels",
-        "b": "Stateful workflows met validatie en herstel"
-      },
-      {
-        "a": "Levert een demo",
-        "b": "Levert productiesoftware die je team kan runnen"
-      },
-      {
-        "a": "Breekt op de edge case",
-        "b": "Review-queue, auditlog, fallback, monitoring"
-      },
-      {
-        "a": "Data door willekeurige SaaS heen",
-        "b": "Ontworpen rond gecontroleerde toegang en EU-privacy"
+        "title": "Geen zwarte doos",
+        "description": "Rolgebaseerde toegang, audit log, human-in-the-loop, monitoring. Iemand kan altijd terugzien wat het systeem deed."
       }
     ]
   },
-  "process": {
-    "eyebrow": "// Hoe we werken",
-    "headline": "Drie fases, elk met een duidelijke grens.",
-    "stages": [
-      {
-        "number": "01",
-        "title": "AI Opportunity Blueprint",
-        "duration": "2 weken",
-        "priceLabel": "Betaalde diagnose",
-        "description": "We kiezen samen één workflow, brengen de technische realiteit in kaart en leveren een concreet bouwvoorstel. Geen vage sessies, geen gratis consulting.",
-        "outputs": [
-          "Procesmap en knelpuntenanalyse",
-          "Data- en integratie-inventaris",
-          "Beveiligings- en privacy-architectuur",
-          "Vast-scope voorstel met ROI-hypothese"
-        ]
-      },
-      {
-        "number": "02",
-        "title": "Build & Launch",
-        "duration": "Variabel per scope",
-        "priceLabel": "Vaste scope",
-        "description": "We ontwerpen, bouwen en zetten het systeem live. Daarna zit je team er zelf aan, met documentatie en overdracht.",
-        "outputs": [
-          "Productie-web-app of intern systeem",
-          "AI-workflow en datamodel",
-          "Integraties en rolgebaseerde toegang",
-          "Auditlog en operations-dashboard"
-        ]
-      },
-      {
-        "number": "03",
-        "title": "Continuous Improvement",
-        "duration": "Maandelijks",
-        "priceLabel": "Doorlopend engagement",
-        "description": "AI-systemen verbeteren na livegang. Monitoring, tuning, kleine uitbreidingen — op basis van gebruik, niet op basis van vermoedens.",
-        "outputs": [
-          "Monitoring en foutresolutie",
-          "Gebruiksreview per maand",
-          "Prompt- en modeltuning",
-          "Prioritaire backlog van verbeteringen"
-        ]
-      }
-    ]
-  },
-  "security": {
-    "eyebrow": "// Veiligheid vanaf ontwerp",
-    "headline": "Rechten, herkomst en verantwoording zijn geen extraatje.",
-    "body": "Deze systemen raken vaak persoonlijke, financiële of contractuele informatie. Dat vraagt om ontwerp, niet om beloftes. Toegang wordt beperkt tot wie het nodig heeft. AI-antwoorden verwijzen terug naar de bron. Belangrijke acties krijgen een menselijke goedkeuring. Elke handeling is auditbestendig.",
-    "points": [
-      {
-        "title": "Gecontroleerde datatoegang",
-        "description": "Data blijft binnen jouw omgeving. Modelkeuze en hosting worden afgestemd op de gevoeligheid van de inhoud."
-      },
-      {
-        "title": "Rolgebaseerde rechten",
-        "description": "Wie wat mag zien en doen is expliciet, niet impliciet. Geen gedeelde admin-accounts."
-      },
-      {
-        "title": "Antwoorden met bron",
-        "description": "AI-output is gekoppeld aan het brondocument, met paginanummer of referentie."
-      },
-      {
-        "title": "Menselijke goedkeuring",
-        "description": "Acties met impact zijn nooit stil geautomatiseerd. Iemand ziet ze, iemand keurt ze."
-      },
-      {
-        "title": "Auditlog",
-        "description": "Elke stap, elke wijziging, elke goedkeuring is terug te vinden. Geen zwarte doos."
-      }
-    ]
-  },
-  "scenarios": {
-    "eyebrow": "// Voorbeelden",
-    "headline": "Drie soorten systemen die vaak terugkomen.",
-    "leadIn": "Anoniem gemaakt. Ze zijn cross-sectoraal — het patroon telt, niet de industrie.",
-    "items": [
-      {
-        "tag": "Document → gevalideerd record",
-        "title": "PDF-naar-boekhouding pipeline",
-        "description": "Inkomende facturen en bijlagen worden uitgelezen, gecontroleerd tegen bestellingen, en klaargezet ter goedkeuring. Twijfel gaat naar de juiste persoon, de rest naar het boekhoudpakket."
-      },
-      {
-        "tag": "Kennis → antwoord",
-        "title": "Interne SOP-assistent",
-        "description": "Personeel stelt vragen over procedures, contracten en producten. Antwoorden komen uit de eigen documenten, met verwijzing naar de bron en respect voor toegangsrechten."
-      },
-      {
-        "tag": "Systemen → één beeld",
-        "title": "Multi-systeem operations dashboard",
-        "description": "ERP, CRM, ticketing en interne tools samengebracht in één werkscherm. Statusupdates lopen automatisch, escalaties komen bij de juiste persoon."
-      }
-    ]
-  },
-  "fit": {
-    "eyebrow": "// Fit",
-    "headline": "Wanneer dit werkt, en wanneer niet.",
-    "yesTitle": "Baghlabs past als",
-    "yes": [
-      "Je team verwerkt veel e-mails, PDF's, formulieren of spreadsheets",
-      "Belangrijke kennis zit verspreid over documenten en collega's",
-      "Personeel dupliceert data tussen meerdere systemen",
-      "Je wil AI die medewerkers ondersteunt, niet vervangt",
-      "Standaardsoftware komt in de buurt, maar past niet op het echte proces",
-      "Beveiliging, rechten en traceerbaarheid zijn een must"
-    ],
-    "noTitle": "Baghlabs past niet als",
-    "no": [
-      "Je zoekt een marketing-chatvenster",
-      "Een standaard SaaS-tool dekt het probleem al volledig",
-      "Je wil een uur Zapier-setup",
-      "Er is geen interne procesverantwoordelijke",
-      "Je zoekt een speculatief 'AI-idee' zonder concreet knelpunt"
-    ]
-  },
-  "cta": {
-    "eyebrow": "// Volgende stap",
-    "headline": "Vind de workflow die je het meeste tijd kost.",
-    "body": "Twee weken, een vaste prijs, een concreet bouwvoorstel. Geen verplichting tot bouw.",
-    "primary": "Start met een Blueprint",
-    "secondary": "Eerst kennismaken"
+  "ctaSection": {
+    "heading": "Vind de workflow die je het meeste tijd kost.",
+    "description": "Twee weken, vaste prijs, concreet voorstel. Zonder verplichting om te bouwen.",
+    "note": "Actief in Brussel, Gent en de rest van Vlaanderen.",
+    "cta": "Bespreek je workflow"
   }
 }

@@ -2,8 +2,8 @@
   "page": {
     "eyebrow": "// Contact",
     "heroTitle": "Bespreek je workflow.",
-    "heroDescription": "Een operationeel knelpunt, een AI-systeem in gedachten, of gewoon willen aftoetsen of dit past. Vul het formulier in — je hoort binnen één werkdag terug.",
-    "heroNote": "Actief in Brussel, Gent en de rest van Vlaanderen.",
+    "heroDescription": "Antwoord binnen één werkdag.",
+    "heroNote": "Brussel · Gent · Vlaanderen",
     "formTitle": "Bericht",
     "formDescription": "Vertel ons over het proces of het probleem. We reageren binnen 1 werkdag."
   },
@@ -56,10 +56,10 @@
     "flexible": "Flexibel"
   },
   "services": {
-    "ai-workflows": "AI Workflow Systemen",
-    "kennissystemen": "Besloten Kennissystemen",
+    "ai-workflows": "AI Workflows",
+    "kennissystemen": "AI-kennissystemen",
     "documentverwerking": "Document- & Dataverwerking",
-    "integraties": "Systeem Integraties",
+    "integraties": "Systeemintegraties",
     "softwareontwikkeling": "Softwareontwikkeling",
     "blueprint": "AI Opportunity Blueprint",
     "other": "Iets anders / niet zeker"

@@ -1,13 +1,15 @@
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { CaseGallery } from '@/components/ui/case-gallery'
 import { getFeaturedCases } from '@/data/cases'
+import { useCurrentLang, useLangPath } from '@/lib/usePathAlternate'
 
 const HomeCasesSection = () => {
   const { t } = useTranslation('home')
-  const location = useLocation()
-  const basePath = location.pathname.startsWith('/en') ? '/en' : ''
+  const lang = useCurrentLang()
+  const langPath = useLangPath()
+  const basePath = lang === 'en' ? '/en' : ''
   const featuredCases = getFeaturedCases(6)
 
   // Augment with i18n text
@@ -34,7 +36,7 @@ const HomeCasesSection = () => {
                 {t('cases.heading')}
               </h2>
               <Link
-                to={`${basePath}/cases`}
+                to={langPath('projects')}
                 className="group flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
                 {t('cases.subtext')}

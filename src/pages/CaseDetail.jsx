@@ -48,7 +48,7 @@ const CaseDetail = () => {
         <div className="text-center">
           <h1 className="text-2xl font-semibold text-foreground mb-3">Case Not Found</h1>
           <p className="text-muted-foreground mb-6">The case study you're looking for doesn't exist.</p>
-          <Link to={`${basePath}/cases`} className="btn-primary">Back to Cases</Link>
+          <Link to={basePath === '/en' ? '/en/cases' : '/projecten'} className="btn-primary">Back to Cases</Link>
         </div>
       </div>
     )

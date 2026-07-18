@@ -1,41 +1,38 @@
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import { RevealImageList } from '@/components/ui/reveal-images'
-import { useLocation } from 'react-router-dom'
+import { useLangPath } from '@/lib/usePathAlternate'
+
+const PILLAR_IMAGES = {
+  'ai-workflows': [
+    '/assets/shiftend/shiftend-report.png',
+    '/assets/availly/availly-dashboard.png',
+  ],
+  'kennissystemen': [
+    '/assets/calvarychurch/calvarychurch-preview.png',
+    '/assets/supportportal/supportportal-preview.png',
+  ],
+  'documentverwerking': [
+    '/assets/shiftend/shiftend-mobile.png',
+    '/assets/delicebrugge/delicebrugge-preview.png',
+  ],
+  'integraties': [
+    '/assets/supportportal/supportportal-preview.png',
+    '/assets/availly/availly-dashboard.png',
+  ],
+}
 
 const AboutSection = () => {
   const { t } = useTranslation('home')
-  const location = useLocation()
-  const basePath = location.pathname.startsWith('/en') ? '/en' : ''
+  const langPath = useLangPath()
 
   const services = t('about.services', { returnObjects: true })
 
-  const items = [
-    {
-      text: services.development.title,
-      href: `${basePath}/services/development`,
-      images: [
-        '/assets/availly/availly-dashboard.png',
-        '/assets/shiftend/shiftend-report.png',
-      ],
-    },
-    {
-      text: services.branding.title,
-      href: `${basePath}/services/branding-content`,
-      images: [
-        '/assets/blurry-vintage/blurry-by-persona-gent.jpg',
-        '/assets/claymates/claymates-cup2.jpg',
-      ],
-    },
-    {
-      text: services.marketing.title,
-      href: `${basePath}/services/performance-marketing`,
-      images: [
-        '/assets/yokoso/yokoso-campagin-photography-by-persona-gent.jpg',
-        '/assets/rebelieve/rebelieve-by-persona-gent.jpg',
-      ],
-    },
-  ]
+  const items = Object.entries(services).map(([id, s]) => ({
+    text: s.title,
+    href: langPath('services', id),
+    images: PILLAR_IMAGES[id] || [],
+  }))
 
   return (
     <div className="w-full min-h-screen flex items-center justify-center">

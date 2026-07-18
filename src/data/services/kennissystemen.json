@@ -4,15 +4,15 @@
   "accent": "cyan",
   "order": 2,
   "label": {
-    "nl": "Besloten Kennissystemen",
+    "nl": "AI-kennissystemen",
     "en": "Private Knowledge Systems"
   },
   "tagline": {
-    "nl": "Interne kennis die je team ook kan gebruiken.",
+    "nl": "Interne kennis die je team ook echt gebruikt.",
     "en": "Company knowledge your team can actually use."
   },
   "positioning": {
-    "nl": "Beleid, procedures, contracten, dossiers, producthandleidingen — meestal verspreid over mappen, mailboxen en de hoofden van drie collega's. We bouwen een besloten, rechten-bewust systeem dat exacte antwoorden geeft met de bron erbij.",
+    "nl": "Beleid, procedures, contracten, dossiers, producthandleidingen — meestal verspreid over mappen, mailboxen en de hoofden van drie collega's. We bouwen een interne knowledge base die exacte antwoorden geeft, met bron en met rechten.",
     "en": "Policies, procedures, contracts, cases, product manuals — usually scattered across folders, inboxes and three colleagues' heads. We build a private, permission-aware system that gives precise answers with the source attached."
   },
   "scope": {

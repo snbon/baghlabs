@@ -1,26 +1,27 @@
-import { useParams, useLocation } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useScroll, useTransform, motion } from 'framer-motion'
-import { Pricing } from '@/components/ui/pricing'
 import { CaseGallery } from '@/components/ui/case-gallery'
 import { cases } from '@/data/cases'
 import { CTASection } from '@/components/sections/Home'
+import { getPillar } from '@/data/services'
+import { useCurrentLang } from '@/lib/usePathAlternate'
 
 const ServiceDetail = () => {
   const { serviceId } = useParams()
-  const location = useLocation()
-  const basePath = location.pathname.startsWith('/en') ? '/en' : ''
+  const lang = useCurrentLang()
+  const basePath = lang === 'en' ? '/en' : ''
   const { t } = useTranslation('services')
   const { t: tCommon } = useTranslation('common')
   const { t: tCases } = useTranslation('cases')
 
-  // Parallax, dots drift upward subtly as user scrolls
   const { scrollY } = useScroll()
   const dotsY = useTransform(scrollY, [0, 2000], [0, -80])
 
-  const service = t(serviceId, { returnObjects: true })
+  const pillar = getPillar(serviceId)
+  const localized = t(serviceId, { returnObjects: true, defaultValue: null })
 
-  if (!service || typeof service !== 'object') {
+  if (!pillar || !localized || typeof localized !== 'object') {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
@@ -30,16 +31,19 @@ const ServiceDetail = () => {
     )
   }
 
+  const scope = pillar.scope[lang] || pillar.scope.nl
+  const deliverables = pillar.deliverables[lang] || pillar.deliverables.nl
+  const notFor = pillar.notForYouIf[lang] || pillar.notForYouIf.nl
+  const positioning = pillar.positioning[lang] || pillar.positioning.nl
+
   const relatedCases = cases
-    .filter(c => c.relatedService === serviceId && !c.comingSoon)
+    .filter(c => !c.comingSoon && (c.relatedService === 'development' || c.relatedService === serviceId))
+    .slice(0, 6)
     .map(c => ({
       ...c,
       name: tCases(`${c.id}.name`, { defaultValue: c.id }),
       tagline: tCases(`${c.id}.tagline`, { defaultValue: '' }),
     }))
-
-  const whatWeOffer = service.whatWeOffer?.items || []
-  const pricing = service.pricing
 
   return (
     <div className="relative overflow-hidden">
@@ -59,7 +63,7 @@ const ServiceDetail = () => {
       </div>
 
       {/* Hero */}
-      <section className="pt-32 md:pt-40 pb-24">
+      <section className="pt-32 md:pt-40 pb-16">
         <div className="container-custom max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -67,46 +71,95 @@ const ServiceDetail = () => {
             transition={{ duration: 0.7 }}
           >
             <p className="text-xs uppercase tracking-widest text-muted-foreground mb-4">
-              {service.subtitle}
+              {localized.subtitle}
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 tracking-tight">
-              {service.title}
+              {localized.title}
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
-              {service.heroDescription}
+              {localized.heroDescription}
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* What we offer */}
-      <section className="py-20">
-        <div className="container-custom">
-          <motion.h2
+      {/* Positioning */}
+      <section className="py-12">
+        <div className="container-custom max-w-4xl">
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl md:text-4xl font-semibold text-foreground mb-12"
+            transition={{ duration: 0.5 }}
+            className="text-lg md:text-xl text-foreground leading-relaxed"
           >
-            {service.whatWeOffer?.heading}
-          </motion.h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {whatWeOffer.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="p-6 rounded-2xl border border-bagh-100/60 bg-white/40 backdrop-blur-sm hover:border-bagh-200 transition-colors"
-              >
-                <div className="w-8 h-0.5 bg-foreground mb-4" />
-                <h3 className="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{item.description}</p>
-              </motion.div>
-            ))}
+            {positioning}
+          </motion.p>
+        </div>
+      </section>
+
+      {/* Scope + Deliverables */}
+      <section className="py-20">
+        <div className="container-custom">
+          <div className="grid md:grid-cols-2 gap-10 md:gap-14">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
+                {tCommon('sections.services')}
+              </h2>
+              <ul className="space-y-3">
+                {scope.map((item, i) => (
+                  <li key={i} className="flex gap-3 text-muted-foreground leading-relaxed">
+                    <span className="text-foreground shrink-0">·</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
+                {tCommon('sections.results')}
+              </h2>
+              <ul className="space-y-3">
+                {deliverables.map((item, i) => (
+                  <li key={i} className="flex gap-3 text-muted-foreground leading-relaxed">
+                    <span className="text-foreground shrink-0">→</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
+        </div>
+      </section>
+
+      {/* Example */}
+      {localized.example && (
+        <section className="py-16">
+          <div className="container-custom max-w-4xl">
+            <p className="text-xs uppercase tracking-widest text-muted-foreground mb-4">
+              {localized.example.title}
+            </p>
+            <p className="text-xl md:text-2xl text-foreground leading-snug">
+              {localized.example.body}
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* Not for you */}
+      <section className="py-16">
+        <div className="container-custom max-w-4xl">
+          <h2 className="text-lg md:text-xl font-semibold text-foreground mb-4 uppercase tracking-wide">
+            {lang === 'en' ? "Not for you if" : 'Niet voor jou als'}
+          </h2>
+          <ul className="space-y-2">
+            {notFor.map((item, i) => (
+              <li key={i} className="flex gap-3 text-muted-foreground leading-relaxed">
+                <span className="text-muted-foreground/50 shrink-0">×</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -121,13 +174,6 @@ const ServiceDetail = () => {
             readMoreLabel={tCommon('cta.readMore')}
             basePath={basePath}
           />
-        </section>
-      )}
-
-      {/* Pricing */}
-      {pricing && (
-        <section className="py-4">
-          <Pricing plans={pricing.plans} heading={pricing.heading} />
         </section>
       )}
 

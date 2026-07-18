@@ -1,26 +1,29 @@
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
-import { useLocation, useNavigate, Link } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
+import { useCurrentLang, usePathAlternate, useLangPath } from '@/lib/usePathAlternate'
 
 const CTASection = () => {
   const { t } = useTranslation('home')
   const { t: tCommon, i18n } = useTranslation('common')
-  const location = useLocation()
   const navigate = useNavigate()
+  const lang = useCurrentLang()
+  const alternatePath = usePathAlternate(lang === 'en' ? 'nl' : 'en')
+  const langPath = useLangPath()
 
-  const isEnglish = location.pathname.startsWith('/en')
-  const basePath = isEnglish ? '/en' : ''
+  const toggleLanguage = () => {
+    const next = lang === 'en' ? 'nl' : 'en'
+    i18n.changeLanguage(next)
+    navigate(alternatePath)
+  }
 
-const toggleLanguage = () => {
-    if (isEnglish) {
-      const newPath = location.pathname.replace(/^\/en/, '') || '/'
-      i18n.changeLanguage('nl')
-      navigate(newPath)
-    } else {
-      const newPath = `/en${location.pathname === '/' ? '' : location.pathname}`
-      i18n.changeLanguage('en')
-      navigate(newPath)
-    }
+  const linkTarget = (key) => {
+    if (key === 'home') return langPath('home')
+    if (key === 'cases') return langPath('projects')
+    if (key === 'services') return langPath('services', 'ai-workflows')
+    if (key === 'about') return langPath('about')
+    if (key === 'contact') return langPath('contact')
+    return langPath('home')
   }
 
   return (
@@ -58,7 +61,7 @@ const toggleLanguage = () => {
               {t('ctaSection.note')}
             </p>
             <Link
-              to={`${basePath}/contact`}
+              to={langPath('contact')}
               className="btn-secondary inline-flex items-center gap-2"
             >
               {t('ctaSection.cta')}
@@ -93,7 +96,7 @@ const toggleLanguage = () => {
                 {Object.entries(tCommon('footer.links', { returnObjects: true })).map(([key, label]) => (
                   <li key={key}>
                     <Link
-                      to={key === 'contact' ? `${basePath}/contact` : key === 'cases' ? `${basePath}/cases` : key === 'services' ? `${basePath}/services/development` : `${basePath}/`}
+                      to={linkTarget(key)}
                       className="text-muted-foreground text-sm hover:text-foreground transition-colors"
                     >
                       {label}
@@ -108,7 +111,7 @@ const toggleLanguage = () => {
               </h4>
               <p className="text-muted-foreground text-sm mb-4">{tCommon('footer.readyText')}</p>
               <Link
-                to={`${basePath}/contact`}
+                to={langPath('contact')}
                 className="btn-secondary text-sm"
               >
                 {tCommon('footer.workWithUs')}
@@ -122,7 +125,7 @@ const toggleLanguage = () => {
               onClick={toggleLanguage}
               className="mt-1 text-xs font-semibold uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors"
             >
-              {isEnglish ? 'NL' : 'EN'}
+              {lang === 'en' ? 'NL' : 'EN'}
             </button>
           </div>
         </div>

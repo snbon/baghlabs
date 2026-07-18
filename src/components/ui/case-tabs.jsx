@@ -4,9 +4,9 @@ import { cn } from '@/lib/utils'
 export function CaseTabs({ activeTab, onTabChange, labels }) {
   const tabs = [
     { value: 'all', label: labels?.all || 'All' },
-    { value: 'development', label: labels?.development || 'Development' },
-    { value: 'branding-content', label: labels?.brandingContent || 'Branding & Content' },
-    { value: 'performance-marketing', label: labels?.performanceMarketing || 'Performance Marketing' },
+    { value: 'development', label: labels?.development || 'Software' },
+    { value: 'ai', label: labels?.ai || 'AI' },
+    { value: 'others', label: labels?.others || 'Other' },
   ]
 
   return (
