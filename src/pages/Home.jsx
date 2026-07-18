@@ -1,26 +1,17 @@
-import {
-  HeroBlock,
-  ProblemBlock,
-  PillarGrid,
-  ComparisonTable,
-  ProcessStages,
-  SecurityBlock,
-  ScenariosBlock,
-  FitBlock,
-  CTASection,
-} from '../components/sections/Home'
+import { HeroSection, AboutSection, WhySection, CTASection, HomeCasesSection } from '../components/sections/Home'
+import BackgroundPage from '@/components/ui/background-page'
 
 const Home = () => {
   return (
-    <div className="bg-noir">
-      <HeroBlock />
-      <ProblemBlock />
-      <PillarGrid />
-      <ComparisonTable />
-      <ProcessStages />
-      <SecurityBlock />
-      <ScenariosBlock />
-      <FitBlock />
+    <div>
+      <HeroSection />
+      {/* Single continuous background spans all mid-sections */}
+      <div className="relative overflow-hidden">
+        <BackgroundPage />
+        <AboutSection />
+        <HomeCasesSection />
+        <WhySection />
+      </div>
       <CTASection />
     </div>
   )

@@ -1,191 +1,135 @@
-import { useParams, Link } from 'react-router-dom'
+import { useParams, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { useScroll, useTransform, motion } from 'framer-motion'
+import { Pricing } from '@/components/ui/pricing'
 import { CaseGallery } from '@/components/ui/case-gallery'
-import { GlowButton } from '@/components/ui/glow-button'
 import { cases } from '@/data/cases'
 import { CTASection } from '@/components/sections/Home'
-import { getPillar, pillars } from '@/data/services'
-import { useCurrentLang, useLangPath } from '@/lib/usePathAlternate'
 
 const ServiceDetail = () => {
   const { serviceId } = useParams()
+  const location = useLocation()
+  const basePath = location.pathname.startsWith('/en') ? '/en' : ''
   const { t } = useTranslation('services')
   const { t: tCommon } = useTranslation('common')
   const { t: tCases } = useTranslation('cases')
-  const lang = useCurrentLang()
-  const langPath = useLangPath()
 
-  const pillar = getPillar(serviceId)
-  const localized = t(serviceId, { returnObjects: true, defaultValue: null })
+  // Parallax, dots drift upward subtly as user scrolls
+  const { scrollY } = useScroll()
+  const dotsY = useTransform(scrollY, [0, 2000], [0, -80])
 
-  if (!pillar || !localized || typeof localized !== 'object') {
+  const service = t(serviceId, { returnObjects: true })
+
+  if (!service || typeof service !== 'object') {
     return (
-      <div className="min-h-screen bg-noir text-paper flex items-center justify-center px-6">
-        <div className="text-center max-w-md">
-          <p className="eyebrow text-neon mb-4">404</p>
-          <h1 className="display-3 mb-6">Pijler niet gevonden</h1>
-          <GlowButton asChild variant="neon" size="md">
-            <Link to={langPath('home')}>← Home</Link>
-          </GlowButton>
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-semibold text-foreground mb-4">Service Not Found</h1>
         </div>
       </div>
     )
   }
 
-  const scope = pillar.scope[lang] || pillar.scope.nl
-  const deliverables = pillar.deliverables[lang] || pillar.deliverables.nl
-  const notFor = pillar.notForYouIf[lang] || pillar.notForYouIf.nl
-  const tagline = pillar.tagline[lang] || pillar.tagline.nl
-  const positioning = pillar.positioning[lang] || pillar.positioning.nl
-
-  const otherPillars = pillars.filter((p) => p.id !== pillar.id)
   const relatedCases = cases
-    .filter((c) => !c.comingSoon && (c.relatedService === 'development' || c.relatedService === serviceId))
-    .slice(0, 6)
-    .map((c) => ({
+    .filter(c => c.relatedService === serviceId && !c.comingSoon)
+    .map(c => ({
       ...c,
       name: tCases(`${c.id}.name`, { defaultValue: c.id }),
       tagline: tCases(`${c.id}.tagline`, { defaultValue: '' }),
     }))
 
+  const whatWeOffer = service.whatWeOffer?.items || []
+  const pricing = service.pricing
+
   return (
-    <div className="bg-noir text-paper">
-      {/* Hero band */}
-      <section className="relative border-b border-paper/10 pt-32 md:pt-40 pb-20 md:pb-28 overflow-hidden">
-        <div className="absolute inset-0 bg-grid opacity-50 pointer-events-none" />
-        <div className="absolute inset-0 halo-neon pointer-events-none" />
-        <div className="container-wide relative">
-          <Link
-            to={langPath('home')}
-            className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-paper/50 hover:text-neon mb-10 transition-colors"
+    <div className="relative overflow-hidden">
+      {/* Full-page background: noise dots only, parallax drift */}
+      <div className="absolute inset-0 -z-10 pointer-events-none">
+        <div className="absolute inset-0 bg-white" />
+        <motion.div style={{ y: dotsY }} className="absolute inset-0">
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage:
+                'radial-gradient(circle at 1px 1px, rgba(0,0,0,0.07) 1px, transparent 0)',
+              backgroundSize: '20px 20px',
+            }}
+          />
+        </motion.div>
+      </div>
+
+      {/* Hero */}
+      <section className="pt-32 md:pt-40 pb-24">
+        <div className="container-custom max-w-4xl">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
           >
-            ← {t('page.backToHome')}
-          </Link>
-          <p className="eyebrow text-neon mb-6">{localized.eyebrow}</p>
-          <h1 className="display-1 max-w-[18ch] text-paper">{localized.title}</h1>
-          <p className="mt-6 md:mt-8 text-xl md:text-2xl font-display font-medium tracking-brut text-paper/85 max-w-3xl">
-            {localized.subtitle}
-          </p>
-          <p className="mt-8 md:mt-10 max-w-3xl text-lg leading-relaxed text-paper/70">
-            {localized.heroDescription}
-          </p>
-        </div>
-      </section>
-
-      {/* Positioning */}
-      <section className="border-b border-paper/10 py-20 md:py-24">
-        <div className="container-wide">
-          <div className="grid md:grid-cols-12 gap-8 md:gap-12">
-            <div className="md:col-span-4 flex md:flex-col gap-3 md:gap-4">
-              <span className="inline-block w-8 h-px bg-neon shadow-glow-sm mt-3" />
-              <p className="eyebrow text-neon">// {tagline}</p>
-            </div>
-            <p className="md:col-span-8 text-xl md:text-2xl leading-snug tracking-brut font-display text-paper">
-              {positioning}
+            <p className="text-xs uppercase tracking-widest text-muted-foreground mb-4">
+              {service.subtitle}
             </p>
-          </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 tracking-tight">
+              {service.title}
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
+              {service.heroDescription}
+            </p>
+          </motion.div>
         </div>
       </section>
 
-      {/* Scope + Deliverables */}
-      <section className="border-b border-paper/10 py-20 md:py-24">
-        <div className="container-wide grid md:grid-cols-2 gap-5 md:gap-6">
-          <div className="rounded-md border border-paper/10 bg-noir-2 overflow-hidden">
-            <div className="px-6 py-4 border-b border-paper/10 bg-noir-3/40">
-              <p className="eyebrow">{t('page.sectionsScope')}</p>
-            </div>
-            <ul className="p-6 md:p-7 space-y-3">
-              {scope.map((item, i) => (
-                <li key={i} className="flex gap-3 leading-snug text-paper/80">
-                  <span className="font-mono text-paper/40 shrink-0">·</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="rounded-md border border-paper/10 bg-noir-2 overflow-hidden relative">
-            <span className="absolute left-0 top-0 bottom-0 w-px bg-neon shadow-glow-sm" />
-            <div className="px-6 py-4 border-b border-paper/10 bg-noir-3/40">
-              <p className="eyebrow text-neon">{t('page.sectionsDeliverables')}</p>
-            </div>
-            <ul className="p-6 md:p-7 space-y-3">
-              {deliverables.map((item, i) => (
-                <li key={i} className="flex gap-3 leading-snug text-paper/85">
-                  <span className="font-mono text-neon shrink-0">→</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Example */}
-      {localized.example && (
-        <section className="border-b border-paper/10 py-20 md:py-24 relative overflow-hidden">
-          <div className="absolute inset-0 halo-violet pointer-events-none" />
-          <div className="container-wide relative max-w-4xl">
-            <p className="eyebrow text-violet mb-6">// {localized.example.title}</p>
-            <p className="display-3 leading-tight text-paper">{localized.example.body}</p>
-          </div>
-        </section>
-      )}
-
-      {/* Not for you */}
-      <section className="border-b border-paper/10 py-20 md:py-24">
-        <div className="container-wide grid md:grid-cols-12 gap-8">
-          <div className="md:col-span-4">
-            <p className="eyebrow mb-4">// {t('page.sectionsNotForYou')}</p>
-          </div>
-          <ul className="md:col-span-8 space-y-3">
-            {notFor.map((item, i) => (
-              <li key={i} className="flex gap-3 text-paper/50 text-lg leading-snug">
-                <span className="font-mono text-paper/30 shrink-0">×</span>
-                <span>{item}</span>
-              </li>
+      {/* What we offer */}
+      <section className="py-20">
+        <div className="container-custom">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl md:text-4xl font-semibold text-foreground mb-12"
+          >
+            {service.whatWeOffer?.heading}
+          </motion.h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            {whatWeOffer.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="p-6 rounded-2xl border border-bagh-100/60 bg-white/40 backdrop-blur-sm hover:border-bagh-200 transition-colors"
+              >
+                <div className="w-8 h-0.5 bg-foreground mb-4" />
+                <h3 className="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{item.description}</p>
+              </motion.div>
             ))}
-          </ul>
+          </div>
         </div>
       </section>
 
-      {/* Related cases */}
+      {/* Related Cases */}
       {relatedCases.length > 0 && (
-        <section className="border-b border-paper/10 py-20 md:py-24">
-          <div className="container-wide mb-10">
-            <p className="eyebrow text-neon mb-4">// {tCommon('sections.relatedWork')}</p>
-            <h2 className="display-3 max-w-2xl text-paper">Recent gebouwd</h2>
+        <section className="py-20">
+          <div className="container-custom mb-8">
+            <h2 className="text-3xl md:text-4xl font-semibold text-foreground">{tCommon('sections.relatedWork')}</h2>
           </div>
           <CaseGallery
             cases={relatedCases}
             readMoreLabel={tCommon('cta.readMore')}
-            basePath={lang === 'en' ? '/en' : ''}
+            basePath={basePath}
           />
         </section>
       )}
 
-      {/* Other pillars */}
-      <section className="border-b border-paper/10 py-20 md:py-24">
-        <div className="container-wide">
-          <p className="eyebrow mb-6">// {t('page.secondaryCta')}</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {otherPillars.map((p) => {
-              const label = p.label[lang] || p.label.nl
-              return (
-                <Link
-                  key={p.id}
-                  to={langPath('services', p.id)}
-                  className="group block rounded-md border border-paper/10 bg-noir-2 p-6 hover:border-neon/50 hover:shadow-glow-sm hover:-translate-y-0.5 transition-all duration-200"
-                >
-                  <p className="font-mono text-xs uppercase tracking-widest text-paper/40 mb-3 group-hover:text-neon transition-colors">
-                    // 0{p.order}
-                  </p>
-                  <p className="font-display font-bold text-lg leading-tight tracking-brut text-paper group-hover:text-neon transition-colors">{label}</p>
-                </Link>
-              )
-            })}
-          </div>
-        </div>
-      </section>
+      {/* Pricing */}
+      {pricing && (
+        <section className="py-4">
+          <Pricing plans={pricing.plans} heading={pricing.heading} />
+        </section>
+      )}
 
       <CTASection />
     </div>
