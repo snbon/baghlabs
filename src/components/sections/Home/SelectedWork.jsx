@@ -163,6 +163,21 @@ const SelectedWork = () => {
     setUiIdx(displayIdx)
   })
 
+  // Mobile — separate pinned section with cross-fade between cases.
+  // Same pattern as ProcessStages so it feels consistent across the site.
+  const mobileWrapperRef = useRef(null)
+  const { scrollYProgress: mobileProgress } = useScroll({
+    target: mobileWrapperRef,
+    offset: ['start start', 'end end'],
+  })
+  const [mobileIdx, setMobileIdx] = useState(0)
+  useMotionValueEvent(mobileProgress, 'change', (p) => {
+    const clamped = Math.min(0.9999, Math.max(0, p))
+    const total = clamped * N
+    setMobileIdx(Math.min(N - 1, Math.max(0, Math.floor(total + 0.5))))
+  })
+  const mobileBarWidth = useTransform(mobileProgress, [0, 1], ['0%', '100%'])
+
   // Init WebGL once.
   useEffect(() => {
     let mounted = true
@@ -415,39 +430,129 @@ const SelectedWork = () => {
         </div>
       </section>
 
-      {/* Mobile: vertical stack (no heavy WebGL) */}
-      <section id="work-mobile" className="md:hidden bg-noir text-paper border-t border-paper/10">
-        <div className="container-wide py-16">
-          <div className="flex items-baseline justify-between mb-10">
-            <p className="chapter">{tHome('chapters.work')}</p>
-            <Link to={langPath('projects')} className="smallcaps text-paper/60 border-b border-paper/20 pb-1">
-              {tHome('labels.viewAll')} →
-            </Link>
+      {/* Mobile: pinned viewport with cross-fade between cases —
+          same pattern as ProcessStages. Wrapper is N × 100vh tall so
+          scroll drives the fade instead of stacking cards vertically. */}
+      <section
+        id="work-mobile"
+        ref={mobileWrapperRef}
+        className="md:hidden bg-noir text-paper border-t border-paper/10 relative"
+        style={{ height: `${N * 100}vh` }}
+      >
+        <div className="sticky top-0 h-screen flex flex-col overflow-hidden">
+          {/* Top row */}
+          <div className="container-wide pt-24 pb-4 border-b border-paper/10 flex items-baseline justify-between z-10">
+            <span className="chapter">{tHome('chapters.work')}</span>
+            <span className="smallcaps text-paper/50">
+              {String(mobileIdx + 1).padStart(2, '0')} / {String(N).padStart(2, '0')}
+            </span>
           </div>
-          <h2 className="poster-2 mb-12">
-            <SplitReveal>{tHome('chapters.work').replace(/^Cap\.\s*[IVX]+\s*—\s*/, '') + '.'}</SplitReveal>
-          </h2>
-          <div className="space-y-14">
-            {featured.map((c, i) => {
-              const name = t(`${c.id}.name`, { defaultValue: c.id })
-              const tagline = t(`${c.id}.tagline`, { defaultValue: '' })
-              return (
-                <Link
-                  key={c.id}
-                  to={c.comingSoon ? '#' : `${basePath}/${projectsSegment}/${c.id}`}
-                  className={`group block ${c.comingSoon ? 'pointer-events-none' : ''}`}
+
+          {/* Cross-fade card */}
+          <div className="flex-1 relative overflow-hidden">
+            <AnimatePresence mode="wait">
+              {featured[mobileIdx] && (
+                <motion.div
+                  key={featured[mobileIdx].id}
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -24 }}
+                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                  className="absolute inset-0 flex flex-col px-4 sm:px-6 py-6"
                 >
-                  <div className="relative aspect-[4/3] overflow-hidden bg-noir-2 mb-5">
-                    <img src={c.image} alt={name} className="absolute inset-0 w-full h-full object-cover" />
-                    <div className="absolute top-3 left-3 bg-noir/80 px-2.5 py-1 border border-paper/15">
-                      <span className="smallcaps text-oxblood">No. {String(i + 1).padStart(2, '0')}</span>
-                    </div>
-                  </div>
-                  <h3 className="font-display font-bold text-3xl leading-tight text-paper mb-2">{name}</h3>
-                  <p className="text-paper/60">{tagline}</p>
-                </Link>
-              )
-            })}
+                  {(() => {
+                    const c = featured[mobileIdx]
+                    const name = t(`${c.id}.name`, { defaultValue: c.id })
+                    const tagline = t(`${c.id}.tagline`, { defaultValue: '' })
+                    const category = t(`${c.id}.category`, { defaultValue: '' })
+                    const href = c.comingSoon
+                      ? '#'
+                      : `${basePath}/${projectsSegment}/${c.id}`
+                    return (
+                      <Link
+                        to={href}
+                        className={`group flex flex-col h-full ${
+                          c.comingSoon ? 'pointer-events-none' : ''
+                        }`}
+                      >
+                        {/* Image */}
+                        <div className="relative aspect-[4/3] overflow-hidden bg-noir-2 border border-paper/10 mb-5 shrink-0">
+                          <img
+                            src={c.image}
+                            alt={name}
+                            className="absolute inset-0 w-full h-full object-cover"
+                          />
+                          <div className="absolute top-3 left-3 bg-noir/70 backdrop-blur-sm px-2.5 py-1 border border-paper/15">
+                            <span className="smallcaps text-oxblood">
+                              No. {String(mobileIdx + 1).padStart(2, '0')} / {String(N).padStart(2, '0')}
+                            </span>
+                          </div>
+                          {c.comingSoon && (
+                            <div className="absolute inset-0 bg-noir/70 flex items-center justify-center">
+                              <span className="smallcaps text-paper/70">
+                                {tCommon('cta.comingSoon')}
+                              </span>
+                            </div>
+                          )}
+                        </div>
+
+                        {/* Text */}
+                        <div className="flex-1">
+                          {category && (
+                            <p className="smallcaps text-oxblood mb-2">{category}</p>
+                          )}
+                          <h3
+                            className="font-display font-bold text-paper leading-none mb-3"
+                            style={{
+                              fontSize: 'clamp(2rem, 8vw, 3rem)',
+                              letterSpacing: '-0.03em',
+                              fontVariationSettings: "'opsz' 96",
+                            }}
+                          >
+                            {name}
+                          </h3>
+                          <p className="font-display italic text-base text-paper/70 leading-snug mb-4">
+                            {tagline}
+                          </p>
+                          {!c.comingSoon && (
+                            <span className="inline-flex items-center gap-2 smallcaps text-paper/80 group-hover:text-oxblood transition-colors border-b border-paper/25 pb-1">
+                              {tCommon('cta.viewCase')}
+                              <ArrowUpRight className="w-3.5 h-3.5" />
+                            </span>
+                          )}
+                        </div>
+                      </Link>
+                    )
+                  })()}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Bottom progress + view-all */}
+          <div className="container-wide pt-3 pb-4 border-t border-paper/10 z-10">
+            <div className="flex items-center gap-3 mb-3">
+              <span className="smallcaps text-paper/50 w-12">
+                {tHome('labels.scroll')}
+              </span>
+              <div className="flex-1 h-px bg-paper/20 relative">
+                <motion.div
+                  className="absolute inset-y-0 left-0 bg-oxblood"
+                  style={{ width: mobileBarWidth }}
+                />
+              </div>
+              <span className="smallcaps text-paper/50 w-12 text-right">
+                {tHome('labels.work')}
+              </span>
+            </div>
+            <div className="flex justify-end">
+              <Link
+                to={langPath('projects')}
+                className="smallcaps text-paper/60 border-b border-paper/20 pb-1"
+              >
+                {tHome('labels.viewAll')} →
+              </Link>
+            </div>
           </div>
         </div>
       </section>

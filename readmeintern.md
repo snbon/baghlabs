@@ -4,6 +4,13 @@ Internal reference for maintaining this site. Read this before touching
 anything so the small stuff (locales, chapter labels, agency register,
 motion primitives) doesn't blow up on you.
 
+> **Doc-update convention:** any defining code change (new architectural
+> pattern, new component that changes how a section works, new dep,
+> renamed routes, new locale namespace, gotcha worth remembering)
+> gets logged here. If a change is a one-off tweak or a copy edit,
+> leave the doc alone. If a change alters how someone should reason
+> about the codebase, update the relevant section
+
 ---
 
 ## 1. What this site is
@@ -215,19 +222,14 @@ via context.
 
 ### Framer Motion
 
-Used throughout. Common patterns:
+Used throughout. Standard entry pattern is `initial` + `whileInView` +
+`viewport={{ once: true, margin: … }}` — see `PillarGrid.jsx:31`,
+`ProcessStages.jsx:53`, or basically any section for the shape.
 
-```jsx
-<motion.div
-  initial={{ opacity: 0, y: 16 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true, margin: '-60px' }}
-  transition={{ duration: 0.4, delay: index * 0.08 }}
->
-```
-
-For pinned/sticky scroll sections, use `useScroll` + `useTransform` (see
-`ProcessStages.jsx` and `SelectedWork.jsx` for the shape).
+For pinned/sticky scroll sections, use `useScroll` + `useTransform`.
+Reference implementations:
+- `src/components/sections/Home/ProcessStages.jsx:13` (setup) and `:19` (activeIdx derivation)
+- `src/components/sections/Home/SelectedWork.jsx:137` (desktop) and `:169` (mobile)
 
 ### Motion primitives
 
@@ -268,13 +270,42 @@ the home page.
 
 ```
 HeroBlock       — Vanta halo + Fraunces poster h1 + tagline + CTA
-SelectedWork    — full-viewport WebGL case gallery (curated 6)
+SelectedWork    — pinned viewport gallery (desktop: WebGL grain-dissolve,
+                  mobile: AnimatePresence cross-fade)
 PillarGrid      — typographic index of 4 pillars + foundation strip
 ProcessStages   — pinned viewport, cross-fade between 3 process stages
 CTASection      — pre-footer CTA + colophon footer with NL/EN toggle
 ```
 
 To reorder or remove: edit `src/pages/Home.jsx` and its imports.
+
+### Pinned + cross-fade pattern
+
+Both `SelectedWork` and `ProcessStages` use the same architectural
+pattern. Whenever a section needs to "hold" a slot and swap content on
+scroll, copy the shape from:
+
+- **Setup** (wrapperRef + `useScroll` with `['start start', 'end end']`):
+  `src/components/sections/Home/ProcessStages.jsx:12-16`
+- **Active-index derivation** (`Math.floor(total + 0.5)` for midpoint
+  swap so the visible item lands centered in its slot):
+  `src/components/sections/Home/ProcessStages.jsx:18-25`
+- **AnimatePresence + motion.div cross-fade** with `mode="wait"`:
+  `src/components/sections/Home/ProcessStages.jsx:52-68` (watermark) and
+  `:101-135` (content block)
+- **Section wrapper sized to N × 100vh + sticky child**:
+  `src/components/sections/Home/ProcessStages.jsx:30-38`
+
+Do NOT use per-item `useTransform` opacity ranges for step-based reveals
+— they can drop items when scroll velocity is high. The state-derived
+`activeIdx` + `AnimatePresence` pattern is robust.
+
+`SelectedWork` uses this for **both** desktop and mobile:
+- **Desktop** (WebGL grain-dissolve): `SelectedWork.jsx:137-164`
+- **Mobile** (plain `<img>` inside AnimatePresence): `SelectedWork.jsx:168-180`
+
+Same `Math.floor(total + 0.5)` swap math on both, so the counter, image,
+title, and progress bar all stay in sync.
 
 ---
 
@@ -341,28 +372,28 @@ literally — Belgian Dutch business writing does not.
 
 ### Structure
 
-Each case is a JSON file in `src/data/cases/`. Registered in `index.js`.
+Each case is a JSON file in `src/data/cases/`. Registered in
+`src/data/cases/index.js`. See any file in that folder for the shape —
+`src/data/cases/availly.json` is a complete `template: "web"` example
+and `src/data/cases/claymates.json` is a complete `template: "creative"`
+example.
 
-```json
-{
-  "id": "availly",
-  "template": "web",           // "web" → ContainerScroll hero, "creative" → CreativeHero
-  "image": "/assets/availly/thumbnail.png",
-  "heroImage": "/assets/availly/hero.png",  // optional; falls back to image
-  "year": "2023",              // optional
-  "technologies": [...],       // web-only
-  "services": [...],           // creative-only
-  "gallery": [...],            // array of image paths
-  "videos": [...],             // creative-only, embed URLs
-  "category": "productivity",  // free-form category tag (visible)
-  "relatedService": "development",  // "development" | "others" — used for filtering on /projecten
-  "comingSoon": false,         // if true, listing shows placeholder + disables link
-  "websiteUrl": "https://..."  // web-only
-}
-```
+Key fields to know:
+- `template` — `"web"` renders `ContainerScroll` hero on the detail
+  page, `"creative"` renders `CreativeHero`. Switching happens in
+  `src/pages/CaseDetail.jsx:73-96`.
+- `image` / `heroImage` — thumbnail + optional larger hero image
+- `relatedService` — `"development"` or `"others"`. Drives the filter
+  tabs on `/projecten`.
+- `comingSoon` — locks the card in the listing.
+- `technologies` (web-only) vs `services` (creative-only) — chip lists
+  on the detail page.
 
 All **user-visible text** for a case lives in `src/locales/{nl,en}/cases.json`
-under the case's `id`.
+under the case's `id`. See any existing entry (e.g. the `"availly"` key
+in both locale files) for the full shape: `name`, `tagline`,
+`description`, `longDescription`, `challenge`, `solution`, `category`,
+`industry`, `client`, `results[]`.
 
 ### How templates render
 
@@ -378,34 +409,17 @@ The floating back-link chip and category chip sit on top of both.
 ### Adding a new case study
 
 1. Add images to `/public/assets/<case-id>/`.
-2. Create `src/data/cases/<case-id>.json` with all structural fields
-   (`id`, `template`, `image`, `heroImage`, `gallery`, `category`,
-   `relatedService`, etc.).
-3. Register it in `src/data/cases/index.js`:
-   ```js
-   import newcase from './new-case.json'
-   export const cases = [newcase, ...others]
-   ```
-4. Add the case's copy to **both** locale files:
-   `src/locales/nl/cases.json` and `src/locales/en/cases.json`, keyed
-   by the case's `id`:
-   ```json
-   "new-case": {
-     "name": "New Case",
-     "tagline": "One-line pitch.",
-     "description": "Short.",
-     "longDescription": "Long paragraph.",
-     "challenge": "Brief in one sentence.",
-     "solution": "Approach in one paragraph.",
-     "category": "Ops",
-     "industry": "Retail",
-     "client": "Client Name",
-     "results": ["metric 1", "metric 2"]
-   }
-   ```
+2. Create `src/data/cases/<case-id>.json`. Copy the shape from
+   `src/data/cases/availly.json` (for a `web` case) or
+   `src/data/cases/claymates.json` (for a `creative` case).
+3. Register it in `src/data/cases/index.js` — add an import at the top
+   and push into the `cases` array.
+4. Add the case's copy to **both** locale files: `src/locales/nl/cases.json`
+   and `src/locales/en/cases.json`, keyed by the case's `id`. Copy the
+   shape from an existing entry like `"availly"` in the same file.
 5. To surface it on the **home page** as one of the six spinning cards,
-   add its `id` to `FEATURED_IDS` in
-   `src/components/sections/Home/SelectedWork.jsx`.
+   add its `id` to `FEATURED_IDS` at
+   `src/components/sections/Home/SelectedWork.jsx:10`.
 6. `npm run build` — smoke test.
 
 ### Filtering on `/projecten`
@@ -426,38 +440,17 @@ state disappears automatically and the case shows in that tab.
 ### Structure
 
 Each pillar is a JSON file in `src/data/services/`. Registered in
-`index.js`.
+`src/data/services/index.js`. See
+`src/data/services/ai-workflows.json` for the complete shape — it has:
+`id`, `slug`, `accent` (legacy, no longer used visually), `order`,
+`label.{nl,en}`, `tagline.{nl,en}`, `positioning.{nl,en}`,
+`scope.{nl,en}[]`, `deliverables.{nl,en}[]`, `notForYouIf.{nl,en}[]`.
 
-```json
-{
-  "id": "ai-workflows",
-  "slug": "ai-workflows",       // URL segment (matches id)
-  "accent": "yellow",           // legacy — no longer used visually
-  "order": 1,                   // sort order in menus
-  "label": {
-    "nl": "AI Workflows",
-    "en": "AI Workflows"
-  },
-  "tagline": { "nl": "…", "en": "…" },
-  "positioning": { "nl": "…", "en": "…" },
-  "scope": { "nl": [...], "en": [...] },
-  "deliverables": { "nl": [...], "en": [...] },
-  "notForYouIf": { "nl": [...], "en": [...] }
-}
-```
-
-Structural bilingual content sits in `data/services/*.json` (bilingual
-inline). Per-page copy lives in `locales/{nl,en}/services.json`
-under the pillar `id`:
-```json
-"ai-workflows": {
-  "eyebrow": "// Service 01",
-  "title": "AI Workflows",
-  "subtitle": "Handmatige admin wordt een werkend systeem.",
-  "heroDescription": "…",
-  "example": { "title": "In practice", "body": "…" }
-}
-```
+Structural bilingual content lives in `data/services/*.json` (bilingual
+inline). Per-page copy lives in `src/locales/{nl,en}/services.json`
+under the pillar `id` — see the `"ai-workflows"` block in that file
+for the shape (`eyebrow`, `title`, `subtitle`, `heroDescription`,
+`example.{title,body}`).
 
 ### Service detail page layout
 
@@ -475,45 +468,38 @@ under the pillar `id`:
 
 ### Adding a new pillar
 
-1. Create `src/data/services/<new-pillar>.json` (see structure above).
-2. Register it in `src/data/services/index.js`:
-   ```js
-   import newpillar from './new-pillar.json'
-   export const pillars = [aiWorkflows, ..., newpillar]
-   ```
-3. Add its copy to **both** `locales/{nl,en}/services.json` under the
-   pillar id.
-4. Update the Home page `PillarGrid` locale (`home.pillars.items`) if you
-   want it visible on the home page — this array is separate from
-   `data/services` because the home page shows a curated subset with
-   custom descriptions.
-5. Add a per-pillar mockup in
-   `src/components/ui/service-graphic.jsx`: add a case to the switch
-   in `<ServiceGraphic>` and write its mini-UI component. Follow the
-   `<Frame>` + `<Chrome>` pattern used by the other 5.
-6. `RELATED_MAP` in `src/pages/ServiceDetail.jsx` — if this new pillar
-   has existing cases you want to show under it, add the mapping
-   (defaults to `serviceId`, meaning it filters by its own id, which is
-   fine for AI pillars that have no cases yet).
+1. Create `src/data/services/<new-pillar>.json` — copy the shape from
+   `src/data/services/ai-workflows.json`.
+2. Register it in `src/data/services/index.js` (import + add to the
+   `pillars` array).
+3. Add its copy to **both** `src/locales/nl/services.json` and
+   `src/locales/en/services.json` under the pillar id — copy the shape
+   from an existing entry.
+4. Update the Home page `PillarGrid` locale (`home.pillars.items`) in
+   both locale files if you want it visible on the home page. That
+   array is separate from `data/services` because the home page shows
+   a curated subset with custom descriptions.
+5. Add a per-pillar mockup: extend the switch at
+   `src/components/ui/service-graphic.jsx:454-465` and write a new
+   mini-UI sub-component following the `<Frame>` + `<Chrome>` pattern
+   used by the other 5 (see e.g. `WorkflowsBoard` at line ~47 or
+   `KnowledgeChat` at ~90).
+6. If the new pillar has existing cases you want to show under it,
+   add an entry to `RELATED_MAP` at `src/pages/ServiceDetail.jsx:15`.
+   Defaults to `serviceId`, meaning it filters by its own id, which is
+   fine for AI pillars that have no cases yet.
 
 ### Editing the planning timeline
 
-`src/components/ui/planning-timeline.jsx`. Edit the `PHASES.nl` and
-`PHASES.en` arrays at the top. Each phase has:
+`src/components/ui/planning-timeline.jsx`. Edit the `PHASES.nl` (line
+~11) and `PHASES.en` (line ~44) arrays. Each phase object has:
+`Icon` (lucide-react component), `label`, `duration` (human-readable,
+goes into the bar), `startWeek` (0..TOTAL_WEEKS), `lengthWeeks`, and
+`desc`. See any existing entry in the file for the shape.
 
-```js
-{
-  Icon,            // lucide-react component
-  label,           // stage title
-  duration,        // human-readable duration (goes into the bar)
-  startWeek,       // where bar starts on the ruler (0..TOTAL_WEEKS)
-  lengthWeeks,     // bar length in weeks
-  desc,            // one-line description under the label
-}
-```
-
-`TOTAL_WEEKS` is a constant — increase if you add phases that stretch
-past week 12.
+`TOTAL_WEEKS` at `src/components/ui/planning-timeline.jsx:98` is the
+overall ruler length — bump it if you add phases that stretch past
+week 12.
 
 ### Editing service graphics
 
@@ -537,45 +523,34 @@ this pattern or add a `serviceGraphic` block to the locales.
 
 ### Route tree
 
-`src/App.jsx`:
+Full route definitions live in `src/App.jsx`. NL (no prefix) and EN
+(under `/en/`) mirror each other:
 
-```jsx
-// NL (default, no prefix)
-/                    → Home
-/projecten           → Cases
-/projecten/:caseName → CaseDetail
-/diensten/:serviceId → ServiceDetail
-/contact             → Contact
-/over-ons            → About
-
-// EN mirror
-/en                    → Home (English)
-/en/cases              → Cases
-/en/cases/:caseName    → CaseDetail
-/en/services/:serviceId → ServiceDetail
-/en/contact            → Contact
-/en/about              → About
-```
+| NL | EN | Renders |
+|---|---|---|
+| `/` | `/en` | `Home` |
+| `/projecten` | `/en/cases` | `Cases` |
+| `/projecten/:caseName` | `/en/cases/:caseName` | `CaseDetail` |
+| `/diensten/:serviceId` | `/en/services/:serviceId` | `ServiceDetail` |
+| `/contact` | `/en/contact` | `Contact` |
+| `/over-ons` | `/en/about` | `About` |
 
 ### Language switching
 
-Use these helpers from `src/lib/usePathAlternate.js`:
+Helpers live in `src/lib/usePathAlternate.js`:
+- `useCurrentLang()` (line 50) — returns `'nl' | 'en'`
+- `useLangPath()` (line 67) — returns a function
+  `langPath(routeKey, slug?)` that builds a URL in the current language.
+  Route keys: `home`, `services`, `projects`, `about`, `contact`.
+- `usePathAlternate(targetLang)` (line 45) — given the current pathname,
+  returns the mirror in the other language (used by the footer toggle at
+  `src/components/sections/Home/CTASection.jsx:16`).
+- `buildLangPath(lang, routeKey, slug)` (line 58) — pure function
+  version of `useLangPath` for non-hook contexts.
 
-```jsx
-import {
-  useCurrentLang,     // 'nl' | 'en'
-  useLangPath,        // langPath('projects', 'availly') → '/projecten/availly' (or /en/cases/availly)
-  usePathAlternate,   // for a given current path, returns the mirror in the other language
-  buildLangPath,      // pure function version of useLangPath
-} from '@/lib/usePathAlternate'
-```
-
-`useLangPath` route keys: `home`, `services`, `projects`, `about`, `contact`.
-
-The **language toggle in the footer** (`CTASection.jsx`) uses
-`usePathAlternate` to preserve the current page when switching languages
-— so if you're on `/diensten/ai-workflows` and click EN, you land on
-`/en/services/ai-workflows`.
+The **language toggle in the footer** uses `usePathAlternate` so
+switching from `/diensten/ai-workflows` lands you on
+`/en/services/ai-workflows`, not the English home.
 
 ### Redirects
 
