@@ -84,8 +84,9 @@
   .poster-1 {
     font-family: 'Fraunces', Georgia, serif;
     font-weight: 700;
-    /* Cap by both viewport width AND height so a 3-line poster never overflows the fold. */
-    font-size: clamp(2.5rem, min(11vw, 17vh), 12rem);
+    /* Cap by both viewport width AND height so a 3-line poster never
+       eats the fold, leaves room for tagline + CTA on the same screen. */
+    font-size: clamp(2.25rem, min(10vw, 13vh), 9rem);
     line-height: 0.95;
     letter-spacing: -0.03em;
     font-variation-settings: 'opsz' 144;
@@ -131,7 +132,7 @@
     border-top: 1px solid rgba(232, 225, 208, 0.1);
   }
 
-  /* SplitReveal — word slides up from below a mask.
+  /* SplitReveal, word slides up from below a mask.
      padding-bottom + negative margin gives descenders (y, j, g, p, q) room
      inside the clip rect without shifting the visual baseline. */
   .split-word {
@@ -197,4 +198,13 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Explicit keyframes, Tailwind only emits keyframes for classes that
+   are actually referenced. HeroBlock uses `animation: fadeIn ...` via
+   an inline style, which needs the @keyframes to exist in the compiled
+   stylesheet. Without this, tagline + CTA stay at opacity 0 forever. */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }

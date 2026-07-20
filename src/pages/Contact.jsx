@@ -126,7 +126,7 @@ const Contact = () => {
         
         <div className="container-wide relative">
           <div className="flex items-baseline justify-between mb-6">
-            <span className="chapter">Cap. — Contact</span>
+            <span className="chapter">Cap., Contact</span>
             <span className="smallcaps text-paper/40 hidden md:inline">{t('page.heroNote')}</span>
           </div>
           <div className="rule-oxblood mb-14 md:mb-20" />
@@ -143,7 +143,7 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Form — poster with framed plate */}
+      {/* Form, poster with framed plate */}
       <section className="border-b border-oxblood py-20 md:py-24 bg-noir-2">
         <div className="container-wide">
           <div className="max-w-3xl mx-auto">

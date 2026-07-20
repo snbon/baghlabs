@@ -9,7 +9,7 @@ const glowButtonVariants = cva(
   {
     variants: {
       variant: {
-        // Filled oxblood, cream text — the primary CTA button
+        // Filled oxblood, cream text, the primary CTA button
         solid: 'rounded-sm bg-oxblood text-paper border border-oxblood hover:bg-oxblood-2',
         // Cream on ink (used on the inverted CTA slab)
         paper: 'rounded-sm bg-noir text-paper border border-paper hover:bg-noir-2',

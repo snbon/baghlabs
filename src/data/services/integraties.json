@@ -12,8 +12,8 @@
     "en": "One system, not seven disconnected tools."
   },
   "positioning": {
-    "nl": "ERP, CRM, boekhouding, planning, webshop, servicedesk, interne databases — meestal werken ze wel apart, maar niet samen. We bouwen de integratielaag waarop je data betrouwbaar heen en weer beweegt, met retries, logs en foutafhandeling die je snapt.",
-    "en": "ERP, CRM, accounting, planning, webshop, service desk, internal databases — mostly they work alone, not together. We build the integration layer that moves data reliably between them, with retries, logs and error handling you can read."
+    "nl": "ERP, CRM, boekhouding, planning, webshop, servicedesk, interne databases, meestal werken ze wel apart, maar niet samen. We bouwen de integratielaag waarop je data betrouwbaar heen en weer beweegt, met retries, logs en foutafhandeling die je snapt.",
+    "en": "ERP, CRM, accounting, planning, webshop, service desk, internal databases, mostly they work alone, not together. We build the integration layer that moves data reliably between them, with retries, logs and error handling you can read."
   },
   "scope": {
     "nl": [

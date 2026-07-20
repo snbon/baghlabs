@@ -9,11 +9,11 @@
   },
   "footer": {
     "tagline": "AI systems for operational work.",
-    "description": "Baghlabs builds private AI software for businesses with complex workflows. Documents, data and tools in one system.",
+    "description": "An AI studio in Flanders building internal systems for businesses ready to move past off-the-shelf.",
     "quickLinks": "Navigation",
     "getInTouch": "Get in touch",
-    "readyText": "Find the workflow costing you the most time.",
-    "workWithUs": "Discuss your workflow",
+    "readyText": "Ready to build what actually works?",
+    "workWithUs": "Book an intro",
     "copyright": "© 2026 Baghlabs. All rights reserved.",
     "links": {
       "home": "Home",
@@ -38,7 +38,7 @@
     "video": "Reel"
   },
   "cta": {
-    "connectWithUs": "Discuss your workflow",
+    "connectWithUs": "Book an intro",
     "learnMore": "Learn more",
     "getInTouch": "Get in touch",
     "visitWebsite": "Visit live site",

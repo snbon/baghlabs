@@ -76,11 +76,11 @@ const FRAG = /* glsl */ `
   void main() {
     vec2 uv = vUv;
 
-    // Velocity-driven horizontal shear — subtle when idle, strong on fast scroll.
+    // Velocity-driven horizontal shear, subtle when idle, strong on fast scroll.
     float shear = uVelocity * 0.06 * sin(uv.y * 5.0 + uTime * 0.7);
     uv.x += shear;
 
-    // Ambient displacement — very slow, adds life.
+    // Ambient displacement, very slow, adds life.
     float amb = fbm(uv * 3.0 + vec2(uTime * 0.04, uTime * 0.02));
     vec2 uvDisp = vec2(0.0, (amb - 0.5) * 0.008);
 
@@ -123,6 +123,7 @@ const FRAG = /* glsl */ `
 const SelectedWork = () => {
   const { t } = useTranslation('cases')
   const { t: tCommon } = useTranslation('common')
+  const { t: tHome } = useTranslation('home')
   const lang = useCurrentLang()
   const langPath = useLangPath()
   const basePath = lang === 'en' ? '/en' : ''
@@ -343,7 +344,7 @@ const SelectedWork = () => {
           <div className="absolute top-0 inset-x-0 z-10">
             <div className="container-wide pt-24 pb-6 border-b border-paper/15 flex items-baseline justify-between">
               <div className="flex items-baseline gap-8">
-                <span className="chapter">Cap. II — Selected work</span>
+                <span className="chapter">{tHome('chapters.work')}</span>
                 <span className="smallcaps text-paper/50">
                   {String(uiIdx + 1).padStart(2, '0')} / {String(N).padStart(2, '0')}
                 </span>
@@ -352,12 +353,12 @@ const SelectedWork = () => {
                 to={langPath('projects')}
                 className="smallcaps text-paper/70 hover:text-oxblood border-b border-paper/25 hover:border-oxblood pb-1 transition-colors"
               >
-                View all →
+                {tHome('labels.viewAll')} →
               </Link>
             </div>
           </div>
 
-          {/* Text overlay — bottom left */}
+          {/* Text overlay, bottom left */}
           <div className="absolute inset-x-0 bottom-0 z-10">
             <div className="container-wide pb-16">
               <AnimatePresence mode="wait">
@@ -400,14 +401,14 @@ const SelectedWork = () => {
             {/* Progress bar */}
             <div className="container-wide pb-6 border-t border-paper/15 pt-4">
               <div className="flex items-center gap-4">
-                <span className="smallcaps text-paper/50 w-14">Scroll</span>
+                <span className="smallcaps text-paper/50 w-14">{tHome('labels.scroll')}</span>
                 <div className="flex-1 h-px bg-paper/20 relative">
                   <motion.div
                     className="absolute inset-y-0 left-0 bg-oxblood"
                     style={{ width: barWidth }}
                   />
                 </div>
-                <span className="smallcaps text-paper/50 w-14 text-right">Work</span>
+                <span className="smallcaps text-paper/50 w-14 text-right">{tHome('labels.work')}</span>
               </div>
             </div>
           </div>
@@ -418,13 +419,13 @@ const SelectedWork = () => {
       <section id="work-mobile" className="md:hidden bg-noir text-paper border-t border-paper/10">
         <div className="container-wide py-16">
           <div className="flex items-baseline justify-between mb-10">
-            <p className="chapter">Cap. II</p>
+            <p className="chapter">{tHome('chapters.work')}</p>
             <Link to={langPath('projects')} className="smallcaps text-paper/60 border-b border-paper/20 pb-1">
-              View all →
+              {tHome('labels.viewAll')} →
             </Link>
           </div>
           <h2 className="poster-2 mb-12">
-            <SplitReveal>Selected work.</SplitReveal>
+            <SplitReveal>{tHome('chapters.work').replace(/^Cap\.\s*[IVX]+\s*—\s*/, '') + '.'}</SplitReveal>
           </h2>
           <div className="space-y-14">
             {featured.map((c, i) => {

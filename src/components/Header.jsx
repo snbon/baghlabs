@@ -67,10 +67,10 @@ const Header = () => {
                 <span className="font-display font-bold text-2xl md:text-3xl leading-none tracking-tight text-paper group-hover:text-oxblood transition-colors">
                   baghlabs
                 </span>
-                <span className="hidden md:inline smallcaps text-paper/45">Studio</span>
+                <span className="hidden md:inline smallcaps text-paper/45">AI Studio</span>
               </Link>
 
-              {/* Hamburger — everywhere */}
+              {/* Hamburger, everywhere */}
               <button
                 type="button"
                 onClick={() => setIsMenuOpen((v) => !v)}
@@ -121,7 +121,7 @@ const Header = () => {
             <div className="container-wide min-h-full flex flex-col pt-24 md:pt-28 pb-10">
               {/* Nav list */}
               <nav className="flex-1 flex flex-col justify-center py-8">
-                <p className="chapter mb-8">Cap. — Menu</p>
+                <p className="chapter mb-8">Cap., Menu</p>
                 <ul className="border-t border-paper/15">
                   {navLinks.map((item, i) => (
                     <motion.li
@@ -153,7 +153,7 @@ const Header = () => {
                     </motion.li>
                   ))}
 
-                  {/* Services — expandable */}
+                  {/* Services, expandable */}
                   <motion.li
                     initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -231,7 +231,7 @@ const Header = () => {
 
               {/* Colophon */}
               <div className="border-t border-paper/10 pt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-                <span className="smallcaps text-paper/45">MMXXVI · Vlaanderen · Studio</span>
+                <span className="smallcaps text-paper/45">MMXXVI · Vlaanderen · AI Studio</span>
                 <span className="smallcaps text-paper/60">
                   {lang === 'en' ? 'English' : 'Nederlands'}
                 </span>

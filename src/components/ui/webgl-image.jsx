@@ -18,13 +18,13 @@ const VERT = `
     vUv = uv;
     vec3 pos = position;
 
-    // Cursor bulge — smooth exponential falloff around cursor UV.
+    // Cursor bulge, smooth exponential falloff around cursor UV.
     vec2 duv = uv - uMouse;
     duv.x *= uAspect; // preserve circular falloff in a rectangle
     float d = length(duv);
     float bulge = exp(-d * 5.5) * uHover * 0.18;
 
-    // Idle breathing — very small.
+    // Idle breathing, very small.
     float breathe = sin(uTime * 0.6) * 0.005;
 
     pos.z += bulge + breathe;
@@ -46,11 +46,11 @@ const FRAG = `
   vec2 coverUv(vec2 uv, float containerAspect, float imgAspect) {
     vec2 out_ = uv;
     if (imgAspect > containerAspect) {
-      // image wider than container — crop horizontally
+      // image wider than container, crop horizontally
       float scale = containerAspect / imgAspect;
       out_.x = (uv.x - 0.5) * scale + 0.5;
     } else {
-      // image taller than container — crop vertically
+      // image taller than container, crop vertically
       float scale = imgAspect / containerAspect;
       out_.y = (uv.y - 0.5) * scale + 0.5;
     }
@@ -63,7 +63,7 @@ const FRAG = `
     duv.x *= uAspect;
     float d = length(duv);
 
-    // Chromatic aberration — stronger near cursor when hovered.
+    // Chromatic aberration, stronger near cursor when hovered.
     float aberr = uHover * smoothstep(0.5, 0.0, d) * 0.006;
 
     vec3 col;

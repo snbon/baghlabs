@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils'
 // `once`: only trigger once (default true).
 // `delay`: initial delay in ms.
 // `stagger`: delay between words in ms.
-// `trigger`: 'load' | 'view' — start immediately or on IntersectionObserver.
+// `trigger`: 'load' | 'view', start immediately or on IntersectionObserver.
 const SplitReveal = ({
   children,
   className,

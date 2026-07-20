@@ -8,7 +8,7 @@ const NetworkSection = () => {
     <section className="bg-noir-2 text-paper border-b border-oxblood">
       <div className="container-wide py-24 md:py-32">
         <div className="flex items-baseline justify-between mb-14 md:mb-20">
-          <p className="chapter">Cap. III — {t('network.label')}</p>
+          <p className="chapter">Cap. III, {t('network.label')}</p>
           <span className="smallcaps text-paper/40 hidden md:inline">Uitbreiding</span>
         </div>
         <div className="grid md:grid-cols-12 gap-8 md:gap-16 items-start">

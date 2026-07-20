@@ -1,14 +1,34 @@
 {
+  "chapters": {
+    "manifest": "Cap. I, Manifest",
+    "work": "Cap. II, Recent werk",
+    "services": "Cap. III, Onze diensten",
+    "process": "Cap. IV, Werkwijze",
+    "next": "Cap. V, Volgende stap"
+  },
+  "labels": {
+    "nowShowing": "Nu getoond",
+    "viewAll": "Bekijk alles",
+    "scroll": "Scroll",
+    "work": "Werk",
+    "process": "Werkwijze",
+    "threePhases": "Drie fases",
+    "phase": "Fase",
+    "colophon": "Colofon",
+    "index": "Navigatie",
+    "servicesShort": "Diensten"
+  },
   "hero": {
     "titleLine1": "Unieke AI-systemen",
     "titleLine2": "die voor jou",
     "titleLine3": "werken.",
-    "tagline": "Baghlabs is jouw digital partner waar off-the-shelf stopt. We shippen AI-workflows, knowledge bases en integraties, fully bespoke.",
-    "primaryCta": "Bespreek je workflow"
+    "tagline": "Custom AI-software die je team écht gebruikt, geen demo, geen chatbot-wrapper.",
+    "primaryCta": "Plan een intro"
   },
   "pillars": {
     "eyebrow": "// What we build",
     "headline": "Vier plekken waar AI verschil maakt.",
+    "sideNote": "Volledig aanbod",
     "items": [
       {
         "id": "ai-workflows",
@@ -32,7 +52,7 @@
         "id": "integraties",
         "number": "04",
         "title": "Systems Integration",
-        "description": "ERP, CRM, boekhouding — één systeem. Logs die je kan lezen."
+        "description": "ERP, CRM, boekhouding, één systeem. Logs die je kan lezen."
       }
     ],
     "foundation": {
@@ -88,9 +108,9 @@
   },
   "cta": {
     "eyebrow": "// Next step",
-    "headline": "Vind de workflow die je het meeste tijd kost.",
-    "body": "Twee weken, fixed price, concreet build proposal. Geen commitment om te bouwen.",
-    "primary": "Start een Blueprint",
-    "secondary": "Eerst een intro call"
+    "headline": "Klaar om te bouwen?",
+    "body": "Start met een korte intro-call. Binnen twee weken hebben we een concreet plan op tafel. Geen commitment.",
+    "primary": "Plan een intro",
+    "secondary": "Of stuur een mail"
   }
 }

@@ -9,11 +9,11 @@
   },
   "footer": {
     "tagline": "AI-systemen voor operationeel werk.",
-    "description": "Baghlabs bouwt interne AI-software voor bedrijven met veel operationeel werk. Documenten, data en tools in één systeem.",
+    "description": "Een AI-studio in Vlaanderen die interne systemen bouwt voor bedrijven die verder willen dan off-the-shelf.",
     "quickLinks": "Navigatie",
     "getInTouch": "Contact",
-    "readyText": "Vind de workflow die je het meeste tijd kost.",
-    "workWithUs": "Bespreek je workflow",
+    "readyText": "Klaar om te bouwen wat werkt?",
+    "workWithUs": "Plan een intro",
     "copyright": "© 2026 Baghlabs. Alle rechten voorbehouden.",
     "links": {
       "home": "Home",
@@ -38,7 +38,7 @@
     "video": "Reel"
   },
   "cta": {
-    "connectWithUs": "Bespreek je workflow",
+    "connectWithUs": "Plan een intro",
     "learnMore": "Meer weten",
     "getInTouch": "Contact",
     "visitWebsite": "Bezoek live site",

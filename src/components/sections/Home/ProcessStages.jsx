@@ -38,17 +38,17 @@ const ProcessStages = () => {
         {/* Top row */}
         <div className="container-wide pt-24 pb-6 border-b border-paper/10 flex items-baseline justify-between z-10">
           <div className="flex items-baseline gap-8">
-            <span className="chapter">Cap. IV — Process</span>
+            <span className="chapter">{t('chapters.process')}</span>
             <span className="smallcaps text-paper/50">
               {String(uiIdx + 1).padStart(2, '0')} / {String(N).padStart(2, '0')}
             </span>
           </div>
-          <span className="smallcaps text-paper/40 hidden md:inline">Three phases</span>
+          <span className="smallcaps text-paper/40 hidden md:inline">{t('labels.threePhases')}</span>
         </div>
 
         {/* Stage layer */}
         <div className="flex-1 relative overflow-hidden">
-          {/* Massive watermark numeral — cross-fades */}
+          {/* Massive watermark numeral, cross-fades */}
           <AnimatePresence mode="wait">
             <motion.span
               key={`num-${uiIdx}`}
@@ -67,7 +67,7 @@ const ProcessStages = () => {
             </motion.span>
           </AnimatePresence>
 
-          {/* Sticky left rail — current stage indicator */}
+          {/* Sticky left rail, current stage indicator */}
           <div className="hidden md:block absolute top-1/2 -translate-y-1/2 left-6 z-20 pointer-events-none">
             <ul className="flex flex-col gap-6">
               {stages.map((s, i) => {
@@ -93,7 +93,7 @@ const ProcessStages = () => {
             </ul>
           </div>
 
-          {/* Content — cross-fades with the same key */}
+          {/* Content, cross-fades with the same key */}
           <div className="absolute inset-0 flex items-center">
             <div className="container-wide w-full grid grid-cols-12 gap-8 items-start">
               <div className="hidden md:block col-span-1" />
@@ -107,7 +107,7 @@ const ProcessStages = () => {
                     transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
                   >
                     <p className="smallcaps text-oxblood mb-4">
-                      Fase {String(uiIdx + 1).padStart(2, '0')} · {stage.priceLabel} · {stage.duration}
+                      {t('labels.phase')} {String(uiIdx + 1).padStart(2, '0')} · {stage.priceLabel} · {stage.duration}
                     </p>
                     <h3
                       className="font-display font-bold mb-8"
@@ -135,9 +135,9 @@ const ProcessStages = () => {
                 </AnimatePresence>
               </div>
 
-              {/* Right rail — counter */}
+              {/* Right rail, counter */}
               <div className="hidden md:flex col-span-3 md:pt-2 md:pl-6 border-l border-paper/15 flex-col gap-2">
-                <p className="smallcaps text-paper/40">Fase</p>
+                <p className="smallcaps text-paper/40">{t('labels.phase')}</p>
                 <p className="font-display text-3xl text-paper leading-none">
                   {String(uiIdx + 1).padStart(2, '0')}
                   <span className="text-paper/30"> / {String(N).padStart(2, '0')}</span>
@@ -150,14 +150,14 @@ const ProcessStages = () => {
         {/* Bottom progress bar */}
         <div className="container-wide pb-6 pt-4 border-t border-paper/10 z-10">
           <div className="flex items-center gap-4">
-            <span className="smallcaps text-paper/50 w-14">Scroll</span>
+            <span className="smallcaps text-paper/50 w-14">{t('labels.scroll')}</span>
             <div className="flex-1 h-px bg-paper/20 relative">
               <motion.div
                 className="absolute inset-y-0 left-0 bg-oxblood"
                 style={{ width: barWidth }}
               />
             </div>
-            <span className="smallcaps text-paper/50 w-14 text-right">Process</span>
+            <span className="smallcaps text-paper/50 w-14 text-right">{t('labels.process')}</span>
           </div>
         </div>
       </div>

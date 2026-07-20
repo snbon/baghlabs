@@ -2,10 +2,19 @@ import { useParams, Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import { CaseGallery } from '@/components/ui/case-gallery'
+import ServiceGraphic from '@/components/ui/service-graphic'
+import PlanningTimeline from '@/components/ui/planning-timeline'
 import { cases } from '@/data/cases'
 import { CTASection } from '@/components/sections/Home'
 import { getPillar, pillars } from '@/data/services'
 import { useCurrentLang, useLangPath } from '@/lib/usePathAlternate'
+
+// Only Custom Software Development pillar shows the existing software cases
+// as its "recent work". Other AI pillars have no public cases yet, so their
+// related-work section stays hidden until we can publish AI cases.
+const RELATED_MAP = {
+  softwareontwikkeling: 'development',
+}
 
 const ServiceDetail = () => {
   const { serviceId } = useParams()
@@ -39,8 +48,9 @@ const ServiceDetail = () => {
   const positioning = pillar.positioning[lang] || pillar.positioning.nl
 
   const otherPillars = pillars.filter((p) => p.id !== pillar.id)
+  const relatedTag = RELATED_MAP[serviceId] || serviceId
   const relatedCases = cases
-    .filter((c) => !c.comingSoon && (c.relatedService === 'development' || c.relatedService === serviceId))
+    .filter((c) => !c.comingSoon && c.relatedService === relatedTag)
     .slice(0, 6)
     .map((c) => ({
       ...c,
@@ -87,7 +97,7 @@ const ServiceDetail = () => {
         <div className="container-wide">
           <div className="grid md:grid-cols-12 gap-8 md:gap-12">
             <div className="md:col-span-4">
-              <p className="chapter mb-4">Fig. I — Manifest</p>
+              <p className="chapter mb-4">Fig. I, Manifest</p>
               <p className="smallcaps text-paper/50">{tagline}</p>
             </div>
             <p className="md:col-span-8 font-display text-xl md:text-2xl leading-snug text-paper">
@@ -97,7 +107,18 @@ const ServiceDetail = () => {
         </div>
       </section>
 
-      {/* Scope + Deliverables — two typographic lists */}
+      {/* Animated flow graphic — shows what this service actually does */}
+      <section className="border-b border-oxblood py-20 md:py-24">
+        <div className="container-wide">
+          <div className="flex items-baseline justify-between mb-8 md:mb-10">
+            <p className="chapter">Fig. II — Hoe het werkt</p>
+            <span className="smallcaps text-paper/40 hidden md:inline">Flow</span>
+          </div>
+          <ServiceGraphic serviceId={serviceId} lang={lang} />
+        </div>
+      </section>
+
+      {/* Scope + Deliverables, two typographic lists */}
       <section className="border-b border-oxblood py-20 md:py-24">
         <div className="container-wide grid md:grid-cols-2 gap-12 md:gap-16">
           <div>
@@ -139,7 +160,7 @@ const ServiceDetail = () => {
           <div className="container-wide max-w-4xl">
             <div className="frame bg-noir p-8 md:p-12">
               <div className="flex items-baseline justify-between border-b border-oxblood pb-3 mb-6">
-                <span className="chapter">Plate — {localized.example.title}</span>
+                <span className="chapter">Plate, {localized.example.title}</span>
                 <span className="smallcaps text-paper/40">In situ</span>
               </div>
               <p className="poster-3 leading-tight text-paper">{localized.example.body}</p>
@@ -165,7 +186,14 @@ const ServiceDetail = () => {
         </div>
       </section>
 
-      {/* Related cases */}
+      {/* Planning timeline — from intro call to production */}
+      <section className="border-b border-oxblood py-24 md:py-32 bg-noir-2">
+        <div className="container-wide">
+          <PlanningTimeline lang={lang} />
+        </div>
+      </section>
+
+      {/* Related cases — only shown when there's actual work to show */}
       {relatedCases.length > 0 && (
         <section className="border-b border-oxblood py-20 md:py-24">
           <div className="container-wide mb-10">
@@ -180,7 +208,7 @@ const ServiceDetail = () => {
         </section>
       )}
 
-      {/* Other pillars — index */}
+      {/* Other pillars, index */}
       <section className="border-b border-oxblood py-20 md:py-24">
         <div className="container-wide">
           <p className="chapter mb-6">Andere pijlers</p>

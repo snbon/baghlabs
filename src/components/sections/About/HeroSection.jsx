@@ -9,7 +9,7 @@ const HeroSection = () => {
       
       <div className="container-wide relative pt-32 md:pt-40 pb-20 md:pb-24">
         <div className="flex items-baseline justify-between mb-6">
-          <span className="chapter">Cap. I — Colofon</span>
+          <span className="chapter">Cap. I, Colofon</span>
           <span className="smallcaps text-paper/40 hidden md:inline">MMXXVI</span>
         </div>
         <div className="rule-oxblood mb-14 md:mb-20" />

@@ -12,7 +12,7 @@ const StorySection = () => {
       <div className="container-wide py-24 md:py-32">
         <div className="flex items-baseline justify-between mb-14 md:mb-20">
           <div>
-            <p className="chapter mb-4">Cap. II — Achtergrond</p>
+            <p className="chapter mb-4">Cap. II, Achtergrond</p>
             <h2 className="poster-2 max-w-[16ch]">{t('story.heading')}</h2>
           </div>
         </div>

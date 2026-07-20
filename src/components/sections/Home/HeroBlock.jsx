@@ -32,16 +32,18 @@ const HeroBlock = () => {
         <div className="flex items-baseline justify-between">
           <span className="chapter" style={{ color: '#9C2626' }}>
             <SplitReveal trigger="load" delay={100} stagger={30}>
-              Cap. I — Studio
+              {t('chapters.manifest')}
             </SplitReveal>
           </span>
-          <span className="smallcaps text-paper/45 hidden md:inline">MMXXVI · Vlaanderen</span>
         </div>
 
         <div className="rule-oxblood mt-4 mb-8 md:mb-12" />
 
-        {/* Poster h1 */}
-        <div className="flex-1 flex flex-col justify-center">
+        {/* Poster h1 + tagline, constrained so it can never push the CTA
+            off-screen. min-h-0 lets the flex-1 shrink; overflow-hidden
+            clips any residual overflow inside this block rather than the
+            section (which would eat the CTA). */}
+        <div className="flex-1 min-h-0 flex flex-col justify-center gap-4 md:gap-6 overflow-hidden">
           <h1 className="poster-1 text-paper">
             <span className="block">
               <SplitReveal trigger="load" delay={300} stagger={70}>
@@ -64,7 +66,7 @@ const HeroBlock = () => {
           </h1>
 
           <p
-            className="mt-6 md:mt-8 max-w-2xl font-display italic text-base md:text-xl text-paper/70 opacity-0 leading-snug"
+            className="max-w-2xl font-display italic text-base md:text-lg text-paper/70 opacity-0 leading-snug"
             style={{
               animation: 'fadeIn 0.9s ease-out 1.3s forwards',
             }}

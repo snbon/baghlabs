@@ -34,7 +34,7 @@ const Cases = () => {
         
         <div className="container-wide relative">
           <div className="flex items-baseline justify-between mb-6">
-            <span className="chapter">Cap. — Projecten</span>
+            <span className="chapter">Cap., Projecten</span>
             <span className="smallcaps text-paper/40 hidden md:inline">Archief</span>
           </div>
           <div className="rule-oxblood mb-14 md:mb-20" />

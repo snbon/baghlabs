@@ -4,7 +4,7 @@ import { motion, useAnimation, useInView } from "framer-motion"
 import { useEffect, useRef, useState } from "react"
 
 export function AnimatedTestimonials({
-  title = "Wat klanten zeggen",
+  title = "Wat onze klanten klanten",
   subtitle = "Bekijk wat onze klanten zeggen over samenwerken met Baghlabs.",
   badgeText = "Klantbeoordelingen",
   testimonials = [],
@@ -34,7 +34,7 @@ export function AnimatedTestimonials({
       <div className="container-wide py-24 md:py-32">
         <div className="flex items-baseline justify-between mb-14 md:mb-20">
           <div>
-            <p className="chapter mb-4">Cap. IV — {badgeText}</p>
+            <p className="chapter mb-4">Cap. IV, {badgeText}</p>
             <h2 className="poster-2 max-w-[18ch]">{title}</h2>
           </div>
           <div className="flex items-center gap-2">

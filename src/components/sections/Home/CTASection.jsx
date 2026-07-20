@@ -25,8 +25,8 @@ const CTASection = () => {
       <section className="relative bg-noir text-paper border-t border-paper/10 overflow-hidden">
         <div className="container-wide py-24 md:py-40 relative">
           <div className="flex items-baseline justify-between mb-14 md:mb-20">
-            <span className="chapter">Cap. V — Volgende stap</span>
-            <span className="smallcaps text-paper/40 hidden md:inline">Colofon</span>
+            <span className="chapter">{t('chapters.next')}</span>
+            <span className="smallcaps text-paper/40 hidden md:inline">{t('labels.colophon')}</span>
           </div>
 
           <motion.h2
@@ -88,12 +88,12 @@ const CTASection = () => {
               </p>
               <div className="smallcaps text-paper/40 space-y-1">
                 <p>MMXXVI · Vlaanderen</p>
-                <p>Studio · Één contact</p>
+                <p>AI studio</p>
               </div>
             </div>
 
             <div className="md:col-span-6">
-              <p className="chapter mb-6">Index</p>
+              <p className="chapter mb-6">{t('labels.index')}</p>
               <ul className="border-t border-paper/15">
                 {[
                   { key: 'projects', label: tCommon('nav.cases'), href: langPath('projects') },
@@ -118,7 +118,7 @@ const CTASection = () => {
               </ul>
 
               <div className="mt-8">
-                <p className="chapter mb-4">Diensten</p>
+                <p className="chapter mb-4">{t('labels.servicesShort')}</p>
                 <ul className="space-y-1">
                   {pillars.map((p) => (
                     <li key={p.id}>

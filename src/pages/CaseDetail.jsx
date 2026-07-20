@@ -4,6 +4,8 @@ import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, ChevronLeft, ChevronRight } from 'lucide-react'
 import { CaseGallery } from '@/components/ui/case-gallery'
+import { ContainerScroll } from '@/components/ui/container-scroll'
+import { CreativeHero } from '@/components/ui/creative-hero'
 import { getCaseById, cases } from '@/data/cases'
 import { CTASection } from '@/components/sections/Home'
 import { useCurrentLang, useLangPath } from '@/lib/usePathAlternate'
@@ -58,41 +60,60 @@ const CaseDetail = () => {
 
   return (
     <div className="bg-noir text-paper">
-      {/* Hero */}
-      <section className="relative border-b border-oxblood pt-32 md:pt-40 pb-16 md:pb-20">
-        
-        <div className="container-wide relative">
-          <div className="flex items-baseline justify-between mb-6">
-            <Link
-              to={langPath('projects')}
-              className="smallcaps text-paper/50 hover:text-oxblood transition-colors"
-            >
-              ← {tCommon('sections.moreWork')}
-            </Link>
-            <span className="chapter">No. {caseData.id.toUpperCase()}</span>
-          </div>
-          <div className="rule-oxblood mb-10 md:mb-14" />
-
-          <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-end">
-            <div className="md:col-span-7">
-              <p className="smallcaps text-oxblood mb-4">{caseText.category}</p>
-              <h1 className="poster-1 text-paper">{caseText.name}</h1>
-              <p className="mt-6 md:mt-8 font-display italic text-xl md:text-2xl text-paper/75 max-w-2xl">
-                {caseText.tagline}
-              </p>
-            </div>
-            <div className="md:col-span-5">
-              <div className="frame bg-noir-2 aspect-[4/3] overflow-hidden">
-                <img
-                  src={caseData.heroImage || caseData.image}
-                  alt={caseText.name}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
+      {/* Back-link bar — floats above the hero */}
+      <div className="fixed top-0 inset-x-0 z-[9998] pointer-events-none">
+        <div className="container-wide pt-24 md:pt-28 flex items-baseline justify-between">
+          <Link
+            to={langPath('projects')}
+            className="pointer-events-auto smallcaps text-paper/70 hover:text-oxblood transition-colors bg-noir/70 backdrop-blur-sm px-3 py-1.5 border border-paper/15"
+          >
+            ← {tCommon('sections.moreWork')}
+          </Link>
+          <span className="pointer-events-none smallcaps text-paper/50 bg-noir/70 backdrop-blur-sm px-3 py-1.5 border border-paper/15 hidden md:inline-block">
+            {caseText.category}
+          </span>
         </div>
-      </section>
+      </div>
+
+      {/* Hero — template-based */}
+      {caseData.template === 'creative' ? (
+        <CreativeHero
+          title={caseText.name}
+          year={caseData.year}
+          category={caseText.category}
+          image={caseData.heroImage || caseData.image}
+          video={caseData.videos?.[0]?.includes('.mp4') ? caseData.videos[0] : undefined}
+        />
+      ) : (
+        <section className="relative bg-noir border-b border-paper/10">
+          <ContainerScroll
+            titleComponent={
+              <div className="text-center px-4">
+                <p className="chapter mb-4">{caseText.category}</p>
+                <h1
+                  className="font-display font-bold text-paper mb-6 leading-none tracking-tight"
+                  style={{
+                    fontSize: 'clamp(2.5rem, 6vw, 5rem)',
+                    letterSpacing: '-0.03em',
+                    fontVariationSettings: "'opsz' 96",
+                  }}
+                >
+                  {caseText.name}
+                </h1>
+                <p className="font-display italic text-lg md:text-xl text-paper/70 max-w-2xl mx-auto">
+                  {caseText.tagline}
+                </p>
+              </div>
+            }
+          >
+            <img
+              src={caseData.heroImage || caseData.image}
+              alt={caseText.name}
+              className="h-full w-full object-cover object-top"
+            />
+          </ContainerScroll>
+        </section>
+      )}
 
       {/* Content */}
       <section className="border-b border-oxblood py-20 md:py-24">

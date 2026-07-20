@@ -1,8 +1,8 @@
 {
   "hero": {
-    "eyebrow": "// Studio",
-    "heading": "One-person studio, één contact.",
-    "subtitle": "AI-systemen voor bedrijven met veel operationeel werk."
+    "eyebrow": "// AI studio",
+    "heading": "Een AI-studio uit Vlaanderen.",
+    "subtitle": "Interne systemen voor bedrijven die verder willen dan off-the-shelf."
   },
   "story": {
     "heading": "Background",
@@ -32,7 +32,7 @@
   },
   "testimonials": {
     "badge": "Testimonials",
-    "title": "Wat klanten zeggen",
+    "title": "Wat onze klanten zeggen",
     "subtitle": "Een paar woorden van clients waarmee er is samengewerkt."
   }
 }

@@ -1,14 +1,34 @@
 {
+  "chapters": {
+    "manifest": "Cap. I, Manifest",
+    "work": "Cap. II, Recent work",
+    "services": "Cap. III, Our services",
+    "process": "Cap. IV, Process",
+    "next": "Cap. V, Next step"
+  },
+  "labels": {
+    "nowShowing": "Now showing",
+    "viewAll": "View all",
+    "scroll": "Scroll",
+    "work": "Work",
+    "process": "Process",
+    "threePhases": "Three phases",
+    "phase": "Phase",
+    "colophon": "Colophon",
+    "index": "Index",
+    "servicesShort": "Services"
+  },
   "hero": {
     "titleLine1": "Bespoke AI systems",
     "titleLine2": "built to work",
     "titleLine3": "for your business.",
-    "tagline": "Baghlabs is your digital partner where off-the-shelf ends. We ship AI workflows, knowledge bases and integrations — fully bespoke.",
-    "primaryCta": "Discuss your workflow"
+    "tagline": "Custom AI software your team actually uses, no demo, no chatbot wrapper.",
+    "primaryCta": "Book an intro"
   },
   "pillars": {
     "eyebrow": "// What we build",
     "headline": "Four places AI actually helps.",
+    "sideNote": "Full offer",
     "items": [
       {
         "id": "ai-workflows",
@@ -32,7 +52,7 @@
         "id": "integraties",
         "number": "04",
         "title": "Systems Integration",
-        "description": "ERP, CRM, accounting — one system. Logs you can actually read."
+        "description": "ERP, CRM, accounting, one system. Logs you can actually read."
       }
     ],
     "foundation": {
@@ -88,9 +108,9 @@
   },
   "cta": {
     "eyebrow": "// Next step",
-    "headline": "Find the workflow costing you the most time.",
-    "body": "Two weeks, fixed price, concrete build proposal. No commitment to build.",
-    "primary": "Start a Blueprint",
-    "secondary": "Intro call first"
+    "headline": "Ready to build?",
+    "body": "Start with a short intro call. Within two weeks we have a concrete plan on the table. No commitment to build.",
+    "primary": "Book an intro",
+    "secondary": "Or send an email"
   }
 }

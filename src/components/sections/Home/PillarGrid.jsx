@@ -17,14 +17,14 @@ const PillarGrid = () => {
       <div className="container-wide py-24 md:py-32">
         <div className="flex items-baseline justify-between mb-14 md:mb-20">
           <div>
-            <p className="chapter mb-4">Cap. III — Aanbod</p>
+            <p className="chapter mb-4">{t('chapters.services')}</p>
             <h2 className="poster-2 max-w-[16ch]">
               <SplitReveal trigger="view" stagger={45}>
                 {t('pillars.headline')}
               </SplitReveal>
             </h2>
           </div>
-          <span className="smallcaps text-paper/40 hidden md:inline">Index of works</span>
+          <span className="smallcaps text-paper/40 hidden md:inline">{t('pillars.sideNote')}</span>
         </div>
 
         <ol className="border-t border-paper/15">
