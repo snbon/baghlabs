@@ -7,7 +7,7 @@ import { cases } from '@/data/cases'
 import { useCurrentLang, useLangPath } from '@/lib/usePathAlternate'
 import SplitReveal from '@/components/motion/SplitReveal'
 
-const FEATURED_IDS = ['availly', 'delicebrugge', 'shiftend', 'calvarychurch', 'supportportal', 'claymates']
+const FEATURED_IDS = ['supportportal', 'availly', 'delicebrugge', 'claymates', 'shiftend', 'calvarychurch']
 
 /* ─────────────────────────────────────────────────────────────
  *   Full-screen WebGL gallery
