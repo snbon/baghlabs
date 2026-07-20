@@ -1,16 +1,16 @@
 {
   "page": {
-    "eyebrow": "// Work",
-    "heroTitle": "Work out of the studio.",
-    "heroDescription": "Software projects this studio is built on. AI cases to follow.",
+    "eyebrow": "// Case Studies",
+    "heroTitle": "Case studies.",
+    "heroDescription": "The software this studio is built on. AI case studies to follow.",
     "tabAll": "All",
     "tabDevelopment": "Software Development",
     "tabAi": "AI Systems",
     "tabOthers": "Other",
-    "aiEmptyTitle": "AI cases coming soon",
-    "aiEmptyBody": "The AI systems currently being built are under NDA. As soon as publication is possible, they'll appear here.",
+    "aiEmptyTitle": "AI case studies coming soon",
+    "aiEmptyBody": "The AI systems currently in production are under NDA. As soon as we can publish, they'll appear here.",
     "ctaTitle": "Want to build something similar?",
-    "ctaDescription": "Start with an AI Opportunity Blueprint. Two weeks, fixed price, concrete build proposal.",
+    "ctaDescription": "Start with an AI Opportunity Blueprint. Two weeks, fixed price, concrete proposal.",
     "ctaLearnMore": "Learn more",
     "ctaGetInTouch": "Get in touch"
   },

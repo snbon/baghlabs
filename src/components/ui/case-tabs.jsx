@@ -11,15 +11,15 @@ export function CaseTabs({ activeTab, onTabChange, labels }) {
 
   return (
     <Tabs.Root value={activeTab} onValueChange={onTabChange}>
-      <Tabs.List className="flex items-center justify-start gap-1 md:gap-2 flex-wrap">
+      <Tabs.List className="flex items-center justify-start gap-6 md:gap-10 flex-wrap border-b border-paper/15">
         {tabs.map((tab) => (
           <Tabs.Trigger
             key={tab.value}
             value={tab.value}
             className={cn(
-              'px-4 py-2 text-sm font-medium rounded-full border transition-all duration-200',
-              'text-muted-foreground border-border hover:text-foreground hover:border-foreground',
-              'data-[state=active]:bg-foreground data-[state=active]:text-background data-[state=active]:border-foreground'
+              'smallcaps pb-3 -mb-px border-b-2 border-transparent transition-colors',
+              'text-paper/50 hover:text-oxblood',
+              'data-[state=active]:text-oxblood data-[state=active]:border-oxblood'
             )}
           >
             {tab.label}

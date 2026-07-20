@@ -1,22 +1,22 @@
 {
   "hero": {
-    "eyebrow": "// About",
-    "heading": "One studio, one contact.",
-    "subtitle": "AI systems for businesses with real work in the process."
+    "eyebrow": "// Studio",
+    "heading": "One-person studio, one contact.",
+    "subtitle": "AI systems for businesses with real operational work."
   },
   "story": {
     "heading": "Background",
-    "intro": "Five years of Baghlabs. The question shifted from 'we need a website' to 'our operational work has stalled'. That's where this work starts.",
+    "intro": "Five years of Baghlabs. The brief shifted from 'we need a website' to 'our operational work has stalled'. That's where this work starts.",
     "pillars": [
       {
         "label": "Systems",
         "title": "Around the process, not the tool",
-        "description": "Exceptions are the work. Permissions, incomplete data, approvals, legacy. That's where a system begins."
+        "description": "Edge cases are the work. Permissions, incomplete data, approvals, legacy. That's where a system begins."
       },
       {
-        "label": "Code",
+        "label": "Craft",
         "title": "Nothing subcontracted",
-        "description": "The person you talk to builds and ships it. Scope and timing stay short."
+        "description": "The person you talk to writes and ships it. Scope and timing stay short."
       },
       {
         "label": "Accountability",
@@ -26,13 +26,13 @@
     ]
   },
   "network": {
-    "label": "Extension",
-    "heading": "When more people are needed",
-    "description": "Larger engagements need more than one discipline. A small trusted circle joins when needed. You always know who's involved and what for."
+    "label": "Collective",
+    "heading": "When more is needed",
+    "description": "Larger engagements need more than one discipline. A small trusted crew joins when needed. You always know who's involved and what for."
   },
   "testimonials": {
-    "badge": "References",
+    "badge": "Testimonials",
     "title": "What clients say",
-    "subtitle": "A few words from people we've worked with."
+    "subtitle": "A few words from clients we've worked with."
   }
 }

@@ -4,7 +4,6 @@ import { motion } from 'framer-motion'
 import { CaseTabs } from '@/components/ui/case-tabs'
 import { CaseGallery } from '@/components/ui/case-gallery'
 import { cases } from '@/data/cases'
-import BackgroundPage from '@/components/ui/background-page'
 import { CTASection } from '@/components/sections/Home'
 import { useCurrentLang } from '@/lib/usePathAlternate'
 
@@ -29,71 +28,70 @@ const Cases = () => {
   })()
 
   return (
-    <div>
-      <div className="relative overflow-hidden min-h-screen">
-        <BackgroundPage />
-
-        {/* Hero */}
-        <section className="pt-32 md:pt-40 pb-12 md:pb-16">
-          <div className="container-custom">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 tracking-tight">
-                {t('page.heroTitle')}
-              </h1>
-              <p className="text-base md:text-lg text-muted-foreground max-w-2xl leading-relaxed">
-                {t('page.heroDescription')}
-              </p>
-            </motion.div>
+    <div className="bg-noir text-paper">
+      {/* Hero */}
+      <section className="relative border-b border-oxblood pt-32 md:pt-40 pb-16 md:pb-20">
+        
+        <div className="container-wide relative">
+          <div className="flex items-baseline justify-between mb-6">
+            <span className="chapter">Cap. — Projecten</span>
+            <span className="smallcaps text-paper/40 hidden md:inline">Archief</span>
           </div>
-        </section>
+          <div className="rule-oxblood mb-14 md:mb-20" />
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <h1 className="poster-1 max-w-[14ch]">{t('page.heroTitle')}</h1>
+            <p className="mt-8 max-w-2xl font-display italic text-xl md:text-2xl text-paper/75">
+              {t('page.heroDescription')}
+            </p>
+          </motion.div>
+        </div>
+      </section>
 
-        {/* Tabs */}
-        <section className="pb-8">
-          <div className="container-custom">
-            <CaseTabs
-              activeTab={activeTab}
-              onTabChange={setActiveTab}
-              labels={{
-                all: t('page.tabAll'),
-                development: t('page.tabDevelopment'),
-                ai: t('page.tabAi'),
-                others: t('page.tabOthers'),
-              }}
-            />
-          </div>
-        </section>
+      {/* Tabs */}
+      <section className="border-b border-paper/15 py-6 md:py-8">
+        <div className="container-wide">
+          <CaseTabs
+            activeTab={activeTab}
+            onTabChange={setActiveTab}
+            labels={{
+              all: t('page.tabAll'),
+              development: t('page.tabDevelopment'),
+              ai: t('page.tabAi'),
+              others: t('page.tabOthers'),
+            }}
+          />
+        </div>
+      </section>
 
-        {/* Gallery or AI empty state */}
-        {activeTab === 'ai' ? (
-          <section className="pb-20">
-            <div className="container-custom max-w-2xl">
-              <div className="rounded-2xl border border-bagh-100/60 bg-white/40 backdrop-blur-sm p-8 md:p-10">
-                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
-                  {tCommon('cta.comingSoon')}
-                </p>
-                <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
-                  {t('page.aiEmptyTitle')}
-                </h2>
-                <p className="text-muted-foreground leading-relaxed">
-                  {t('page.aiEmptyBody')}
-                </p>
+      {/* Gallery / Empty */}
+      {activeTab === 'ai' ? (
+        <section className="border-b border-oxblood py-24 md:py-32 bg-noir-2">
+          <div className="container-wide max-w-3xl">
+            <div className="frame bg-noir p-8 md:p-12">
+              <div className="flex items-baseline justify-between border-b border-oxblood pb-3 mb-6">
+                <span className="chapter">{tCommon('cta.comingSoon')}</span>
+                <span className="smallcaps text-paper/40">Onder NDA</span>
               </div>
+              <h2 className="poster-3 mb-6">{t('page.aiEmptyTitle')}</h2>
+              <p className="text-lg leading-relaxed text-paper/70">
+                {t('page.aiEmptyBody')}
+              </p>
             </div>
-          </section>
-        ) : (
-          <section className="pb-20">
-            <CaseGallery
-              cases={filteredCases}
-              readMoreLabel={tCommon('cta.readMore')}
-              basePath={basePath}
-            />
-          </section>
-        )}
-      </div>
+          </div>
+        </section>
+      ) : (
+        <section className="border-b border-oxblood py-16 md:py-20">
+          <CaseGallery
+            cases={filteredCases}
+            readMoreLabel={tCommon('cta.readMore')}
+            basePath={basePath}
+          />
+        </section>
+      )}
 
       <CTASection />
     </div>

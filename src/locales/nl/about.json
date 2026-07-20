@@ -1,38 +1,38 @@
 {
   "hero": {
-    "eyebrow": "// Over",
-    "heading": "Eén studio, één contact.",
+    "eyebrow": "// Studio",
+    "heading": "One-person studio, één contact.",
     "subtitle": "AI-systemen voor bedrijven met veel operationeel werk."
   },
   "story": {
-    "heading": "Achtergrond",
-    "intro": "Vijf jaar Baghlabs. De vraag verschoof van 'we hebben een website nodig' naar 'ons operationeel werk loopt vast'. Daar begint dit werk.",
+    "heading": "Background",
+    "intro": "Vijf jaar Baghlabs. De brief verschoof van 'we hebben een website nodig' naar 'ons operationeel werk loopt vast'. Daar begint dit werk.",
     "pillars": [
       {
-        "label": "Systeem",
+        "label": "Systems",
         "title": "Rond het proces, niet de tool",
-        "description": "Uitzonderingen zijn het werk. Rechten, incomplete data, goedkeuringen, legacy. Daar begint een systeem."
+        "description": "Edge cases zijn het werk. Rechten, incomplete data, approvals, legacy. Daar begint een systeem."
       },
       {
-        "label": "Code",
+        "label": "Craft",
         "title": "Geen doorverwezen werk",
-        "description": "De persoon aan de lijn schrijft en rolt uit. Scope en timing blijven kort."
+        "description": "De persoon aan de lijn schrijft en ships. Scope en timing blijven kort."
       },
       {
-        "label": "Verantwoording",
-        "title": "Geen zwarte doos",
-        "description": "Rechten, auditlog, human-in-the-loop, monitoring. Iemand kan altijd terugzien wat het systeem deed."
+        "label": "Accountability",
+        "title": "Geen black box",
+        "description": "Rechten, audit log, human-in-the-loop, monitoring. Iemand kan altijd terugzien wat het systeem deed."
       }
     ]
   },
   "network": {
-    "label": "Uitbreiding",
-    "heading": "Wanneer meer mensen nodig zijn",
-    "description": "Grotere trajecten vragen meer dan één discipline. Er is een kleine vertrouwde kring die aansluit wanneer nodig. Je weet altijd wie erbij is en waarvoor."
+    "label": "Collective",
+    "heading": "Wanneer er meer nodig is",
+    "description": "Grotere engagements vragen meer dan één discipline. Een kleine vertrouwde crew sluit aan wanneer nodig. Je weet altijd wie erbij is en waarvoor."
   },
   "testimonials": {
-    "badge": "Referenties",
+    "badge": "Testimonials",
     "title": "Wat klanten zeggen",
-    "subtitle": "Een paar woorden van mensen waarmee er is samengewerkt."
+    "subtitle": "Een paar woorden van clients waarmee er is samengewerkt."
   }
 }

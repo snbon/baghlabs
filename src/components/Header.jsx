@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 import { pillars } from '@/data/services'
 import { useCurrentLang, useLangPath } from '@/lib/usePathAlternate'
@@ -9,8 +10,6 @@ const Header = () => {
   const [isVisible, setIsVisible] = useState(true)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
-  const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
-  const dropdownRef = useRef(null)
   const prevScrollY = useRef(0)
   const location = useLocation()
   const { t } = useTranslation('common')
@@ -18,245 +17,229 @@ const Header = () => {
   const langPath = useLangPath()
 
   const navLinks = [
-    { name: t('nav.home'), href: langPath('home'), key: 'home' },
     { name: t('nav.cases'), href: langPath('projects'), key: 'projects' },
     { name: t('nav.about'), href: langPath('about'), key: 'about' },
     { name: t('nav.contact'), href: langPath('contact'), key: 'contact' },
-    { name: 'Support', href: 'https://support.baghlabs.com', external: true, key: 'support' },
   ]
 
-  const serviceLinks = pillars.map((p) => ({
-    id: p.id,
-    label: p.label[lang] || p.label.nl,
-  }))
-
-  const isActive = (item) => {
-    const p = location.pathname
-    if (item.external) return false
-    if (item.key === 'home') return p === '/' || p === '/en'
-    if (item.key === 'projects') return p.startsWith('/projecten') || p.startsWith('/en/cases')
-    if (item.key === 'about') return p.startsWith('/over-ons') || p.startsWith('/en/about')
-    if (item.key === 'contact') return p.startsWith('/contact') || p.startsWith('/en/contact')
-    return false
-  }
-
-  const isServicesActive = () =>
-    location.pathname.startsWith('/diensten') || location.pathname.startsWith('/en/services')
-
-  // Hide after 15% scroll down, reveal on scroll up
   useEffect(() => {
     const handleScroll = () => {
       const currentY = window.scrollY
       const threshold = window.innerHeight * 0.15
-
-      if (currentY <= threshold) {
-        setIsVisible(true)
-      } else if (currentY > prevScrollY.current) {
-        setIsVisible(false)
-      } else {
-        setIsVisible(true)
-      }
+      if (currentY <= threshold) setIsVisible(true)
+      else if (currentY > prevScrollY.current) setIsVisible(false)
+      else setIsVisible(true)
       prevScrollY.current = currentY
     }
-
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Close dropdown on outside click
+  // Close menu on route change, reset expanded state.
   useEffect(() => {
-    const onOutside = (e) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
-        setServicesOpen(false)
+    setIsMenuOpen(false)
+    setServicesOpen(false)
+  }, [location.pathname])
+
+  // Lock body scroll when menu is open.
+  useEffect(() => {
+    if (isMenuOpen) {
+      const prev = document.body.style.overflow
+      document.body.style.overflow = 'hidden'
+      return () => {
+        document.body.style.overflow = prev
       }
     }
-    document.addEventListener('mousedown', onOutside)
-    return () => document.removeEventListener('mousedown', onOutside)
-  }, [])
-
-  // Close everything on route change
-  useEffect(() => {
-    setServicesOpen(false)
-    setIsMenuOpen(false)
-  }, [location.pathname])
+  }, [isMenuOpen])
 
   return (
     <>
       <header
         className={`fixed top-0 inset-x-0 z-[9999] transition-transform duration-300 ${
-          isVisible ? 'translate-y-0' : '-translate-y-full'
+          isVisible || isMenuOpen ? 'translate-y-0' : '-translate-y-full'
         }`}
       >
-        <div className="container-custom py-3">
-          <div className="relative">
-            {/* Floating glass card layers */}
-            <div className="absolute inset-0 bg-white/20 backdrop-blur-xl rounded-2xl border border-white/30 shadow-2xl shadow-bagh-600/20" />
-            <div className="absolute inset-0 bg-gradient-to-r from-bagh-600/10 via-bagh-500/5 to-bagh-600/10 rounded-2xl" />
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(71,85,105,0.08),transparent_70%)] rounded-2xl" />
-
-            {/* Content */}
-            <div className="relative flex items-center justify-between px-5 py-3 md:px-8 md:py-4">
-              {/* Logo */}
-              <Link to={langPath('home')} className="flex items-center space-x-3 group">
-                <div className="w-8 h-8 bg-gradient-to-br from-bagh-700 to-bagh-600 rounded-xl flex items-center justify-center shadow-lg shadow-bagh-600/30 transition-all duration-300 group-hover:scale-110">
-                  <span className="text-white font-light text-sm">B</span>
-                </div>
-                <span className="text-lg font-light text-bagh-800 transition-colors duration-300">
-                  Baghlabs
+        <div className="bg-noir/85 backdrop-blur-md border-b border-paper/10">
+          <div className="container-wide">
+            <div className="flex items-center justify-between py-4 md:py-5">
+              {/* Wordmark */}
+              <Link to={langPath('home')} className="group flex items-baseline gap-3">
+                <span className="font-display font-bold text-2xl md:text-3xl leading-none tracking-tight text-paper group-hover:text-oxblood transition-colors">
+                  baghlabs
                 </span>
+                <span className="hidden md:inline smallcaps text-paper/45">Studio</span>
               </Link>
 
-              {/* Desktop nav */}
-              <nav className="hidden md:flex items-center space-x-8">
-                {navLinks.map((item) =>
-                  item.external ? (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="relative text-sm font-light transition-all duration-300 group text-bagh-800 hover:text-bagh-600"
-                    >
-                      {item.name}
-                      <div className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-bagh-600 to-bagh-500 rounded-full transition-all duration-300 w-0 opacity-0 group-hover:w-full group-hover:opacity-100" />
-                    </a>
-                  ) : (
-                    <Link
-                      key={item.name}
-                      to={item.href}
-                      className={`relative text-sm font-light transition-all duration-300 group ${
-                        isActive(item) ? 'text-bagh-600' : 'text-bagh-800 hover:text-bagh-600'
-                      }`}
-                    >
-                      {item.name}
-                      <div className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-bagh-600 to-bagh-500 rounded-full transition-all duration-300 ${
-                        isActive(item)
-                          ? 'w-full opacity-100'
-                          : 'w-0 opacity-0 group-hover:w-full group-hover:opacity-100'
-                      }`} />
-                    </Link>
-                  )
-                )}
-
-                {/* Services dropdown */}
-                <div className="relative" ref={dropdownRef}>
-                  <button
-                    onClick={() => setServicesOpen((v) => !v)}
-                    className={`flex items-center gap-1 text-sm font-light transition-all duration-300 group relative ${
-                      isServicesActive() ? 'text-bagh-600' : 'text-bagh-800 hover:text-bagh-600'
-                    }`}
-                  >
-                    {t('nav.services')}
-                    <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${servicesOpen ? 'rotate-180' : ''}`} />
-                    <div className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-bagh-600 to-bagh-500 rounded-full transition-all duration-300 ${
-                      isServicesActive()
-                        ? 'w-full opacity-100'
-                        : 'w-0 opacity-0 group-hover:w-full group-hover:opacity-100'
-                    }`} />
-                  </button>
-
-                  {servicesOpen && (
-                    <div className="absolute top-full right-0 mt-3 w-56 bg-white/90 backdrop-blur-xl rounded-xl border border-white/40 shadow-xl shadow-bagh-900/10 overflow-hidden">
-                      {serviceLinks.map((s) => (
-                        <Link
-                          key={s.id}
-                          to={langPath('services', s.id)}
-                          className="block px-4 py-3 text-sm font-light text-bagh-700 hover:text-bagh-900 hover:bg-bagh-50/80 transition-colors duration-150 border-b border-bagh-100/50 last:border-0"
-                        >
-                          {s.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              </nav>
-
-              {/* Mobile hamburger */}
+              {/* Hamburger — everywhere */}
               <button
                 type="button"
-                className="md:hidden p-2.5 rounded-xl text-bagh-800 hover:text-bagh-600 hover:bg-white/20 transition-all duration-300"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                onClick={() => setIsMenuOpen((v) => !v)}
+                aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+                aria-expanded={isMenuOpen}
+                className="group flex items-center gap-3"
               >
-                <span className="sr-only">Open menu</span>
-                {isMenuOpen ? (
-                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                ) : (
-                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                  </svg>
-                )}
+                <span
+                  className={`smallcaps transition-colors ${
+                    isMenuOpen ? 'text-oxblood' : 'text-paper group-hover:text-oxblood'
+                  }`}
+                >
+                  {isMenuOpen ? 'Close' : 'Menu'}
+                </span>
+                <div className="relative w-8 h-4 flex flex-col justify-between">
+                  <span
+                    className={`block h-px bg-current transition-all duration-300 origin-left ${
+                      isMenuOpen
+                        ? 'text-oxblood rotate-45 translate-y-[1px] w-full'
+                        : 'text-paper w-full group-hover:text-oxblood'
+                    }`}
+                  />
+                  <span
+                    className={`block h-px bg-current transition-all duration-300 origin-left ${
+                      isMenuOpen
+                        ? 'text-oxblood -rotate-45 -translate-y-[3px] w-full'
+                        : 'text-paper w-2/3 self-end group-hover:text-oxblood group-hover:w-full'
+                    }`}
+                  />
+                </div>
               </button>
             </div>
           </div>
         </div>
       </header>
 
-      {/* Mobile menu, slide down from navbar */}
-      <div className={`md:hidden fixed top-0 inset-x-0 z-[9997] transition-all duration-300 ease-in-out ${
-        isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'
-      }`}>
-        <div className="container-custom pt-20 pb-3">
-          <div className="relative rounded-2xl overflow-hidden">
-            <div className="absolute inset-0 bg-white/80 backdrop-blur-xl border border-white/40 shadow-xl shadow-bagh-900/10" />
-            <nav className="relative px-2 py-3 space-y-0.5">
-              {navLinks.map((item) =>
-                item.external ? (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block px-4 py-3 rounded-xl text-sm font-light transition-colors duration-200 text-bagh-800 hover:text-bagh-600 hover:bg-bagh-50/40"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.name}
-                  </a>
-                ) : (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    className={`block px-4 py-3 rounded-xl text-sm font-light transition-colors duration-200 ${
-                      isActive(item)
-                        ? 'text-bagh-600 bg-bagh-50/60'
-                        : 'text-bagh-800 hover:text-bagh-600 hover:bg-bagh-50/40'
-                    }`}
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                )
-              )}
-
-              <button
-                className="w-full text-left px-4 py-3 rounded-xl text-sm font-light text-bagh-800 hover:text-bagh-600 hover:bg-bagh-50/40 transition-colors duration-200 flex items-center gap-1.5"
-                onClick={() => setMobileServicesOpen((v) => !v)}
-              >
-                {t('nav.services')}
-                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${mobileServicesOpen ? 'rotate-180' : ''}`} />
-              </button>
-
-              {mobileServicesOpen && (
-                <div className="pl-4 space-y-0.5">
-                  {serviceLinks.map((s) => (
-                    <Link
-                      key={s.id}
-                      to={langPath('services', s.id)}
-                      className="block px-4 py-2.5 rounded-xl text-sm font-light text-bagh-600 hover:bg-bagh-50/40 transition-colors duration-200"
-                      onClick={() => setIsMenuOpen(false)}
+      {/* Full-screen takeover menu */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            key="menu"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className="fixed inset-0 z-[9998] bg-noir text-paper overflow-y-auto"
+          >
+            <div className="container-wide min-h-full flex flex-col pt-24 md:pt-28 pb-10">
+              {/* Nav list */}
+              <nav className="flex-1 flex flex-col justify-center py-8">
+                <p className="chapter mb-8">Cap. — Menu</p>
+                <ul className="border-t border-paper/15">
+                  {navLinks.map((item, i) => (
+                    <motion.li
+                      key={item.key}
+                      initial={{ opacity: 0, y: 16 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4, delay: 0.05 + i * 0.06 }}
+                      className="border-b border-paper/15"
                     >
-                      {s.label}
-                    </Link>
+                      <Link
+                        to={item.href}
+                        onClick={() => setIsMenuOpen(false)}
+                        className="group flex items-baseline gap-6 md:gap-10 py-5 md:py-7 transition-colors"
+                      >
+                        <span className="smallcaps text-oxblood w-10 md:w-14 shrink-0">
+                          {String(i + 1).padStart(2, '0')}
+                        </span>
+                        <span
+                          className="font-display font-bold text-paper group-hover:text-oxblood transition-colors leading-none"
+                          style={{
+                            fontSize: 'clamp(2.5rem, 7vw, 5.5rem)',
+                            letterSpacing: '-0.03em',
+                            fontVariationSettings: "'opsz' 96",
+                          }}
+                        >
+                          {item.name}
+                        </span>
+                      </Link>
+                    </motion.li>
                   ))}
-                </div>
-              )}
-            </nav>
-          </div>
-        </div>
-        {/* Tap outside to close */}
-        <div className="fixed inset-0 -z-10" onClick={() => setIsMenuOpen(false)} />
-      </div>
+
+                  {/* Services — expandable */}
+                  <motion.li
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: 0.05 + navLinks.length * 0.06 }}
+                    className="border-b border-paper/15"
+                  >
+                    <button
+                      type="button"
+                      onClick={() => setServicesOpen((v) => !v)}
+                      aria-expanded={servicesOpen}
+                      className="w-full flex items-baseline gap-6 md:gap-10 py-5 md:py-7 text-left group"
+                    >
+                      <span className="smallcaps text-oxblood w-10 md:w-14 shrink-0">
+                        {String(navLinks.length + 1).padStart(2, '0')}
+                      </span>
+                      <span
+                        className={`font-display font-bold transition-colors leading-none ${
+                          servicesOpen ? 'text-oxblood' : 'text-paper group-hover:text-oxblood'
+                        }`}
+                        style={{
+                          fontSize: 'clamp(2.5rem, 7vw, 5.5rem)',
+                          letterSpacing: '-0.03em',
+                          fontVariationSettings: "'opsz' 96",
+                        }}
+                      >
+                        {t('nav.services')}
+                      </span>
+                      <span className="ml-auto flex items-center gap-2">
+                        <span className="smallcaps text-paper/45 hidden md:inline">
+                          {servicesOpen ? 'Close' : 'Expand'}
+                        </span>
+                        <ChevronDown
+                          className={`w-5 h-5 md:w-6 md:h-6 transition-transform duration-300 ${
+                            servicesOpen ? 'rotate-180 text-oxblood' : 'text-paper/60'
+                          }`}
+                        />
+                      </span>
+                    </button>
+                    <AnimatePresence initial={false}>
+                      {servicesOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                          className="overflow-hidden"
+                        >
+                          <ul className="pb-6 md:pb-8 md:pl-24 pl-16 divide-y divide-paper/10">
+                            {pillars.map((p, pi) => (
+                              <li key={p.id}>
+                                <Link
+                                  to={langPath('services', p.id)}
+                                  onClick={() => setIsMenuOpen(false)}
+                                  className="group flex items-baseline gap-4 py-3 md:py-4"
+                                >
+                                  <span className="smallcaps text-oxblood/70 w-10 shrink-0">
+                                    {String(pi + 1).padStart(2, '0')}
+                                  </span>
+                                  <span className="font-display text-xl md:text-2xl text-paper/85 group-hover:text-oxblood transition-colors">
+                                    {p.label[lang] || p.label.nl}
+                                  </span>
+                                  <span className="ml-auto smallcaps text-paper/30 group-hover:text-oxblood transition-colors">
+                                    →
+                                  </span>
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.li>
+                </ul>
+              </nav>
+
+              {/* Colophon */}
+              <div className="border-t border-paper/10 pt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                <span className="smallcaps text-paper/45">MMXXVI · Vlaanderen · Studio</span>
+                <span className="smallcaps text-paper/60">
+                  {lang === 'en' ? 'English' : 'Nederlands'}
+                </span>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   )
 }

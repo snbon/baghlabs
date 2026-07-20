@@ -5,49 +5,48 @@ const NetworkSection = () => {
   const { t } = useTranslation('about')
 
   return (
-    <div className="w-full flex items-center justify-center py-28">
-      <div className="container-custom">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+    <section className="bg-noir-2 text-paper border-b border-oxblood">
+      <div className="container-wide py-24 md:py-32">
+        <div className="flex items-baseline justify-between mb-14 md:mb-20">
+          <p className="chapter">Cap. III — {t('network.label')}</p>
+          <span className="smallcaps text-paper/40 hidden md:inline">Uitbreiding</span>
+        </div>
+        <div className="grid md:grid-cols-12 gap-8 md:gap-16 items-start">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.6 }}
-            className="space-y-6"
+            transition={{ duration: 0.5 }}
+            className="md:col-span-7"
           >
-            <p className="text-xs uppercase tracking-widest text-muted-foreground font-medium">
-              {t('network.label')}
-            </p>
-            <h2 className="text-3xl md:text-4xl font-semibold text-foreground tracking-tight">
-              {t('network.heading')}
-            </h2>
-            <p className="text-muted-foreground leading-relaxed text-base md:text-lg">
+            <h2 className="poster-2 mb-8">{t('network.heading')}</h2>
+            <p className="text-lg md:text-xl leading-relaxed text-paper/80 max-w-2xl">
               {t('network.description')}
-            </p>
-            <p className="text-sm text-foreground font-medium border-l-2 border-foreground pl-4">
-              {t('network.note')}
             </p>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="grid grid-cols-2 gap-4"
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="md:col-span-5 grid grid-cols-2 gap-3"
           >
-            {['Development', 'Branding', 'Marketing', 'Strategy'].map((tag, i) => (
+            {['Systems', 'Frontend', 'Data', 'Strategy'].map((tag, i) => (
               <div
                 key={i}
-                className="border border-bagh-200 rounded-2xl p-6 flex items-center justify-center"
+                className="frame bg-noir aspect-square flex flex-col items-start justify-between p-4"
               >
-                <span className="text-sm font-light text-muted-foreground">{tag}</span>
+                <span className="smallcaps text-oxblood">{String(i + 1).padStart(2, '0')}</span>
+                <span className="font-display font-bold text-xl md:text-2xl leading-none">
+                  {tag}
+                </span>
               </div>
             ))}
           </motion.div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

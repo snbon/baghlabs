@@ -1,6 +1,5 @@
-import { createContext, useContext } from 'react'
-
-export const LenisContext = createContext(null)
+import { useContext } from 'react'
+import { LenisContext } from '@/components/LenisProvider'
 
 export function useLenis() {
   return useContext(LenisContext)

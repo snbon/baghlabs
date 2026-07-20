@@ -1,58 +1,96 @@
 {
   "hero": {
-    "morphingPhrases": ["AI Workflows", "Knowledge Systems", "Document Processing", "Integrations"],
-    "subtitle": "Bespoke AI systems for businesses with a lot of operational work. For the work stuck in email, PDFs and spreadsheets.",
-    "cta": "Discuss your workflow"
+    "titleLine1": "Bespoke AI systems",
+    "titleLine2": "built to work",
+    "titleLine3": "for your business.",
+    "tagline": "Baghlabs is your digital partner where off-the-shelf ends. We ship AI workflows, knowledge bases and integrations — fully bespoke.",
+    "primaryCta": "Discuss your workflow"
   },
-  "about": {
-    "heading": "What we build",
-    "intro": "Four places where AI actually helps the operation. Internal software your team uses — with sources, with permissions, with an audit trail.",
-    "servicesLabel": "Our pillars",
-    "services": {
-      "ai-workflows": {
+  "pillars": {
+    "eyebrow": "// What we build",
+    "headline": "Four places AI actually helps.",
+    "items": [
+      {
+        "id": "ai-workflows",
+        "number": "01",
         "title": "AI Workflows",
-        "description": "Requests come in, get processed, routed and logged. No manual middle."
+        "description": "Requests come in, get processed, routed and logged. No manual middleman."
       },
-      "kennissystemen": {
-        "title": "Private Knowledge Systems",
-        "description": "Answers from your own documents. With sources. With permissions. Not a public model."
+      {
+        "id": "kennissystemen",
+        "number": "02",
+        "title": "Knowledge Bases",
+        "description": "Answers from your own documents. With sources. With permissions. No public model."
       },
-      "documentverwerking": {
+      {
+        "id": "documentverwerking",
+        "number": "03",
         "title": "Document & Data Processing",
-        "description": "PDFs and scans become data. Uncertain records go to a person."
+        "description": "PDFs and scans become data. Edge cases go to a human."
       },
-      "integraties": {
+      {
+        "id": "integraties",
+        "number": "04",
         "title": "Systems Integration",
         "description": "ERP, CRM, accounting — one system. Logs you can actually read."
       }
+    ],
+    "foundation": {
+      "eyebrow": "// The foundation",
+      "title": "Custom Software Development",
+      "description": "What this studio runs on. AI sits on top, not instead."
     }
   },
-  "cases": {
-    "heading": "Recent work",
-    "subtext": "View project",
-    "comingSoon": "More work coming soon."
-  },
-  "why": {
-    "heading": "Why Baghlabs",
-    "reasons": [
+  "process": {
+    "eyebrow": "// How we work",
+    "headline": "Three phases. Clear boundaries.",
+    "stages": [
       {
-        "title": "One point of contact",
-        "description": "The person you talk to writes the code. Scope, timing and communication stay short. Nothing subcontracted."
+        "number": "01",
+        "title": "Blueprint",
+        "duration": "2 weeks",
+        "priceLabel": "Paid discovery",
+        "description": "We pick one workflow together. You end with a concrete build proposal. No free consulting.",
+        "outputs": [
+          "Process mapping",
+          "Data & integrations scan",
+          "Security & privacy design",
+          "Fixed-scope proposal"
+        ]
       },
       {
-        "title": "Around the process, not the tool",
-        "description": "Exceptions are the work. Permissions, incomplete data, approvals, legacy. That's where a system begins."
+        "number": "02",
+        "title": "Build & Launch",
+        "duration": "Scoped per project",
+        "priceLabel": "Fixed scope",
+        "description": "We build, test, ship. Your team runs it after, with docs and handover.",
+        "outputs": [
+          "Production system",
+          "AI workflow & data model",
+          "Integrations & permissions",
+          "Audit log & dashboard"
+        ]
       },
       {
-        "title": "Not a black box",
-        "description": "Role-based access, audit log, human-in-the-loop, monitoring. Someone can always see what the system did."
+        "number": "03",
+        "title": "Continuous Improvement",
+        "duration": "Monthly retainer",
+        "priceLabel": "Ongoing",
+        "description": "Monitoring, tuning, incremental releases. Based on what the system actually does, not guesses.",
+        "outputs": [
+          "Monitoring & support",
+          "Monthly review",
+          "Prompt & model tuning",
+          "Prioritized backlog"
+        ]
       }
     ]
   },
-  "ctaSection": {
-    "heading": "Find the workflow costing you the most time.",
-    "description": "Two weeks, fixed price, concrete proposal. No commitment to build.",
-    "note": "Active in Brussels, Ghent and across Flanders.",
-    "cta": "Discuss your workflow"
+  "cta": {
+    "eyebrow": "// Next step",
+    "headline": "Find the workflow costing you the most time.",
+    "body": "Two weeks, fixed price, concrete build proposal. No commitment to build.",
+    "primary": "Start a Blueprint",
+    "secondary": "Intro call first"
   }
 }

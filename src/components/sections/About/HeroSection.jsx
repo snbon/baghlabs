@@ -1,31 +1,31 @@
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
-import BackgroundHero from '@/components/ui/background-hero'
 
 const HeroSection = () => {
   const { t } = useTranslation('about')
 
   return (
-    <div className="relative w-full min-h-screen flex items-center justify-center">
-      <BackgroundHero />
-      <div className="container-custom text-center pt-20">
+    <section className="relative bg-noir text-paper border-b border-oxblood">
+      
+      <div className="container-wide relative pt-32 md:pt-40 pb-20 md:pb-24">
+        <div className="flex items-baseline justify-between mb-6">
+          <span className="chapter">Cap. I — Colofon</span>
+          <span className="smallcaps text-paper/40 hidden md:inline">MMXXVI</span>
+        </div>
+        <div className="rule-oxblood mb-14 md:mb-20" />
+
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
+          transition={{ duration: 0.6 }}
         >
-          <p className="text-xs uppercase tracking-widest text-muted-foreground mb-6 font-medium">
-            {t('hero.label')}
-          </p>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-foreground tracking-tight mb-8">
-            {t('hero.heading')}
-          </h1>
-          <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <h1 className="poster-1 max-w-[16ch]">{t('hero.heading')}</h1>
+          <p className="mt-8 md:mt-10 max-w-3xl font-display italic text-xl md:text-2xl text-paper/75">
             {t('hero.subtitle')}
           </p>
         </motion.div>
       </div>
-    </div>
+    </section>
   )
 }
 

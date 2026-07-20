@@ -1,9 +1,9 @@
 {
   "nav": {
     "home": "Home",
-    "cases": "Projecten",
-    "about": "Over",
-    "services": "Diensten",
+    "cases": "Case Studies",
+    "about": "Studio",
+    "services": "Services",
     "contact": "Contact",
     "lang": "EN"
   },
@@ -17,36 +17,36 @@
     "copyright": "© 2026 Baghlabs. Alle rechten voorbehouden.",
     "links": {
       "home": "Home",
-      "cases": "Projecten",
-      "services": "Diensten",
-      "about": "Over",
+      "cases": "Case Studies",
+      "services": "Services",
+      "about": "Studio",
       "contact": "Contact"
     }
   },
   "sections": {
-    "relatedWork": "Ander werk",
-    "gallery": "Beelden",
+    "relatedWork": "Meer case studies",
+    "gallery": "Visuals",
     "moreWork": "Meer werk",
     "industry": "Sector",
-    "client": "Klant",
-    "year": "Jaar",
-    "technologies": "Technologie",
-    "services": "Onderdelen",
-    "challenge": "Probleem",
-    "solution": "Aanpak",
-    "results": "Resultaat",
-    "video": "Video"
+    "client": "Client",
+    "year": "Year",
+    "technologies": "Stack",
+    "services": "Scope",
+    "challenge": "Brief",
+    "solution": "Approach",
+    "results": "Impact",
+    "video": "Reel"
   },
   "cta": {
     "connectWithUs": "Bespreek je workflow",
     "learnMore": "Meer weten",
     "getInTouch": "Contact",
-    "visitWebsite": "Bezoek site",
-    "caseDetail": "Bekijk project",
-    "comingSoon": "Binnenkort",
-    "readMore": "Lees meer",
-    "bookCall": "Plan een gesprek",
+    "visitWebsite": "Bezoek live site",
+    "caseDetail": "Bekijk case study",
+    "comingSoon": "Coming soon",
+    "readMore": "Lees case study",
+    "bookCall": "Plan een intro call",
     "mostPopular": "// meest gekozen",
-    "viewCase": "Bekijk project"
+    "viewCase": "Bekijk case study"
   }
 }

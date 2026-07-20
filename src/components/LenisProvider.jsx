@@ -1,39 +1,40 @@
-import { useEffect, useRef, useState } from 'react'
+import { createContext, useEffect, useRef, useState } from 'react'
 import Lenis from 'lenis'
-import { LenisContext } from '@/lib/useLenis'
+
+export const LenisContext = createContext(null)
 
 const LenisProvider = ({ children }) => {
-  const [instance, setInstance] = useState(null)
   const rafRef = useRef(null)
+  const [lenis, setLenis] = useState(null)
 
   useEffect(() => {
     if (typeof window === 'undefined') return
 
-    const lenis = new Lenis({
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (prefersReducedMotion) return
+
+    const instance = new Lenis({
       duration: 1.15,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
-      smoothTouch: false,
-      wheelMultiplier: 1,
       touchMultiplier: 1.2,
     })
 
-    setInstance(lenis)
-
     const raf = (time) => {
-      lenis.raf(time)
+      instance.raf(time)
       rafRef.current = requestAnimationFrame(raf)
     }
     rafRef.current = requestAnimationFrame(raf)
+    setLenis(instance)
 
     return () => {
       if (rafRef.current) cancelAnimationFrame(rafRef.current)
-      lenis.destroy()
-      setInstance(null)
+      instance.destroy()
+      setLenis(null)
     }
   }, [])
 
-  return <LenisContext.Provider value={instance}>{children}</LenisContext.Provider>
+  return <LenisContext.Provider value={lenis}>{children}</LenisContext.Provider>
 }
 
 export default LenisProvider

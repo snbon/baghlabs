@@ -1,15 +1,15 @@
 {
   "page": {
-    "sectionsScope": "What we build",
-    "sectionsDeliverables": "What you get",
-    "sectionsNotForYou": "When this isn't for you",
+    "sectionsScope": "Scope",
+    "sectionsDeliverables": "Deliverables",
+    "sectionsNotForYou": "Not a fit when",
     "backToHome": "Back",
     "primaryCta": "Discuss this workflow",
-    "secondaryCta": "See the full offer"
+    "secondaryCta": "See all services"
   },
   "ai-workflows": {
     "id": "ai-workflows",
-    "eyebrow": "// Pillar 01",
+    "eyebrow": "// Service 01",
     "title": "AI Workflows",
     "subtitle": "Manual admin becomes a working system.",
     "heroDescription": "From incoming request to closed task. Extraction, checks, approval, action. Full trace back.",
@@ -20,7 +20,7 @@
   },
   "kennissystemen": {
     "id": "kennissystemen",
-    "eyebrow": "// Pillar 02",
+    "eyebrow": "// Service 02",
     "title": "Private Knowledge Systems",
     "subtitle": "Internal knowledge becomes usable.",
     "heroDescription": "Answers to internal questions, grounded in your own documents. With sources. With permissions. No public API.",
@@ -31,7 +31,7 @@
   },
   "documentverwerking": {
     "id": "documentverwerking",
-    "eyebrow": "// Pillar 03",
+    "eyebrow": "// Service 03",
     "title": "Document & Data Processing",
     "subtitle": "PDFs become data.",
     "heroDescription": "Extraction pipelines that turn unstructured files into validated data. Doubt routes to a human.",
@@ -42,7 +42,7 @@
   },
   "integraties": {
     "id": "integraties",
-    "eyebrow": "// Pillar 04",
+    "eyebrow": "// Service 04",
     "title": "Systems Integration",
     "subtitle": "One system, not seven tools.",
     "heroDescription": "The connective layer between your existing systems. With logs, retries and error handling you can read.",

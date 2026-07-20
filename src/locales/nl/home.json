@@ -1,58 +1,96 @@
 {
   "hero": {
-    "morphingPhrases": ["AI Workflows", "Kennissystemen", "Documentverwerking", "Systeemintegraties"],
-    "subtitle": "Bespoke AI-systemen voor bedrijven met veel operationeel werk. Voor het werk dat vastloopt in mails, PDF's en Excel.",
-    "cta": "Bespreek je workflow"
+    "titleLine1": "Unieke AI-systemen",
+    "titleLine2": "die voor jou",
+    "titleLine3": "werken.",
+    "tagline": "Baghlabs is jouw digital partner waar off-the-shelf stopt. We shippen AI-workflows, knowledge bases en integraties, fully bespoke.",
+    "primaryCta": "Bespreek je workflow"
   },
-  "about": {
-    "heading": "Wat we bouwen",
-    "intro": "Vier plekken waar AI verschil maakt in de operatie. Interne software die je team ook echt gebruikt — met bron, met rechten, met een audit trail.",
-    "servicesLabel": "Onze pijlers",
-    "services": {
-      "ai-workflows": {
+  "pillars": {
+    "eyebrow": "// What we build",
+    "headline": "Vier plekken waar AI verschil maakt.",
+    "items": [
+      {
+        "id": "ai-workflows",
+        "number": "01",
         "title": "AI Workflows",
-        "description": "Aanvragen komen binnen, worden verwerkt, doorgezet en gelogd. Zonder handwerk in het midden."
+        "description": "Requests komen binnen, worden verwerkt, gerouteerd en gelogd. Geen manual middleman."
       },
-      "kennissystemen": {
-        "title": "AI-kennissystemen",
-        "description": "Antwoorden uit je eigen documenten. Met bron. Met rechten. Geen publiek model."
+      {
+        "id": "kennissystemen",
+        "number": "02",
+        "title": "Knowledge Bases",
+        "description": "Antwoorden uit je eigen documenten. Met bron. Met permissions. Geen public model."
       },
-      "documentverwerking": {
-        "title": "Document- & Dataverwerking",
-        "description": "PDF's en scans worden data. Twijfelgevallen komen bij een mens."
+      {
+        "id": "documentverwerking",
+        "number": "03",
+        "title": "Document & Data Processing",
+        "description": "PDF's en scans worden data. Edge cases naar een mens."
       },
-      "integraties": {
-        "title": "Systeemintegraties",
+      {
+        "id": "integraties",
+        "number": "04",
+        "title": "Systems Integration",
         "description": "ERP, CRM, boekhouding — één systeem. Logs die je kan lezen."
       }
+    ],
+    "foundation": {
+      "eyebrow": "// The foundation",
+      "title": "Custom Software Development",
+      "description": "Waar dit huis op draait. AI sits on top, niet in de plaats van."
     }
   },
-  "cases": {
-    "heading": "Recent gebouwd",
-    "subtext": "Bekijk project",
-    "comingSoon": "Meer werk binnenkort."
-  },
-  "why": {
-    "heading": "Waarom Baghlabs",
-    "reasons": [
+  "process": {
+    "eyebrow": "// How we work",
+    "headline": "Drie fases. Vaste boundaries.",
+    "stages": [
       {
-        "title": "Eén contact",
-        "description": "De persoon aan de lijn schrijft ook de code. Scope, timing en communicatie blijven kort. Geen doorverwezen werk."
+        "number": "01",
+        "title": "Blueprint",
+        "duration": "2 weken",
+        "priceLabel": "Paid discovery",
+        "description": "We kiezen samen één workflow. Aan het einde ligt er een concreet build proposal op tafel. Geen free consulting.",
+        "outputs": [
+          "Process mapping",
+          "Data & integrations scan",
+          "Security & privacy design",
+          "Fixed-scope proposal"
+        ]
       },
       {
-        "title": "Rond het proces, niet de tool",
-        "description": "Uitzonderingen zijn het werk. Rechten, incomplete data, goedkeuring, legacy. Daar begint een systeem."
+        "number": "02",
+        "title": "Build & Launch",
+        "duration": "Scope per project",
+        "priceLabel": "Fixed scope",
+        "description": "We bouwen, testen en shippen. Daarna draait je team het zelf, met docs en handover.",
+        "outputs": [
+          "Production system",
+          "AI workflow & data model",
+          "Integrations & permissions",
+          "Audit log & dashboard"
+        ]
       },
       {
-        "title": "Geen zwarte doos",
-        "description": "Rolgebaseerde toegang, audit log, human-in-the-loop, monitoring. Iemand kan altijd terugzien wat het systeem deed."
+        "number": "03",
+        "title": "Continuous Improvement",
+        "duration": "Monthly retainer",
+        "priceLabel": "Ongoing",
+        "description": "Monitoring, tuning, incremental releases. Op basis van wat het systeem echt doet, niet op basis van vermoedens.",
+        "outputs": [
+          "Monitoring & support",
+          "Monthly review",
+          "Prompt & model tuning",
+          "Prioritized backlog"
+        ]
       }
     ]
   },
-  "ctaSection": {
-    "heading": "Vind de workflow die je het meeste tijd kost.",
-    "description": "Twee weken, vaste prijs, concreet voorstel. Zonder verplichting om te bouwen.",
-    "note": "Actief in Brussel, Gent en de rest van Vlaanderen.",
-    "cta": "Bespreek je workflow"
+  "cta": {
+    "eyebrow": "// Next step",
+    "headline": "Vind de workflow die je het meeste tijd kost.",
+    "body": "Twee weken, fixed price, concreet build proposal. Geen commitment om te bouwen.",
+    "primary": "Start een Blueprint",
+    "secondary": "Eerst een intro call"
   }
 }

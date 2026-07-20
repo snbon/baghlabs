@@ -1,65 +1,65 @@
 {
   "page": {
-    "sectionsScope": "Wat we bouwen",
-    "sectionsDeliverables": "Wat je krijgt",
-    "sectionsNotForYou": "Wanneer dit niet past",
+    "sectionsScope": "Scope",
+    "sectionsDeliverables": "Deliverables",
+    "sectionsNotForYou": "Not a fit when",
     "backToHome": "Terug",
     "primaryCta": "Bespreek deze workflow",
-    "secondaryCta": "Bekijk het volledige aanbod"
+    "secondaryCta": "Zie alle services"
   },
   "ai-workflows": {
     "id": "ai-workflows",
-    "eyebrow": "// Pijler 01",
+    "eyebrow": "// Service 01",
     "title": "AI Workflows",
     "subtitle": "Handmatige admin wordt een werkend systeem.",
-    "heroDescription": "Van inkomend verzoek tot afgehandelde taak. Extractie, controle, goedkeuring, actie. Alles traceerbaar.",
+    "heroDescription": "Van inkomend verzoek tot afgehandelde taak. Extractie, controle, approval, actie. Alles traceerbaar.",
     "example": {
-      "title": "In de praktijk",
-      "body": "Leveranciers-mails worden uitgelezen, gematcht met bestellingen, en enkel bij twijfel doorgezet naar iemand."
+      "title": "In practice",
+      "body": "Supplier mails worden uitgelezen, gematcht met bestellingen, en enkel bij edge cases doorgezet naar een human."
     }
   },
   "kennissystemen": {
     "id": "kennissystemen",
-    "eyebrow": "// Pijler 02",
-    "title": "AI-kennissystemen",
+    "eyebrow": "// Service 02",
+    "title": "Knowledge Bases",
     "subtitle": "Interne kennis wordt bruikbaar.",
-    "heroDescription": "Antwoorden op interne vragen, uit je eigen documenten. Met bron. Met rechten. Geen publiek model.",
+    "heroDescription": "Antwoorden op interne vragen, uit je eigen documenten. Met bron. Met permissions. Geen public model.",
     "example": {
-      "title": "In de praktijk",
-      "body": "Een medewerker vraagt naar een procedure. Het systeem toont het juiste artikel, met paginabron."
+      "title": "In practice",
+      "body": "Een medewerker vraagt naar een procedure. Het systeem toont het juiste artikel, met page reference."
     }
   },
   "documentverwerking": {
     "id": "documentverwerking",
-    "eyebrow": "// Pijler 03",
-    "title": "Document- & Dataverwerking",
+    "eyebrow": "// Service 03",
+    "title": "Document & Data Processing",
     "subtitle": "PDF's worden data.",
-    "heroDescription": "Pipelines die ongestructureerde bestanden omzetten in schone data. Twijfel gaat naar een mens.",
+    "heroDescription": "Pipelines die unstructured files omzetten in clean data. Edge cases naar een human.",
     "example": {
-      "title": "In de praktijk",
-      "body": "Facturen worden uitgelezen, gecontroleerd tegen bestelbonnen, klaargezet ter goedkeuring in het boekhoudpakket."
+      "title": "In practice",
+      "body": "Invoices worden uitgelezen, gecontroleerd tegen purchase orders, klaargezet ter approval in het boekhoudpakket."
     }
   },
   "integraties": {
     "id": "integraties",
-    "eyebrow": "// Pijler 04",
-    "title": "Systeemintegraties",
+    "eyebrow": "// Service 04",
+    "title": "Systems Integration",
     "subtitle": "Eén systeem, geen zeven losse tools.",
-    "heroDescription": "De laag die je bestaande systemen aan elkaar knoopt. Met logs, retries en foutafhandeling die je kan lezen.",
+    "heroDescription": "De layer die je bestaande systemen aan elkaar knoopt. Met logs, retries en error handling die je kan lezen.",
     "example": {
-      "title": "In de praktijk",
-      "body": "Een order in de webshop maakt automatisch een factuur, boekt voorraad af en opent een servicedesk-ticket."
+      "title": "In practice",
+      "body": "Een order in de webshop maakt automatisch een invoice, boekt stock af en opent een service desk ticket."
     }
   },
   "softwareontwikkeling": {
     "id": "softwareontwikkeling",
-    "eyebrow": "// De basis",
-    "title": "Custom Softwareontwikkeling",
+    "eyebrow": "// The foundation",
+    "title": "Custom Software Development",
     "subtitle": "Waar dit huis op draait.",
-    "heroDescription": "Voordat AI iets oplost, moet er iemand zijn die de app bouwt die het draait. Dat is de kernvaardigheid hier.",
+    "heroDescription": "Voordat AI iets oplost, moet er iemand zijn die de app bouwt die het draait. Dat is de core craft hier.",
     "example": {
-      "title": "In de praktijk",
-      "body": "Een klantportaal waar bedrijven inloggen, status volgen en tickets openen. Gekoppeld aan de interne tools."
+      "title": "In practice",
+      "body": "Een client portal waar bedrijven inloggen, status tracken en tickets openen. Wired to de interne tools."
     }
   }
 }

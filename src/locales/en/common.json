@@ -1,8 +1,8 @@
 {
   "nav": {
     "home": "Home",
-    "cases": "Work",
-    "about": "About",
+    "cases": "Case Studies",
+    "about": "Studio",
     "services": "Services",
     "contact": "Contact",
     "lang": "NL"
@@ -17,36 +17,36 @@
     "copyright": "© 2026 Baghlabs. All rights reserved.",
     "links": {
       "home": "Home",
-      "cases": "Work",
+      "cases": "Case Studies",
       "services": "Services",
-      "about": "About",
+      "about": "Studio",
       "contact": "Contact"
     }
   },
   "sections": {
-    "relatedWork": "Other work",
+    "relatedWork": "More case studies",
     "gallery": "Visuals",
     "moreWork": "More work",
     "industry": "Industry",
     "client": "Client",
     "year": "Year",
-    "technologies": "Technology",
+    "technologies": "Stack",
     "services": "Scope",
-    "challenge": "Problem",
+    "challenge": "Brief",
     "solution": "Approach",
-    "results": "Outcome",
-    "video": "Video"
+    "results": "Impact",
+    "video": "Reel"
   },
   "cta": {
     "connectWithUs": "Discuss your workflow",
     "learnMore": "Learn more",
     "getInTouch": "Get in touch",
-    "visitWebsite": "Visit site",
-    "caseDetail": "View project",
+    "visitWebsite": "Visit live site",
+    "caseDetail": "View case study",
     "comingSoon": "Coming soon",
-    "readMore": "Read more",
-    "bookCall": "Book a call",
+    "readMore": "Read case study",
+    "bookCall": "Book an intro call",
     "mostPopular": "// most picked",
-    "viewCase": "View project"
+    "viewCase": "View case study"
   }
 }
