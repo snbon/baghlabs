@@ -1,211 +1,65 @@
 {
-  "development": {
-    "id": "development",
-    "title": "Development",
-    "subtitle": "Web & Product Development",
-    "heroDescription": "From idea to launched product. Baghlabs builds scalable web applications, SaaS products and MVPs for startups and SMEs.",
-    "whatWeOffer": {
-      "heading": "What we build",
-      "items": [
-        {
-          "title": "Custom Websites",
-          "description": "Professional tailor-made websites, from an impactful homepage to complex multi-page structures with CMS and backend integration."
-        },
-        {
-          "title": "SaaS Product Development",
-          "description": "We build scalable SaaS applications from the ground up. From architecture design and MVP to full launch with user management and analytics."
-        },
-        {
-          "title": "MVP Development",
-          "description": "Validate your idea quickly and cost-efficiently. We help you prioritize the right features and launch in weeks, not months."
-        },
-        {
-          "title": "API & Backend Integrations",
-          "description": "Connect your systems seamlessly. We build robust APIs and integrate existing services into your digital infrastructure."
-        }
-      ]
-    },
-    "pricing": {
-      "heading": "Pricing",
-      "plans": [
-        {
-          "title": "Basic",
-          "popular": false,
-          "description": "For starters who need a professional online presence.",
-          "price": "From €850 ex.",
-          "features": [
-            "Custom homepage",
-            "Responsive & mobile-friendly",
-            "Basic SEO optimization",
-            "Contact form",
-            "Email support",
-            "Delivery within 2 weeks"
-          ]
-        },
-        {
-          "title": "Pro",
-          "popular": true,
-          "description": "For SMEs with more complex digital needs.",
-          "price": "From €1,590 ex.",
-          "features": [
-            "Custom multi-page website",
-            "Complex site structures",
-            "Backend & CMS integration",
-            "User management & roles",
-            "Support via ticket platform",
-            "3 months aftercare"
-          ]
-        },
-        {
-          "title": "Enterprise",
-          "popular": false,
-          "description": "For complex architectures and long-term projects.",
-          "price": "On request",
-          "features": [
-            "From conception to launch",
-            "Complex architecture & integrations",
-            "Dedicated developer",
-            "Extensive testing & QA",
-            "Post-launch support",
-            "Support via ticket platform"
-          ]
-        }
-      ]
+  "page": {
+    "sectionsScope": "Scope",
+    "sectionsDeliverables": "Deliverables",
+    "sectionsNotForYou": "Not a fit when",
+    "backToHome": "Back",
+    "primaryCta": "Discuss this workflow",
+    "secondaryCta": "See all services"
+  },
+  "ai-workflows": {
+    "id": "ai-workflows",
+    "eyebrow": "// Service 01",
+    "title": "AI Workflows",
+    "subtitle": "Manual admin becomes a working system.",
+    "heroDescription": "From incoming request to closed task. Extraction, checks, approval, action. Full trace back.",
+    "example": {
+      "title": "In practice",
+      "body": "Supplier inboxes get parsed, matched to purchase orders, and only routed to a human on doubt."
     }
   },
-  "branding-content": {
-    "id": "branding-content",
-    "title": "Branding & Content",
-    "subtitle": "Brand Identity & Visual Content",
-    "heroDescription": "Your brand is more than a logo. Baghlabs creates complete brand identities, photo sessions and video productions for businesses that want to stand out.",
-    "whatWeOffer": {
-      "heading": "What we create",
-      "items": [
-        {
-          "title": "Brand Identity & Branding",
-          "description": "Logos, color palettes, typography and brand books that differentiate your brand and make it recognizable to your target audience."
-        },
-        {
-          "title": "Photo & Video Production",
-          "description": "Professional photo and video sessions that capture the essence of your brand. From product shots to campaign visuals."
-        },
-        {
-          "title": "Advertising Campaigns",
-          "description": "Full campaign approach: strategy, video ads and photos, ready to deploy on social media and other channels."
-        },
-        {
-          "title": "Packaging Design",
-          "description": "From digital presentation to physical packaging, consistent brand experience at every touchpoint."
-        }
-      ]
-    },
-    "pricing": {
-      "heading": "Pricing",
-      "plans": [
-        {
-          "title": "Content",
-          "popular": false,
-          "description": "For starters who need professional visual content.",
-          "price": "From €500 ex.",
-          "features": [
-            "Photo and/or video session",
-            "Edited final material",
-            "Suitable for social media",
-            "Fast delivery",
-            "Email support"
-          ]
-        },
-        {
-          "title": "Advertising",
-          "popular": true,
-          "description": "Complete campaign approach for SMEs looking to grow.",
-          "price": "From €1,500 ex.",
-          "features": [
-            "Custom campaign strategy",
-            "Video advertisement production",
-            "Professional photo session included",
-            "Edited campaign material",
-            "Ready for Meta & Google Ads",
-            "2 revision rounds"
-          ]
-        },
-        {
-          "title": "Branding",
-          "popular": false,
-          "description": "From brand identity to complete visual strategy with web solutions.",
-          "price": "On request",
-          "features": [
-            "Full brand identity",
-            "Logo, colors & typography",
-            "Brand book & style guide",
-            "Content to launch",
-            "Integration with web solutions",
-            "Support via ticket platform"
-          ]
-        }
-      ]
+  "kennissystemen": {
+    "id": "kennissystemen",
+    "eyebrow": "// Service 02",
+    "title": "Private Knowledge Systems",
+    "subtitle": "Internal knowledge becomes usable.",
+    "heroDescription": "Answers to internal questions, grounded in your own documents. With sources. With permissions. No public API.",
+    "example": {
+      "title": "In practice",
+      "body": "A staff member asks about a procedure. The system shows the right policy article, with the source page."
     }
   },
-  "performance-marketing": {
-    "id": "performance-marketing",
-    "title": "Performance Marketing",
-    "subtitle": "Data-Driven Marketing & Growth",
-    "heroDescription": "Marketing that delivers measurable results. Baghlabs combines creativity with data to build Meta Ads and Google Ads campaigns that actually convert.",
-    "whatWeOffer": {
-      "heading": "What we do",
-      "items": [
-        {
-          "title": "Meta Ads (Facebook & Instagram)",
-          "description": "Targeted advertising campaigns on Meta that reach your audience and generate conversions."
-        },
-        {
-          "title": "Google Ads & SEA",
-          "description": "Search, display and shopping campaigns that increase your visibility and attract quality leads."
-        },
-        {
-          "title": "Campaign Strategy & Creation",
-          "description": "From audience analysis to ad creation, we build campaigns that perform consistently and optimize based on data."
-        },
-        {
-          "title": "Reporting & Analysis",
-          "description": "Transparent monthly and weekly reports with meaningful KPIs. You always know what your budget delivers."
-        }
-      ]
-    },
-    "pricing": {
-      "heading": "Pricing",
-      "plans": [
-        {
-          "title": "Starter",
-          "popular": false,
-          "description": "Ideal for businesses starting with paid advertising.",
-          "price": "€500/mo",
-          "features": [
-            "Meta Ads account setup",
-            "1 advertising campaign",
-            "Audience setup & targeting",
-            "Monthly reporting",
-            "Optimization & adjustments",
-            "Email support"
-          ]
-        },
-        {
-          "title": "Growth",
-          "popular": true,
-          "description": "For SMEs that want to scale seriously via paid channels.",
-          "price": "On request",
-          "features": [
-            "Multi-platform approach (Meta + Google)",
-            "Full campaign strategy",
-            "Ad creation & copywriting",
-            "A/B testing & optimization",
-            "Weekly reporting",
-            "Monthly strategy calls",
-            "Conversion tracking & pixel setup",
-            "Retargeting campaigns"
-          ]
-        }
-      ]
+  "documentverwerking": {
+    "id": "documentverwerking",
+    "eyebrow": "// Service 03",
+    "title": "Document & Data Processing",
+    "subtitle": "PDFs become data.",
+    "heroDescription": "Extraction pipelines that turn unstructured files into validated data. Doubt routes to a human.",
+    "example": {
+      "title": "In practice",
+      "body": "Invoices get extracted, checked against purchase orders, queued for approval in the accounting tool."
+    }
+  },
+  "integraties": {
+    "id": "integraties",
+    "eyebrow": "// Service 04",
+    "title": "Systems Integration",
+    "subtitle": "One system, not seven tools.",
+    "heroDescription": "The connective layer between your existing systems. With logs, retries and error handling you can read.",
+    "example": {
+      "title": "In practice",
+      "body": "A webshop order creates an invoice, reduces stock and opens a service-desk ticket automatically."
+    }
+  },
+  "softwareontwikkeling": {
+    "id": "softwareontwikkeling",
+    "eyebrow": "// The foundation",
+    "title": "Custom Software Development",
+    "subtitle": "The foundation AI runs on.",
+    "heroDescription": "Before AI solves anything, someone has to build the application that runs it. That's the core skill here.",
+    "example": {
+      "title": "In practice",
+      "body": "A client portal where businesses log in, follow status and open tickets. Wired into the internal tools."
     }
   }
 }

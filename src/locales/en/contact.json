@@ -1,10 +1,11 @@
 {
   "page": {
-    "heroTitle": "Let's get acquainted",
-    "heroDescription": "Have a project in mind? An idea you want to develop? Or just a question? Fill in the form and we'll get back to you as soon as possible.",
-    "heroNote": "Active in Brussels, Ghent and across Flanders",
-    "formTitle": "Send us a message",
-    "formDescription": "Tell us about your project or question. We respond within 1-2 business days."
+    "eyebrow": "// Contact",
+    "heroTitle": "Discuss your workflow.",
+    "heroDescription": "Reply within one business day.",
+    "heroNote": "Brussels · Ghent · Flanders",
+    "formTitle": "Message",
+    "formDescription": "Tell us about the process or the problem. We respond within 1 business day."
   },
   "form": {
     "name": "Full name",
@@ -55,10 +56,13 @@
     "flexible": "Flexible"
   },
   "services": {
-    "development": "Development",
-    "branding": "Branding & Content",
-    "marketing": "Performance Marketing",
-    "other": "Other / Not sure"
+    "ai-workflows": "AI Workflows",
+    "kennissystemen": "Private Knowledge Systems",
+    "documentverwerking": "Document & Data Processing",
+    "integraties": "Systems Integration",
+    "softwareontwikkeling": "Software Development",
+    "blueprint": "AI Opportunity Blueprint",
+    "other": "Something else / not sure"
   },
   "testimonials": {
     "badge": "Client Reviews",

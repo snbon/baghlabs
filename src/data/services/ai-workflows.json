@@ -1,0 +1,62 @@
+{
+  "id": "ai-workflows",
+  "slug": "ai-workflows",
+  "accent": "yellow",
+  "order": 1,
+  "label": {
+    "nl": "AI Workflow Systemen",
+    "en": "AI Workflow Systems"
+  },
+  "tagline": {
+    "nl": "Van handmatige admin naar één betrouwbaar werksysteem.",
+    "en": "From manual admin to one reliable working system."
+  },
+  "positioning": {
+    "nl": "We bouwen software rond je echte proces: binnenkomend bericht, data eruit, controle, goedkeuring, actie in het volgende systeem — met een audit trail. Geen losse automations die stuk gaan bij de eerste uitzondering.",
+    "en": "We build software around your actual process: incoming request, extracted data, checks, approvals, action in the next system, full trace back. No brittle automations that break on the first exception."
+  },
+  "scope": {
+    "nl": [
+      "Inbox- en e-mail-naar-workflow systemen",
+      "Documentintake en automatische routing",
+      "Goedkeuringsflows en exception queues",
+      "Statusupdates en taken in bestaande tools",
+      "Interne operations-dashboards",
+      "Human-in-the-loop review wachtrijen"
+    ],
+    "en": [
+      "Shared-inbox and email-to-workflow systems",
+      "Document intake and automated routing",
+      "Approval flows and exception queues",
+      "Status updates and tasks in existing tools",
+      "Internal operations dashboards",
+      "Human-in-the-loop review queues"
+    ]
+  },
+  "deliverables": {
+    "nl": [
+      "Live productiesysteem, geen prototype",
+      "Rolgebaseerde toegang en auditlog",
+      "Documentatie en overdracht aan je team",
+      "Metingen op doorlooptijd en fouten"
+    ],
+    "en": [
+      "Live production system, not a prototype",
+      "Role-based access and audit log",
+      "Documentation and handover to your team",
+      "Metrics on throughput and errors"
+    ]
+  },
+  "notForYouIf": {
+    "nl": [
+      "Een standaard SaaS-tool dekt het proces al volledig",
+      "Er is nog geen procesverantwoordelijke intern",
+      "Je zoekt een demo, geen operationeel systeem"
+    ],
+    "en": [
+      "A standard SaaS tool already covers the whole process",
+      "There is no internal process owner yet",
+      "You want a demo, not an operational system"
+    ]
+  }
+}

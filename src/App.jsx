@@ -13,11 +13,11 @@ function App() {
       {/* Dutch (default) */}
       <Route path="/" element={<Layout lang="nl" />}>
         <Route index element={<Home />} />
-        <Route path="cases" element={<Cases />} />
-        <Route path="cases/:caseName" element={<CaseDetail />} />
-        <Route path="services/:serviceId" element={<ServiceDetail />} />
+        <Route path="projecten" element={<Cases />} />
+        <Route path="projecten/:caseName" element={<CaseDetail />} />
+        <Route path="diensten/:serviceId" element={<ServiceDetail />} />
         <Route path="contact" element={<Contact />} />
-        <Route path="about" element={<About />} />
+        <Route path="over-ons" element={<About />} />
       </Route>
       {/* English */}
       <Route path="/en" element={<Layout lang="en" />}>

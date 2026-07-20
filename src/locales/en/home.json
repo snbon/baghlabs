@@ -1,57 +1,96 @@
 {
   "hero": {
-    "morphingPhrases": ["From Concept", "to Product", "to Impact"],
-    "subtitle": "A software studio dedicated to transforming bold ideas into impactful digital products. We build software, brands and campaigns for ambitious businesses.",
-    "cta": "Explore"
+    "titleLine1": "Bespoke AI systems",
+    "titleLine2": "built to work",
+    "titleLine3": "for your business.",
+    "tagline": "Baghlabs is your digital partner where off-the-shelf ends. We ship AI workflows, knowledge bases and integrations — fully bespoke.",
+    "primaryCta": "Discuss your workflow"
   },
-  "about": {
-    "heading": "Your digital partner",
-    "intro": "Baghlabs is a software studio active in Flanders. We work with SMEs, startups and scale-ups looking to strengthen their digital presence, from custom software to brand identity and performance marketing campaigns.",
-    "servicesLabel": "Our Services",
-    "services": {
-      "development": {
-        "title": "Development",
-        "description": "Custom web applications, SaaS products and MVPs built to scale and solve real business problems.",
-        "link": "/en/services/development"
+  "pillars": {
+    "eyebrow": "// What we build",
+    "headline": "Four places AI actually helps.",
+    "items": [
+      {
+        "id": "ai-workflows",
+        "number": "01",
+        "title": "AI Workflows",
+        "description": "Requests come in, get processed, routed and logged. No manual middleman."
       },
-      "branding": {
-        "title": "Branding & Content",
-        "description": "Brand identities, photography and video productions that tell your story and connect with your audience.",
-        "link": "/en/services/branding-content"
+      {
+        "id": "kennissystemen",
+        "number": "02",
+        "title": "Knowledge Bases",
+        "description": "Answers from your own documents. With sources. With permissions. No public model."
       },
-      "marketing": {
-        "title": "Performance Marketing",
-        "description": "Data-driven Meta Ads and Google Ads campaigns that generate conversions and deliver measurable growth.",
-        "link": "/en/services/performance-marketing"
+      {
+        "id": "documentverwerking",
+        "number": "03",
+        "title": "Document & Data Processing",
+        "description": "PDFs and scans become data. Edge cases go to a human."
+      },
+      {
+        "id": "integraties",
+        "number": "04",
+        "title": "Systems Integration",
+        "description": "ERP, CRM, accounting — one system. Logs you can actually read."
       }
+    ],
+    "foundation": {
+      "eyebrow": "// The foundation",
+      "title": "Custom Software Development",
+      "description": "What this studio runs on. AI sits on top, not instead."
     }
   },
-  "cases": {
-    "heading": "Our Cases",
-    "subtext": "See how we turn ideas into products with impact.",
-    "comingSoon": "More projects coming soon..."
-  },
-  "why": {
-    "heading": "Why Baghlabs",
-    "reasons": [
+  "process": {
+    "eyebrow": "// How we work",
+    "headline": "Three phases. Clear boundaries.",
+    "stages": [
       {
-        "title": "We solve real problems",
-        "description": "Not imagined ones. We start with the actual pain points of your business and build solutions that address them directly, no feature bloat, no unnecessary complexity."
+        "number": "01",
+        "title": "Blueprint",
+        "duration": "2 weeks",
+        "priceLabel": "Paid discovery",
+        "description": "We pick one workflow together. You end with a concrete build proposal. No free consulting.",
+        "outputs": [
+          "Process mapping",
+          "Data & integrations scan",
+          "Security & privacy design",
+          "Fixed-scope proposal"
+        ]
       },
       {
-        "title": "Simplicity is our superpower",
-        "description": "The best solutions are invisible. We translate complex business processes into intuitive products your team can use without training, and your customers won't forget."
+        "number": "02",
+        "title": "Build & Launch",
+        "duration": "Scoped per project",
+        "priceLabel": "Fixed scope",
+        "description": "We build, test, ship. Your team runs it after, with docs and handover.",
+        "outputs": [
+          "Production system",
+          "AI workflow & data model",
+          "Integrations & permissions",
+          "Audit log & dashboard"
+        ]
       },
       {
-        "title": "Results, not excuses",
-        "description": "We measure our success by your results. More leads, better conversions, a stronger brand, that's what drives us. No cookie-cutter templates, no half measures."
+        "number": "03",
+        "title": "Continuous Improvement",
+        "duration": "Monthly retainer",
+        "priceLabel": "Ongoing",
+        "description": "Monitoring, tuning, incremental releases. Based on what the system actually does, not guesses.",
+        "outputs": [
+          "Monitoring & support",
+          "Monthly review",
+          "Prompt & model tuning",
+          "Prioritized backlog"
+        ]
       }
     ]
   },
-  "ctaSection": {
-    "heading": "Ready to build something together?",
-    "description": "From custom software to a complete brand identity, Baghlabs is your digital partner. Let's get acquainted.",
-    "note": "Active in Brussels, Ghent and across Flanders.",
-    "cta": "Get in touch"
+  "cta": {
+    "eyebrow": "// Next step",
+    "headline": "Find the workflow costing you the most time.",
+    "body": "Two weeks, fixed price, concrete build proposal. No commitment to build.",
+    "primary": "Start a Blueprint",
+    "secondary": "Intro call first"
   }
 }

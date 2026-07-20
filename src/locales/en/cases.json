@@ -1,17 +1,18 @@
 {
   "page": {
-    "heroTitle": "Our Work",
-    "heroDescription": "Explore the products we've built, the challenges they solve, and the impact they deliver.",
+    "eyebrow": "// Case Studies",
+    "heroTitle": "Case studies.",
+    "heroDescription": "The software this studio is built on. AI case studies to follow.",
     "tabAll": "All",
-    "tabSoftware": "Software Products",
-    "tabCreative": "Creative Work",
-    "tabDevelopment": "Development",
-    "tabBrandingContent": "Branding & Content",
-    "tabPerformanceMarketing": "Performance Marketing",
-    "ctaTitle": "Impressed?",
-    "ctaDescription": "Let's discuss how we can help bring your idea to life with our expertise in SaaS and mobile development. We are currently not taking on new projects, but that doesn't hold us to chat over a coffee.",
-    "ctaLearnMore": "Learn More",
-    "ctaGetInTouch": "Get in Touch"
+    "tabDevelopment": "Software Development",
+    "tabAi": "AI Systems",
+    "tabOthers": "Other",
+    "aiEmptyTitle": "AI case studies coming soon",
+    "aiEmptyBody": "The AI systems currently in production are under NDA. As soon as we can publish, they'll appear here.",
+    "ctaTitle": "Want to build something similar?",
+    "ctaDescription": "Start with an AI Opportunity Blueprint. Two weeks, fixed price, concrete proposal.",
+    "ctaLearnMore": "Learn more",
+    "ctaGetInTouch": "Get in touch"
   },
   "availly": {
     "name": "Availly",

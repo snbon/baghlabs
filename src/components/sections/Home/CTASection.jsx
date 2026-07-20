@@ -1,129 +1,157 @@
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
-import { useLocation, useNavigate, Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useCurrentLang, usePathAlternate, useLangPath } from '@/lib/usePathAlternate'
+import { pillars } from '@/data/services'
+import SplitReveal from '@/components/motion/SplitReveal'
 
 const CTASection = () => {
   const { t } = useTranslation('home')
   const { t: tCommon, i18n } = useTranslation('common')
-  const location = useLocation()
   const navigate = useNavigate()
+  const lang = useCurrentLang()
+  const alternatePath = usePathAlternate(lang === 'en' ? 'nl' : 'en')
+  const langPath = useLangPath()
 
-  const isEnglish = location.pathname.startsWith('/en')
-  const basePath = isEnglish ? '/en' : ''
-
-const toggleLanguage = () => {
-    if (isEnglish) {
-      const newPath = location.pathname.replace(/^\/en/, '') || '/'
-      i18n.changeLanguage('nl')
-      navigate(newPath)
-    } else {
-      const newPath = `/en${location.pathname === '/' ? '' : location.pathname}`
-      i18n.changeLanguage('en')
-      navigate(newPath)
-    }
+  const toggleLanguage = () => {
+    const next = lang === 'en' ? 'nl' : 'en'
+    i18n.changeLanguage(next)
+    navigate(alternatePath)
   }
 
   return (
-    <div className="relative w-full flex flex-col bg-white overflow-hidden">
-      {/* Noise dots only, fade in very gradually from top, no colour cast */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage:
-            'radial-gradient(circle at 1px 1px, rgba(0,0,0,0.07) 1px, transparent 0)',
-          backgroundSize: '20px 20px',
-          WebkitMaskImage:
-            'linear-gradient(to bottom, transparent 0%, black 35%, black 100%)',
-          maskImage:
-            'linear-gradient(to bottom, transparent 0%, black 35%, black 100%)',
-        }}
-      />
+    <div>
+      {/* CTA slab */}
+      <section className="relative bg-noir text-paper border-t border-paper/10 overflow-hidden">
+        <div className="container-wide py-24 md:py-40 relative">
+          <div className="flex items-baseline justify-between mb-14 md:mb-20">
+            <span className="chapter">Cap. V — Volgende stap</span>
+            <span className="smallcaps text-paper/40 hidden md:inline">Colofon</span>
+          </div>
 
-      {/* CTA */}
-      <div className="relative flex-1 flex items-center justify-center py-28">
-        <div className="container-custom text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.6 }}
+            className="poster-1 max-w-[14ch] text-paper mb-10 md:mb-14"
           >
-            <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-6 tracking-tight">
-              {t('ctaSection.heading')}
-            </h2>
-            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-4 leading-relaxed">
-              {t('ctaSection.description')}
-            </p>
-            <p className="text-sm text-muted-foreground/60 mb-10">
-              {t('ctaSection.note')}
-            </p>
+            <SplitReveal trigger="view" stagger={55}>
+              {t('cta.headline')}
+            </SplitReveal>
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="font-display italic text-xl md:text-2xl text-paper/70 max-w-2xl mb-10 md:mb-16"
+          >
+            {t('cta.body')}
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="flex flex-col md:flex-row items-start md:items-end gap-8 md:gap-12 border-t border-paper/20 pt-8"
+          >
+            <div className="flex items-baseline gap-4">
+              <span className="chapter text-oxblood">▸</span>
+              <Link
+                to={langPath('contact')}
+                className="font-display font-bold text-3xl md:text-5xl text-paper hover:text-oxblood transition-colors leading-none border-b-2 border-oxblood pb-1 hover:pb-1.5"
+              >
+                {t('cta.primary')}
+              </Link>
+            </div>
             <Link
-              to={`${basePath}/contact`}
-              className="btn-secondary inline-flex items-center gap-2"
+              to={langPath('contact')}
+              className="smallcaps text-paper/60 hover:text-oxblood border-b border-paper/25 hover:border-oxblood pb-1"
             >
-              {t('ctaSection.cta')}
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+              {t('cta.secondary')}
             </Link>
           </motion.div>
         </div>
-      </div>
+      </section>
 
-      {/* Footer */}
-      <footer className="relative border-t border-bagh-100 py-12">
-        <div className="container-custom">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div>
-              <div className="flex items-center space-x-3 mb-4">
-                <div className="w-7 h-7 bg-bagh-800 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-medium text-xs">B</span>
-                </div>
-                <span className="text-bagh-800 font-semibold">Baghlabs</span>
-              </div>
-              <p className="text-muted-foreground text-sm leading-relaxed">
+      {/* Colophon footer */}
+      <footer className="relative bg-noir-2 text-paper border-t border-paper/10">
+        <div className="container-wide py-16 md:py-20">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12">
+            <div className="md:col-span-6">
+              <h3 className="poster-2 mb-6">baghlabs</h3>
+              <p className="text-paper/60 max-w-md mb-6 leading-relaxed">
                 {tCommon('footer.description')}
               </p>
+              <div className="smallcaps text-paper/40 space-y-1">
+                <p>MMXXVI · Vlaanderen</p>
+                <p>Studio · Één contact</p>
+              </div>
             </div>
-            <div>
-              <h4 className="text-foreground font-medium text-sm mb-4 uppercase tracking-wide">
-                {tCommon('footer.quickLinks')}
-              </h4>
-              <ul className="space-y-2">
-                {Object.entries(tCommon('footer.links', { returnObjects: true })).map(([key, label]) => (
-                  <li key={key}>
+
+            <div className="md:col-span-6">
+              <p className="chapter mb-6">Index</p>
+              <ul className="border-t border-paper/15">
+                {[
+                  { key: 'projects', label: tCommon('nav.cases'), href: langPath('projects') },
+                  { key: 'services', label: tCommon('nav.services'), href: `${langPath('home')}#pillars` },
+                  { key: 'about', label: tCommon('nav.about'), href: langPath('about') },
+                  { key: 'contact', label: tCommon('nav.contact'), href: langPath('contact') },
+                ].map((item, i) => (
+                  <li key={item.key} className="border-b border-paper/15">
                     <Link
-                      to={key === 'contact' ? `${basePath}/contact` : key === 'cases' ? `${basePath}/cases` : key === 'services' ? `${basePath}/services/development` : `${basePath}/`}
-                      className="text-muted-foreground text-sm hover:text-foreground transition-colors"
+                      to={item.href}
+                      className="group flex items-baseline gap-4 py-3 text-paper hover:text-oxblood transition-colors"
                     >
-                      {label}
+                      <span className="smallcaps text-oxblood w-10 shrink-0">
+                        {String(i + 1).padStart(2, '0')}
+                      </span>
+                      <span className="font-display text-xl">{item.label}</span>
+                      <span className="dot-leader" />
+                      <span className="smallcaps text-paper/40 group-hover:text-oxblood">→</span>
                     </Link>
                   </li>
                 ))}
               </ul>
-            </div>
-            <div>
-              <h4 className="text-foreground font-medium text-sm mb-4 uppercase tracking-wide">
-                {tCommon('footer.getInTouch')}
-              </h4>
-              <p className="text-muted-foreground text-sm mb-4">{tCommon('footer.readyText')}</p>
-              <Link
-                to={`${basePath}/contact`}
-                className="btn-secondary text-sm"
-              >
-                {tCommon('footer.workWithUs')}
-              </Link>
+
+              <div className="mt-8">
+                <p className="chapter mb-4">Diensten</p>
+                <ul className="space-y-1">
+                  {pillars.map((p) => (
+                    <li key={p.id}>
+                      <Link
+                        to={langPath('services', p.id)}
+                        className="font-display text-base text-paper/70 hover:text-oxblood transition-colors"
+                      >
+                        {p.label[lang] || p.label.nl}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
-          <div className="border-t border-bagh-100 mt-12 pt-6 flex flex-col items-center gap-2 text-center">
-            <p className="text-muted-foreground text-xs">{tCommon('footer.copyright')}</p>
-            <p className="text-muted-foreground/50 text-xs">{tCommon('footer.tagline')}</p>
-            <button
-              onClick={toggleLanguage}
-              className="mt-1 text-xs font-semibold uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors"
-            >
-              {isEnglish ? 'NL' : 'EN'}
-            </button>
+
+          <div className="border-t border-paper/15 mt-14 pt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <p className="smallcaps text-paper/40">{tCommon('footer.copyright')}</p>
+            <div className="flex items-center gap-2 smallcaps">
+              <button
+                onClick={toggleLanguage}
+                className={`px-2 py-1 transition-colors ${lang === 'nl' ? 'text-oxblood border-b border-oxblood' : 'text-paper/50 hover:text-oxblood'}`}
+              >
+                NL
+              </button>
+              <span className="text-paper/25">·</span>
+              <button
+                onClick={toggleLanguage}
+                className={`px-2 py-1 transition-colors ${lang === 'en' ? 'text-oxblood border-b border-oxblood' : 'text-paper/50 hover:text-oxblood'}`}
+              >
+                EN
+              </button>
+            </div>
           </div>
         </div>
       </footer>

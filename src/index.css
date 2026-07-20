@@ -1,5 +1,5 @@
-/* Import Geist font */
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap');
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,48 +7,65 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --background: 30 15% 4%;
+    --foreground: 42 33% 86%;
+    --muted: 30 10% 10%;
+    --muted-foreground: 42 12% 55%;
+    --border: 42 20% 88% / 0.1;
+    --input: 30 10% 10%;
+    --ring: 0 61% 38%;
+    --primary: 0 61% 38%;
+    --primary-foreground: 42 33% 86%;
+    --secondary: 30 10% 10%;
+    --secondary-foreground: 42 33% 86%;
+    --accent: 30 10% 10%;
+    --accent-foreground: 42 33% 86%;
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --radius: 0.5rem;
+    --destructive-foreground: 42 33% 86%;
+    --radius: 0.25rem;
   }
 
   html {
-    scroll-behavior: smooth;
+    background-color: #0C0A08;
   }
 
   body {
-    font-family: 'Geist', system-ui, sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    line-height: 1.6;
+    line-height: 1.55;
     overflow-x: hidden;
-    background-color: hsl(var(--background));
-    color: hsl(var(--foreground));
+    background-color: #0C0A08;
+    color: #E8E1D0;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Geist', system-ui, sans-serif;
-    font-weight: 600;
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 700;
     letter-spacing: -0.02em;
-    line-height: 1.2;
+    line-height: 1.02;
+    color: #E8E1D0;
+    font-variation-settings: 'opsz' 96;
   }
 
-  * {
-    border-color: hsl(var(--border));
+  ::selection {
+    background: #9C2626;
+    color: #E8E1D0;
+  }
+
+  /* Lenis */
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
   }
 }
 
@@ -56,32 +73,113 @@
   .container-custom {
     @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
   }
-
-  .btn-primary {
-    @apply bg-bagh-800 text-white px-4 py-2 rounded-md font-normal text-sm hover:bg-bagh-700 transition-colors duration-200 w-fit;
+  .container-wide {
+    @apply max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10;
   }
-
-  .btn-secondary {
-    @apply border border-bagh-800 text-bagh-800 px-4 py-2 rounded-md font-normal text-sm hover:bg-bagh-800 hover:text-white transition-colors duration-200 w-fit;
-  }
-
   .section-padding {
     @apply py-20 md:py-32;
   }
 
-  .text-gradient {
-    @apply bg-gradient-to-r from-bagh-800 to-bagh-600 bg-clip-text text-transparent;
+  /* Poster typography */
+  .poster-1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 700;
+    /* Cap by both viewport width AND height so a 3-line poster never overflows the fold. */
+    font-size: clamp(2.5rem, min(11vw, 17vh), 12rem);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    font-variation-settings: 'opsz' 144;
+  }
+  .poster-2 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 700;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: 0.98;
+    letter-spacing: -0.02em;
+    font-variation-settings: 'opsz' 96;
+  }
+  .poster-3 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(1.6rem, 3.2vw, 2.25rem);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    font-variation-settings: 'opsz' 48;
   }
 
-  .text-minimal {
-    @apply text-bagh-700;
+  .smallcaps {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.7rem;
   }
 
-  .heading-minimal {
-    @apply text-bagh-800 font-semibold tracking-tight;
+  .chapter {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 0.68rem;
+    color: #9C2626;
   }
 
-  /* Scrollbar hide utility */
+  .rule-oxblood {
+    border-top: 1px solid #9C2626;
+  }
+  .rule-ink {
+    border-top: 1px solid rgba(232, 225, 208, 0.1);
+  }
+
+  /* SplitReveal — word slides up from below a mask.
+     padding-bottom + negative margin gives descenders (y, j, g, p, q) room
+     inside the clip rect without shifting the visual baseline. */
+  .split-word {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: baseline;
+    padding-bottom: 0.2em;
+    margin-bottom: -0.2em;
+    line-height: inherit;
+  }
+  .split-word > span {
+    display: inline-block;
+    transform: translateY(110%);
+    transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+  }
+  .split-word.split-in > span {
+    transform: translateY(0);
+  }
+
+  /* Dot leader between two spans in a flex row */
+  .dot-leader {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    align-self: flex-end;
+    height: 1em;
+  }
+  .dot-leader::after {
+    content: ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .";
+    display: block;
+    color: rgba(232, 225, 208, 0.25);
+    letter-spacing: 0.15em;
+    white-space: nowrap;
+    position: absolute;
+    bottom: 0.15em;
+    left: 0;
+    right: 0;
+    line-height: 1;
+  }
+
+  .frame {
+    border: 1px solid #9C2626;
+  }
+  .frame-ink {
+    border: 1px solid rgba(232, 225, 208, 0.15);
+  }
+
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -90,13 +188,11 @@
     display: none;
   }
 
-  /* Scroll reveal animation states */
   .animate-fade-in-up {
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
-
   .animate-fade-in-up.animate-active {
     opacity: 1;
     transform: translateY(0);

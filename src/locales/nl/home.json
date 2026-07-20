@@ -1,57 +1,96 @@
 {
   "hero": {
-    "morphingPhrases": ["Van Concept", "tot Product", "tot Impact"],
-    "subtitle": "Wij vertalen uw visie naar digitale producten met impact. Wij creëren software, merken en campagnes voor ondernemingen met ambitie.",
-    "cta": "Let's go!"
+    "titleLine1": "Unieke AI-systemen",
+    "titleLine2": "die voor jou",
+    "titleLine3": "werken.",
+    "tagline": "Baghlabs is jouw digital partner waar off-the-shelf stopt. We shippen AI-workflows, knowledge bases en integraties, fully bespoke.",
+    "primaryCta": "Bespreek je workflow"
   },
-  "about": {
-    "heading": "Uw digitale partner",
-    "intro": "Baghlabs is een software studio actief in Vlaanderen. We werken met KMO's, startups en scale-ups die hun digitale aanwezigheid willen versterken, van custom software tot merkidentiteit en performante marketingcampagnes.",
-    "servicesLabel": "Onze Diensten",
-    "services": {
-      "development": {
-        "title": "Development",
-        "description": "Maatwerk web applicaties, SaaS producten en MVP's die schaalbaar zijn en echte zakelijke problemen oplossen.",
-        "link": "/services/development"
+  "pillars": {
+    "eyebrow": "// What we build",
+    "headline": "Vier plekken waar AI verschil maakt.",
+    "items": [
+      {
+        "id": "ai-workflows",
+        "number": "01",
+        "title": "AI Workflows",
+        "description": "Requests komen binnen, worden verwerkt, gerouteerd en gelogd. Geen manual middleman."
       },
-      "branding": {
-        "title": "Branding & Content",
-        "description": "Merkidentiteiten, fotografie en videoproducties die uw verhaal vertellen en uw doelgroep aanspreken.",
-        "link": "/services/branding-content"
+      {
+        "id": "kennissystemen",
+        "number": "02",
+        "title": "Knowledge Bases",
+        "description": "Antwoorden uit je eigen documenten. Met bron. Met permissions. Geen public model."
       },
-      "marketing": {
-        "title": "Performance Marketing",
-        "description": "Datagedreven Meta Ads en Google Ads campagnes die conversies genereren en meetbare groei leveren.",
-        "link": "/services/performance-marketing"
+      {
+        "id": "documentverwerking",
+        "number": "03",
+        "title": "Document & Data Processing",
+        "description": "PDF's en scans worden data. Edge cases naar een mens."
+      },
+      {
+        "id": "integraties",
+        "number": "04",
+        "title": "Systems Integration",
+        "description": "ERP, CRM, boekhouding — één systeem. Logs die je kan lezen."
       }
+    ],
+    "foundation": {
+      "eyebrow": "// The foundation",
+      "title": "Custom Software Development",
+      "description": "Waar dit huis op draait. AI sits on top, niet in de plaats van."
     }
   },
-  "cases": {
-    "heading": "Onze Cases",
-    "subtext": "Bekijk hoe we ideeën omzetten in producten met impact.",
-    "comingSoon": "Meer projecten binnenkort..."
-  },
-  "why": {
-    "heading": "Waarom Baghlabs",
-    "reasons": [
+  "process": {
+    "eyebrow": "// How we work",
+    "headline": "Drie fases. Vaste boundaries.",
+    "stages": [
       {
-        "title": "We lossen echte problemen op",
-        "description": "Geen verzonnen uitdagingen. We beginnen bij de werkelijke knelpunten van uw bedrijf en bouwen oplossingen die deze direct aanpakken, zonder functiebloat, zonder onnodige complexiteit."
+        "number": "01",
+        "title": "Blueprint",
+        "duration": "2 weken",
+        "priceLabel": "Paid discovery",
+        "description": "We kiezen samen één workflow. Aan het einde ligt er een concreet build proposal op tafel. Geen free consulting.",
+        "outputs": [
+          "Process mapping",
+          "Data & integrations scan",
+          "Security & privacy design",
+          "Fixed-scope proposal"
+        ]
       },
       {
-        "title": "Eenvoud is onze superkracht",
-        "description": "De beste oplossingen zijn onzichtbaar. We vertalen complexe bedrijfsprocessen naar intuïtieve producten die uw team zonder training kan gebruiken, en uw klanten niet zullen vergeten."
+        "number": "02",
+        "title": "Build & Launch",
+        "duration": "Scope per project",
+        "priceLabel": "Fixed scope",
+        "description": "We bouwen, testen en shippen. Daarna draait je team het zelf, met docs en handover.",
+        "outputs": [
+          "Production system",
+          "AI workflow & data model",
+          "Integrations & permissions",
+          "Audit log & dashboard"
+        ]
       },
       {
-        "title": "Resultaat, geen excuses",
-        "description": "We meten ons succes aan uw resultaten. Meer leads, betere conversies, een sterker merk, dat is wat ons drijft. Geen standaard templates, geen half werk."
+        "number": "03",
+        "title": "Continuous Improvement",
+        "duration": "Monthly retainer",
+        "priceLabel": "Ongoing",
+        "description": "Monitoring, tuning, incremental releases. Op basis van wat het systeem echt doet, niet op basis van vermoedens.",
+        "outputs": [
+          "Monitoring & support",
+          "Monthly review",
+          "Prompt & model tuning",
+          "Prioritized backlog"
+        ]
       }
     ]
   },
-  "ctaSection": {
-    "heading": "Klaar om samen iets te bouwen?",
-    "description": "Van maatwerk software tot een complete merkidentiteit, Baghlabs is uw digitale partner. Laten we kennismaken.",
-    "note": "Actief in Brussel, Gent en de rest van Vlaanderen.",
-    "cta": "Contact"
+  "cta": {
+    "eyebrow": "// Next step",
+    "headline": "Vind de workflow die je het meeste tijd kost.",
+    "body": "Twee weken, fixed price, concreet build proposal. Geen commitment om te bouwen.",
+    "primary": "Start een Blueprint",
+    "secondary": "Eerst een intro call"
   }
 }

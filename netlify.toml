@@ -9,6 +9,43 @@
   targetPort = 3000
   framework = "#custom"
 
+# 301 redirects from old NL paths to new Dutch paths
+[[redirects]]
+  from = "/services/development"
+  to = "/diensten/softwareontwikkeling"
+  status = 301
+
+[[redirects]]
+  from = "/services/branding-content"
+  to = "/diensten/ai-workflows"
+  status = 301
+
+[[redirects]]
+  from = "/services/performance-marketing"
+  to = "/diensten/ai-workflows"
+  status = 301
+
+[[redirects]]
+  from = "/services/*"
+  to = "/diensten/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/cases"
+  to = "/projecten"
+  status = 301
+
+[[redirects]]
+  from = "/cases/*"
+  to = "/projecten/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/about"
+  to = "/over-ons"
+  status = 301
+
+# SPA fallback
 [[redirects]]
   from = "/*"
   to = "/index.html"

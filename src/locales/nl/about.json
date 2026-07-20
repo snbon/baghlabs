@@ -1,39 +1,38 @@
 {
   "hero": {
-    "label": "Over ons",
-    "heading": "Achter Baghlabs",
-    "subtitle": "Een kleine studio met een achtergrond in marketing, projectbeheer en software. Drie disciplines die zelden samen voorkomen."
+    "eyebrow": "// Studio",
+    "heading": "One-person studio, één contact.",
+    "subtitle": "AI-systemen voor bedrijven met veel operationeel werk."
   },
   "story": {
-    "heading": "De achtergrond",
-    "intro": "De meeste studio's kiezen één richting. Baghlabs werkt er over meerdere, omdat de problemen die klanten meebrengen zelden in één vakje passen.",
+    "heading": "Background",
+    "intro": "Vijf jaar Baghlabs. De brief verschoof van 'we hebben een website nodig' naar 'ons operationeel werk loopt vast'. Daar begint dit werk.",
     "pillars": [
       {
-        "label": "Marketing",
-        "title": "Waar het begon",
-        "description": "Campagnes, positionering, advertentiestrategie in verschillende sectoren. De les die telkens terugkwam: de meeste marketingproblemen zijn geen marketingproblemen. Brief, doelgroep, timing, dat is waar het echt fout loopt. Dat is het niveau waarop er gewerkt wordt."
+        "label": "Systems",
+        "title": "Rond het proces, niet de tool",
+        "description": "Edge cases zijn het werk. Rechten, incomplete data, approvals, legacy. Daar begint een systeem."
       },
       {
-        "label": "Management",
-        "title": "Projecten op de rails houden",
-        "description": "Projecten lopen mis om vertrouwde redenen. Scope die groeit zonder gesprek, beslissingen die uitblijven, dingen die eerder gezegd hadden moeten worden. Die patronen vroeg herkennen en er iets aan doen is hier deel van het werk."
+        "label": "Craft",
+        "title": "Geen doorverwezen werk",
+        "description": "De persoon aan de lijn schrijft en ships. Scope en timing blijven kort."
       },
       {
-        "label": "Software",
-        "title": "Gebouwd in eigen huis",
-        "description": "De code wordt hier geschreven, niet doorgegeven. Dat betekent dat offertes gebaseerd zijn op wat het werk echt vraagt, en dat de communicatie kort blijft."
+        "label": "Accountability",
+        "title": "Geen black box",
+        "description": "Rechten, audit log, human-in-the-loop, monitoring. Iemand kan altijd terugzien wat het systeem deed."
       }
     ]
   },
   "network": {
-    "label": "Hoe het werkt",
-    "heading": "Wanneer meer mensen nodig zijn",
-    "description": "Sommige projecten vragen meer dan één discipline. Er is een kleine vertrouwde kring waar ik als Baghlabs mee samenwerk. Wanneer ze nodig zijn, sluiten ze aan. Je weet wie er betrokken is en wat ze doen.",
-    "note": "Mensen met een gedeelde werkhistorie, niet gevonden via een platform"
+    "label": "Collective",
+    "heading": "Wanneer er meer nodig is",
+    "description": "Grotere engagements vragen meer dan één discipline. Een kleine vertrouwde crew sluit aan wanneer nodig. Je weet altijd wie erbij is en waarvoor."
   },
   "testimonials": {
-    "badge": "Klantbeoordelingen",
+    "badge": "Testimonials",
     "title": "Wat klanten zeggen",
-    "subtitle": "Een paar woorden van mensen waarmee er is samengewerkt."
+    "subtitle": "Een paar woorden van clients waarmee er is samengewerkt."
   }
 }
